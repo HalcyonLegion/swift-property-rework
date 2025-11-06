@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="author" content="Swift Property Auctions"/>
+        <meta name="description" content="With over 60 years of combined experience, Swift Property Auctions offers professional guidance for buying and selling residential and commercial properties through expertly managed auctions."/>
+        <meta name="keywords" content="Property Auction, Residential Auction, Commercial Auction, Real Estate, Swift Property Auction, Expert Auction Advice, Property Visibility, Rightmove, Zoopla, Eigroup, Property Support, 24/7 Assistance, Property Investment, Sell Property, Buy Property"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+				
+  		<!-- SITE TITLE -->
+		<title>Private Treaty</title>
+							
+		<!-- FAVICON AND TOUCH ICONS -->
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+		<!-- BOOTSTRAP CSS -->
+		<link href="static/css/bootstrap.min.css" rel="stylesheet">
+				
+		<!-- FONT ICONS -->
+		<link href="static/css/flaticon.css" rel="stylesheet">
+
+		<!-- PLUGINS STYLESHEET -->
+		<link href="static/css/menu.css" rel="stylesheet">	
+		<link id="effect" href="static/css/dropdown-effects/fade-down.css" media="all" rel="stylesheet">
+		<link href="static/css/magnific-popup.css" rel="stylesheet">	
+		<link href="static/css/owl.carousel.min.css" rel="stylesheet">
+		<link href="static/css/owl.theme.default.min.css" rel="stylesheet">
+
+		<!-- ON SCROLL ANIMATION -->
+		<link href="static/css/animate.css" rel="stylesheet">
+
+		<!-- TEMPLATE CSS -->
+		<link href="static/css/style.css" rel="stylesheet"> 
+		
+		<!-- RESPONSIVE CSS -->
+		<link href="static/css/responsive.css" rel="stylesheet">
+
+	</head>
+
+
+
+	<body>
+
+
+
+
+		<!-- PRELOADER SPINNER
+		============================================= -->	
+		<!-- PRELOADER SPINNER -->
+		<div id="loading" class="preloader">
+			<div id="loading-center">
+				<div id="loading-center-absolute">
+					<img src="static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- PAGE CONTENT
+		============================================= -->	
+		<div id="page" class="page">
+
+
+
+
+			<!-- HEADER
+			============================================= -->
+			<header id="header" class="header tra-menu navbar-light">
+				<div class="header-wrapper">
+
+
+					<!-- MOBILE HEADER -->
+					<div class="wsmobileheader clearfix">      
+						<!-- Homepage link around the logo -->
+						<a href="{{ url_for('home') }}" class="smllogo">
+							<img src="/static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="Homepage"/>
+						</a>
+						<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>  
+					</div>
+
+
+				 	<!-- NAVIGATION MENU -->
+				  	<div class="wsmainfull menu d-flex justify-content-center clearfix">
+	    				<div class="wsmainwp clearfix">
+
+
+	    					<!-- HEADER LOGO -->
+	    					<div class="desktoplogo"><a href="{{ url_for('home') }}" class="logo-black"><img src="/static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="header-logo"></a></div>
+	    					<div class="desktoplogo"><a href="{{ url_for('home') }}" class="logo-white"><img src="/static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="header-logo"></a></div>
+
+
+	    					<!-- MAIN MENU -->
+	      					<nav class="wsmenu clearfix text-center">
+	        					<ul class="wsmenu-list nav-red-hover">
+
+                                    <!-- SIMPLE NAVIGATION LINK -->
+							    	<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('home') }}">Home</a></li>
+
+	        						<!-- DROPDOWN MENU -->
+									<li aria-haspopup="true"><a href="{{ url_for('about') }}">About <span class="wsarrow"></span></a>
+	            						<ul class="sub-menu">
+	            							<li aria-haspopup="true"><a href="{{ url_for('about') }}">About Us</a></li>
+						           		</ul>
+								    </li>
+
+
+	        						<!-- DROPDOWN MENU -->
+						          	<li aria-haspopup="true"><a href="#">Current Lots <span class="wsarrow"></span></a>
+	            						<ul class="sub-menu">
+	            							<li aria-haspopup="true"><a href="{{ url_for('current_lots') }}">Current Lots</a></li>
+	            							<li aria-haspopup="true"><a href="{{ url_for('available_lots') }}">Available Lots</a></li>
+	            							<li aria-haspopup="true"><a href="{{ url_for('bidder_registration') }}">Bidder Registration</a></li>
+	            							<li aria-haspopup="true"><a href="{{ url_for('private_sales') }}">Private Treaty</a></li>
+						           		</ul>
+								    </li>
+
+
+							    	<!-- DROPDOWN MENU -->
+						        	<li aria-haspopup="true"><a href="#">Auctions <span class="wsarrow"></span></a>
+						        		<div class="wsmegamenu clearfix halfmenu">
+						              		<div class="container-fluid">
+						                		<div class="row">
+
+						                			<!-- Links -->
+									                <ul class="col-lg-12 link-list">
+														<li><a href="{{ url_for('valuation') }}">Free Valuation</a></li>
+									                	<li><a href="{{ url_for('future_auctions_dates') }}">Future Auction Dates</a></li>							          
+									                    <li><a href="{{ url_for('previous_auctions') }}">Previous Auctions</a></li>
+									                    <li><a href="{{ url_for('auction_finance') }}">Auction Finance</a></li>
+														<li><a href="https://waterstonelegal.co.uk/jasmine-chaudry-partner/" target="_blank">Auction Solicitors</a></li>
+									                    <li><a href="{{ url_for('auction_buying_guide') }}">Auction Buying Guide</a></li>
+									                </ul>
+
+								                  	<!-- Links -->
+									                <ul class="col-lg-12 link-list">
+														<li><a href="/static/pdf/Auction_Guide.pdf" target="_blank">Buying Guide Download</a></li>
+														<li><a href="{{ url_for('auction_selling_guide') }}">Auction Selling Guide</a></li>	
+									                	<li><a href="{{ url_for('benefits_of_auctions') }}">Benefits of Auctions</a></li>  			               
+									                    <li><a href="{{ url_for('frequently_asked_questions') }}">FAQs Page</a></li>
+									                </ul>
+
+						                		</div>
+						              		</div>
+						            	</div>
+						          	</li>	<!-- END DROPDOWN MENU -->
+
+						          	<!-- DROPDOWN MENU -->
+						          	<li aria-haspopup="true"><a href="#">News & Blogs <span class="wsarrow"></span></a>
+	            						<ul class="sub-menu">
+	            							<li aria-haspopup="true"><a href="{{ url_for('news_and_blogs') }}">Blogs</a></li>
+						           		</ul>
+								    </li>
+
+
+								    <!-- HEADER BUTTON -->
+								    <li class="nl-simple" aria-haspopup="true">
+								    	<a href="{{ url_for('contact') }}" class="btn btn-tra-white red-hover last-link">Contact</a>
+									</li>
+
+									<!-- HEADER SOCIAL LINKS --> 													
+							<!-- <li class="nl-simple white-color header-socials ico-20 clearfix" aria-haspopup="true">
+								<span><a href="https://www.facebook.com/profile.php?id=61554772972429" target="_blank" class="ico-facebook"><span class="flaticon-facebook tra-red-hover"></span></a></span> -->
+								<!-- <span><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fswiftauction" target="_blank" class="ico-twitter"><span class="flaticon-x tra-red-hover"></span></a></span> -->
+								<!-- <span><a href="https://www.linkedin.com/in/swift-property-auctions-1ab5b42b3/" target="_blank" class="ico-linkedin"><span class="flaticon-linkedin tra-red-hover"></span></a></span>
+								<span><a href="https://www.instagram.com/swiftpropertyauctions/" target="_blank" class="ico-instagram"><span class="flaticon-instagram tra-red-hover"></span></a></span>
+								<span><a href="tel:02089504588" class="ico-phone-call"><span class="flaticon-phone-call tra-red-hover mr-50"></a></span>
+								
+							</li> -->
+
+
+									<!-- HEADER SOCIAL LINKS --> 													
+							<!-- <li class="nl-simple white-color header-socials2 ico-20 clearfix" aria-haspopup="true">
+								<span><a href="https://www.facebook.com/profile.php?id=61554772972429" target="_blank" class="ico-facebook"><span class="flaticon-facebook tra-red-hover"></span></a></span> -->
+								<!-- <span><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fswiftauction" target="_blank" class="ico-twitter"><span class="flaticon-x tra-red-hover"></span></a></span> -->
+								<!-- <span><a href="https://www.linkedin.com/in/swift-property-auctions-1ab5b42b3/" target="_blank" class="ico-linkedin"><span class="flaticon-linkedin tra-red-hover"></span></a></span>
+								<span><a href="https://www.instagram.com/swiftpropertyauctions/" target="_blank" class="ico-instagram"><span class="flaticon-instagram tra-red-hover"></span></a></span>
+								<span><a href="tel:02089504588" class="ico-phone-call"><span class="flaticon-phone-call tra-red-hover mr-50"></a></span>
+
+								<span class="smllogo"><img src="/static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="mobile-logo"/></span>
+							</li> -->
+
+
+	        					</ul>
+	        				</nav>	<!-- END MAIN MENU -->
+
+
+	    				</div>
+	    			</div>	<!-- END NAVIGATION MENU -->
+
+
+				</div>     <!-- End header-wrapper -->
+			</header>	<!-- END HEADER -->
+
+
+
+
+			<!-- HERO-14
+			============================================= -->	
+			<section id="hero-17" class="bg-fixed hero-section division">
+				<div class="container">	
+					<div class="row d-flex align-items-center justify-content-center text-center">
+
+
+						<!-- HERO TEXT -->
+						<div class="col-sm-10 col-md-10 col-lg-10">
+							<div class="hero-14-txt white-color">
+
+								<!-- Title -->
+								<h2 class="h2-lg txt-upcase">Private Treaty</h2>
+								<br><br>
+
+
+					</div>    <!-- End row --> 	
+				</div>	   <!-- End container --> 	
+			</section>	<!-- END HERO-14 -->
+
+            <!-- CONTACTS-2
+			============================================= -->
+			<section id="contacts-2" class="bg-snow wide-50 contacts-section division">				
+				<div class="container">
+
+
+					<!-- SECTION TITLE -->	
+					<div class="row justify-content-center">	
+						<div class="col-md-10 col-lg-8">
+							<div class="section-title title-02 mb-80">				
+
+								<!-- Text -->	
+								<p class="p-xl">We have a <span class="red-color">large private treaty department</span> that specifically deals with properties that do not get advertised in our auction. Feel free to get in touch and let us know what you are looking for.
+								</p>	
+
+							</div>	
+						</div>
+					</div>
+
+
+			 		<!-- CONTACT FORM -->
+				 	<div class="row justify-content-center">	
+				 		<div class="col-lg-10 col-xl-8">
+				 			<div class="form-holder">
+								<form name="contactform" class="row contact-form">
+
+						            <!-- Contact Form Input -->
+									<div class="col-md-12">
+										<p class="p-lg text-black"><strong>Your Name: </strong></p>
+										<span class="text-black">Please enter your full name: </span>
+										<input type="text" name="name" class="form-control name" placeholder="Full Name"> 
+									</div>
+												
+									<div  class="col-md-12">
+										<p class="p-lg text-black"><strong>Your Email Address: </strong></p>
+										<span class="text-black">Please carefully check your email address for accuracy</span>
+										<input type="text" name="email" class="form-control email" placeholder="E-Mail"> 
+									</div>
+
+                                    <div  class="col-md-12">
+										<p class="p-lg text-black"><strong>Contact Phone: </strong></p>
+										<input type="number" name="phone" class="form-control number" placeholder="Contact Phone Number"> 
+									</div>
+
+                                    <div  class="col-md-12">
+										<p class="p-lg text-black"><strong>Budget: </strong></p>
+										<input type="text" name="budget" class="form-control digits" placeholder="Budget"> 
+									</div>
+		
+									<div class="col-md-12">
+										<p class="p-lg text-black"><strong>How can we help? </strong></p>
+										<textarea class="form-control message" name="message" rows="6" placeholder="I am interested in buying..."></textarea>
+									</div>
+
+                                    <!-- Terms and Conditions Checkbox -->
+    							    <div class="terms-and-conditions-checkbox text-black">
+									    <label for="terms">By clicking 'Submit Request' I accept the Company's <strong><a href="/static/pdf/terms_conditions.pdf" target="_blank" style="text-decoration: underline;" class="text-black tra-blue-hover">Terms and Conditions of Service</a></strong> and <strong><a href="{{ url_for('privacy') }}" target="_blank" style="text-decoration: underline;" class="text-black tra-blue-hover">Privacy Policy</strong></a></label>
+	  							    </div>
+																						
+									<!-- Contact Form Button -->
+									<div class="col-md-12 mt-15 form-btn text-right">	
+										<button type="submit" class="btn btn-red blue-hover submit">Submit Request</button>	
+									</div>
+																															
+									<!-- Contact Form Message -->
+									<div class="col-lg-12 contact-form-msg">
+										<span class="loading"></span>
+									</div>	
+																							
+								</form>	
+				 			</div>	
+				 		</div>	
+				 	</div>	   <!-- END CONTACT FORM -->
+				 	
+
+				</div>	   <!-- End container -->	
+			</section>	<!-- END CONTACTS-2 -->
+
+			<!-- DIVIDER LINE -->
+			<hr class="divider">
+
+
+			<!-- NEWSLETTER-2
+			============================================= -->
+			<section id="newsletter-2" class="pt-60 pb-60 newsletter-section division bg-blue white-color">
+				<div class="container">
+					<div class="row d-flex align-items-center row-cols-1 row-cols-lg-2">
+
+
+						<!-- NEWSLETTER TEXT -->	
+						<div class="col">
+							<div class="newsletter-txt pr-20">	
+								<h3 class="h3-xs">Stay up to date with our latest news and deals!</h3>	
+							</div>								
+						</div>
+
+
+						<!-- NEWSLETTER FORM -->
+						<div class="col">
+							<form class="newsletter-form quick-form"> <!-- Added "quick-form" class to form -->
+								
+								<div class="input-group terms-and-conditions-checkbox">
+									<input type="email" autocomplete="off" class="form-control email" placeholder="Your email address" required id="s-email">
+									<!-- Changed the input class from ".form-control" to ".form-control email" -->
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-md btn-tra-white red-hover">Subscribe Now</button>
+									</span>
+								</div>
+
+								<!-- Terms and Conditions Checkbox -->
+								<div class="terms-and-conditions-checkbox">
+									<input type="checkbox" id="terms" name="terms" required>
+									<label for="terms">I accept the Company's <strong><a href="/static/pdf/terms_conditions.pdf" target="_blank" style="text-decoration: underline;" class="tra-red-hover">Terms and Conditions of Service</a></strong> and <strong><a href="{{ url_for('privacy') }}" target="_blank" style="text-decoration: underline;" class="tra-red-hover">Privacy Policy</strong></a></label>
+								</div>
+
+								<!-- Newsletter Form Notification -->
+								<label for="s-email" class="form-notification"></label>
+
+							</form>
+						</div>
+						<!-- END NEWSLETTER FORM -->
+
+
+					</div>	  <!-- End row -->
+				</div>	   <!-- End container -->	
+			</section>	<!-- END NEWSLETTER-2 -->
+
+
+			<!-- DIVIDER LINE -->
+			<hr class="divider">
+
+			<!-- FOOTER-4
+			============================================= -->
+			<footer id="footer-4" class="footer division bg-blue">
+				<div class="container">
+
+
+					<!-- FOOTER CONTENT -->
+					<div class="row white-color">
+
+
+						<!-- FOOTER INFO -->
+						<div class="col-lg-3">
+							<div class="footer-info mb-40">
+								<img class="footer-logo" src="static/images/footerLogo.png" alt="footer-logo">
+								<br><br>
+								<ul class="contact-info">
+									<li><a href="tel:02089504588" class="ico-facebook mr-15 tr"><span class="flaticon-phone-call"></span> <span class="tra-red-hover"> 0208 950 4588
+									</span></a></li>
+									<br>
+									<li>
+										<a href="mailto:info@swiftpropertyauctions.co.uk">
+										  <!-- Inserted img tag for the email icon -->
+										  <img src="/static/images/email.svg" class="email-icon" alt="Email">
+										  <span class="tra-red-hover"> info@swiftpropertyauctions.co.uk</span>
+										</a>
+									  </li>
+									<br><br>
+									<li class="txt-700">Swift Property Auctions</li>
+									<p class ="p-sm">83 Uxbridge Road,<br> Stanmore,<br> HA7 3NH</p>
+								</ul>
+							</div>	
+						</div>	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-6 col-md-3 col-lg-2 col-lg-2 col-xl-2 offset-xl-1 accordion">
+							<div class="footer-links mb-40 accordion-item">
+							
+								<!-- Title -->
+								<h6 class="h6-lg accordion-header" id="headingAbout"><button class="btn btn-red accordion-button2 white-color collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAbout" aria-expanded="false">
+									About
+								  </button></h6>
+								  <h6 class="h6-lg non-accordion-header">About</h6>
+
+								<!-- Footer Links -->
+								<div id="collapseAbout" class="accordion-collapse collapse" aria-labelledby="headingAbout" data-bs-parent="#footerAccordion">
+									<div class="accordion-body">
+									  <ul class="foo-links text-secondary clearfix">
+											<li><p class="p-sm"><a href="{{ url_for('about') }}" class="tra-red-hover">About Us</a></p></li>
+											<li><p class="p-sm"><a href="{{ url_for('contact') }}" class="tra-red-hover">Contact Us</a></p></li>
+											<li><p class="p-sm"><a href="{{ url_for('news_and_blogs') }}" class="tra-red-hover">News & Blogs</a></p></li>			
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-6 col-md-3 col-lg-2 accordion">
+							<div class="footer-links mb-40 accordion-item">
+							
+								<!-- Title -->
+								<h6 class="h6-lg accordion-header" id="headingLots"><button class="btn btn-red accordion-button2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLots" aria-expanded="false">
+									Lots
+								  </button></h6>
+								  <h6 class="h6-lg non-accordion-header">Lots</h6>
+
+								<!-- Footer List -->
+								<div id="collapseLots" class="accordion-collapse collapse" aria-labelledby="headingLots" data-bs-parent="#footerAccordion">
+									<div class="accordion-body">
+									  	<ul class="foo-links text-secondary clearfix">							
+											<li><p class="p-sm"><a href="{{ url_for('current_lots') }}" class="tra-red-hover">Current Lots</a></p></li>
+											<li><p class="p-sm"><a href="{{ url_for('available_lots') }}" class="tra-red-hover">Available Lots</a></p><li>											
+											<li><p class="p-sm"><a href="{{ url_for('bidder_registration') }}" class="tra-red-hover">Bidder Registration</a></p></li>
+											<li><p class="p-sm"><a href="{{ url_for('private_sales') }}" class="tra-red-hover">Private Treaty</a></p></li>				
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-6 col-md-3 col-lg-2 accordion">
+							<div class="footer-links mb-40 accordion-item">
+												
+								<!-- Title -->
+								<h6 class="h6-lg accordion-header" id="headingAuctions"><button class="btn btn-red accordion-button2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAuctions" aria-expanded="false">
+									Auctions
+								  </button></h6>
+								  <h6 class="h6-lg non-accordion-header">Auctions</h6>
+
+								<!-- Footer List -->
+								<div id="collapseAuctions" class="accordion-collapse collapse" aria-labelledby="headingAuctions" data-bs-parent="#footerAccordion">
+									<div class="accordion-body">
+										<ul class="foo-links text-secondary clearfix">
+											<li><p class="p-sm"><a href="{{ url_for('valuation') }}" class="tra-red-hover">Free Valuation</a></p></li>
+											<li><p class="p-sm"><a href="{{ url_for('future_auctions_dates') }}" class="tra-red-hover">Future Auction Dates</a></p></li>
+											<li><p class="p-sm"><a href="{{ url_for('previous_auctions') }}" class="tra-red-hover">Previous Auctions</a></p></li>
+											<li><p class="p-sm"><a href="{{ url_for('auction_finance') }}" class="tra-red-hover">Auction Finance</a></p></li>
+											<li><p class="p-sm"><a href="{{ url_for('auction_buying_guide') }}" class="tra-red-hover">Auction Buying Guide</a></p></li>																						
+											<li><p class="p-sm"><a href="{{ url_for('auction_selling_guide') }}" class="tra-red-hover">Auction Selling Guide</a></p></li>	
+											<li><p class="p-sm"><a href="{{ url_for('benefits_of_auctions') }}" class="tra-red-hover">Benefits of Auctions</a></p></li>
+											<li><p class="p-sm"><a href="{{ url_for('frequently_asked_questions') }}" class="tra-red-hover">Frequently Asked Questions</a></p></li>								
+										</ul>
+									</div>
+								</div>
+
+							</div>	
+						</div>	
+
+
+						<!-- FOOTER LINKS -->
+						<div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 accordion">
+							<div class="footer-links mb-40 accordion-item">
+												
+								<!-- Title -->
+								<h6 class="h6-lg accordion-header" id="headingInformation"><button class="btn btn-red accordion-button2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInformation" aria-expanded="false">
+									Information
+								  </button></h6>
+								  <h6 class="h6-lg non-accordion-header">Information</h6>
+
+								<!-- Footer List -->
+								<div id="collapseInformation" class="accordion-collapse collapse" aria-labelledby="headingInformation" data-bs-parent="#footerAccordion">
+									<div class="accordion-body">
+										<ul class="foo-links text-secondary clearfix">
+											<li><p class="p-sm"><a href="{{ url_for('complaint_procedure') }}" class="tra-red-hover">Complaint Procedure</a></p></li>
+											<li><p class="p-sm"><a href="/static/pdf/Auction_Guide.pdf" target="_blank" class="tra-red-hover">Online Auction Buying Guide</a></p></li>
+											<li><p class="p-sm"><a href="/static/pdf/internet_bidding.pdf" target="_blank" class="tra-red-hover">Proxy Telephone & Internet Bidding</a></p></li>											
+											<li><p class="p-sm"><a href="{{ url_for('privacy') }}" class="tra-red-hover">Privacy Policy</a></p></li>	
+											<li><p class="p-sm"><a href="/static/pdf/AML.pdf" target="_blank" class="tra-red-hover">AML ID Requirements</a></p></li>
+											<li><p class="p-sm"><a href="/static/pdf/terms_conditions.pdf" target="_blank" class="tra-red-hover">Terms & Conditions</a></p></li>							
+										</ul>
+									</div>
+								</div>
+							</div>	
+						</div>	
+
+
+					</div>	<!-- END FOOTER CONTENT -->
+
+
+					<hr>
+
+
+					<!-- BOTTOM FOOTER -->
+					<div class="bottom-footer">
+						<div class="row row-cols-1 row-cols-md-2 d-flex align-items-center white-color">
+
+
+							<!-- FOOTER COPYRIGHT -->
+							<div class="col">
+								<div class="footer-copyright">
+									<p>&copy; Swift Property Auctions London Copyright 2023. All Rights Reserved.</p>
+								</div>
+							</div>
+
+
+							<!-- BOTTOM FOOTER LINKS -->
+							<!-- <div class="col">
+								<ul class="bottom-footer-list text-secondary text-end">
+									<li><a href="https://www.facebook.com/profile.php?id=61554772972429" target="_blank" class="ico-facebook mr-15 tr"><span class="flaticon-facebook tra-red-hover"></span></a></li> -->
+									<!-- <li><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fswiftauction" target="_blank" class="ico-twitter mr-15"><span class="flaticon-x tra-red-hover"></span></a></li> -->
+									<!-- <li><a href="https://www.linkedin.com/in/swift-property-auctions-1ab5b42b3/" target="_blank" class="ico-linkedin mr-15"><span class="flaticon-linkedin tra-red-hover"></span></a></li>
+                                    <li class="last-li"><a href="https://www.instagram.com/swiftpropertyauctions/" target="_blank" class="ico-instagram mr-15"><span class="flaticon-instagram tra-red-hover"></span></a></li>
+								</ul>
+							</div> -->
+
+
+						</div>  <!-- End row -->
+					</div>	<!-- BOTTOM FOOTER -->
+
+					<!-- CREDENTIALS IMAGES SECTION -->
+					<div class="bottom-footer">
+						<div class="row justify-content-center align-items-center">
+							<div class="row-auto credential-image">
+								<a href="https://www.tpos.co.uk/" target="_blank">
+									<img src="static/images/TPO_TSI_BW_Horizontal.jpg" alt="Credential 1" class="credential-image">
+								</a>
+								<a href="https://ico.org.uk/" target="_blank">
+									<img src="static/images/icoffice.jpg" alt="Credential 2" class="credential-image">
+								</a>
+								<!-- <a href="https://www.propertymark.co.uk/" target="_blank">
+									<img src="static/images/naea.jpg" alt="Credential 3" class="credential-image">
+								</a>
+								<a href="https://www.propertymark.co.uk/" target="_blank">
+									<img src="/static/images/nava.jpg" alt="Credential 4" class="credential-image">
+								</a> -->
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</footer>	<!-- FOOTER-4 -->
+
+
+
+
+		</div>	<!-- END PAGE CONTENT -->	
+			
+
+
+
+		<!-- EXTERNAL SCRIPTS
+		============================================= -->	
+		<script src="static/js/jquery-3.6.0.min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>	
+		<script src="static/js/modernizr.custom.js"></script>
+		<script src="static/js/jquery.easing.js"></script>
+		<script src="static/js/jquery.appear.js"></script>
+		<script src="static/js/jquery.scrollto.js"></script>	
+		<script src="static/js/menu.js"></script>
+		<script src="static/js/imagesloaded.pkgd.min.js"></script>
+		<script src="static/js/isotope.pkgd.min.js"></script>
+		<script src="static/js/owl.carousel.min.js"></script>
+		<script src="static/js/jquery.magnific-popup.min.js"></script>
+		<script src="static/js/quick-form.js"></script>	
+		<script src="static/js/request-form.js"></script>	
+		<script src="static/js/jquery.validate.min.js"></script>
+		<script src="static/js/jquery.ajaxchimp.min.js"></script>	
+		<script src="static/js/wow.js"></script>
+		<script src="static/js/privsales-form.js"></script>
+				
+		<!-- Custom Script -->		
+		<script src="static/js/custom.js"></script>
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
+		<!--
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		-->
+
+
+
+	</body>
+
+
+
+</html>
