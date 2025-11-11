@@ -14,7 +14,7 @@
 */
 
 @font-face {
-  font-family: 'GillSansNova-Book';
+  font-family: 'Inter', 'GillSansNova-Book';
   src: url('/static/fonts/424-font.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
@@ -31,7 +31,7 @@ html {
 } 
 
 body {
-  font-family: 'GillSansNova-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'GillSansNova-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000000;
   line-height: 1.6666;
   font-weight: 400;
@@ -352,11 +352,11 @@ body {
 .bg-stateblue { background-color: #6064e3; }
 .bg-green { background-color: #0fbc49; }
 .bg-magenta { background-color: #562d57; }
-.bg-orange-red { background-color: #ff523d; }
+.bg-orange-red { background-color: #fc3f38; }
 .bg-pink { background-color: #eb1561; }
 .bg-plum { background-color: #e8daf5; }
 .bg-purple { background-color: #6a26da; }
-.bg-red { background-color: rgb(178, 31, 24); }
+.bg-red { background-color: #AD1D18; }
 .bg-salmon { background-color: #ff523d; }
 .bg-violet { background-color: #9400d3; }
 .bg-violet-red { background-color: #c73e9b; }
@@ -367,7 +367,7 @@ body {
 /*------------------------------------------*/
 
 .bg-tra { background-color: transparent; border: 1px solid #aaa;  }
-.bg-tra-dark { background-color: rgba(10, 10, 10, .15); }
+.bg-tra-dark { background-color: #000000; }
 .bg-tra-white { background-color: rgba(255, 255, 255, .15); }
 .bg-tra-grey { background-color: rgba(17, 36, 70, .04); }
 .bg-tra-blue { background-color: rgba(37, 138, 255, .08); } 
@@ -524,7 +524,7 @@ hr.divider2 {
 
 h1, h2, h3, h4, h5, h6 {  
   color: #000000;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   letter-spacing: -0.75px;
 }
@@ -861,7 +861,7 @@ ol.digit-list p {
 
 .btn-white, 
 .white-color .btn-white {
-  color: #1d293f;
+  color: #ffffff;
   background-color: #fff;
   border-color: #fff!important;
 }
@@ -979,8 +979,8 @@ ol.digit-list p {
 .scroll .orange-red-hover:hover, 
 .white-color .orange-red-hover:hover {
   color: #fff!important;
-  background-color: #ff523d!important;
-  border-color: #ff523d!important;
+  background-color: #fc3f38!important;
+  border-color: #fc3f38!important;
 }
 
 .btn-tra-orange-red, 
@@ -989,9 +989,9 @@ ol.digit-list p {
 .tra-orange-red-hover:hover, 
 .scroll .tra-orange-red-hover:hover, 
 .white-color .tra-orange-red-hover:hover {
-  color: #ff523d!important;
+  color: #fc3f38!important;
   background-color: transparent!important;
-  border-color: #ff523d!important;
+  border-color: #fc3f38!important;
 }
 
 .btn-pink, 
@@ -1045,8 +1045,8 @@ ol.digit-list p {
 .scroll .red-hover:hover, 
 .white-color .red-hover:hover {
   color: #fff!important;
-  background-color: rgb(178, 31, 24)!important;
-  border-color: rgb(178, 31, 24)!important;
+  background-color: #AD1D18!important;
+  border-color: #AD1D18!important;
 }
 
 .btn-tra-red, 
@@ -1055,9 +1055,9 @@ ol.digit-list p {
 .tra-red-hover:hover,
 .scroll .tra-red-hover:hover, 
 .white-color .tra-red-hover:hover {
-  color: rgb(178, 31, 24)!important;
+  color: #AD1D18!important;
   background-color: transparent!important;
-  border-color: rgb(178, 31, 24)!important;
+  border-color: #AD1D18!important;
 }
 
 .btn-skyblue, 
@@ -1738,7 +1738,7 @@ span.os-version {
 .white-color a, 
 .white-color li,
 .white-color i, 
-.white-color span { color: #fff; }
+.white-color span { color: #ffffff; }
 
 .dark-color,
 .dark-color h2, 
@@ -1868,7 +1868,7 @@ span.os-version {
 .orange-red-color li,
 .orange-red-color i, 
 .orange-red-color span,
-.white-color .orange-red-color { color: #ff523d; }
+.white-color .orange-red-color { color: #fc3f38; }
 
 .pink-color,
 .pink-color h2, 
@@ -1907,7 +1907,7 @@ span.os-version {
 .red-color li,
 .red-color i, 
 .red-color span,
-.white-color .red-color { color: rgb(178, 31, 24); }
+.white-color .red-color { color: #AD1D18; }
 
 .violet-red-color,
 .violet-red-color h2, 
@@ -2111,7 +2111,7 @@ p.terms-txt a,
 
 .quote {
   color: #000000;
-  border-left: 3px solid rgb(178, 31, 24);
+  border-left: 3px solid #AD1D18;
   padding-left: 20px;
   margin-top: 25px;
   margin-bottom: 20px;
@@ -2334,7 +2334,7 @@ p.terms-txt a,
 }
 
 .white-menu .wsmainfull {
-  background-color: #fff!important;
+  background-color: #ffffff!important;
   padding: 5px 0;
   -webkit-box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
   -moz-box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
@@ -2527,7 +2527,7 @@ p.terms-txt a,
 }
 
 .wsmenu > .wsmenu-list > li > ul.sub-menu > li > a span {
-  color: #ff523d;
+  color: #FC3F38;
   font-size: 0.6rem;
   position: relative;
   top: -8px;
@@ -2700,7 +2700,7 @@ p.terms-txt a,
 .wsmenu > .wsmenu-list.nav-orange-red-hover > li > ul.sub-menu > li > a:hover,
 .wsmenu > .wsmenu-list.nav-orange-red-hover > li > .wsmegamenu.w-75 ul.link-list > li > a:hover,
 .wsmenu > .wsmenu-list.nav-orange-red-hover > li > .wsmegamenu.halfmenu ul.link-list > li > a:hover {
-  color: #ff523d!important;
+  color: #FC3F38!important;
 }
 
 .wsmenu > .wsmenu-list.nav-pink-hover > li > ul.sub-menu > li > a:hover,
@@ -2718,7 +2718,7 @@ p.terms-txt a,
 .wsmenu > .wsmenu-list.nav-red-hover > li > ul.sub-menu > li > a:hover,
 .wsmenu > .wsmenu-list.nav-red-hover > li > .wsmegamenu.w-75 ul.link-list > li > a:hover,
 .wsmenu > .wsmenu-list.nav-red-hover > li > .wsmegamenu.halfmenu ul.link-list > li > a:hover {
-  color: rgb(178, 31, 24)!important;
+  color: #AD1D18!important;
 }
 
 .wsmenu > .wsmenu-list.nav-violet-red-hover > li > ul.sub-menu > li > a:hover,
@@ -5514,7 +5514,7 @@ h2.statistic-number {
 .accordion-item {
   background-color: transparent!important;
   border: none;
-  border-bottom: 1px solid rgb(178, 31, 24)!important;
+  border-bottom: 1px solid #AD1D18!important;
 }
 
 .accordion-item2 {
@@ -6753,7 +6753,7 @@ h5.posts-category {
 .contact-form .form-select:focus {
   outline: 0px none;
   box-shadow: none;
-  border-color: rgb(178, 31, 24);
+  border-color: #AD1D18;
 }
 
 /*------------------------------------------*/
@@ -7389,7 +7389,7 @@ p.forgot-password {
 
 .login-separator-txt {
   position: relative;  
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.05rem;
   font-weight: 400;
 }
@@ -7654,7 +7654,7 @@ nav a#pull {
     align-items: center; /* Center the content horizontally */
     width: 200px; /* Equals the width of your images */
     height: 200px; /* Equals the height of your images */
-    background-color: rgb(178, 31, 24); /* The hex code for red color */
+    background-color: #AD1D18; /* The hex code for red color */
     border-radius: 50%; /* This makes the div circular */
     color: white; /* The text color */
     text-align: center; /* Align text in the center */
@@ -8060,7 +8060,7 @@ nav a#pull {
 }
 
 .email-icon:hover {
-  fill: rgb(178, 31, 24)!important;
+  fill: #AD1D18!important;
 }
 
 .contact-info li span {
@@ -8333,7 +8333,7 @@ nav a#pull {
   left: 99%; /* Adjust to position alongside the white stripe */
   width: 1%; /* Stripe width, matching the white stripe or adjusted as preferred */
   height: 12%; /* Adjust the length/height of the red stripe */
-  background-color: rgb(178, 31, 24);
+  background-color: #AD1D18;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

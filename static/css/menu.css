@@ -491,7 +491,7 @@
   text-transform: none;
   color: #888;
   font-size: 16px;
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Inter', sans-serif; 
   line-height: 22px;
   font-weight: 400;
   letter-spacing: normal;
@@ -1386,7 +1386,7 @@ body.wsactive {
   height: 100%;
   border-width: 1.5px 1.5px 0 0;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.40);
+  border-color: #000000;
   transition: 0.2s ease;
   display: block;
   transform-origin: 100% 0;
