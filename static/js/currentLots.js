@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       </div>
       <div class="lot-details p-3">
         <div class="address">
-          <h5 class="text-left"><strong>${addressLine1}<br>${addressLine2}</strong></h5>
+          <h5 class="text-left h5-md"><strong>${addressLine1}<br>${addressLine2}</strong></h5>
         </div>
         <div class="description">
           <p class="p-sm text-black text-left">${description}</p>
