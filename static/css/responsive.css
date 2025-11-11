@@ -1006,7 +1006,10 @@
   /*  HERO   
   /*------------------------------------------*/
 
-  .hero-section { margin-top: 80px; }
+  .hero-section { margin-top: 80px;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center; }
 
   /* Hero Brands */
   .hero-brands {margin-top: 40px; padding: 0 5%; } 

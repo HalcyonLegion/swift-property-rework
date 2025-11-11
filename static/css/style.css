@@ -522,7 +522,7 @@ hr.divider2 {
 /*------------------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {  
-  color: #000000;
+  color: #ffffff;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   letter-spacing: -0.75px;
@@ -8032,7 +8032,8 @@ nav a#pull {
 
 .btn3 {
   display: block;
-  width: 100%; /* Make buttons stretch to the limit of the btn-wrapper */
+  min-width: 180px;
+  text-align: center;
   box-sizing: border-box;
   margin-bottom: 10px; /* Add some space between the buttons */
   font-size: 1.0rem;
@@ -8473,3 +8474,22 @@ nav a#pull {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.auction-info-glass {
+    background: rgba(255, 255, 255, 0.1); /* translucent layer */
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Optional: subtle hover enhancement */
+.auction-info-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+

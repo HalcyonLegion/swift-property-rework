@@ -198,82 +198,44 @@
 
 
 
-			<!-- HERO-14
-			============================================= -->	
-			<section id="hero-14" class="bg-fixed hero-section division">
-				<div class="container">	
-					<div class="row d-flex align-items-center justify-content-center text-center">
+			<!-- HERO SECTION (Updated Layout) -->
+					<section id="hero-14" class="hero-section division bg-fixed" style="position: relative; overflow: hidden;">
+						<div class="container h-100 d-flex flex-column justify-content-center">
+							<div class="row align-items-start justify-content-start">
+								<!-- Left Section (Title, Subtitle, Buttons) -->
+								<div class="col-lg-7 col-md-10 text-left text-white">
+									<h2 class="h2-title-md">Swift Property Auctions</h2>
+									<h4 class="h4-sm">Specialists in Residential & Commercial Property Auctions</h4>
 
+									<div class="d-flex flex-wrap gap-3">
+										<a href="{{ url_for('current_lots') }}" class="btn3 btn-tra-white red-hover btn-md">Current Lots</a>
+										<a href="{{ url_for('valuation') }}" class="btn3 btn-tra-white red-hover btn-md">Free Valuation</a>
+										<a href="{{ url_for('available_lots') }}" class="btn3 btn-tra-white red-hover btn-md">Available Lots</a>
+										<a href="{{ url_for('bidder_registration') }}" class="btn3 btn-tra-white red-hover btn-md">Bidder Registration</a>
+									</div>
+								</div>
 
-						<!-- HERO TEXT -->
-						<div class="col-sm-10 col-md-10 col-lg-10">
-							<div class="hero-14-txt white-color">
-
-								<!-- Title -->
-								<h2 class="h2-title-md">Swift Property Auctions</h2>
-
-								<!-- Text -->
-								<h4 class="h4-sm">Connecting Buyers and Sellers Through The Power of Auction
-								</h4>
-								<br>
+								<!-- Right Floating Auction Info -->
+								<div class="col-lg-4 col-md-6 ms-auto mt-4 mt-lg-0">
+									<div class="auction-info-glass">
+										<h5 class="h5-md mb-2">Next Auction:</h5>
+										<p class="p-lg mb-1">27th November 2025 12:00pm</p>
+										<p class="p-sm mb-3">We're Live In: <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Mins</p>
+										<div class="d-flex gap-2">
+											<a href="#add-calendar" class="btn3 btn-tra-white red-hover btn-sm">Add to Calendar</a>
+											<a href="/static/pdf/Auction_Guide.pdf" target="_blank" class="btn3 btn-tra-white red-hover btn-sm">Auction Guide</a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 
-						
-												
-						<div class="btn-wrapper">
-							<a href="{{ url_for('valuation') }}" class="btn3 btn-sm btn-tra-white red-hover">Free Valuation</a>
+						<!-- Optional Scroll hint -->
+						<div class="position-absolute bottom-0 start-50 translate-middle-x text-white pb-3 small opacity-75">
+							<span>Scroll down ↓</span>
 						</div>
-						<div class="btn-wrapper">
-							<a href="{{ url_for('current_lots') }}" class="btn3 btn-sm btn-tra-white red-hover">Current Lots</a>
-						</div>
-						<div class="btn-wrapper">
-							<a href="{{ url_for('available_lots') }}" class="btn3 btn-sm btn-tra-white red-hover">Available Lots</a>
-						</div>
-						<div class="btn-wrapper">
-							<a href="{{ url_for('bidder_registration') }}" class="btn3 btn-sm btn-tra-white red-hover">Bidder Registration</a>
-						</div>
-								<br><br>
+					</section>
 
-
-					</div>    <!-- End row --> 	
-				</div>	   <!-- End container --> 	
-			</section>	<!-- END HERO-14 -->
-			
-			
-			<!-- SIMPLE-COUNTDOWN-ROW =================================================== -->
-			<div id="simple-countdown-row" class="simple-countdown bg-blue signaturebg py-3">
-				<div class="container">
-					<div class="row align-items-center justify-content-between text-center text-md-start">
-			
-						<!-- NEXT AUCTION DATE -->
-						<div class="col-12 col-sm-6 col-lg-4 mb-3 mb-lg-0">
-							<h5 class=" h5-md text-white mb-0">Next Auction:</h5>
-							<p class="text-white p-lg">27th November 2025 12:00pm</p>
-						</div>
-			
-						<!-- ADD TO CALENDAR LINK -->
-						<div class="col-6 col-sm-3 col-lg-2 mb-3 mb-lg-0 text-center">
-							<a href="#add-calendar" class="btn3 btn-tra-white red-hover btn-sm btn-block txt-700">Add to Calendar</a>
-						</div>
-			
-						<!-- AUCTION GUIDE LINK -->
-						<div class="col-6 col-sm-3 col-lg-2 mb-3 mb-lg-0 text-center">
-							<a href="/static/pdf/Auction_Guide.pdf" target="_blank" class="btn3 btn-tra-white red-hover btn-sm btn-block txt-700">Auction Guide</a>
-						</div>
-			
-						<!-- COUNTDOWN TIMER -->
-						<div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-end">
-							<p class="text-white p-lg mb-0 me-2">We're Live in: </p>
-							<p class="text-white p-lg mb-0 me-2"><span id="days"></span> Days</p>
-							<p class="text-white p-lg mb-0 me-2"><span id="hours"></span> Hours</p>
-							<p class="text-white p-lg mb-0"><span id="minutes"></span> Mins</p>
-						</div>
-			
-					</div>
-				</div>
-			</div>
-			<!-- END SIMPLE-COUNTDOWN-ROW -->
 
 					<!-- FEATURES-8
 					============================================= -->
