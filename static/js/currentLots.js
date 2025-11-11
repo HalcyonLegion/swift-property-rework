@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   <div class="col">
     <div class="fbox-8 mb-40 wow fadeInUp position-relative">
       <!-- Lot Number Banner -->
-      <div class="lot-banner text-white position-absolute" style="top: 0; left: 0; padding: 5px 10px;">
+      <div class="lot-banner position-absolute" style="top: 0; left: 0; padding: 5px 10px;">
         Lot ${lot.LotNumber}
       </div>
       ${soldBanner}

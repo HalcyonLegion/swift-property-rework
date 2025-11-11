@@ -8437,8 +8437,9 @@ nav a#pull {
 }
 
 .lot-banner {
-  background-color: #0b1a2a;
-  color: #fff;
+  background-color: #ffffff;
+  color: #AD1D18;
+  border-radius: 1rem;
   font-weight: bold;
   padding: 5px 10px;
   position: absolute;
