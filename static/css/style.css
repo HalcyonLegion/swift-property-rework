@@ -765,7 +765,7 @@ ol.digit-list p {
   background-color: transparent;
   color: #fff;
   line-height: 1;
-  font-weight: 500;
+  font-weight: 300;
   padding: 16px 0px;
   border: 1px solid transparent;
   -webkit-border-radius: 5px;
@@ -781,8 +781,8 @@ ol.digit-list p {
 /* Frosted Glass Buttons (based on .btn3) */
 .btn3glass {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    font-weight: 500;
+    padding: 1.5rem 1.25rem;
+    font-weight: 300;
     color: #fff !important;
     background: rgba(255, 255, 255, 0.12);
     border: none !important;
