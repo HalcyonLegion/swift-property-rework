@@ -14,12 +14,11 @@
 */
 
 @font-face {
-  font-family: 'Inter', 'GillSansNova-Book';
+  font-family: 'Inter', sans-serif;
   src: url('/static/fonts/424-font.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
-
 
 /* ==========================================================================
   01. GENERAL & BASIC STYLES
@@ -31,7 +30,7 @@ html {
 } 
 
 body {
-  font-family: 'Inter', 'GillSansNova-Book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #000000;
   line-height: 1.6666;
   font-weight: 400;
@@ -543,13 +542,13 @@ h6.h6-xl { font-size: 1.25rem; }     /* 20px */
 /* Header H5 */
 h5.h5-xs { font-size: 1.3125rem; }  /* 21px */
 h5.h5-sm { font-size: 1.375rem; }   /* 22px */
-h5.h5-md { font-size: 1.5rem; }     /* 24px */
+h5.h5-md { font-size: 1.5rem; }     /* 24px NEW REGULAR HEADING VALUE */
 h5.h5-lg { font-size: 1.625rem; }   /* 26px */
 h5.h5-xl { font-size: 1.75rem; }    /* 28px */
 
 /* Header H4 */
 h4.h4-xs { font-size: 1.875rem; }   /* 30px */
-h4.h4-sm { font-size: 2rem; }       /* 32px */
+h4.h4-sm { font-size: 2rem; }       /* 32px NEW H2 VALUE */
 h4.h4-md { font-size: 2.125rem; }   /* 34px */
 h4.h4-lg { font-size: 2.25rem; }    /* 36px */
 h4.h4-xl { font-size: 2.375rem; }   /* 38px */
@@ -569,7 +568,7 @@ h2.h2-xl { font-size: 3.75rem; }    /* 60px */
 
 h2.h2-title-xs { font-size: 4.0625rem; letter-spacing: -1.5px; } /* 65px */
 h2.h2-title-sm { font-size: 4.375rem; letter-spacing: -1.5px; }  /* 70px */
-h2.h2-title-md { font-size: 4.6875rem; letter-spacing: -1.5px; } /* 75px */
+h2.h2-title-md { font-size: 4.6875rem; letter-spacing: -1.5px; } /* 75px NEW HEADING VALUE */
 h2.h2-title-lg { font-size: 5rem; letter-spacing: -1.5px; }      /* 80px */
 h2.h2-title-xl { font-size: 5.3125rem; letter-spacing: -1.5px; } /* 85px */
 
@@ -584,10 +583,10 @@ h2.h2-title-xl { font-size: 5.3125rem; letter-spacing: -1.5px; } /* 85px */
 /*------------------------------------------*/
 
 p.p-xs { font-size: 0.9rem; }       /* 16px */
-p.p-sm { font-size: 1rem; }       /* 16px */
+p.p-sm { font-size: 1rem; }       /* 16px NEW REGULAR PARAGRAPH VALUE*/
 p { font-size: 1.0625rem; }       /* 17px */
-p.p-md { font-size: 1.125rem; }   /* 18px */
-p.p-lg { font-size: 1.1875rem; }  /* 19px */
+p.p-lg { font-size: 1.125rem; }   /* 18px NEW LARGE PARAGRAPH VALUE */
+/* p.p-lg { font-size: 1.1875rem; }  19px */
 p.p-xl { font-size: 1.25rem; }    /* 20px */
 
 p.p-title-xs { font-size: 1.3125rem; }  /* 21px */
