@@ -524,7 +524,7 @@ hr.divider2 {
 h1, h2, h3, h4, h5, h6 {  
   color: #ffffff;
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: -0.75px;
 }
 
@@ -777,6 +777,31 @@ ol.digit-list p {
   -ms-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out; 
 }
+
+/* Frosted Glass Buttons (based on .btn3) */
+.btn3glass {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.12);
+    border: none !important;
+    border-radius: 12px;
+    backdrop-filter: blur(8px) saturate(160%);
+    -webkit-backdrop-filter: blur(8px) saturate(160%);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Hover: brighter and more defined */
+.btn3glass:hover,
+.btn3glass:focus {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    text-decoration: none;
+}
+
 
 /*------------------------------------------*/
 /*  Button Size
