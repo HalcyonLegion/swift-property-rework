@@ -525,7 +525,7 @@ hr.divider2 {
 h1, h2, h3, h4, h5, h6 {  
   color: #ffffff;
   font-family: 'Inter', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   /* letter-spacing: -0.75px; */
 }
 
@@ -569,7 +569,7 @@ h2.h2-xl { font-size: 3.75rem; }    /* 60px */
 
 h2.h2-title-xs { font-size: 4.0625rem; letter-spacing: -1.5px; } /* 65px */
 h2.h2-title-sm { font-size: 4.375rem; letter-spacing: -1.5px; }  /* 70px */
-h2.h2-title-md { font-size: 4.6875rem; letter-spacing: -1.5px; } /* 75px NEW HEADING VALUE */
+h2.h2-title-md { font-size: 4.6875rem; letter-spacing: 2.5px; } /* 75px NEW HEADING VALUE */
 h2.h2-title-lg { font-size: 5rem; letter-spacing: -1.5px; }      /* 80px */
 h2.h2-title-xl { font-size: 5.3125rem; letter-spacing: -1.5px; } /* 85px */
 
