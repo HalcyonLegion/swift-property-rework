@@ -8583,3 +8583,8 @@ nav a#pull {
   right: 2rem;
   z-index: 10;
 }
+
+.hr-grey {
+height: 1px;           /* thickness of the line */
+border: 1px solid rgba(255, 255, 255, 0.5);
+}
