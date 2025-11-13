@@ -8571,3 +8571,15 @@ nav a#pull {
   padding: 0 !important;
   line-height: 1 !important;
 }
+
+.next-auction-banner {
+  background-color: #ffffff;
+  color: #AD1D18;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+}
