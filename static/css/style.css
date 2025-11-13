@@ -2353,7 +2353,7 @@ p.terms-txt a,
 
 .tra-menu .wsmainfull {
   background-color: transparent!important;
-  padding: 20px 0 20px 85px;
+  padding: 10px 0 10px 85px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -2767,7 +2767,7 @@ p.terms-txt a,
 .white-menu .wsmainfull.scroll,
 .dark-menu.dark-scroll .wsmainfull.scroll {
   background-color: #0b1a2a!important;
-  padding: 20px 0 0 85px;
+  padding: 10px 0 10px 85px;
   -webkit-box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
   -moz-box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
   box-shadow: 0 2px 3px rgba(96, 96, 96, .1);

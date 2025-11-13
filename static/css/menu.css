@@ -94,14 +94,14 @@
   top: 10px;
   left: 0;
   z-index: 1000; /* ensures the logo stays on top of other content */
-  display: block; /* Ensures proper spacing and layout */
+  /* display: block; Ensures proper spacing and layout */
   margin-left: 12px;
   padding: 0;
   line-height: 70px; /* Adjust or remove as necessary */
 }
 
 .desktoplogo img {
-  display: block; /* Ensures no extra space around the img */
+  /* display: block; Ensures no extra space around the img */
   max-height: 70px; /* Adjust according to your logo's size */
 }
 
