@@ -238,10 +238,22 @@
 									<div class="container h-100 d-flex flex-column justify-content-center">
 										<div class="row align-items-start justify-content-start">
 											<div class="d-flex flex-wrap gap-3">
-												<a href="{{ url_for('current_lots') }}" class="btn3 btn3glass btn-tra-white red-hover btn-md">Current Lots →</a>
-												<a href="{{ url_for('valuation') }}" class="btn3 btn3glass btn-tra-white red-hover btn-md">Free Valuation →</a>
-												<a href="{{ url_for('available_lots') }}" class="btn3 btn3glass btn-tra-white red-hover btn-md">Available Lots →</a>
-												<a href="{{ url_for('bidder_registration') }}" class="btn3 btn3glass btn-tra-white red-hover btn-md">Bidder Registration →</a>
+												<a href="{{ url_for('current_lots') }}" class="btn3 btn3glass new-svg-btn btn-md" aria-label="Current Lots">
+													<img src="{{ url_for('static', filename='images/currentLots-default.svg') }}" 
+												alt="Contact Us" class="default">
+												</a>
+												<a href="{{ url_for('valuation') }}" class="btn3 btn3glass new-svg-btn btn-md" aria-label="Valuation">
+													<img src="{{ url_for('static', filename='images/freeValuation-default.svg') }}" 
+												alt="Contact Us" class="default">
+												</a>
+												<a href="{{ url_for('available_lots') }}" class="btn3 btn3glass new-svg-btn btn-md" aria-label="Available Lots">
+													<img src="{{ url_for('static', filename='images/availablelots-default.svg') }}" 
+												alt="Contact Us" class="default">
+												</a>
+												<a href="{{ url_for('bidder_registration') }}" class="btn3 btn3glass new-svg-btn btn-md" aria-label="Bidder Registration">
+													<img src="{{ url_for('static', filename='images/bidderReg-default.svg') }}" 
+												alt="Contact Us" class="default">
+												</a>
 											</div>
 										</div>
 									</div>
