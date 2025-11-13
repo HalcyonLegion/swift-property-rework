@@ -149,17 +149,19 @@
 						          	</li>	<!-- END DROPDOWN MENU -->
 
 						          	<!-- DROPDOWN MENU -->
-						          	<li aria-haspopup="true"><a href="#">News & Blogs <span class="wsarrow"></span></a>
-	            						<ul class="sub-menu">
-	            							<li aria-haspopup="true"><a href="{{ url_for('news_and_blogs') }}">Blogs</a></li>
-						           		</ul>
-								    </li>
-
+						          	<li class="nl-simple" aria-haspopup="true">
+										<a href="{{ url_for('contact') }}" class="btn contact-svg-btn start-200 last-link" aria-label="Contact Us">
+											<img src="{{ url_for('static', filename='images/contact-default.svg') }}" 
+												alt="Contact Us" class="contact-img default">
+											<img src="{{ url_for('static', filename='images/contact-hover.svg') }}" 
+												alt="Contact Us" class="contact-img hover">
+										</a>
+									</li>
 
 								    <!-- HEADER BUTTON -->
-								    <li class="nl-simple" aria-haspopup="true">
+								    <!-- <li class="nl-simple" aria-haspopup="true">
 								    	<a href="{{ url_for('contact') }}" class="btn btn-tra-white red-hover last-link">Contact Us</a>
-									</li>
+									</li> -->
 
 									<!-- HEADER SOCIAL LINKS --> 													
 							<!-- <li class="nl-simple white-color header-socials ico-20 clearfix" aria-haspopup="true">

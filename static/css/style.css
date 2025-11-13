@@ -2353,7 +2353,7 @@ p.terms-txt a,
 
 .tra-menu .wsmainfull {
   background-color: transparent!important;
-  padding: 20px 0 0 85px;
+  padding: 20px 0 20px 85px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -8521,3 +8521,53 @@ nav a#pull {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
 }
 
+/* CONTACT SVG BUTTON --------------------------------------*/
+
+.contact-svg-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: 14px;
+  margin-left: 12px;
+  border: none;
+  background: none;
+  width: auto;
+  height: auto;
+  line-height: 1;
+  transition: none;
+}
+
+/* Make sure our SVG fits neatly in the header line height */
+.contact-svg-btn .contact-img {
+  display: block;
+  /* height: 38px;        adjust to match your nav link height */
+  width: auto;
+  transition: opacity 0.25s ease;
+}
+
+/* Hover image fades in */
+.contact-svg-btn .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.contact-svg-btn:hover .hover {
+  opacity: 1;
+}
+
+.contact-svg-btn:hover .default {
+  opacity: 0;
+}
+
+/* Reset unwanted inherited styles from .btn */
+.wsmenu > .wsmenu-list > li > a.contact-svg-btn {
+  font-size: 0 !important;
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
