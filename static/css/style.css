@@ -8604,3 +8604,27 @@ border: 1px solid rgba(255, 255, 255, 0.5);
   line-height: 1;
   transition: none;
 }
+
+/* Make sure our SVG fits neatly in the header line height */
+.new-svg-btn .contact-img {
+  display: block;
+  /* height: 38px;        adjust to match your nav link height */
+  width: auto;
+  transition: opacity 0.25s ease;
+}
+
+/* Hover image fades in */
+.new-svg-btn .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.new-svg-btn:hover .hover {
+  opacity: 1;
+}
+
+.new-svg-btn:hover .default {
+  opacity: 0;
+}
