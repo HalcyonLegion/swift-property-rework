@@ -8168,7 +8168,7 @@ nav a#pull {
   border-color: rgb(0, 0, 0) transparent transparent;
   pointer-events: none;
   transition: all 0.3s ease 0s;
-  filter: brightness(0) invert(1);
+  /* filter: brightness(0) invert(1); */
 }
 
 .rotate-arrow {
@@ -8197,14 +8197,14 @@ nav a#pull {
   font-size:1rem;
   font-weight:400;
   line-height:1.5;
-  color:#fff;
-  background-color:#0b1a2a;
+  color:#000000;
+  background-color:#BDBDBD33; 
   background-clip:padding-box;
-  border:3px solid #ced4da;
+  border:0px solid #ced4da;
   -webkit-appearance:none;
   -moz-appearance:none;
   appearance:none;
-  border-radius:.25rem;
+  border-radius:.3rem;
   transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out
 }
 
