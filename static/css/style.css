@@ -616,7 +616,7 @@ a {
 }
 
 a:hover {
-  color: #666;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -8627,4 +8627,132 @@ border: 1px solid rgba(255, 255, 255, 0.5);
 
 .new-svg-btn:hover .default {
   opacity: 0;
+}
+
+
+/* Card container */
+.lot-card {
+  width: 448px;
+  height: 600px;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Lot banner */
+.lot-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 6px 14px;
+  font-weight: 700;
+  color: #e3342f;
+  border-bottom-right-radius: 12px;
+  z-index: 10;
+}
+
+/* Image */
+.lot-image img {
+  width: 440px;
+  height: 436px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Content */
+.lot-content {
+  padding: 16px 18px;
+  height: calc(600px - 436px); /* ensures perfect total height */
+}
+
+/* Address */
+.lot-content .address {
+  margin-bottom: 6px;
+}
+
+/* Description */
+.lot-content .description {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Price */
+.lot-content .price {
+  margin-bottom: 18px;
+}
+
+/* Button row */
+.btn-row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+/* Button styles - matches Figma pill buttons */
+.btn-gray,
+.btn-red2 {
+  font-size: 16px;       /* Figma spec */
+  padding: 8px 14px;     /* slimmer buttons */
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-gray {
+  background: #e4e4e4
+}
+
+.btn-red2 {
+  background: #b02020;
+  color: white;
+}
+
+.btn-gray:hover {
+  background: #e4e4e4;
+}
+
+.btn-red2:hover {
+  background: #AD1D18;
+}
+
+/* Guide Price overlay */
+.guide-price {
+  position: absolute;
+  bottom: 148px;
+  left: 0px;
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.35); /* ← darker + more visible */
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+}
+
+.price-red {
+  color: #b02020;
+}
+
+/* Grid container for cards */
+.lots-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.lot-item {
+  flex: 0 0 auto; /* do not shrink */
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;     /* → max number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

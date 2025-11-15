@@ -128,34 +128,52 @@ document.addEventListener('DOMContentLoaded', async () => {
             .join(', ');
 
         const lotHtml = `
-  <div class="col">
-    <div class="fbox-8 mb-40 wow fadeInUp position-relative">
-      <!-- Lot Number Banner -->
-      <div class="lot-banner position-absolute" style="top: 0; left: 0; padding: 5px 10px;">
-        Lot ${lot.LotNumber}
-      </div>
-      ${soldBanner}
-      <div class="fbox-img bg-white">
-        <a href="${detailsUrl}" target="_blank">
-          <img class="img-fluid" src="${thumbnail}" alt="feature icon" style="width: 100%; height: auto; max-height: 276px; object-fit: cover;" />
-        </a>
-      </div>
-      <div class="lot-details p-3">
-        <div class="address">
-          <h5 class="text-left h5-md"><strong>${addressLine1}<br>${addressLine2}</strong></h5>
-        </div>
-        <div class="description">
-          <p class="p-sm text-black text-left">${description}</p>
-        </div>
-        <div class="price-link-container">
-          <p class="p-md text-black text-left"><strong>Guide Price: <span class="red-color">${startingPrice}</span></strong></p>
-          <div class="details-link">
-            <a href="${detailsUrl}" target="_blank" class="btn btn-md btn-tra-black blue-hover">View Details</a>
+        <div class="col">
+        <div class="lot-card position-relative">
+
+          <!-- Lot Number Banner -->
+          <div class="lot-banner">
+            LOT ${lot.LotNumber}
+          </div>
+
+          ${soldBanner}
+
+          <!-- Image -->
+          <div class="lot-image">
+            <a href="${detailsUrl}" target="_blank">
+              <img src="${thumbnail}" alt="property image" />
+            </a>
+          </div>
+
+          <!-- Content -->
+          <div class="lot-content">
+            <h5 class="address"><strong>${addressLine1}<br>${addressLine2}</strong></h5>
+
+            <p class="description">${description}</p>
+
+            <p class="price">
+              <strong>Guide Price: <span class="red-color">${startingPrice}</span></strong>
+            </p>
+
+            <!-- Buttons Row -->
+            <div class="btn-row">
+              <a href="#" class="btn btn-md btn-gray">Legal Pack</a>
+
+              <a href="${detailsUrl}"
+                target="_blank"
+                class="btn btn-md btn-red2">
+                View Details
+              </a>
+
+              <a href="{{ url_for('auction_finance') }}"
+                class="btn btn-md btn-gray">
+                Finance
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>`;
+      `;
         document.getElementById('lots-container').insertAdjacentHTML('beforeend', lotHtml);
     });
 }
