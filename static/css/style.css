@@ -8829,8 +8829,8 @@ border: 1px solid rgba(255, 255, 255, 0.5);
 
 /* Typography */
 .newsletter-title {
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 500;
   margin-bottom: 15px;
   color: #fff;
 }
@@ -8955,7 +8955,7 @@ border: 1px solid rgba(255, 255, 255, 0.5);
 /* Text area */
 .statistic-title {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 15px;
 }
 
