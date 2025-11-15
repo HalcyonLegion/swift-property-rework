@@ -506,6 +506,20 @@
 	    });
 
 
+		const swiper = new Swiper('.experience-swiper', {
+			loop: true,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			speed: 600,
+			slidesPerView: 1,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+		});
+
 	    /*----------------------------------------------------*/
 	    /*  Sign Up Form Validation
 	    /*----------------------------------------------------*/

@@ -58,6 +58,7 @@ body {
 .wide-100 { padding-top: 100px; padding-bottom: 100px; }
 .wide-90 { padding-top: 100px; padding-bottom: 90px; }
 .wide-80 { padding-top: 100px; padding-bottom: 80px; }
+.wide-75 { padding-top: 70px; padding-bottom: 70px; }
 .wide-70 { padding-top: 100px; padding-bottom: 70px; }
 .wide-60 { padding-top: 50px; padding-bottom: 10px; }
 .wide-50 { padding-top: 50px; padding-bottom: 30px; }
@@ -8756,3 +8757,275 @@ border: 1px solid rgba(255, 255, 255, 0.5);
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+
+.experience-swiper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Card style */
+.fbox-card {
+  background: #f5f7fa;
+  border-radius: 18px;
+  padding: 35px 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  min-height: 220px;
+}
+
+/* Pagination dots */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #d0d0d0;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #AD1D18 !important; /* your brand red */
+  width: 32px;
+  border-radius: 8px;
+}
+
+.swiper-pagination {
+  bottom: -15px !important;   /* adjust this value until perfect */
+}
+
+/* Background */
+.newsletter-modern {
+  position: relative;
+  background: url('/static/images/NewSwiftbg.jpeg') center/cover no-repeat;
+  padding: 120px 20px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.newsletter-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+/* Layout container */
+.newsletter-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Glass card */
+.newsletter-card {
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 50px 45px;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 10px 45px rgba(0,0,0,0.3);
+}
+
+/* Typography */
+.newsletter-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.newsletter-subtitle {
+  font-size: 18px;
+  margin-bottom: 35px;
+  color: rgba(255,255,255,0.95);
+}
+
+/* Input + Button wrapper */
+.newsletter-input-wrap {
+  display: flex;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* Email input */
+.newsletter-input {
+  flex: 1;
+  padding: 18px 20px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: transparent;
+  font-size: 17px;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255,255,255,0.75);
+}
+
+/* Button */
+.newsletter-btn {
+  background: #AD1D18;
+  padding: 0 38px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+  background: #921713;
+}
+
+/* Checkbox area */
+.terms-and-conditions-checkbox {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.terms-and-conditions-checkbox label {
+  color: #fff;
+}
+
+.terms-and-conditions-checkbox a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* Links hover */
+.terms-and-conditions-checkbox a:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .newsletter-card {
+    padding: 35px 25px;
+  }
+  .newsletter-title {
+    font-size: 30px;
+  }
+  .newsletter-btn {
+    padding: 0 22px;
+  }
+}
+
+
+/* Background */
+.statistic-modern {
+  position: relative;
+  background: url('/static/images/register_main.png') center/cover no-repeat;
+  padding: 120px 20px;
+  color: #fff;
+}
+
+.statistic-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  /* backdrop-filter: blur(2px); */
+}
+
+/* Container for card */
+.statistic-container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Glass card */
+.statistic-card {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 60px 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  color: #fff;
+}
+
+/* Text area */
+.statistic-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.statistic-subtitle {
+  font-size: 18px;
+  color: rgba(255,255,255,0.9);
+  max-width: 450px;
+}
+
+/* Button layout */
+.statistic-buttons {
+  display: flex;
+  gap: 40px;
+}
+
+.statistic-btn-block {
+  text-align: center;
+}
+
+.statistic-btn-block p {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Circular icons */
+.statistic-circle {
+  width: 85px;
+  height: 85px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+  margin-left: 20px;
+}
+
+.statistic-circle:hover {
+  background: #AD1D18;
+  transform: scale(1.06);
+}
+
+/* Gavel icon */
+.statistic-circle img {
+  width: 42px;
+  filter: brightness(0) invert(1);
+}
+
+/* Flaticon icon */
+.statistic-circle span {
+  font-size: 40px;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .statistic-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .statistic-subtitle {
+    margin: 0 auto;
+  }
+
+  .statistic-buttons {
+    justify-content: center;
+  }
+}
+

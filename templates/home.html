@@ -18,6 +18,10 @@
 		<link rel="shortcut icon" href="{{ versioned_url('static/images/favicon.ico') }}" type="image/x-icon">
 		<link rel="icon" href="{{ versioned_url('static/images/favicon.ico') }}" type="image/x-icon">
 
+		<!-- Swiper (CDN) -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 		<!-- GOOGLE FONTS -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -157,35 +161,6 @@
 												alt="Contact Us" class="contact-img hover">
 										</a>
 									</li>
-
-								    <!-- HEADER BUTTON -->
-								    <!-- <li class="nl-simple" aria-haspopup="true">
-								    	<a href="{{ url_for('contact') }}" class="btn btn-tra-white red-hover last-link">Contact Us</a>
-									</li> -->
-
-									<!-- HEADER SOCIAL LINKS --> 													
-							<!-- <li class="nl-simple white-color header-socials ico-20 clearfix" aria-haspopup="true">
-								<span><a href="https://www.facebook.com/profile.php?id=61554772972429" target="_blank" class="ico-facebook"><span class="flaticon-facebook tra-red-hover"></span></a></span> -->
-								<!-- <span><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fswiftauction" target="_blank" class="ico-twitter"><span class="flaticon-x tra-red-hover"></span></a></span> -->
-								<!-- <span><a href="https://www.linkedin.com/in/swift-property-auctions-1ab5b42b3/" target="_blank" class="ico-linkedin"><span class="flaticon-linkedin tra-red-hover"></span></a></span>
-								<span><a href="https://www.instagram.com/swiftpropertyauctions/" target="_blank" class="ico-instagram"><span class="flaticon-instagram tra-red-hover"></span></a></span>
-								<span><a href="tel:02089504588" class="ico-phone-call"><span class="flaticon-phone-call tra-red-hover mr-50"></a></span>
-								
-							</li> -->
-
-
-									<!-- HEADER SOCIAL LINKS --> 													
-							<!-- <li class="nl-simple white-color header-socials2 ico-20 clearfix" aria-haspopup="true">
-								<span><a href="https://www.facebook.com/profile.php?id=61554772972429" target="_blank" class="ico-facebook"><span class="flaticon-facebook tra-red-hover"></span></a></span> -->
-								<!-- <span><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fswiftauction" target="_blank" class="ico-twitter"><span class="flaticon-x tra-red-hover"></span></a></span> -->
-								<!-- <span><a href="https://www.linkedin.com/in/swift-property-auctions-1ab5b42b3/" target="_blank" class="ico-linkedin"><span class="flaticon-linkedin tra-red-hover"></span></a></span>
-								<span><a href="https://www.instagram.com/swiftpropertyauctions/" target="_blank" class="ico-instagram"><span class="flaticon-instagram tra-red-hover"></span></a></span>
-								<span><a href="tel:02089504588" class="ico-phone-call"><span class="flaticon-phone-call tra-red-hover mr-50"></a></span>
-
-								<span class="smllogo"><img src="/static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="mobile-logo"/></span>
-							</li> -->
-
-
 	        					</ul>
 	        				</nav>	<!-- END MAIN MENU -->
 
@@ -297,7 +272,7 @@
 			<!-- Filtering Section -->
 			<section id="lot-filtering" class="division">
 			<div class="container">
-				<div class="row justify-content-center">
+				<div class="row justify-content-center ml-100">
 					<div class="col-lg-12">
 
 						<br>
@@ -374,12 +349,12 @@
 
 			<!-- END Filtering Section -->
 
-			<section id="features-8" class="bg-white wide-040 features-section division">
+			<section id="features-8" class="bg-white wide-20 features-section division">
 				<div class="container">
 				  <!-- FEATURES-8 WRAPPER -->
 				  <div class="fbox-8-wrapper">
 					<div id="lots-container" class="row row-cols-xl-3 d-flex justify-content-center"></div> <!-- End row -->
-					<div class="row text-center justify-content-center">
+					<div class="row text-center justify-content-center mt-20">
 					  <p class="p-lg txt-upcase">
 						<a href="{{ url_for('current_lots') }}" class="btn btn-sm btn-tra-black blue-hover">View All</a>
 					  </p>
@@ -389,292 +364,218 @@
 			  </section> <!-- END FEATURES-8 -->
 			  
 			<!-- DIVIDER LINE -->
-			<hr class="divider">
+			<hr class="dividers">
 
 			<!-- FEATURES-4
 			============================================= -->
-			<section id="features-4" class="wide-60 features-section division">
+			<section id="features-4" class="wide-75 features-section division">
 				<div class="container">
 
+					<!-- SECTION TITLE -->
+					<div class="row justify-content-center">
+					<div class="col-lg-10 col-xl-8">
+						<div class="section-title title-01 mb-40">
 
-					<!-- SECTION TITLE -->	
-					<div class="row justify-content-center">	
-						<div class="col-lg-10 col-xl-8">
-							<div class="section-title title-01 mb-40">		
+						<h4 class="h4-sm text-black">Partnering for Success: Swift Property Auctions.</h4>
+						<h4 class="h4-sm text-black">Experts in Every Auction Requirement.</h4>
 
-								<!-- Title -->	
-								<h3 class="h3-md ">Your Trusted Property Auction Experts</h3>	
+						<p class="p-lg text-black">
+							We are the only company you will need for your property auction needs.
+						</p>
 
-								<!-- Text -->	
-								<p class="p-lg text-black">Swift Property Auctions are masters of their trade, here's why...
-								</p>
-									
-							</div>	
 						</div>
 					</div>
+					</div>
 
+					<!-- FEATURES CAROUSEL -->
+					<div class="experience-swiper swiper">
 
-					<!-- FEATURES-4 WRAPPER -->
-					<div class="fbox-4-wrapper fbox-4-wide dark-color">
-						<div class="row row-cols-1 row-cols-md-2">
+					<div class="swiper-wrapper">
 
+						<!-- CARD 1 -->
+						<div class="swiper-slide fbox-card">
+						<div class="fbox-ico">
+							<div class="ico-65">
+							<span class="flaticon-credit-card-1"></span>
+							</div>
+						</div>
+						<div class="fbox-txt">
+							<h5 class="h5-md txt-700">Our Industry Experience</h5>
+							<p class="p-sm text-black">
+							As your trusted partner in buying and selling, we equip corporate clients,
+							receivers, and private sellers with the expertise and resources to navigate
+							the auction process quickly and confidently.
+							</p>
+						</div>
+						</div>
 
-							<!-- FEATURE BOX #1 -->
-		 					<div class="col">
-		 						<div class="fbox-4 pr-25 mb-40 wow fadeInUp">
+						<!-- CARD 2 -->
+						<div class="swiper-slide fbox-card">
+						<div class="fbox-ico">
+							<div class="ico-65">
+							<span class="flaticon-process"></span>
+							</div>
+						</div>
+						<div class="fbox-txt">
+							<h5 class="h5-md txt-700">Guidance from Seasoned Professionals</h5>
+							<p class="p-sm text-black">
+							We aim to give you Expert Auction Advice whether you are looking to buy or sell
+							any type of Residential or Commercial Property.
+							</p>
+						</div>
+						</div>
 
-		 							<!-- Icon -->
-		 							<div class="fbox-ico">
-		 								<div class="ico-65">
-											<span class="flaticon-credit-card-1"></span>
-										</div>
-									</div>
+						<!-- CARD 3 -->
+						<div class="swiper-slide fbox-card">
+						<div class="fbox-ico">
+							<div class="ico-65">
+							<span class="flaticon-visible"></span>
+							</div>
+						</div>
+						<div class="fbox-txt">
+							<h5 class="h5-md txt-700">Maximising Property Visibility</h5>
+							<p class="p-sm text-black">
+							We ensure maximum visibility for every residential or commercial property through
+							strategic advertising and direct outreach to our investors.
+							</p>
+						</div>
+						</div>
 
-									<!-- Text -->
-									<div class="fbox-txt">
-		
-										<!-- Title -->
-										<h6 class="h6-md txt-700">Our Industry Experience</h6>
-											
-										<!-- Text -->
-										<p class="p-md text-black">At Swift Property Auction we have over 60 years combined experience in all matters Real Estate. There isn't a property or situation we haven't dealt with before.
-										</p>
+						<!-- CARD 4 -->
+						<div class="swiper-slide fbox-card">
+						<div class="fbox-ico">
+							<div class="ico-65">
+							<span class="flaticon-chat-4"></span>
+							</div>
+						</div>
+						<div class="fbox-txt">
+							<h5 class="h5-md txt-700">Around the Clock Advice</h5>
+							<p class="p-sm text-black">
+							We are committed to accessible, around-the-clock advice. No email or phone call is
+							too early or too late.
+							</p>
+						</div>
+						</div>
 
-									</div>
+					</div>
 
-		 						</div>
-		 					</div>	
+					
 
+				</div> <!-- End container -->
 
-		 					<!-- FEATURE BOX #2 -->
-		 					<div class="col">
-		 						<div class="fbox-4 pl-25 mb-40 wow fadeInUp">
+				<!-- Pagination dots -->
+					<div class="swiper-pagination"></div>
 
-		 							<!-- Icon -->
-		 							<div class="fbox-ico">
-		 								<div class="ico-65">
-											<span class="flaticon-process"></span>
-										</div>
-									</div>
-
-									<!-- Text -->
-									<div class="fbox-txt">
-		
-										<!-- Title -->
-										<h6 class="h6-md txt-700">Guidance from Seasoned Professionals</h6>
-											
-										<!-- Text -->
-										<p class="p-md text-black">We aim to give you Expert Auction Advice whether you are looking to buy or sell any type of Residential or Commercial Property.
-										</p>
-
-									</div>
-
-		 						</div>
-		 					</div>	
-
-
-		 					<!-- FEATURE BOX #3 -->
-		 					<div class="col">
-		 						<div class="fbox-4 pr-25 mb-40 wow fadeInUp">
-
-		 							<!-- Icon -->
-		 							<div class="fbox-ico">
-		 								<div class="ico-65">
-											<span class="flaticon-visible"></span>
-										</div>
-									</div>
-
-									<!-- Text -->
-									<div class="fbox-txt">
-		
-										<!-- Title -->
-										<h6 class="h6-md txt-700">Maximising Property Visibility
-
-										</h6>
-											
-										<!-- Text -->
-										<p class="p-md text-black">What's the use of having a fantastic property if it can't be seen? That's why we advertise on Rightmove and EIgroup, and we proactively email your property to our investors’ database to gain maximum exposure.
-										</p>
-
-									</div>
-
-		 						</div>
-		 					</div>	
-
-
-		 					<!-- FEATURE BOX #4 -->
-		 					<div class="col">
-		 						<div class="fbox-4 pl-25 mb-40 wow fadeInUp">
-
-		 							<!-- Icon -->
-		 							<div class="fbox-ico">
-		 								<div class="ico-65">
-											<span class="flaticon-chat-4"></span>
-										</div>
-									</div>
-
-									<!-- Text -->
-									<div class="fbox-txt">
-		
-										<!-- Title -->
-										<h6 class="h6-md txt-700">Around the clock advice</h6>
-											
-										<!-- Text -->
-										<p class="p-md text-black"> No email or phone call is too early or too late.
-										</p>
-
-									</div>
-
-		 						</div>
-		 					</div>	
-
-		 				</div>
-					</div>    <!-- END FEATURES-4 WRAPPER -->
-
-
-				</div>     <!-- End container --> 	
-			</section>	<!-- END FEATURES-4 -->
+					</div> <!-- END swiper -->
+			</section> <!-- END FEATURES-4 -->
 
 			<!-- STATISTIC-2
 			============================================= -->
-			<section id="statistic-2" class="wide-100 statistic-section division bg-blue">
-				<div class="container">
-					<div class="row d-flex align-items-center white-color">
+			<section id="statistic-2" class="statistic-modern">
+				<div class="statistic-overlay"></div>
 
+				<div class="container statistic-container">
 
-						<!-- TEXT BLOCK -->	
-						<div class="col-lg-6">
-							<div class="txt-block right-column wow fadeInLeft">
-								<h4 class="h4-xs">Market your property with us</h4>
-								<br>
-								<p class="p-md">Whether you would like a free valuation on your property or simply understand the auction process, we'd love to hear from you.</p>
-							</div>
+					<div class="statistic-card">
+
+					<!-- LEFT TEXT -->
+					<div class="statistic-text">
+						<h2 class="statistic-title">Market your property with us</h2>
+						<p class="statistic-subtitle">
+						Whether you would like a free valuation on your property or simply understand the
+						auction process, we'd love to hear from you.
+						</p>
+					</div>
+
+					<!-- BUTTON ROW -->
+					<div class="statistic-buttons">
+
+						<!-- BUTTON 1 -->
+						<div class="statistic-btn-block">
+						<a href="{{ url_for('valuation') }}" class="statistic-circle">
+							<img src="/static/images/gavel.png" alt="Gavel Icon">
+						</a>
+						<p>Auction Valuation</p>
 						</div>
 
-
-						<!-- STATISTIC BLOCK #1 -->
-						<div class="col-sm-5 col-md-4 col-lg-3 offset-sm-1 offset-md-2 offset-lg-1">
-							<div class="circular-button statistic-block wow fadeInUp">
-							  <a href="{{ url_for('valuation') }}" class="button-icon ico-65">
-								<img src="/static/images/gavel.png" alt="Gavel Icon" class="white-gavel-icon">
-							  </a>
-							  <p>Auction Valuation</p>
-							</div>
+						<!-- BUTTON 2 -->
+						<div class="statistic-btn-block">
+						<a href="{{ url_for('benefits_of_auctions') }}" class="statistic-circle">
+							<span class="flaticon-file"></span>
+						</a>
+						<p>Benefits of Auction</p>
 						</div>
 
+					</div>
 
-						<!-- STATISTIC BLOCK #2 -->
-						<div class="col-sm-5 col-md-4 col-lg-2">						
-							<div class="circular-button statistic-block wow fadeInUp">
-								<a href="{{ url_for('benefits_of_auctions') }}" class="button-icon ico-65"><span class="flaticon-file"></span></a>
-								<p>Benefits of Auction</p>
-							</div>								
-						</div>
+					</div>
 
-
-					</div>    <!-- End row -->
-				</div>	   <!-- End container -->		
-			</section>	<!-- END STATISTIC-2 -->
+				</div>
+			</section> <!-- END STATISTIC-2 -->
 
 
 			<!-- DIVIDER LINE -->
 			<hr class="divider">
-
-			<!-- CONTENT-7
-			============================================= -->
-			<section id="content-7" class="content-7 wide-60 content-section division">
-				<div class="container">
-					<div class="row d-flex">
-
-								
-						<!-- TEXT BLOCK -->		
-						<div class="col-md-6 order-md-2">
-							<div class="txt-block left-column wow fadeInLeft">
-
-								<!-- Title -->	
-								<h3 class="h3-xs">News & Blogs</h3>
-
-								<!-- Text -->	
-								<p class="p-md text-black">Our blog is your one-stop shop for all things property auctions. We provide helpful advice, the latest updates, and personal assistance to guide you through buying or selling real estate at auction. Whether you're a seasoned investor or new to auctions, our easy-to-understand tips cover everything from bidding strategies to market trends, making sure you're well-prepared and informed every step of the way.
-									Stay up-to-date with our detailed coverage of industry news and trends. We keep track of market changes, rules, and new technologies, providing simple explanations to help you make smart decisions. Whether you're a buyer looking for investment opportunities or a seller wanting to get the best price for your property, our practical advice will help you succeed in the competitive auction world.
-								</p>
-
-								<p class="p-md"><a href="{{ url_for('blog_1') }}" class="underline-on-hover dark-color tra-blue-hover"><strong>A Comprehensive Guide to Property Types Ideal for Auctioning</strong></a>
-								</p>
-
-								<p class="p-md"><a href="{{ url_for('blog_2') }}" class="underline-on-hover dark-color tra-blue-hover"><strong>Exploring the Benefits of Auctioning Your Property</strong></a>
-								</p>
-
-							</div>	
-						</div>	<!-- END TEXT BLOCK -->		
-
-
-						<!-- IMAGE BLOCK -->	
-						<div class="col-md-6 order-md-2">
-							<div class="content-7-img wow fadeInRight">
-								<a href="{{ url_for('news_and_blogs') }}">
-									<img class="img-fluid blog-pic" src="/static/images/MagazineCover-2.jpeg" alt="content-image">
-								</a>
-							</div>	
-						</div>
-
-
-					</div>	  <!-- End row -->
-				</div>	   <!-- End container -->
-			</section>	<!-- END CONTENT-7 -->
 
 			<!-- DIVIDER LINE -->
 			<hr class="divider">
 
             <!-- NEWSLETTER-2
 			============================================= -->
-			<section id="newsletter-2" class="pt-60 pb-60 newsletter-section division bg-blue white-color">
-				<div class="container">
-					<div class="row d-flex align-items-center row-cols-1 row-cols-lg-2">
+			<section id="newsletter-2" class="newsletter-modern bg-fixed">
+				<div class="newsletter-overlay"></div>
 
+				<div class="newsletter-container">
+					
+					<div class="newsletter-card">
 
-						<!-- NEWSLETTER TEXT -->	
-						<div class="col">
-							<div class="newsletter-txt pr-20">	
-								<h4 class="h4-xs">Stay up to date with our latest news and deals!</h4>	
-							</div>								
+					<h2 class="newsletter-title">Never Miss a New Auction Lot Again</h2>
+					<p class="newsletter-subtitle">
+						Get instant alerts for new lots, viewing times, legal packs, and key updates.
+					</p>
+
+					<!-- FORM -->
+					<form class="newsletter-form quick-form">
+
+						<!-- Input + Button -->
+						<div class="newsletter-input-wrap">
+						<input 
+							type="email" 
+							autocomplete="off" 
+							class="newsletter-input" 
+							placeholder="Enter your email address" 
+							required 
+							id="s-email"
+						>
+
+						<button type="submit" class="newsletter-btn">
+							Get Alerts
+						</button>
 						</div>
 
-
-						<!-- NEWSLETTER FORM -->
-						<div class="col">
-							<form class="newsletter-form quick-form"> <!-- Added "quick-form" class to form -->
-								
-								<div class="input-group terms-and-conditions-checkbox">
-									<input type="email" autocomplete="off" class="form-control email" placeholder="Your email address" required id="s-email">
-									<!-- Changed the input class from ".form-control" to ".form-control email" -->
-									<span class="input-group-btn">
-										<button type="submit" class="btn btn-sm btn-tra-white red-hover">Subscribe Now</button>
-									</span>
-								</div>
-
-								<!-- Terms and Conditions Checkbox -->
-								<div class="terms-and-conditions-checkbox">
-									<input type="checkbox" id="terms" name="terms" required>
-									<label for="terms">I accept the Company's <strong><a href="/static/pdf/terms_conditions.pdf" target="_blank" style="text-decoration: underline;" class="tra-red-hover">Terms and Conditions of Service</a></strong> and <strong><a href="{{ url_for('privacy') }}" target="_blank" style="text-decoration: underline;" class="tra-red-hover">Privacy Policy</strong></a></label>
-								</div>
-
-								<!-- Newsletter Form Notification -->
-								<label for="s-email" class="form-notification"></label>
-
-							</form>
+						<!-- Checkbox (names/IDs unchanged for JS compatibility) -->
+						<div class="terms-and-conditions-checkbox">
+						<input type="checkbox" id="terms" name="terms" required>
+						<label for="terms">
+							I accept the Company's 
+							<strong><a href="/static/pdf/terms_conditions.pdf" target="_blank" class="tra-red-hover">Terms and Conditions of Service</a></strong>
+							and 
+							<strong><a href="{{ url_for('privacy') }}" target="_blank" class="tra-red-hover">Privacy Policy</a></strong>
+						</label>
 						</div>
-						<!-- END NEWSLETTER FORM -->
 
+						<label for="s-email" class="form-notification"></label>
 
-					</div>	  <!-- End row -->
-				</div>	   <!-- End container -->	
-			</section>	<!-- END NEWSLETTER-2 -->
+					</form>
+
+					</div>
+
+				</div>
+			</section>
+
 
 			<!-- DIVIDER LINE -->
-			<hr class="divider">
-
-			
+			<hr class="divider hr-grey">
 
 			<!-- FOOTER-4
 			============================================= -->

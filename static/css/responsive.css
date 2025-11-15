@@ -653,10 +653,11 @@
   .wide-50 { padding-top: 80px; padding-bottom: 30px; }
   .wide-40 { padding-top: 80px; padding-bottom: 20px; }
   .wide-30 { padding-top: 80px; padding-bottom: 10px; }
-  .wide-20 { padding-top: 20px; padding-bottom: 0px; }
+  .wide-20 { padding-top: 20px; padding-bottom: 20px; }
   .wide-10 { padding-top: 20px; padding-bottom: 20px; }
   .wide-060 { padding-top: 0px; padding-bottom: 60px; }
   .wide-040 { padding-top: 0px; padding-bottom: 40px; }
+  .wide-050 { padding-top: 50px; padding-bottom: 60px; }
 
   .mt-inverse-40, .mt-inverse-50 { margin-top: 0; }
 
