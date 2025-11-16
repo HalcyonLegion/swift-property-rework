@@ -327,7 +327,7 @@ body {
 .bg-scroll {
   width: 100%;
   background-repeat: no-repeat;
-  background-position: center center;   
+  /* background-position: center center;    */
   background-size: cover;
 }
 
@@ -782,7 +782,7 @@ ol.digit-list p {
 }
 
 /* Frosted Glass Buttons (based on .btn3) */
-.btn3glass {
+.d-flex .gap-2 .btn3glass {
     display: inline-block;
     padding: 1.5rem 1.25rem;
     font-weight: 300;
@@ -793,12 +793,23 @@ ol.digit-list p {
     backdrop-filter: blur(8px) saturate(160%);
     -webkit-backdrop-filter: blur(8px) saturate(160%);
     transition: all 0.3s ease;
+    padding: 12px 26px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 /* Hover: brighter and more defined */
 .btn3glass:hover,
 .btn3glass:focus {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    text-decoration: none;
+}
+
+
+/* Hover: brighter and more defined */
+.d-flex .gap-2 .btn3glass:hover,
+.d-flex .gap-2 .btn3glass:focus {
     background: rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
@@ -2382,12 +2393,12 @@ p.terms-txt a,
 
 .wsmenu > .wsmenu-list > li > a {
   display: block;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   letter-spacing: 0;
   margin: 0 7px;
   padding: 10px 15px;
-  line-height: 50px;
+  /* line-height: 110%; */
   text-decoration: none;  
 }
 
@@ -3377,8 +3388,25 @@ p.terms-txt a,
 
 #hero-14 {
   background-image: url(../images/NewSwiftbg.jpeg);
-  padding-top: 170px;
-  padding-bottom: 100px;
+  padding-top: 200px; /* restores vertical gap like Figma */
+    /* padding-bottom: 160px; */
+    /* min-height: 100vh; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Remove excessive space under the main title */
+#hero-14 .h2-title-md {
+    margin-bottom: 20px !important; /* was 100 */
+    margin-top: 60px; /* lifts the title up to Figma alignment */
+}
+
+
+#hero-14 .btn3glass {
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
 }
 
 .hero-14-txt h2 {
@@ -3388,6 +3416,19 @@ p.terms-txt a,
 .hero-14-txt p.p-xl {
   margin-bottom: 30px;
 }
+
+/* Align button row slightly above "scroll down" */
+#hero-14 .d-flex.flex-wrap.gap-3 {
+    margin-bottom: 40px;
+}
+
+#hero-14 .position-absolute {
+    left: auto !important;
+    right: 40px !important; /* Figma-like padding */
+    transform: none !important;
+    bottom: 25px !important; /* slightly above edge */
+}
+
 
 /*------------------------------------------*/
 /*  HERO-15
@@ -8505,7 +8546,7 @@ nav a#pull {
 }
 
 .auction-info-glass {
-    background: rgba(255, 255, 255, 0.1); /* translucent layer */
+    background: rgba(255, 255, 255, 0.15); /* translucent layer */
     backdrop-filter: blur(12px) saturate(160%);
     -webkit-backdrop-filter: blur(12px) saturate(160%);
     /* border: 1px solid rgba(255, 255, 255, 0.25); */
@@ -8525,18 +8566,20 @@ nav a#pull {
 /* CONTACT SVG BUTTON --------------------------------------*/
 
 .contact-svg-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin-top: 14px;
-  margin-left: 12px;
-  border: none;
-  background: none;
-  width: auto;
-  height: auto;
-  line-height: 1;
+    position: fixed !important;
+    top: 10px;
+    right: 12px;
+    z-index: 1000;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    background: none;
+
+    line-height: 1;
   transition: none;
 }
 
@@ -8586,8 +8629,10 @@ nav a#pull {
 }
 
 .hr-grey {
-height: 1px;           /* thickness of the line */
-border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 82%;                /* Figma width */
+    margin: 0px auto 20px;    /* center it */
+    border-color: rgba(255,255,255,0.25);
+    border-width: 1px;
 }
 
 .new-svg-btn {
@@ -9029,3 +9074,37 @@ border: 1px solid rgba(255, 255, 255, 0.5);
   }
 }
 
+/* Prevent clipping */
+/* .contact-svg-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 22px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    position: relative;
+} */
+
+/**************************************
+    DATE/TIME + NEWS item
+**************************************/
+
+.header-datetime {
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.85;
+}
+
+.nav-news-item {
+    display: block;
+    color: #666;
+    font-weight: 700;
+}
+
+.nav-news-item:hover {
+    color: #c20000;
+}

@@ -520,6 +520,28 @@
 			},
 		});
 
+		function updateHeaderDateTime() {
+		const now = new Date();
+
+		const day = now.getDate().toString().padStart(2, '0');
+		const month = now.toLocaleString('en-GB', { month: 'short' });
+
+		const hours = now.getHours().toString().padStart(2, '0');
+		const minutes = now.getMinutes().toString().padStart(2, '0');
+
+		// Final string EXACTLY like Figma:
+		// "04 Nov, 11:30"
+		const formatted = `${day} ${month}, ${hours}:${minutes}`;
+
+		const el = document.getElementById("live-datetime");
+		if (el) {
+			el.textContent = `• ${formatted}`;
+		}
+		}
+
+		updateHeaderDateTime();
+		setInterval(updateHeaderDateTime, 30000);
+
 	    /*----------------------------------------------------*/
 	    /*  Sign Up Form Validation
 	    /*----------------------------------------------------*/

@@ -102,18 +102,19 @@
 	        					<ul class="wsmenu-list nav-red-hover">
 
                                     <!-- SIMPLE NAVIGATION LINK -->
+
+									<li class="header-datetime">
+										<span id="live-datetime"></span>
+									</li>
+									
 							    	<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('home') }}">Home</a></li>
 
 	        						<!-- DROPDOWN MENU -->
-									<li aria-haspopup="true"><a href="{{ url_for('about') }}">About <span class="wsarrow"></span></a>
-	            						<ul class="sub-menu">
-	            							<li aria-haspopup="true"><a href="{{ url_for('about') }}">About Us</a></li>
-						           		</ul>
-								    </li>
+									<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('about') }}">About</a></li>
 
 
 	        						<!-- DROPDOWN MENU -->
-						          	<li aria-haspopup="true"><a href="#">Current Lots <span class="wsarrow"></span></a>
+						          	<li aria-haspopup="true"><a href="#">Current Lots<span class="wsarrow"></span></a>
 	            						<ul class="sub-menu">
 	            							<li aria-haspopup="true"><a href="{{ url_for('current_lots') }}">Current Lots</a></li>
 	            							<li aria-haspopup="true"><a href="{{ url_for('available_lots') }}">Available Lots</a></li>
@@ -124,37 +125,41 @@
 
 
 							    	<!-- DROPDOWN MENU -->
-						        	<li aria-haspopup="true"><a href="#">Auctions <span class="wsarrow"></span></a>
-						        		<div class="wsmegamenu clearfix halfmenu">
+						        	<li aria-haspopup="true"><a href="#">Auctions<span class="wsarrow"></span></a>
+						        		<!-- <div class="wsmegamenu clearfix halfmenu">
 						              		<div class="container-fluid">
-						                		<div class="row">
+						                		<div class="row"> -->
 
 						                			<!-- Links -->
-									                <ul class="col-lg-12 link-list">
+									                <ul class="sub-menu">
 														<li><a href="{{ url_for('valuation') }}">Free Valuation</a></li>
 									                	<li><a href="{{ url_for('future_auctions_dates') }}">Future Auction Dates</a></li>							          
 									                    <li><a href="{{ url_for('previous_auctions') }}">Previous Auctions</a></li>
 									                    <li><a href="{{ url_for('auction_finance') }}">Auction Finance</a></li>
 														<li><a href="https://waterstonelegal.co.uk/jasmine-chaudry-partner/" target="_blank">Auction Solicitors</a></li>
 									                    <li><a href="{{ url_for('auction_buying_guide') }}">Auction Buying Guide</a></li>
-									                </ul>
+									                <!-- </ul> -->
 
 								                  	<!-- Links -->
-									                <ul class="col-lg-12 link-list">
+									                <!-- <ul class="sub-menu"> -->
 														<li><a href="/static/pdf/Auction_Guide.pdf" target="_blank">Buying Guide Download</a></li>
 														<li><a href="{{ url_for('auction_selling_guide') }}">Auction Selling Guide</a></li>	
 									                	<li><a href="{{ url_for('benefits_of_auctions') }}">Benefits of Auctions</a></li>  			               
 									                    <li><a href="{{ url_for('frequently_asked_questions') }}">FAQs Page</a></li>
 									                </ul>
 
-						                		</div>
+						                		<!-- </div>
 						              		</div>
-						            	</div>
+						            	</div> -->
 						          	</li>	<!-- END DROPDOWN MENU -->
+
+									<li class="nl-simple" aria-haspopup="true">
+										<a href="{{ url_for('news_and_blogs') }}" class="nav-news-item">News</a>
+									</li>
 
 						          	<!-- DROPDOWN MENU -->
 						          	<li class="nl-simple" aria-haspopup="true">
-										<a href="{{ url_for('contact') }}" class="btn contact-svg-btn start-200 last-link" aria-label="Contact Us">
+										<a href="{{ url_for('contact') }}" class="btn contact-svg-btn last-link" aria-label="Contact Us">
 											<img src="{{ url_for('static', filename='images/contact-default.svg') }}" 
 												alt="Contact Us" class="contact-img default">
 											<img src="{{ url_for('static', filename='images/contact-hover.svg') }}" 
@@ -176,8 +181,8 @@
 
 
 			<!-- HERO SECTION (Updated Layout) -->
-					<section id="hero-14" class="hero-section division bg-fixed" style="position: relative; overflow: hidden;">
-						<div class="container h-100 d-flex flex-column justify-content-center mt-200 mb-100">
+					<section id="hero-14" class="hero-section division bg-fixed">
+						<div class="container h-100 d-flex flex-column justify-content-center mb-100">
 							<div class="row align-items-start justify-content-start">
 								<!-- Left Section (Title, Subtitle, Buttons) -->
 								<div class="col-lg-8 col-md-10 text-left text-white">
@@ -193,8 +198,8 @@
 										<p class="p-lg mb-1">27th November 2025 12:00pm</p>
 										<p class="p-sm mb-3">We're Live In: <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Mins</p>
 										<div class="d-flex gap-2">
-											<a href="#add-calendar" class="btn3 btn-tra-white red-hover btn-sm">Add to Calendar</a>
-											<a href="/static/pdf/Auction_Guide.pdf" target="_blank" class="btn3 btn-tra-white red-hover btn-sm">Auction Guide</a>
+											<a href="#add-calendar" class="btn3glass btn-tra-white btn-sm">Add to Calendar</a>
+											<a href="/static/pdf/Auction_Guide.pdf" target="_blank" class="btn3glass btn-tra-white btn-sm">Auction Guide</a>
 										</div>
 									</div>
 								</div>
@@ -203,7 +208,7 @@
 
 						<div class="container h-100 d-flex flex-column justify-content-center">
 							<div class="row align-items-start justify-content-start">
-								<div class="col-lg-8 col-md-10 text-left text-white">
+								<div class="col-lg-4 col-md-10 text-left text-white">
 									<h4 class="h4-sm">Specialists in Residential & Commercial Property Auctions</h4>
 								</div>
 							</div>
@@ -237,14 +242,16 @@
 												<img src="{{ url_for('static', filename='images/bidderReg-hover.svg') }}" 
 												alt="Contact Us" class="contact-img hover">
 												</a>
+
+												<!-- Optional Scroll hint -->
+												<div class="position-absolute text-white pb-3 opacity-75">
+													<span>Scroll down ↓</span>
+												</div>
 											</div>
 										</div>
 									</div>
 
-						<!-- Optional Scroll hint -->
-						<div class="position-absolute bottom-0 start-50 translate-middle-x text-white pb-3 opacity-75">
-							<span>Scroll down ↓</span>
-						</div>
+						
 					</section>
 
 

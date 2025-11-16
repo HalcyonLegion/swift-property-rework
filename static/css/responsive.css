@@ -5532,3 +5532,32 @@
 
 
 }
+
+/**************************************
+    RESPONSIVE FIXES
+**************************************/
+
+@media (max-width: 991px) {
+
+    /* Stack hero content better */
+    #hero-14 {
+        padding-top: 180px;
+        padding-bottom: 100px;
+    }
+
+    /* Ensure bottom buttons don't fall off-screen */
+    #hero-14 .btn3glass {
+        width: 48%;
+    }
+
+    /* Contact button shouldn't push off-screen */
+    .contact-svg-btn {
+        padding: 6px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero-14 .btn3glass {
+        width: 100%;
+    }
+}
