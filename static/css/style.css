@@ -64,7 +64,7 @@ body {
 .wide-50 { padding-top: 50px; padding-bottom: 30px; }
 .wide-40 { padding-top: 100px; padding-bottom: 40px; }
 .wide-30 { padding-top: 100px; padding-bottom: 30px; }
-.wide-20 { padding-top: 20px; padding-bottom: 20px; }
+.wide-20 { padding-top: 0px; padding-bottom: 20px; }
 .wide-10 { padding-top: 20px; padding-bottom: 10px; }
 .wide-0 { padding-top: 0px; padding-bottom: 10px; }
 .wide-060 { padding-top: 0px; padding-bottom: 60px; }
@@ -8481,7 +8481,7 @@ nav a#pull {
 .lot-banner {
   background-color: #ffffff;
   color: #AD1D18;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   font-weight: bold;
   padding: 5px 10px;
   position: absolute;
@@ -8656,7 +8656,7 @@ nav a#pull {
   display: block;
   /* height: 38px;        adjust to match your nav link height */
   width: auto;
-  transition: opacity 0.4s ease-in-out;
+  /* transition: opacity 0.4s ease-in-out; */
 }
 
 /* Hover image fades in */
@@ -8678,7 +8678,7 @@ nav a#pull {
 
 /* Card container */
 .lot-card {
-  width: 448px;
+  width: 436px;
   height: 600px;
   border-radius: 16px;
   background: #fff;
@@ -8701,12 +8701,11 @@ nav a#pull {
 
 /* Image */
 .lot-image img {
-  width: 440px;
+  width: 436px;
   height: 436px;
   object-fit: cover;
   transition: transform 0.6s ease-in-out;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-radius: 0.5rem;
 }
 
 .lot-image:hover img {
