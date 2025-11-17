@@ -118,7 +118,7 @@ body {
 /*------------------------------------------*/
 /*  Margin Bottom
 /*------------------------------------------*/
-
+.mb-160 { margin-bottom: 160px; }
 .mb-100 { margin-bottom: 100px; }
 .mb-95 { margin-bottom: 95px; }
 .mb-90 { margin-bottom: 90px; }
@@ -327,8 +327,9 @@ body {
 .bg-scroll {
   width: 100%;
   background-repeat: no-repeat;
-  /* background-position: center center;    */
-  background-size: cover;
+  background-position: center center;
+  background-size: cover;  /* keep this */
+  min-height: 95vh;        /* <--- THIS fixes the issue */
 }
 
 .bg-scroll {
@@ -3388,7 +3389,7 @@ p.terms-txt a,
 
 #hero-14 {
   background-image: url(../images/NewSwiftbg.jpeg);
-  padding-top: 200px; /* restores vertical gap like Figma */
+  padding-top: 250px; /* restores vertical gap like Figma */
     /* padding-bottom: 160px; */
     /* min-height: 100vh; */
     position: relative;
@@ -3426,7 +3427,7 @@ p.terms-txt a,
     left: auto !important;
     right: 40px !important; /* Figma-like padding */
     transform: none !important;
-    bottom: 25px !important; /* slightly above edge */
+    bottom: 0px !important; /* slightly above edge */
 }
 
 
