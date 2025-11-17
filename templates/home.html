@@ -279,7 +279,7 @@
 			<!-- Filtering Section -->
 			<section id="lot-filtering" class="division">
 			<div class="container">
-				<div class="row justify-content-center ml-100">
+				<div class="row justify-content-center">
 					<div class="col-lg-12">
 
 						<br>
@@ -288,12 +288,46 @@
 						<form id="lots-filter-form" class="row align-items-center">
 
 							<!-- Lot No, Postcode, Address Filter -->
-							<div class="col-md-3">
+							<div class="col-md-4">
 								<input type="text" id="lot-address-filter" class="form-control2 mb-2" placeholder="Postcode, Address or Lot No">
 							</div>
 
+							<!-- Minimum Price Filter -->
+							<div class="col-md-2 position-relative">
+								<select id="min-price-filter" class="form-control2 mb-2">
+									<option value="">No Min</option>
+									<option>£50,000</option>
+									<option>£100,000</option>
+									<option>£150,000</option>
+									<option>£200,000</option>
+									<option>£250,000</option>
+									<option>£300,000</option>
+									<option>£350,000</option>
+									<option>£400,000</option>
+									<option>£450,000</option>
+									<option>£500,000</option>
+									<option>£550,000</option>
+									<option>£600,000</option>
+									<option>£650,000</option>
+									<option>£700,000</option>
+									<option>£750,000</option>
+									<option>£800,000</option>
+									<option>£850,000</option>
+									<option>£900,000</option>
+									<option>£950,000</option>
+									<option>£1,000,000</option>
+									<option>£1,100,000</option>
+									<option>£1,200,000</option>
+									<option>£1,300,000</option>
+									<option>£1,400,000</option>
+									<option>£1,500,000+</option>
+								</select>
+								<div class="css-arrow"></div>
+							</div>
+
+
 							<!-- Maximum Price Filter -->
-							<div class="col-md-3 position-relative">
+							<div class="col-md-2 position-relative">
 								<select id="max-price-filter" class="form-control2 mb-2">
 									<option value="">No Max</option>
 									<option>£50,000</option>
@@ -326,7 +360,7 @@
 							</div>
 
 							<!-- Property Type Filter -->
-							<div class="col-md-3 position-relative">
+							<div class="col-md-2 position-relative">
 								<img src="/static/images/swift-property-auctions-icon-only-black.svg" alt="House" class="dropdown-icon">
 								<select id="property-type-filter" class="form-control2 mb-2">
 									<option value="">Property Type</option>
@@ -339,7 +373,7 @@
 							</div>
 
 							<!-- Apply Filter Button -->
-							<div class="col-md-3 text-center">
+							<div class="col-md-2 text-center">
 								<a id="apply-filter-button" class="btn3glass new-svg-btn btn-md mt-1" aria-label="Search">
 									<img src="{{ url_for('static', filename='images/searchButton.svg') }}" 
 										alt="Search default" 

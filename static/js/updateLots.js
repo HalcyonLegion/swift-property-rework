@@ -153,58 +153,73 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   
   function attachFilterEvent() {
-    document.getElementById('apply-filter-button').addEventListener('click', updateFilteredLots);
-    document.getElementById('reset-filter-button').addEventListener('click', function() {
-      resetFilters();
-      updateLots(); // Or re-fetch the lots as per the application's needs
-    });
-  }
-  
-  function resetFilters() {
-    document.getElementById('lot-address-filter').value = '';
-    document.getElementById('max-price-filter').value = '';
-    document.getElementById('property-type-filter').value = '';
-  }
-  
-  function updateFilteredLots() {
-    const addressValue = document.getElementById('lot-address-filter').value;
-    let maxPriceValue = document.getElementById('max-price-filter').value;
-    const propertyTypeValue = document.getElementById('property-type-filter').value;
-  
-    const filteredLots = filterLots({
-      address: addressValue,
-      maxPrice: maxPriceValue.length > 0 ? Number(maxPriceValue.replace(/[£,]+/g, '')) : undefined,
-      propertyType: propertyTypeValue,
-    });
-  
-    renderLots(filteredLots);
-  }
-  
-  function filterLots(criteria) {
-    return globalLots.filter((lot) => {
-      const fullAddress = `${lot.StreetNumber}, ${lot.StreetName}, ${lot.StreetName2}, ${lot.Town}, ${lot.County}, ${lot.PostCode}`.toLowerCase();
-      const startPrice = `${lot.StartingPrice}`;
-      let matchesCriteria = true;
-      
-  
-      // Filter by address if search query is provided (case insensitive)
-      if (criteria.address && !fullAddress.includes(criteria.address.toLowerCase())) {
-        matchesCriteria = false;
-      }
-  
-      // Filter by maximum price
-      if (criteria.maxPrice && startPrice > criteria.maxPrice) {
-        matchesCriteria = false;
-      }
-  
-      // Filter by property type
-      if (criteria.propertyType && criteria.propertyType !== "Property Type" && lot.LotData["Featured Lots Options"] !== criteria.propertyType) {
-        matchesCriteria = false;
-      }
-  
-      return matchesCriteria;
-    });
-  }
+  document.getElementById('apply-filter-button').addEventListener('click', updateFilteredLots);
+  document.getElementById('reset-filter-button').addEventListener('click', function() {
+    resetFilters();
+    updateLots();
+  });
+}
+
+function resetFilters() {
+  document.getElementById('lot-address-filter').value = '';
+  document.getElementById('min-price-filter').value = '';   // NEW
+  document.getElementById('max-price-filter').value = '';
+  document.getElementById('property-type-filter').value = '';
+}
+
+function updateFilteredLots() {
+  const addressValue = document.getElementById('lot-address-filter').value;
+
+  let minPriceValue = document.getElementById('min-price-filter').value; // NEW
+  let maxPriceValue = document.getElementById('max-price-filter').value;
+
+  const propertyTypeValue = document.getElementById('property-type-filter').value;
+
+  const filteredLots = filterLots({
+    address: addressValue,
+    minPrice: minPriceValue.length > 0 ? Number(minPriceValue.replace(/[£,]+/g, '')) : undefined, // NEW
+    maxPrice: maxPriceValue.length > 0 ? Number(maxPriceValue.replace(/[£,]+/g, '')) : undefined,
+    propertyType: propertyTypeValue
+  });
+
+  renderLots(filteredLots);
+}
+
+function filterLots(criteria) {
+  return globalLots.filter((lot) => {
+
+    const fullAddress = `${lot.StreetNumber}, ${lot.StreetName}, ${lot.StreetName2}, ${lot.Town}, ${lot.County}, ${lot.PostCode}`.toLowerCase();
+    const startPrice = Number(lot.StartingPrice);
+
+    let matchesCriteria = true;
+
+    // Address Filter
+    if (criteria.address && !fullAddress.includes(criteria.address.toLowerCase())) {
+      matchesCriteria = false;
+    }
+
+    // NEW: Minimum Price Filter
+    if (criteria.minPrice && startPrice < criteria.minPrice) {
+      matchesCriteria = false;
+    }
+
+    // Maximum Price Filter
+    if (criteria.maxPrice && startPrice > criteria.maxPrice) {
+      matchesCriteria = false;
+    }
+
+    // Property Type Filter
+    if (
+      criteria.propertyType &&
+      criteria.propertyType !== "Property Type" &&
+      lot.LotData["Featured Lots Options"] !== criteria.propertyType
+    ) {
+      matchesCriteria = false;
+    }
+
+    return matchesCriteria;
+  });
+}
 
   document.getElementById('lots-filter-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
