@@ -340,11 +340,15 @@
 
 							<!-- Apply Filter Button -->
 							<div class="col-md-3 text-center">
-								<button type="button" id="apply-filter-button" class="btn btn3 mt-1">
+								<a id="apply-filter-button" class="btn3glass new-svg-btn btn-md mt-1" aria-label="Search">
 									<img src="{{ url_for('static', filename='images/searchButton.svg') }}" 
-										alt="Search" 
-										style="height: 50px; width: 139px;">
-								</button>
+										alt="Search default" 
+										class="contact-img default">
+
+									<img src="{{ url_for('static', filename='images/search-hover.svg') }}" 
+										alt="Search hover" 
+										class="contact-img hover">
+								</a>
 							</div>
 
 						</form>

@@ -769,7 +769,7 @@ ol.digit-list p {
   color: #fff;
   line-height: 1;
   font-weight: 300;
-  padding: 16px 0px;
+  /* padding: 16px 0px; */
   border: 1px solid transparent;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -802,7 +802,7 @@ ol.digit-list p {
 .btn3glass:focus {
     background: rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); */
     text-decoration: none;
 }
 
@@ -8656,7 +8656,7 @@ nav a#pull {
   display: block;
   /* height: 38px;        adjust to match your nav link height */
   width: auto;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.4s ease-in-out;
 }
 
 /* Hover image fades in */
@@ -8704,8 +8704,13 @@ nav a#pull {
   width: 440px;
   height: 436px;
   object-fit: cover;
+  transition: transform 0.6s ease-in-out;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+}
+
+.lot-image:hover img {
+  transform: scale(1.05); /* Zoom in effect */
 }
 
 /* Content */
