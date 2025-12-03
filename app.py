@@ -261,7 +261,7 @@ def generate_map():
     # Get the full address from the query parameters
     full_address = request.args.get('address', '')
 
-    # Perform your cleaning logic and encode the address
+    # Perform cleaning logic and encode the address
     cleaned_address = full_address.replace("TEST PROPERTY, ", "")
     encoded_address = urllib.parse.quote(cleaned_address)  # Using 'urllib.parse.quote' to encode the address
 

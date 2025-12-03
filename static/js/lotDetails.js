@@ -136,11 +136,11 @@ function navigateToLot(lotId) {
 }
 
 function createMapIframe(fullAddress) {
-    // Remove any reference to the API key here, as it will be securely added on the server side
+    // Remove any reference to the API key
     var cleanedAddress = fullAddress.replace("TEST PROPERTY, ", "");
     var encodedAddress = encodeURIComponent(cleanedAddress);
 
-    // Make the AJAX call to your new server-side route
+    // Make the AJAX call to the new server-side route
     fetch(`/generate_map?address=${encodedAddress}`)
       .then(response => response.json())
       .then(data => {
@@ -154,8 +154,8 @@ function createMapIframe(fullAddress) {
               iframe.src = data.embed_url;
               iframe.allowFullscreen = true;
 
-              // Insert the iframe into your page
-              const mapContainer = document.getElementById('mapContainer'); // Make sure you have a container with this ID
+              // Inserts the iframe into the page
+              const mapContainer = document.getElementById('mapContainer'); // have a container with this ID
               mapContainer.innerHTML = '';
               mapContainer.appendChild(iframe);
           }
