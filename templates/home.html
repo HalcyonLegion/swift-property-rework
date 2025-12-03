@@ -223,26 +223,92 @@
 					</section>
 
 
-					<!-- FEATURES-8
-					============================================= -->
-					<!-- <section id="features-8" class="bg-snow wide-60 features-section division">
-						<div class="container"> -->
+					<section class="auction-feature-section">
+							<div class="auction-feature-card">
 
-							<!-- SECTION TITLE -->   
-							<!-- <div class="row justify-content-center">    
-								<div class="col-lg-10 col-xl-12">
-									<div class="section-title title-01">       
+								<!-- LEFT: IMAGE + OVERLAYS -->
+								<div class="auction-feature-image-wrapper">
+									<!-- Main image -->
+									<img
+										src="{{ url_for('static', filename='images/auction-city-street.jpg') }}"
+										alt="Regent Street, London"
+										class="auction-feature-image"
+									>
 
-										<!-- Title -->   
-										<!-- <h4 class="h4-lg text-black">27th November 2025 at 12:00pm</h4>
-										<h4 class="h4-lg text-black">Property Auction</h4>
-										<br>
+									<!-- Bottom-left: white Swift logo (image) -->
+									<img
+										src="/static/images/newlogo.svg" alt="header-logo"
+										alt="Swift Property Auctions"
+										class="auction-feature-logo-main"
+									>
 
+									<!-- Bottom-right: SWIFT / INTELLIGENCE / INDUSTRY LEADING badge (image) -->
+									<!-- Bottom-right: badge with background blur -->
+									<div class="auction-feature-logo-badge">
+									<img
+										src="{{ url_for('static', filename='images/swift-intelligence-badge.svg') }}"
+										alt="Swift Intelligence – Industry Leading"
+									>
 									</div>
+
 								</div>
+
+								<!-- RIGHT: TEXT CONTENT -->
+								<div class="auction-feature-content">
+
+									<!-- Top block: heading, body, red line -->
+									<div class="auction-feature-intro">
+										<h3 class="auction-feature-title">
+										EXPLORE UPCOMING LOTS<br>
+										IN OUR NEXT AUCTION
+										</h3>
+
+										<p class="auction-feature-body">
+										Browse a selection of <span class="highlight-red">residential, commercial, and land lots</span>
+										included in our upcoming auctions. Every listing offers the essential information to help you
+										understand the opportunity at a glance.
+										</p>
+
+										<hr class="auction-feature-divider">
+									</div>
+
+									<!-- Bottom block: subheading, body, CTA -->
+									<div class="auction-feature-sell">
+										<h4 class="auction-feature-subtitle">
+											WANT TO SELL AT AUCTION?
+										</h4>
+
+										<p class="auction-feature-body">
+											Speak with our valuation team – we’ll guide you on price, demand, and the best strategy
+											for a successful sale.
+										</p>
+
+										<div class="auction-feature-cta">
+											<a
+											href="{{ url_for('valuation') }}"
+											class="auction-feature-cta-main new-svg-btn"
+											aria-label="Valuation"
+											>
+											<img
+												src="{{ url_for('static', filename='images/freeValuation-default.svg') }}"
+												alt="Free Valuation"
+												class="contact-img default"
+											>
+											<img
+												src="{{ url_for('static', filename='images/freeValuation-hover.svg') }}"
+												alt="Free Valuation"
+												class="contact-img hover"
+											>
+											</a>
+										</div>
+									</div>
+
+
+								</div>
+
 							</div>
-						</div>     
-					</section>  <!-- End container END FEATURES-8 -->
+					</section>
+
 
 			<!-- Filtering Section -->
 			<section id="lot-filtering" class="division">

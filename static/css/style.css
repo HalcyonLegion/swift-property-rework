@@ -9274,3 +9274,281 @@ nav a#pull {
 }
 
 
+/* === Section wrapper === */
+.auction-feature-section {
+  padding: 64px 36px;
+}
+
+/* === White card === */
+.auction-feature-card {
+  box-sizing: border-box;
+  max-width: 1376px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 1px solid #BDBDBD;
+  border-radius: 16px;
+
+  /* Figma multi-shadow */
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+
+  display: flex;
+  gap: 48px;
+  padding: 32px;
+  align-items: stretch;
+}
+
+/* === Left: image area === */
+.auction-feature-image-wrapper {
+  position: relative;
+  flex: 0 0 60%;       /* roughly matches 836 / 1376 */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.auction-feature-image {
+  width: 100%;
+  height: 100%;
+  max-height: 455px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bottom-left Swift logo */
+.auction-feature-logo-main {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  height: 80px;        /* tweak if needed */
+  width: auto;
+}
+
+/* Bottom-right frosted badge logo */
+.auction-feature-logo-badge {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  height: 96px;        /* tweak to match your asset */
+  width: auto;
+}
+
+/* === Right: content === */
+.auction-feature-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 396px;
+}
+
+/* Top intro block */
+.auction-feature-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Headline */
+.auction-feature-title {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #0F2848; /* Dark Blue */
+  margin: 0;
+}
+
+/* Body text */
+.auction-feature-body {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: #0F2848;
+  margin: 0;
+}
+
+.highlight-red {
+  color: #AD1D18;
+}
+
+/* Red line */
+.auction-feature-divider {
+  width: 108px;
+  border: 0;
+  border-top: 2px solid #AD1D18;
+  margin: 8px 0px 16px 0px;
+}
+
+/* Bottom "sell" block */
+.auction-feature-sell {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Subheading */
+.auction-feature-subtitle {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 110%;
+  color: #0F2C50;
+  margin: 0;
+}
+
+/* CTA row */
+.auction-feature-cta {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Main CTA button (glass dark) */
+.auction-feature-cta-main {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  min-width: 169px;
+  height: 54px;
+
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 8px;
+  border: none;
+
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  color: #FFFFFF;
+  text-decoration: none;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Right little arrow square */
+.auction-feature-cta-arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  font-size: 24px;
+  line-height: 1;
+  color: #EA150D;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover states */
+.auction-feature-cta-main:hover,
+.auction-feature-cta-arrow:hover {
+  background: rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+/* === Responsive tweaks === */
+@media (max-width: 1024px) {
+  .auction-feature-card {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .auction-feature-image-wrapper {
+    flex-basis: auto;
+  }
+
+  .auction-feature-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .auction-feature-section {
+    padding: 48px 16px;
+  }
+
+  .auction-feature-card {
+    padding: 20px;
+  }
+
+  .auction-feature-title {
+    font-size: 26px;
+  }
+
+  .auction-feature-body {
+    font-size: 16px;
+  }
+
+  .auction-feature-logo-main {
+    height: 60px;
+  }
+
+  .auction-feature-logo-badge {
+    height: 80px;
+  }
+}
+
+/* Badge container with 30px backdrop blur, no dark block */
+.auction-feature-logo-badge {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+
+  border-radius: 8px;
+
+  /* light “glass” instead of dark border */
+  background: rgba(255, 255, 255, 0.2);  /* or remove this line for pure blur */
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: none;
+}
+
+.auction-feature-logo-badge img {
+  display: block;
+  width: auto;
+}
+
+/* SVG button inside this card */
+.auction-feature-cta-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+/* Ensure SVGs behave like a single block */
+.auction-feature-cta-main .contact-img {
+  display: block;
+}
+
+/* Optional: tweak size specifically in this card if needed */
+.auction-feature-cta-main img {
+  height: 52px;     /* or whatever your hero uses */
+  width: auto;
+}
+
+
+
+
+
