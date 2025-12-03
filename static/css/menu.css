@@ -91,12 +91,9 @@
 
 /* Ensures the logo is fixed at the top left of the viewport */
 .desktoplogo {
-  position: fixed;
-  top: 10px;
   left: 0;
   z-index: 1000; /* ensures the logo stays on top of other content */
   /* display: block; Ensures proper spacing and layout */
-  margin-left: 12px;
   padding: 0;
   line-height: 70px; /* Adjust or remove as necessary */
 }
@@ -811,7 +808,7 @@ body.wsactive {
   height: auto;
   min-height: 100%;
   width: 350px;
-  background: #0b1a2a;
+  background: #0F2848;
   padding-bottom: 300px;
   margin-right: -350px;
   display: block;
@@ -1429,4 +1426,135 @@ body.wsactive {
   padding-right: 22px;
 }
 }
+
+/* Wrapper margins (you can tweak if needed) */
+.header-wrapper {
+  margin: 36px 36px 0;
+}
+
+.wsmainfull.menu.auction-info-glass {
+  background: #FFFFFF33;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 16px;
+
+  /* instead of height: 64px; */
+  min-height: 64px;
+  height: auto;
+
+  padding: 8px 24px;       /* add a bit of vertical breathing room */
+  display: flex;
+  align-items: center;
+
+  overflow: visible;       /* no more clipping of logo / button */
+}
+
+
+/* Inner flex row: logo | datetime | nav */
+.wsmainwp {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+.desktoplogo {
+  flex-shrink: 0;
+}
+
+.desktoplogo img {
+  height: 48px;
+  width: auto;
+}
+
+.header-datetime {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-right: 120px;    /* increase separation before Home */
+  margin-left: 120px;
+
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.header-datetime::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #E4E5E9;
+}
+
+/* keep this so the contact button stays hard-right */
+.nav-contact {
+  margin-left: auto;
+}
+
+/* Nav takes remaining width */
+.wsmenu {
+  flex: 1;
+  float: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu items in one row */
+.wsmenu > .wsmenu-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.wsmenu > .wsmenu-list > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+
+/* Link typography */
+.wsmenu > .wsmenu-list > li > a {
+  display: block;
+  padding: 0;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Kill .btn padding/box-shadow on the SVG button */
+.contact-svg-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-svg-btn .contact-img {
+  display: block;
+  height: 50px;
+  width: auto;
+}
+
+.auction-info-glass .desktoplogo img {
+  height: 40px;           /* or 48px if you prefer, just below min-height */
+  width: auto;
+  display: block;
+}
+
+
+
 

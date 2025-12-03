@@ -87,6 +87,7 @@ body {
 .mt-50 { margin-top: 50px; }
 .mt-45 { margin-top: 45px; }
 .mt-40 { margin-top: 40px; }
+.mt-36 { margin-top: 36px; }
 .mt-35 { margin-top: 35px; }
 .mt-30 { margin-top: 30px; }
 .mt-25 { margin-top: 25px; }
@@ -132,6 +133,7 @@ body {
 .mb-50 { margin-bottom: 50px; }
 .mb-45 { margin-bottom: 45px; }
 .mb-40 { margin-bottom: 40px; }
+.mb-36 { margin-bottom: 36px; }
 .mb-35 { margin-bottom: 35px; }
 .mb-30 { margin-bottom: 30px; }
 .mb-25 { margin-bottom: 25px; }
@@ -157,6 +159,7 @@ body {
 .ml-50 { margin-left: 50px; }
 .ml-45 { margin-left: 45px; }
 .ml-40 { margin-left: 40px; }
+.ml-36 { margin-left: 36px; }
 .ml-35 { margin-left: 35px; }
 .ml-30 { margin-left: 30px; }
 .ml-25 { margin-left: 25px; }
@@ -182,6 +185,7 @@ body {
 .mr-50 { margin-right: 50px; }
 .mr-45 { margin-right: 45px; }
 .mr-40 { margin-right: 40px; }
+.mr-36 { margin-right: 36px; }
 .mr-35 { margin-right: 35px; }
 .mr-30 { margin-right: 30px; }
 .mr-25 { margin-right: 25px; }
@@ -348,7 +352,7 @@ body {
 .bg-whitesmoke { background-color: #f4f4f9; }
 .bg-lavender { background-color: #ecf1f4; }
 .bg-snow { background-color: #fbfbfd; }
-.bg-blue { background-color: #0b1a2a; }
+.bg-blue { background-color: #0F2848; }
 .bg-indigo { background-color: #62147e; }
 .bg-skyblue { background-color: #0195ff; }
 .bg-stateblue { background-color: #6064e3; }
@@ -531,11 +535,6 @@ h1, h2, h3, h4, h5, h6 {
   /* letter-spacing: -0.75px; */
 }
 
-h3, h5, h6 { 
-  color: #000000; 
-  line-height: 1.3;
-}
-
 /* Header H6 */
 h6.h6-xs { font-size: 1rem; }        /* 16px */
 h6.h6-sm { font-size: 1.0625rem; }   /* 17px */
@@ -587,7 +586,8 @@ h2.h2-title-xl { font-size: 5.3125rem; letter-spacing: -1.5px; } /* 85px */
 /*------------------------------------------*/
 
 p.p-xs { font-size: 0.9rem; }       /* 16px */
-p.p-sm { font-size: 1rem; }       /* 16px NEW REGULAR PARAGRAPH VALUE*/
+p.p-sm { font-size: 1rem;
+font-weight: 300; }       /* 16px NEW REGULAR PARAGRAPH VALUE*/
 p { font-size: 1.0625rem; }       /* 17px */
 p.p-lg { font-size: 1.125rem; }   /* 18px NEW LARGE PARAGRAPH VALUE */
 /* p.p-lg { font-size: 1.1875rem; }  19px */
@@ -789,13 +789,13 @@ ol.digit-list p {
     font-weight: 300;
     color: #fff !important;
     background: rgba(255, 255, 255, 0.12);
-    border: none !important;
     border-radius: 12px;
     backdrop-filter: blur(8px) saturate(160%);
     -webkit-backdrop-filter: blur(8px) saturate(160%);
     transition: all 0.3s ease;
     padding: 12px 26px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgb(255, 255, 255);
 }
 
 /* Hover: brighter and more defined */
@@ -815,6 +815,7 @@ ol.digit-list p {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
     text-decoration: none;
+    color: #0F2848 !important;
 }
 
 
@@ -952,8 +953,8 @@ ol.digit-list p {
 .scroll .blue-hover:hover, 
 .white-color .blue-hover:hover {
   color: #fff!important;
-  background-color: #0b1a2a!important;
-  border-color: #0b1a2a!important;
+  background-color: #0F2848!important;
+  border-color: #0F2848!important;
 }
 
 .btn-tra-blue, 
@@ -962,9 +963,9 @@ ol.digit-list p {
 .tra-blue-hover:hover, 
 .scroll .tra-blue-hover:hover, 
 .white-color .tra-blue-hover:hover {
-  color: #0b1a2a!important;
+  color: #0F2848!important;
   background-color: transparent!important;
-  border-color: #0b1a2a!important;
+  border-color: #0F2848!important;
 }
 
 .btn-green, 
@@ -1816,7 +1817,7 @@ span.os-version {
 .blue-color li,
 .blue-color i, 
 .blue-color span,
-.white-color .blue-color { color: #0b1a2a; }
+.white-color .blue-color { color: #0F2848; }
 
 .skyblue-color,
 .skyblue-color h2, 
@@ -2158,7 +2159,7 @@ p.terms-txt a,
 
 .quote2 {
   color: #000000;
-  border-left: 3px solid #0b1a2a;
+  border-left: 3px solid #0F2848;
   padding-left: 20px;
   margin-top: 25px;
   margin-bottom: 20px;
@@ -2365,15 +2366,15 @@ p.terms-txt a,
 }
 
 .tra-menu .wsmainfull {
-  background-color: transparent!important;
-  padding: 10px 0 10px 85px;
+  background: #FFFFFF33!important;
+  padding: 10px 0px 10px 0px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 
 .white-menu .wsmainfull {
-  background-color: #ffffff!important;
+  background: #FFFFFF33!important;
   padding: 5px 0;
   -webkit-box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
   -moz-box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
@@ -2446,7 +2447,6 @@ p.terms-txt a,
   font-weight: 500;
   text-transform: none;
   letter-spacing: 0;
-  margin-top: 14px;
   margin-left: 12px;
   padding: 5px 30px;
 }
@@ -2709,7 +2709,7 @@ p.terms-txt a,
 .wsmenu > .wsmenu-list.nav-blue-hover > li > ul.sub-menu > li > a:hover,
 .wsmenu > .wsmenu-list.nav-blue-hover > li > .wsmegamenu.w-75 ul.link-list > li > a:hover,
 .wsmenu > .wsmenu-list.nav-blue-hover > li > .wsmegamenu.halfmenu ul.link-list > li > a:hover {
-  color: #0b1a2a!important;
+  color: #0F2848!important;
 }
 
 .wsmenu > .wsmenu-list.nav-skyblue-hover > li > ul.sub-menu > li > a:hover,
@@ -2779,8 +2779,8 @@ p.terms-txt a,
 .tra-menu .wsmainfull.scroll,
 .white-menu .wsmainfull.scroll,
 .dark-menu.dark-scroll .wsmainfull.scroll {
-  background-color: #0b1a2a!important;
-  padding: 10px 0 10px 85px;
+  background-color: #0F2848!important;
+  padding: 10px 0px 10px 0px;
   -webkit-box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
   -moz-box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
   box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
@@ -5589,7 +5589,7 @@ h2.statistic-number {
 .accordion-item2 {
   background-color: transparent!important;
   border: none;
-  border-bottom: 1px solid #0b1a2a!important;
+  border-bottom: 1px solid #0F2848!important;
 }
 
 .accordion-item.acc-last-item {
@@ -7230,8 +7230,8 @@ img.footer-logo {
 
 .page-item.active .page-link {
   color: #fff;
-  background-color: #0b1a2a;
-  border: 2px solid #0b1a2a;
+  background-color: #0F2848;
+  border: 2px solid #0F2848;
 }
 
 .page-item.disabled .page-link {
@@ -7709,7 +7709,7 @@ p.forgot-password {
 }
 
 #scrollUp:hover {
-  background-color: #0b1a2a;
+  background-color: #0F2848;
 }
 
 nav a#pull {  
@@ -7872,7 +7872,7 @@ nav a#pull {
   left: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  background: #0b1a2a; /* Swift Blue background with opacity */
+  background: #0F2848; /* Swift Blue background with opacity */
   z-index: 1000; /* Above other elements */
 }
 
@@ -8028,7 +8028,7 @@ nav a#pull {
 
 /* In your custom stylesheet */
 .padding-blue-background {
-  background-color: #0b1a2a; /* Bootstrap blue color or any blue you choose */
+  background-color: #0F2848; /* Bootstrap blue color or any blue you choose */
   padding: 14px; /* Adjust padding size as needed */
 }
 
@@ -8353,7 +8353,7 @@ nav a#pull {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   /* Always visible light grey circle background */
-  background-color: #0b1a2a; /* Light grey, adjust the opacity as needed */
+  background-color: #0F2848; /* Light grey, adjust the opacity as needed */
   opacity: 0.3;
   border-radius: 50%;  /* Circular shape */
   /* Transition for smooth hover effect */
@@ -8366,7 +8366,7 @@ nav a#pull {
 .carousel-control-next:hover .carousel-control-next-icon,
 .carousel-control-next:focus .carousel-control-next-icon {
   /* Solid grey circle background on hover/focus */
-  background-color: #0b1a2a; /* Adjust grey shade as desired */
+  background-color: #0F2848; /* Adjust grey shade as desired */
 }
 
 /* Optional: Improves accessibility by providing feedback when controls are focused via keyboard navigation */
@@ -8378,7 +8378,7 @@ nav a#pull {
 
 .signaturebg {
   position: relative; /* Required for positioning pseudo-elements */
-  background-color: #0b1a2a; /* Deep blue background */
+  background-color: #0F2848; /* Deep blue background */
   min-height: 100px; /* Adjust based on required container height */
   width: 100%; /* Full container width */
 }
@@ -8547,22 +8547,21 @@ nav a#pull {
 }
 
 .auction-info-glass {
-    background: rgba(255, 255, 255, 0.15); /* translucent layer */
+    background: #FFFFFF33; /* white at 20% opacity */
     backdrop-filter: blur(12px) saturate(160%);
     -webkit-backdrop-filter: blur(12px) saturate(160%);
-    /* border: 1px solid rgba(255, 255, 255, 0.25); */
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     padding: 2rem;
     color: #fff;
     transition: all 0.3s ease-in-out;
 }
 
-/* Optional: subtle hover enhancement */
 .auction-info-glass:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: #FFFFFF33; /* or bump to e.g. #FFFFFF4D for a stronger hover */
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
 }
+
 
 /* CONTACT SVG BUTTON --------------------------------------*/
 
@@ -8630,7 +8629,7 @@ nav a#pull {
 }
 
 .hr-grey {
-    width: 82%;                /* Figma width */
+    width: 95%;                /* Figma width */
     margin: 0px auto 20px;    /* center it */
     border-color: rgba(255,255,255,0.25);
     border-width: 1px;
@@ -9113,3 +9112,132 @@ nav a#pull {
 .nav-news-item:hover {
     color: #c20000;
 }
+
+/* Wrapper margins (you can tweak if needed) */
+.header-wrapper {
+  margin: 36px 36px 0;
+}
+
+.wsmainfull.menu.auction-info-glass {
+  background: #FFFFFF33;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 16px;
+
+  /* instead of height: 64px; */
+  min-height: 64px;
+  height: auto;
+
+  padding: 8px 24px;       /* add a bit of vertical breathing room */
+  display: flex;
+  align-items: center;
+
+  overflow: visible;       /* no more clipping of logo / button */
+}
+
+
+/* Inner flex row: logo | datetime | nav */
+.wsmainwp {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+.desktoplogo {
+  flex-shrink: 0;
+}
+
+.desktoplogo img {
+  height: 48px;
+  width: auto;
+}
+
+.header-datetime {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-right: 120px;    /* increase separation before Home */
+  margin-left: 120px;
+
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.header-datetime::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #E4E5E9;
+}
+
+/* keep this so the contact button stays hard-right */
+.nav-contact {
+  margin-left: auto;
+}
+
+/* Nav takes remaining width */
+.wsmenu {
+  flex: 1;
+  float: none;
+  width: 100%;
+  padding: 0;
+  margin-left: 120px;
+}
+
+/* Menu items in one row */
+.wsmenu > .wsmenu-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.wsmenu > .wsmenu-list > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+
+/* Link typography */
+.wsmenu > .wsmenu-list > li > a {
+  display: block;
+  padding: 0;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Kill .btn padding/box-shadow on the SVG button */
+.contact-svg-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-svg-btn .contact-img {
+  display: block;
+  height: 45px;
+  width: auto;
+}
+
+.auction-info-glass .desktoplogo img {
+  height: 40px;           /* or 48px if you prefer, just below min-height */
+  width: auto;
+  display: block;
+}
+

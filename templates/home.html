@@ -76,126 +76,85 @@
 			<header id="header" class="header tra-menu navbar-light">
 				<div class="header-wrapper">
 
-
 					<!-- MOBILE HEADER -->
-					<div class="wsmobileheader clearfix">      
-						<!-- Homepage link around the logo -->
-						<a href="{{ url_for('home') }}" class="smllogo">
-							<img src="/static/images/newlogo.svg" alt="Homepage"/>
-						</a>
-						<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>  
+					<div class="wsmobileheader clearfix">
+					<a href="{{ url_for('home') }}" class="smllogo">
+						<img src="/static/images/newlogo.svg" alt="Homepage" />
+					</a>
+					<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
 					</div>
 
+					<!-- GLASS NAV BAR -->
+					<div class="wsmainfull menu auction-info-glass">
+					<div class="wsmainwp clearfix">
 
-				 	<!-- NAVIGATION MENU -->
-				  	<div class="wsmainfull menu d-flex justify-content-center clearfix auction-info-glass">
-	    				<div class="wsmainwp clearfix">
+						<!-- LOGO LEFT -->
+						<div class="desktoplogo">
+						<a href="{{ url_for('home') }}" class="logo-white">
+							<img src="/static/images/newlogo.svg" alt="header-logo">
+						</a>
+						</div>
+						<div class="desktoplogo">
+						<a href="{{ url_for('home') }}" class="logo-black">
+							<img src="/static/images/newlogo.svg" alt="header-logo">
+						</a>
+						</div>
 
+						<!-- DATETIME (separate block, not inside <ul>) -->
+						<div class="header-datetime">
+						<span id="live-datetime"></span>
+						</div>
 
-	    					<!-- HEADER LOGO -->
-	    					<div class="desktoplogo"><a href="{{ url_for('home') }}" class="logo-black"><img src="/static/images/newlogo.svg" alt="header-logo"></a></div>
-	    					<div class="desktoplogo"><a href="{{ url_for('home') }}" class="logo-white"><img src="/static/images/newlogo.svg" alt="header-logo"></a></div>
+						<!-- MAIN MENU -->
+						<nav class="wsmenu clearfix text-center">
+						<ul class="wsmenu-list nav-red-hover">
 
+							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('home') }}">Home</a></li>
+							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('about') }}">About</a></li>
+							<li class="nl-simple" aria-haspopup="true"><a href="#">Auctions</a></li>
+							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('current_lots') }}">Current Lots</a></li>
+							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('valuation') }}">Auction Valuation</a></li>
+							</li>
 
-	    					<!-- MAIN MENU -->
-	      					<nav class="wsmenu clearfix text-center">
-	        					<ul class="wsmenu-list nav-red-hover">
+							<!-- Contact button hard right -->
+							<li class="nl-simple nav-contact" aria-haspopup="true">
+							<a href="{{ url_for('contact') }}" class="btn contact-svg-btn" aria-label="Contact Us">
+								<img src="{{ url_for('static', filename='images/contact-default.svg') }}"
+									alt="Contact Us" class="contact-img default">
+								<img src="{{ url_for('static', filename='images/contact-hover.svg') }}"
+									alt="Contact Us" class="contact-img hover">
+							</a>
+							</li>
 
-                                    <!-- SIMPLE NAVIGATION LINK -->
+						</ul>
+						</nav>
 
-									<li class="header-datetime">
-										<span id="live-datetime"></span>
-									</li>
-									
-							    	<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('home') }}">Home</a></li>
+					</div>
+					</div>
 
-	        						<!-- DROPDOWN MENU -->
-									<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('about') }}">About</a></li>
-
-
-	        						<!-- DROPDOWN MENU -->
-						          	<li aria-haspopup="true"><a href="#">Current Lots<span class="wsarrow"></span></a>
-	            						<ul class="sub-menu">
-	            							<li aria-haspopup="true"><a href="{{ url_for('current_lots') }}">Current Lots</a></li>
-	            							<li aria-haspopup="true"><a href="{{ url_for('available_lots') }}">Available Lots</a></li>
-	            							<li aria-haspopup="true"><a href="{{ url_for('bidder_registration') }}">Bidder Registration</a></li>
-	            							<li aria-haspopup="true"><a href="{{ url_for('private_sales') }}">Private Treaty</a></li>
-						           		</ul>
-								    </li>
-
-
-							    	<!-- DROPDOWN MENU -->
-						        	<li aria-haspopup="true"><a href="#">Auctions<span class="wsarrow"></span></a>
-						        		<!-- <div class="wsmegamenu clearfix halfmenu">
-						              		<div class="container-fluid">
-						                		<div class="row"> -->
-
-						                			<!-- Links -->
-									                <ul class="sub-menu">
-														<li><a href="{{ url_for('valuation') }}">Free Valuation</a></li>
-									                	<li><a href="{{ url_for('future_auctions_dates') }}">Future Auction Dates</a></li>							          
-									                    <li><a href="{{ url_for('previous_auctions') }}">Previous Auctions</a></li>
-									                    <li><a href="{{ url_for('auction_finance') }}">Auction Finance</a></li>
-														<li><a href="https://waterstonelegal.co.uk/jasmine-chaudry-partner/" target="_blank">Auction Solicitors</a></li>
-									                    <li><a href="{{ url_for('auction_buying_guide') }}">Auction Buying Guide</a></li>
-									                <!-- </ul> -->
-
-								                  	<!-- Links -->
-									                <!-- <ul class="sub-menu"> -->
-														<li><a href="/static/pdf/Auction_Guide.pdf" target="_blank">Buying Guide Download</a></li>
-														<li><a href="{{ url_for('auction_selling_guide') }}">Auction Selling Guide</a></li>	
-									                	<li><a href="{{ url_for('benefits_of_auctions') }}">Benefits of Auctions</a></li>  			               
-									                    <li><a href="{{ url_for('frequently_asked_questions') }}">FAQs Page</a></li>
-									                </ul>
-
-						                		<!-- </div>
-						              		</div>
-						            	</div> -->
-						          	</li>	<!-- END DROPDOWN MENU -->
-
-									<li class="nl-simple" aria-haspopup="true">
-										<a href="{{ url_for('news_and_blogs') }}" class="nav-news-item">News</a>
-									</li>
-
-						          	<!-- DROPDOWN MENU -->
-						          	<li class="nl-simple" aria-haspopup="true">
-										<a href="{{ url_for('contact') }}" class="btn contact-svg-btn last-link" aria-label="Contact Us">
-											<img src="{{ url_for('static', filename='images/contact-default.svg') }}" 
-												alt="Contact Us" class="contact-img default">
-											<img src="{{ url_for('static', filename='images/contact-hover.svg') }}" 
-												alt="Contact Us" class="contact-img hover">
-										</a>
-									</li>
-	        					</ul>
-	        				</nav>	<!-- END MAIN MENU -->
-
-
-	    				</div>
-	    			</div>	<!-- END NAVIGATION MENU -->
-
-
-				</div>     <!-- End header-wrapper -->
-			</header>	<!-- END HEADER -->
+				</div>
+			</header>
+			<!-- END HEADER -->
 
 
 
 
 			<!-- HERO SECTION (Updated Layout) -->
 					<section id="hero-14" class="hero-section division bg-fixed">
-						<div class="container h-100 d-flex flex-column justify-content-center mb-160">
+						<div class="ml-36 mr-36 h-100 d-flex flex-column justify-content-center mb-160">
 							<div class="row align-items-start justify-content-start">
 								<!-- Left Section (Title, Subtitle, Buttons) -->
-								<div class="col-lg-8 col-md-10 text-left text-white">
-									<h2 class="h2-title-md mb-100">Swift Property Auctions</h2>
+								<div class="col-lg-9 col-md-10 text-left text-white">
+									<h2 class="h2-title-md mb-100">SWIFT PROPERTY AUCTIONS</h2>
 								</div>
 
 								<!-- Right Floating Auction Info -->
-								<div class="col-lg-4 col-md-6 ms-auto mt-4 mt-lg-0">
+								<div class="col-lg-3 col-md-6 ms-auto mt-4 mt-lg-0">
 									<div class="auction-info-glass">
-										<h4 class="h4-sm mb-2">Next Auction:</h4>
+										<h5 class="h5-md mb-2">Next Auction:</h4>
 										<img src="{{ url_for('static', filename='images/bellIcon.svg') }}" 
 												alt="bell" class="next-auction-banner">
-										<p class="p-lg mb-1">27th November 2025 12:00pm</p>
+										<p class="p-sm mb-1">27th November 2025 12:00pm</p>
 										<p class="p-sm mb-3">We're Live In: <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Mins</p>
 										<div class="d-flex gap-2">
 											<a href="#add-calendar" class="btn3glass btn-tra-white btn-sm">Add to Calendar</a>
@@ -206,7 +165,7 @@
 							</div>
 						</div>
 
-						<div class="container h-100 d-flex flex-column justify-content-center">
+						<div class="ml-36 mr-36 h-100 d-flex flex-column justify-content-center">
 							<div class="row align-items-start justify-content-start">
 								<div class="col-lg-4 col-md-10 text-left text-white">
 									<h4 class="h4-sm">Specialists in Residential & Commercial Property Auctions</h4>
@@ -214,10 +173,10 @@
 							</div>
 						</div>
 
-						<hr class="mb-25 hr-grey">
-									<div class="container h-100 d-flex flex-column justify-content-center" style="padding-left: 0px;">
-										<div class="row align-items-start justify-content-start">
-											<div class="d-flex flex-wrap">
+						<hr class="mb-36 hr-grey">
+									<div class="ml-36 mr-36 h-100 d-flex flex-column justify-content-center">
+										<div class="row align-items-start justify-content-start mb-36">
+											<div class="d-flex flex-wrap"  style="padding-left: 0px;">
 												<a href="{{ url_for('current_lots') }}" class="btn3 btn3glass new-svg-btn btn-md" aria-label="Current Lots">
 													<img src="{{ url_for('static', filename='images/currentLots-default.svg') }}" 
 												alt="Contact Us" class="contact-img default">

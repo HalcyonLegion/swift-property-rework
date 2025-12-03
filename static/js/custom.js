@@ -535,7 +535,7 @@
 
 		const el = document.getElementById("live-datetime");
 		if (el) {
-			el.textContent = `• ${formatted}`;
+			el.textContent = `${formatted}`;
 		}
 		}
 
