@@ -11,7 +11,8 @@ async function updateLots() {
       new Date(2025, 1, 27, 12, 0),   // 27th February 12:00
       new Date(2025, 4, 13, 12, 0),   // 13th May 12:00
       new Date(2025, 8, 30, 12, 0),  // 30th September 12:00
-      new Date(2025, 10, 27, 12, 0)   // 27th November 12:00
+      new Date(2025, 10, 27, 12, 0),   // 27th November 12:00
+      new Date(2026, 1, 17, 12, 0),   // 17th February 12:00
     ];
 
     const lotsContainer = document.querySelector('#lots-container');

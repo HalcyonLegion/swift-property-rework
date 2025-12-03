@@ -1,0 +1,30 @@
+<svg width="168" height="52" viewBox="0 0 168 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject x="-50" y="-49" width="214" height="150">
+    <div xmlns="http://www.w3.org/1999/xhtml"
+         style="backdrop-filter:blur(25px);clip-path:url(#bgblur_0_239_913_clip_path);height:100%;width:100%"></div>
+  </foreignObject>
+
+  <!-- LEFT GLASS BUTTON + TEXT -->
+  <g data-figma-bg-blur-radius="50">
+    <rect y="1" width="114" height="50" rx="8" fill="white" fill-opacity="0.4"/>
+    <!-- New text instead of the giant path -->
+    <text
+      x="57"              <!-- centre of the 114px-wide rect -->
+      y="31"              <!-- tweak up/down if needed -->
+      text-anchor="middle"
+      font-family="'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+      font-size="16"
+      fill="white">
+      Subscribe
+    </text>
+  </g>
+
+  <foreignObject x="66" y="-50" width="152" height="152">
+    <div xmlns="http://www.w3.org/1999/xhtml"
+         style="backdrop-filter:blur(25px);clip-path:url(#bgblur_1_239_913_clip_path);height:100%;width:100%"></div>
+  </foreignObject>
+
+  <!-- RIGHT ARROW BUTTON (unchanged) -->
+  <g data-figma-bg-blur-radius="50">
+    <rect x="116" width="52" height="52" rx="8" fill="white"/>
+    <path d="M146.743 21.7574L146.743 28.8285C146.743 28.9612 146.691 29.0886 146.597 29.1825C146.503 29.2763 146.375 29.3291 146.243 29.3291C146.11 29.3291 145.983 29.2763 145.889 29.1825C145.795 29.0886 145.742 28.9612 145.742 28.8285L145.743 22.9644L138.111 30.5962C138.017 30.69 137.89 30.7427 137.757 30.7427C137.625 30.7427 137.498 30.69 137.404 30.5962C137.31 30.5025 137.257 30.3753 137.257 30.2427C137.257 30.1101 137.31 29.9829 137.404 29.8891L145.036 22.2573L139.172 22.258C139.039 22.258 138.911 22.2053 138.818 22.1114C138.724 22.0175 138.671 21.8902 138.671 21.7574C138.671 21.6246 138.724 21.4973 138.818 21.4034C13
