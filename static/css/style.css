@@ -9533,7 +9533,7 @@ nav a#pull {
   justify-content: center;
 
   padding: 0;
-  border: 1px solid black;
+  border: 1px solid #0F2848;
   text-decoration: none;
 }
 
@@ -9546,6 +9546,294 @@ nav a#pull {
 .auction-feature-cta-main img {
   height: 52px;     /* or whatever your hero uses */
   width: auto;
+}
+
+
+/* ===== OVERALL SECTION ===== */
+
+.strategy-section {
+  background: #F4F4F4;        /* page background in your Figma */
+  padding: 72px 36px 80px;
+}
+
+.strategy-grid {
+  max-width: 1376px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.4fr);
+  grid-template-rows: auto auto;
+  gap: 48px 56px;
+}
+
+/* Grid areas */
+.strategy-bubble {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.strategy-heading {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+}
+
+.strategy-copy {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.strategy-image-wrapper {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* ===== SPEECH BUBBLE CARD ===== */
+
+.strategy-bubble-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow:
+    27px 37px 18px rgba(0, 0, 0, 0.01),
+    15px 21px 16px rgba(0, 0, 0, 0.05),
+    7px 9px 12px rgba(0, 0, 0, 0.09),
+    2px 2px 6px rgba(0, 0, 0, 0.10);
+  padding: 40px 48px;
+}
+
+/* Inner raised panel */
+.strategy-bubble-inner {
+  background: #F5F5F5;
+  border-radius: 16px;
+  box-shadow:
+    65px 38px 30px rgba(0, 0, 0, 0.01),
+    36px 21px 25px rgba(0, 0, 0, 0.05),
+    16px 9px 19px rgba(0, 0, 0, 0.09),
+    4px 2px 10px rgba(0, 0, 0, 0.10);
+  padding: 40px 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.strategy-bubble-text {
+  text-align: center;
+  max-width: 317px;
+}
+
+/* eyebrow */
+.strategy-bubble-eyebrow {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0F2848;
+}
+
+/* SELL WITH CLEAR */
+.strategy-bubble-line1 {
+  margin-top: 10px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0F2848;
+}
+
+.strategy-bubble-clear {
+  font-weight: 400;
+  font-style: italic !important;          /* lighter weight for CLEAR */
+}
+
+/* STRATEGY */
+.strategy-bubble-line2 {
+  margin-top: 4px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0F2848;
+}
+
+.strategy-bubble-card {
+  position: relative; /* keep this */
+}
+
+/* Tail under the card */
+/* .strategy-bubble-card::after {
+  content: "";
+  position: absolute;
+
+
+  left: calc(100% - 140px);
+
+
+  bottom: -22px;
+
+  width: 82px;
+  height: 28px;
+
+  background: #FFFFFF;
+  border-radius: 999px;
+
+
+  box-shadow:
+    0 8px 12px rgba(0, 0, 0, 0.04),
+    0 3px 6px rgba(0, 0, 0, 0.06);
+
+  transform: rotate(32deg);
+} */
+
+
+/* ===== TOP-RIGHT HEADING BLOCK ===== */
+
+.strategy-heading-inner {
+  max-width: 533px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.strategy-heading-title {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0F2848;
+  margin: 0;
+}
+
+.strategy-heading-divider {
+  width: 108px;
+  border: 0;
+  border-top: 2px solid #AD1D18;
+  margin: 12px 0 0;
+}
+
+.strategy-heading-body {
+  max-width: 402px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #0F2848;
+  margin: 8px 0 0;
+}
+
+/* ===== LONG COPY + CTA ===== */
+
+.strategy-copy {
+  max-width: 545px;
+}
+
+.strategy-copy p {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  color: #0F2848;
+  margin: 0 0 18px;
+}
+
+.strategy-cta {
+  margin-top: 8px;
+}
+
+/* (Reuses the auction-feature-cta styles you already have) */
+.auction-feature-cta {
+  display: inline-flex;
+  align-items: center;
+}
+
+.auction-feature-cta-main .contact-img {
+  display: block;
+}
+
+.auction-feature-cta-main:hover {
+  background: rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* ===== IMAGE + BADGE ===== */
+
+.strategy-image-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #F4F4F4;
+
+  /* keep the Figma ratio but let it scale with width */
+  aspect-ratio: 796 / 435;
+}
+
+/* Image scales to the wrapper, keeping cover + radius */
+.strategy-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ===== RESPONSIVE TWEAKS ===== */
+
+@media (max-width: 1024px) {
+  .strategy-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .strategy-heading,
+  .strategy-image-wrapper {
+    grid-column: 1;
+  }
+
+  .strategy-heading-inner {
+    max-width: 100%;
+  }
+
+  .strategy-copy {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .strategy-section {
+    padding: 48px 16px 56px;
+  }
+
+  .strategy-bubble-card {
+    padding: 24px;
+  }
+
+  .strategy-bubble-inner {
+    padding: 24px 20px;
+  }
+
+  .strategy-heading-title {
+    font-size: 26px;
+  }
+
+  .strategy-copy p {
+    font-size: 18px;
+  }
+
+  .strategy-bubble-line2 {
+    font-size: 48px;
+  }
 }
 
 
