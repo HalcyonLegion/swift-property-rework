@@ -8907,7 +8907,6 @@ nav a#pull {
   border: none;
   outline: none;
   color: #fff;
-  background: transparent;
   font-size: 17px;
 }
 
@@ -10326,7 +10325,6 @@ nav a#pull {
   width: 100%;
   border: none;
   outline: none;
-  background: transparent;
   font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -10603,6 +10601,87 @@ nav a#pull {
   height: 52px;          /* match your SVG height */
   width: auto;
 }
+
+/* Main row: input on left, button + T&Cs on right */
+.newsletter-main-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;                 /* space between email box and right column */
+}
+
+/* Card-style email box */
+.newsletter-input-wrap {
+  flex: 1 1 auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow:
+    65px 18px 27px rgba(0, 0, 0, 0.01),
+    36px 10px 23px rgba(0, 0, 0, 0.05),
+    16px 5px 17px rgba(0, 0, 0, 0.09),
+    4px 1px 9px rgba(0, 0, 0, 0.10);
+}
+
+/* Input sits inside, no extra border/shadow */
+.newsletter-input {
+  width: 100%;
+  padding: 20px 32px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: transparent;      /* let the white wrapper show */
+  font-size: 16px;
+  color: #0F2848;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(15, 40, 72, 0.5);
+}
+
+
+/* Right-hand column: button above, T&Cs below */
+.newsletter-side-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 360px;          /* tweak as needed */
+}
+
+/* Keep your SVG button tidy */
+.newsletter-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.newsletter-btn .newsletter-svg {
+  display: block;
+  height: 52px;              /* match your SVG height */
+  width: auto;
+}
+
+/* T&Cs text tone & wrapping (optional, matches figma feel more closely) */
+.terms-and-conditions-checkbox label {
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(15, 40, 72, 0.6);
+}
+
+/* Mobile / tablet: stack everything vertically again */
+@media (max-width: 991.98px) {
+  .newsletter-main-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-side-column {
+    max-width: none;
+  }
+}
+
 
 
 

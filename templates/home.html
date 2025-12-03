@@ -718,26 +718,29 @@
 					</p>
 				</div>
 
-				<!-- Right form (IDs & classes preserved for JS) -->
 				<form class="newsletter-form quick-form">
 
-					<!-- Email input in frosted card -->
-					<div class="newsletter-input-row">
-					<div class="newsletter-input-shell">
-						<input
-						type="email"
-						autocomplete="off"
-						class="newsletter-input"
-						placeholder="Stay Updated - Enter Your Email Here"
-						required
-						id="s-email"
-						>
-					</div>
-					</div>
+					<!-- MAIN HORIZONTAL ROW -->
+					<div class="newsletter-main-row">
 
-					<!-- Subscribe button (single submit, contains arrow) -->
-					<div class="newsletter-cta-row">
-						<button
+						<!-- Left: email input box -->
+						<div class="newsletter-input-wrap">
+						<input 
+							type="email" 
+							autocomplete="off" 
+							class="newsletter-input" 
+							placeholder="Stay Updated - Enter Your Email Here" 
+							required 
+							id="s-email"
+						>
+						</div>
+
+						<!-- Right: button + T&Cs stacked -->
+						<div class="newsletter-side-column">
+
+						<!-- Subscribe button -->
+						<div class="newsletter-cta-row">
+							<button
 							type="submit"
 							class="newsletter-btn"
 							aria-label="Subscribe"
@@ -747,32 +750,37 @@
 								alt="Subscribe"
 								class="newsletter-svg default"
 							>
-						</button>
+							</button>
+						</div>
 
-					</div>
+						<!-- T&Cs (unchanged semantics) -->
+						<div class="terms-and-conditions-checkbox">
+							<input type="checkbox" id="terms" name="terms" required>
+							<label for="terms">
+							I accept the Company's
+							<strong>
+								<a href="/static/pdf/terms_conditions.pdf" target="_blank" class="tra-red-hover">
+								Terms and Conditions of Service
+								</a>
+							</strong>
+							and
+							<strong>
+								<a href="{{ url_for('privacy') }}" target="_blank" class="tra-red-hover">
+								Privacy Policy
+								</a>
+							</strong>
+							</label>
+						</div>
 
-					<!-- T&Cs (unchanged semantics) -->
-					<div class="terms-and-conditions-checkbox">
-					<input type="checkbox" id="terms" name="terms" required>
-					<label for="terms">
-						I accept the Company's
-						<strong>
-						<a href="/static/pdf/terms_conditions.pdf" target="_blank" class="tra-red-hover">
-							Terms and Conditions of Service
-						</a>
-						</strong>
-						and
-						<strong>
-						<a href="{{ url_for('privacy') }}" target="_blank" class="tra-red-hover">
-							Privacy Policy
-						</a>
-						</strong>
-					</label>
-					</div>
+						</div><!-- /.newsletter-side-column -->
 
+					</div><!-- /.newsletter-main-row -->
+
+					<!-- JS notification label (unchanged) -->
 					<label for="s-email" class="form-notification"></label>
 				</form>
 				</div>
+
 
 				<!-- MAIN FOOTER AREA (inside same card) -->
 				<footer id="footer-4" class="footer division bg-blue footer-card-body">
