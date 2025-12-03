@@ -8848,7 +8848,7 @@ nav a#pull {
 .newsletter-modern {
   position: relative;
   background: url('/static/images/NewSwiftbg.jpeg') center/cover no-repeat;
-  padding: 120px 20px;
+  padding: 120px 0px;
   color: #fff;
   overflow: hidden;
 }
@@ -9282,7 +9282,7 @@ nav a#pull {
 /* === White card === */
 .auction-feature-card {
   box-sizing: border-box;
-  max-width: 1376px;
+  /* max-width: 1376px; */
   margin: 0 auto;
   background: #FFFFFF;
   border: 1px solid #BDBDBD;
@@ -9557,7 +9557,7 @@ nav a#pull {
 }
 
 .strategy-grid {
-  max-width: 1376px;
+  /* max-width: 1376px; */
   margin: 0 auto;
 
   display: grid;
@@ -9843,7 +9843,7 @@ nav a#pull {
 }
 
 .services-grid {
-  max-width: 1376px;
+  /* max-width: 1376px; */
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -9990,6 +9990,245 @@ nav a#pull {
     aspect-ratio: 680 / 293;
   }
 }
+
+/* ===== SECTION & HEADING ===== */
+
+.advantage-section {
+  padding: 64px 36px 80px;
+  background: #F4F4F4;
+}
+
+.advantage-heading {
+  max-width: 1376px;
+  margin: 0 auto 24px;
+
+  /* key changes */
+  display: inline-flex;        /* shrink to content width */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+
+.advantage-title {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 90%;
+  color: #0F2848;
+  margin: 0;
+}
+
+.advantage-title-underline {
+  width: 351px;
+  border: 0;
+  border-top: 2px solid #AD1D18;
+  margin: 0;
+
+  /* key bit: push the line to the right so it sits under "Advantage" */
+  align-self: flex-end;
+}
+
+
+/* ===== MAIN CARD ===== */
+
+.advantage-card {
+  margin: 0 auto;
+
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+
+  min-height: 540px;
+
+  background: #FFFFFF;
+  border: 1px solid #F2F2F2;
+  border-radius: 32px;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+/* LEFT SIDE TEXT */
+
+.advantage-card-content {
+  position: relative;
+  z-index: 2;
+
+  flex: 0 0 55%;
+  padding: 72px 48px 48px 48px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.advantage-card-heading {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 115%;
+  text-transform: uppercase;
+  color: #0F2848;
+  margin: 0;
+}
+
+.advantage-card-divider {
+  width: 108px;
+  border: 0;
+  border-top: 2px solid #AD1D18;
+  margin: 8px 0 0;
+}
+
+.advantage-card-body {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  color: #0F2848;
+  margin: 16px 0 0;
+  max-width: 571px;
+}
+
+.advantage-card-tagline {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 110%;
+  color: rgba(0, 0, 0, 0.5);
+  margin: auto 0 0; /* push it to the bottom of the column */
+}
+
+/* ===== RIGHT SIDE IMAGE ===== */
+
+.advantage-card-image-wrapper {
+  position: relative;
+  flex: 1;
+  min-height: 100%;
+}
+
+/* The image itself */
+.advantage-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Angled white wedge between text and image
+   (approximation of Rectangle 54 + diagonal) */
+.advantage-card-image-wrapper::before {
+  content: "";
+  position: absolute;
+  left: -90px;
+  top: 0;
+  width: 180px;
+  height: 100%;
+  background: #FFFFFF;
+  transform: skewX(-18deg);
+  transform-origin: center;
+  z-index: 1;
+}
+
+/* ensure image sits above wedge base but below badge */
+.advantage-card-image {
+  position: relative;
+  z-index: 0;
+}
+
+/* ===== BADGE (reusing badge styles) ===== */
+
+.advantage-badge {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+
+  padding: 17px 16px;
+  width: 185px;
+  border-radius: 5px;
+
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 2;
+}
+
+/* These can be reused from your existing grid badge styles */
+.badge-title {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.badge-line {
+  width: 100%;
+  border-top: 2px solid #FFFFFF;
+}
+
+.badge-sub {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 110%;
+  color: #FFFFFF;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .advantage-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .advantage-card-content {
+    flex: none;
+    padding: 40px 24px 32px 24px;
+  }
+
+  .advantage-card-image-wrapper::before {
+    left: 0;
+    width: 0;   /* remove angled wedge on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .advantage-section {
+    padding: 48px 16px 56px;
+  }
+
+  .advantage-title {
+    font-size: 42px;
+  }
+
+  .advantage-title-underline {
+    width: 220px;
+  }
+
+  .advantage-card-heading {
+    font-size: 24px;
+  }
+
+  .advantage-card-body {
+    font-size: 18px;
+  }
+}
+
 
 
 

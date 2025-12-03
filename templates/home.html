@@ -651,175 +651,58 @@
 			</section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-			<!-- FEATURES-4
-			============================================= -->
-			<section id="features-4" class="wide-75 features-section division">
-				<div class="container">
-
-					<!-- SECTION TITLE -->
-					<div class="row justify-content-center">
-					<div class="col-lg-10 col-xl-8">
-						<div class="section-title title-01 mb-40">
-
-						<h4 class="h4-sm text-black">Partnering for Success: Swift Property Auctions.</h4>
-						<h4 class="h4-sm text-black">Experts in Every Auction Requirement.</h4>
-
-						<p class="p-lg text-black">
-							We are the only company you will need for your property auction needs.
-						</p>
-
-						</div>
-					</div>
-					</div>
-
-					<!-- FEATURES CAROUSEL -->
-					<div class="experience-swiper swiper">
-
-					<div class="swiper-wrapper">
-
-						<!-- CARD 1 -->
-						<div class="swiper-slide fbox-card">
-						<div class="fbox-ico">
-							<div class="ico-65">
-							<span class="flaticon-credit-card-1"></span>
-							</div>
-						</div>
-						<div class="fbox-txt">
-							<h5 class="h5-md txt-700">Our Industry Experience</h5>
-							<p class="p-sm text-black">
-							As your trusted partner in buying and selling, we equip corporate clients,
-							receivers, and private sellers with the expertise and resources to navigate
-							the auction process quickly and confidently.
-							</p>
-						</div>
-						</div>
-
-						<!-- CARD 2 -->
-						<div class="swiper-slide fbox-card">
-						<div class="fbox-ico">
-							<div class="ico-65">
-							<span class="flaticon-process"></span>
-							</div>
-						</div>
-						<div class="fbox-txt">
-							<h5 class="h5-md txt-700">Guidance from Seasoned Professionals</h5>
-							<p class="p-sm text-black">
-							We aim to give you Expert Auction Advice whether you are looking to buy or sell
-							any type of Residential or Commercial Property.
-							</p>
-						</div>
-						</div>
-
-						<!-- CARD 3 -->
-						<div class="swiper-slide fbox-card">
-						<div class="fbox-ico">
-							<div class="ico-65">
-							<span class="flaticon-visible"></span>
-							</div>
-						</div>
-						<div class="fbox-txt">
-							<h5 class="h5-md txt-700">Maximising Property Visibility</h5>
-							<p class="p-sm text-black">
-							We ensure maximum visibility for every residential or commercial property through
-							strategic advertising and direct outreach to our investors.
-							</p>
-						</div>
-						</div>
-
-						<!-- CARD 4 -->
-						<div class="swiper-slide fbox-card">
-						<div class="fbox-ico">
-							<div class="ico-65">
-							<span class="flaticon-chat-4"></span>
-							</div>
-						</div>
-						<div class="fbox-txt">
-							<h5 class="h5-md txt-700">Around the Clock Advice</h5>
-							<p class="p-sm text-black">
-							We are committed to accessible, around-the-clock advice. No email or phone call is
-							too early or too late.
-							</p>
-						</div>
-						</div>
-
-					</div>
-
-					
-
-				</div> <!-- End container -->
-
-				<!-- Pagination dots -->
-					<div class="swiper-pagination"></div>
-
-					</div> <!-- END swiper -->
-			</section> <!-- END FEATURES-4 -->
-
-			<!-- STATISTIC-2
-			============================================= -->
-			<section id="statistic-2" class="statistic-modern">
-				<div class="statistic-overlay"></div>
-
-				<div class="container statistic-container">
-
-					<div class="statistic-card">
-
-					<!-- LEFT TEXT -->
-					<div class="statistic-text">
-						<h2 class="statistic-title">Market Your Property With Us</h2>
-						<p class="statistic-subtitle">
-						Whether you would like a free valuation on your property or simply understand the
-						auction process, we'd love to hear from you.
-						</p>
-					</div>
-
-					<!-- BUTTON ROW -->
-					<div class="statistic-buttons">
-
-						<!-- BUTTON 1 -->
-						<div class="statistic-btn-block">
-						<a href="{{ url_for('valuation') }}" class="statistic-circle">
-							<img src="/static/images/gavel.png" alt="Gavel Icon">
-						</a>
-						<p>Auction Valuation</p>
-						</div>
-
-						<!-- BUTTON 2 -->
-						<div class="statistic-btn-block">
-						<a href="{{ url_for('benefits_of_auctions') }}" class="statistic-circle">
-							<span class="flaticon-file"></span>
-						</a>
-						<p>Benefits of Auction</p>
-						</div>
-
-					</div>
-
-					</div>
-
+			<section class="advantage-section">
+				<!-- Heading -->
+				<div class="advantage-heading">
+					<h2 class="advantage-title">The Swift Advantage</h2>
+					<hr class="advantage-title-underline">
 				</div>
-			</section> <!-- END STATISTIC-2 -->
 
+				<!-- Main card -->
+				<div class="advantage-card">
+					<!-- LEFT: TEXT CONTENT -->
+					<div class="advantage-card-content">
+					<h3 class="advantage-card-heading">
+						PARTNERING WITH SWIFT MEANS WORKING WITH A TEAM THAT DELIVERS
+						STRUCTURE, CLARITY AND CONFIDENCE AT EVERY STAGE.
+					</h3>
 
-			<!-- DIVIDER LINE -->
-			<hr class="divider">
+					<hr class="advantage-card-divider">
 
-			<!-- DIVIDER LINE -->
-			<hr class="divider">
+					<p class="advantage-card-body">
+						From first instruction to auction day, we manage the process professionally,
+						communicate clearly and focus on securing strongest outcome for your property.
+					</p>
+
+					<p class="advantage-card-tagline">
+						Your property, presented with clarity.
+					</p>
+					</div>
+
+					<!-- RIGHT: IMAGE + BADGE -->
+					<div class="advantage-card-image-wrapper">
+					<img
+						src="{{ url_for('static', filename='images/swift-advantage.jpg') }}"
+						alt="Swift team at work"
+						class="advantage-card-image"
+					>
+
+					<!-- Re-using badge structure -->
+					<div class="advantage-badge">
+						<div class="badge-title">GUIDED</div>
+						<div class="badge-line"></div>
+						<div class="badge-sub">
+						<span>BY EXPERIENCE</span>
+						</div>
+					</div>
+					</div>
+				</div>
+			</section>
+
 
             <!-- NEWSLETTER-2
 			============================================= -->
-			<section id="newsletter-2" class="newsletter-modern bg-fixed">
+			<section id="newsletter-2" class="newsletter-modern">
 				<div class="newsletter-overlay"></div>
 
 				<div class="newsletter-container">
