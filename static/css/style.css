@@ -9836,6 +9836,162 @@ nav a#pull {
   }
 }
 
+/* === Section & Grid === */
+
+.services-grid-section {
+  padding: 64px 36px;
+}
+
+.services-grid {
+  max-width: 1376px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* === Card shell === */
+
+.service-card {
+  position: relative;
+  box-sizing: border-box;
+  height: 293px;                         /* matches Figma */
+  background: #FFFFFF;
+  border: 1px solid #F2F2F2;
+  border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+/* Background image */
+
+.service-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark gradient overlay so text is readable */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.60) 0%,
+    rgba(0, 0, 0, 0.25) 40%,
+    rgba(0, 0, 0, 0.05) 70%,
+    transparent 100%
+  );
+}
+
+/* === Text content (bottom-left) === */
+
+.service-card-content {
+  position: absolute;
+  left: 16px;
+  right: 220px;                 /* leave room for the badge */
+  bottom: 16px;
+}
+
+.service-card-title {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 8px;
+}
+
+.service-card-body {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 110%;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+/* === Frosted badge bottom-right === */
+
+.service-card-badge {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+
+  padding: 17px 16px;
+  width: 185px;
+  border-radius: 5px;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Top label (CORPORATE / FINANCE / etc.) */
+.badge-title {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+/* White divider line */
+.badge-line {
+  width: 100%;
+  border-top: 2px solid #FFFFFF;
+}
+
+/* Two-line descriptor */
+.badge-sub {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 110%;
+  color: #FFFFFF;
+}
+
+.badge-emphasis {
+  font-weight: 700;
+}
+
+/* === Responsive tweaks === */
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid-section {
+    padding: 48px 16px;
+  }
+
+  .service-card {
+    height: auto;
+    aspect-ratio: 680 / 293;
+  }
+}
+
+
 
 
 
