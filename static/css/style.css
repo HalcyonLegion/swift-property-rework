@@ -14,7 +14,7 @@
 */
 
 @font-face {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Stack Sans Headline', sans-serif;
   src: url('/static/fonts/424-font.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
@@ -30,7 +30,7 @@ html {
 } 
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Stack Sans Headline', sans-serif;
   color: #000000;
   line-height: 1.6666;
   font-weight: 400;
@@ -526,7 +526,7 @@ hr.divider2 {
 
 h1, h2, h3, h4, h5, h6 {  
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Stack Sans Headline', sans-serif;
   font-weight: 400;
   /* letter-spacing: -0.75px; */
 }
@@ -7458,7 +7458,7 @@ p.forgot-password {
 
 .login-separator-txt {
   position: relative;  
-  font-family: 'Inter', sans-serif;
+  font-family: 'Stack Sans Headline', sans-serif;
   font-size: 1.05rem;
   font-weight: 400;
 }
