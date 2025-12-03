@@ -9241,3 +9241,36 @@ nav a#pull {
   display: block;
 }
 
+/* Row that holds buttons + scroll text */
+.hero-cta-row {
+  width: 100%;
+}
+
+/* Let buttons wrap nicely with some breathing room */
+.hero-button-group a {
+  margin-right: 16px;
+  margin-bottom: 12px;
+}
+
+/* Scroll hint on the right, bottom-aligned with buttons */
+.hero-scroll-hint {
+  margin-left: 24px;
+  white-space: nowrap;      /* keep "Scroll down ↓" on one line */
+  align-self: flex-end;     /* bottom-align with the button row */
+}
+
+/* Optional: stack on mobile */
+@media (max-width: 767.98px) {
+  .hero-cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-scroll-hint {
+    margin-left: 0;
+    margin-top: 1rem;
+    align-self: flex-end;   /* still right-ish on mobile */
+  }
+}
+
+
