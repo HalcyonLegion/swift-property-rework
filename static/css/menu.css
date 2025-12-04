@@ -58,13 +58,13 @@
 /*  Desktop Main Menu CSS
 --------------------------------------------*/
 
-.wsmenucontainer {
+/* .wsmenucontainer {
   background-size: cover;
   overflow: hidden;
   background-attachment: fixed;
   background-position: 50% 0;
   background-repeat: no-repeat;
-}
+} */
 
 .wsmainfull {
   width: 100%;
@@ -1295,7 +1295,7 @@ body.wsactive {
   z-index: 8888!important;
 }
 
-.wsmenucontainer {
+/* .wsmenucontainer {
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -1310,7 +1310,7 @@ body.wsactive {
   -o-transition: all 0.25s ease-in-out;
   -ms-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-}
+} */
 
 .wsactive .wsmenu {
   overflow-y: scroll;
@@ -1555,6 +1555,24 @@ body.wsactive {
   display: block;
 }
 
+/* Disable sticky / fixed header so it scrolls away with the page */
+#header,
+#header .header-wrapper,
+#header .wsmainfull.menu,
+#header .wsmainfull.menu.auction-info-glass {
+  position: relative !important;   /* non-sticky, but can have z-index */
+  top: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+}
 
+/* Make sure the header is above the hero background */
+#header {
+  z-index: 10;
+}
 
+/* If the theme added space for a fixed header, remove it */
+body {
+  padding-top: 0 !important;
+}
 

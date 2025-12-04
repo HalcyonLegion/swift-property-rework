@@ -2325,7 +2325,7 @@ p.terms-txt a,
   transition: all 400ms ease-in-out;
 }
 
-.hidden-nav .wsmainfull.scroll {
+.hidden-nav .wsmainfull {
   margin-top: 0;
 }
 
@@ -3389,7 +3389,8 @@ p.terms-txt a,
 
 #hero-14 {
   background-image: url(../images/NewSwiftbg.jpeg);
-  padding-top: 250px; /* restores vertical gap like Figma */
+  margin-top: -100px;   /* pull hero up: roughly header height */
+  padding-top: 350px;   /* push hero content back down */
     /* padding-bottom: 160px; */
     /* min-height: 100vh; */
     position: relative;
@@ -9531,7 +9532,7 @@ nav a#pull {
   justify-content: center;
 
   padding: 0;
-  border: 1px solid #0F2848;
+  border: 1px solid #fff;
   text-decoration: none;
 }
 
@@ -10681,6 +10682,8 @@ nav a#pull {
     max-width: none;
   }
 }
+
+
 
 
 
