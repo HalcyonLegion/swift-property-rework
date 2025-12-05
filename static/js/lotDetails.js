@@ -447,29 +447,47 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
             </div>
           </div>
 
-          <!-- RIGHT: help card above finance banner -->
-          <div class="lot-right-column">
-            <aside class="lot-help-card">
-              <p class="lot-help-title">Need help before you bid?</p>
-              <p class="lot-help-body">
-                If you’re preparing to bid and need anything explained, just let us know — we’re here to help.
-              </p>
+                      <!-- RIGHT: help card above finance banner -->
+            <div class="lot-right-column">
+              <aside class="lot-help-card">
+                <div class="lot-help-header">
+                  <div class="lot-help-text">
+                    <p class="lot-help-title">Need help before you bid?</p>
+                    <p class="lot-help-body">
+                      If you’re preparing to bid and need anything explained, just let us know — we’re here to help.
+                    </p>
+                  </div>
 
-              <div class="lot-help-badge">
-                <div class="lot-help-badge-text">
-                  <span class="badge-swift">SWIFT</span>
-                  <span class="badge-line"></span>
-                  <span class="badge-subline">INTELLIGENCE</span>
-                  <span class="badge-subline-strong">INDUSTRY LEADING</span>
+                  <!-- SWIFT INTELLIGENCE badge -->
+                  <div class="lot-help-badge">
+                    <div class="lot-help-badge-text">
+                      <span class="badge-swift">SWIFT</span>
+                      <span class="badge-line"></span>
+                      <span class="badge-subline">INTELLIGENCE</span>
+                      <span class="badge-subline-strong">INDUSTRY LEADING</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              <div class="lot-help-buttons">
-                <a href="tel:02089504588" class="lot-help-btn primary">Call Swift</a>
-                <a href="#contacts-2" class="lot-help-btn">Ask a Question</a>
-                <a href="https://wa.me/442089504588" target="_blank" class="lot-help-btn">WhatsApp</a>
-              </div>
-            </aside>
+                <!-- Buttons with icons -->
+                <div class="lot-help-buttons">
+                  <a href="tel:02089504588" class="lot-help-btn primary">
+                    <img src="/static/images/proPhone.svg" alt="" class="lot-help-icon">
+                    <span>Call Swift</span>
+                  </a>
+
+                  <a href="#contacts-2" class="lot-help-btn">
+                    <img src="/static/images/proQuestion.svg" alt="" class="lot-help-icon">
+                    <span>Ask a Question</span>
+                  </a>
+
+                  <a href="https://wa.me/442089504588" target="_blank" class="lot-help-btn">
+                    <img src="/static/images/proWhat.svg" alt="" class="lot-help-icon">
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              </aside>
+
 
             <aside class="lot-finance-banner">
               <div class="finance-card">
