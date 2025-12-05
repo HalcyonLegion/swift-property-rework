@@ -174,299 +174,328 @@ function createMapIframe(fullAddress) {
 // }
 
 function renderLotDetails(lot, PreviousLotId, NextLotId) {
-    // Check for LotImages and generate carousel HTML if images are available
-    let carouselHtml = '';
-    let thumbnailsHtml = ''; // Added thumbnails container
+    // ----- IMAGE / MEDIA SETUP -----
+    let carouselHtml = "";
     if (lot.LotImages && lot.LotImages.length) {
         carouselHtml = `
-            <div>
-                <div id="lotImageCarousel" class="carousel-inner carousel slide" data-ride="carousel">
-                    ${lot.LotImages.map((image, index) =>
-                        `<div class="carousel-item ${index === 0 ? 'active' : ''}">
-                            <div class="carousel-item-container">
-                                <img src="${image.Url}" class="d-block img-fluid" alt="Image ${index + 1}">
+            <div class="lot-media">
+                <div id="lotImageCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        ${lot.LotImages.map((image, index) => `
+                            <div class="carousel-item ${index === 0 ? "active" : ""}">
+                                <div class="carousel-item-container">
+                                    <img src="${image.Url}" class="d-block img-fluid" alt="Image ${index + 1}">
+                                </div>
                             </div>
-                        </div>`
-                    ).join('')}
-                
-                <a class="carousel-control-prev" href="#lotImageCarousel" role="button" data-bs-slide="prev" data-bs-interval="false">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only"></span>
-                </a>
-                <a class="carousel-control-next" href="#lotImageCarousel" role="button" data-bs-slide="next" data-bs-interval="false">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only"></span>
-                </a>
+                        `).join("")}
+                    </div>
+
+                    <a class="carousel-control-prev" href="#lotImageCarousel" role="button" data-bs-slide="prev" data-interval="false">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#lotImageCarousel" role="button" data-bs-slide="next" data-interval="false">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only"></span>
+                    </a>
                 </div>
+
                 <!-- Map container, initially hidden -->
-                <div id="mapContainer" class="carousel-item" style="display: none;">
-                ${createMapIframe(lot.FullAddress)}
+                <div id="mapContainer" style="display: none;">
+                    ${createMapIframe(lot.FullAddress)}
                 </div>
             </div>
-        `;
-
-        // Generate thumbnails HTML
-        thumbnailsHtml = `
-        <div class="carousel-thumbnails d-none d-lg-flex">
-            ${lot.LotImages.map((image, index) =>
-            `<img src="${image.Url}" class="carousel-thumbnail-img img-thumbnail tra-red-hover" alt="Thumbnail ${index + 1}" onclick="$('#lotImageCarousel').carousel(${index});">`
-            ).join('')}
-        </div>
         `;
     }
 
-    let accommodationText = '';
-    let locationText = '';
-    let tenureText = '';
-    let exteriorText = '';
+    // Right-hand stacked images (first 2 thumbnails)
+    let sideImagesHtml = "";
+    if (lot.LotImages && lot.LotImages.length > 1) {
+        const sideImages = lot.LotImages.slice(1, 3);
+        sideImagesHtml = `
+            <div class="lot-side-images d-none d-lg-flex flex-column">
+                ${sideImages.map((image, index) => `
+                    <div class="lot-side-image-wrapper">
+                        <img src="${image.Url}" 
+                             class="img-fluid lot-side-image" 
+                             alt="Thumbnail ${index + 2}"
+                             onclick="$('#lotImageCarousel').carousel(${index + 1});">
+                    </div>
+                `).join("")}
+            </div>
+        `;
+    }
 
+    // ----- LOT DATA (ACCOM / LOCATION / etc.) -----
+    let accommodationText = "";
+    let locationText = "";
+    let tenureText = "";
+    let exteriorText = "";
 
-    // Assuming 'lot' is the object that contains 'LotData'
-    lot.LotData.forEach((data) => {
-        if (data.Name === 'Accommodation' && data.ShowOnWeb) {
+    (lot.LotData || []).forEach(data => {
+        if (data.Name === "Accommodation" && data.ShowOnWeb) {
             accommodationText = data.Value;
-        } else if (data.Name === 'Location' && data.ShowOnWeb) {
+        } else if (data.Name === "Location" && data.ShowOnWeb) {
             locationText = data.Value;
-        } else if (data.Name === 'Tenure' && data.ShowOnWeb) {
-        tenureText = data.Value;
-        } else if (data.Name === 'Exterior' && data.ShowOnWeb) {
-        exteriorText = data.Value;
+        } else if (data.Name === "Tenure" && data.ShowOnWeb) {
+            tenureText = data.Value;
+        } else if (data.Name === "Exterior" && data.ShowOnWeb) {
+            exteriorText = data.Value;
         }
     });
-    
-     // Build the HTML string for the lot details page
-     const lotDetailsHtml = `
-     <div class="lot-details">
 
-        <div class="lot-details-top">
-            <div class="top-right mr-10">
-                <!-- Navigation Buttons -->
-                <div id="lots-container" class="navigation-buttons">
-                    ${PreviousLotId !== null ? `<a href="#" id="prev-lot" class="txt-700 text-white mr-15" onclick="navigateToLot(${PreviousLotId})">&lt; Previous Lot</a>` : ''}
-                    ${NextLotId !== null ? `<a href="#" id="next-lot" class="txt-700 text-white" onclick="navigateToLot(${NextLotId})">Next Lot &gt;</a>` : ''}
-                    <a href="#" id="all-lots" class="txt-700 text-white mr-15" onclick="navigateToAllLots()">All Lots &#x2191;</a>
-                </div>
+    // Viewing times list – guard for missing array
+    const viewingTimesHtml = (Array.isArray(lot.ViewingTimes) && lot.ViewingTimes.length)
+        ? lot.ViewingTimes.map(viewing => {
+            const startDate = new Date(viewing.StartDate);
+            const endDate = new Date(viewing.EndDate);
+
+            const options = {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true
+            };
+
+            const startFormatted = startDate.toLocaleString("en-GB", options);
+            const endFormatted = endDate.toLocaleString("en-GB", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true
+            });
+
+            const dayOfMonth = startDate.getDate();
+            let daySuffix;
+            if (dayOfMonth > 3 && dayOfMonth < 21) daySuffix = "th";
+            else if (dayOfMonth % 10 === 1) daySuffix = "st";
+            else if (dayOfMonth % 10 === 2) daySuffix = "nd";
+            else if (dayOfMonth % 10 === 3) daySuffix = "rd";
+            else daySuffix = "th";
+
+            const startWithSuffix = startFormatted.replace(dayOfMonth, `${dayOfMonth}${daySuffix}`);
+
+            return `
+                <li class="viewing-time-item">
+                    ${viewing.Note ? `<p class="p-lg text-black">${viewing.Note} from:</p>` : ""}
+                    <p class="p-lg text-black">${startWithSuffix} - ${endFormatted}</p>
+                </li>
+            `;
+        }).join("")
+        : "";
+
+    // Address line + tagline
+    const fullAddress = [
+        lot.StreetNumber,
+        lot.StreetName,
+        lot.Town,
+        lot.County,
+        lot.PostCode
+    ].filter(Boolean).join(", ");
+
+    // ----- MAIN TEMPLATE -----
+    const lotDetailsHtml = `
+      <div class="lot-details-wrapper">
+        <div class="lot-main-card">
+          
+          <!-- TOP: LOT + GUIDE + PREV / ALL / NEXT -->
+          <div class="lot-main-header">
+            <div class="lot-chip-group">
+              <span class="lot-chip lot-chip-lot">LOT ${lot.LotNumber}</span>
+              <span class="lot-chip lot-chip-guide">
+                Guide Price: <span data-formatted-price></span>
+              </span>
             </div>
-            <div class="top-left ml-10">
-                <h6 class="text-white">Lot: ${lot.LotNumber}</h6>
+
+            <div class="lot-nav-row">
+              ${
+                PreviousLotId !== null
+                  ? `
+                  <button class="lot-nav-arrow" onclick="navigateToLot(${PreviousLotId})" aria-label="Previous lot">&lt;</button>
+                  <button class="lot-nav-pill" onclick="navigateToLot(${PreviousLotId})">Previous</button>
+                `
+                  : ""
+              }
+              <button class="lot-nav-pill" onclick="navigateToAllLots()">All Lots</button>
+              ${
+                NextLotId !== null
+                  ? `
+                  <button class="lot-nav-pill" onclick="navigateToLot(${NextLotId})">Next</button>
+                  <button class="lot-nav-arrow" onclick="navigateToLot(${NextLotId})" aria-label="Next lot">&gt;</button>
+                `
+                  : ""
+              }
             </div>
-        </div>
+          </div>
 
-     <div class="header-row wide-60 bg-blue mb-3">
-            <div class="lot-main-container">
-            <div class="row justify-content-md-center">
-                <!-- Lot Number and Address -->
-                <div class="col-md-5 full-address txt-700 ml-10">
-                    <h3 class="text-white">${lot.StreetNumber} ${lot.StreetName}, ${lot.StreetName2}</h3>
-                    <h4 class="text-white">${lot.Town}, ${lot.County}, ${lot.PostCode}</h4>
-                    <br>
-                    <h6 class="h6-md text-white">${lot.Tagline}</h6>
-                </div>
-                <!-- Guide Price and Register Button -->
-                <div class="col-md-5 guide-price txt-700 ml-10">
-                    <h4 class="text-white">Guide Price</h4>
-                    <h4 class="text-white"><span id="formattedPrice"></span></h4>
-                    <a href="https://passport.eigroup.co.uk/account/log-in" target="_blank" class="btn btn-red tra-white-hover mb-2">Register to Bid</a>
-                </div>
+          <!-- TITLE + TAGLINE -->
+          <div class="lot-title-block">
+            <h1 class="lot-title">${fullAddress}</h1>
+            ${lot.Tagline ? `<p class="lot-subtitle">${lot.Tagline}</p>` : ""}
+          </div>
+
+          <!-- MAIN MEDIA + SIDE HELP PANEL -->
+          <div class="lot-media-help-grid">
+            <div class="lot-media-wrapper">
+              <div class="lot-main-media-row">
+                ${carouselHtml}
+                ${sideImagesHtml}
+              </div>
+
+              <!-- CTA ROW UNDER IMAGES -->
+              <div class="lot-cta-row">
+                <a href="https://passport.eigroup.co.uk/account/log-in"
+                   target="_blank"
+                   class="lot-cta-btn">
+                  Legal Pack
+                </a>
+                <a href="https://passport.eigroup.co.uk/account/log-in"
+                   target="_blank"
+                   class="lot-cta-btn">
+                  Register to Bid
+                </a>
+                <a href="#" onclick="navigateToFinancePage(); return false;" class="lot-cta-btn">
+                  Auction Finance
+                </a>
+                <a href="https://www.youtube.com/@SwiftPropertyAuctions"
+                   target="_blank"
+                   class="lot-cta-btn">
+                  Virtual Tour
+                </a>
+                <a href="#contacts-2"
+                   class="lot-cta-btn">
+                  Enquire Now
+                </a>
+              </div>
             </div>
+
+            <!-- RIGHT: HELP CARD (simplified Figma version) -->
+            <aside class="lot-help-column">
+              <div class="lot-help-card">
+                <p class="lot-help-title">Need help before you bid?</p>
+                <p class="lot-help-body">
+                  If you’re preparing to bid and need anything explained, just let us know — we’re here to help.
+                </p>
+
+                <div class="lot-help-badge">
+                  <div class="lot-help-badge-text">
+                    <span class="badge-swift">SWIFT</span>
+                    <span class="badge-line"></span>
+                    <span class="badge-subline">INTELLIGENCE</span>
+                    <span class="badge-subline-strong">INDUSTRY LEADING</span>
+                  </div>
+                </div>
+
+                <div class="lot-help-buttons">
+                  <a href="tel:02089504588" class="lot-help-btn primary">Call Swift</a>
+                  <a href="#contacts-2" class="lot-help-btn">Ask a Question</a>
+                  <a href="https://wa.me/442089504588" target="_blank" class="lot-help-btn">WhatsApp</a>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <!-- LOWER: DESCRIPTION + FINANCE CARD -->
+          <div class="lot-bottom-layout">
+            <div class="lot-info-card">
+              <div class="lot-info-section">
+                <h5 class="lot-info-heading">Property Description</h5>
+                <p class="lot-info-body">${lot.Description || ""}</p>
+              </div>
+
+              <div class="lot-info-section">
+                <h5 class="lot-info-heading">Accommodation</h5>
+                <p class="lot-info-body">${accommodationText || ""}</p>
+              </div>
+
+              <div class="lot-info-section">
+                <h5 class="lot-info-heading">Location</h5>
+                <p class="lot-info-body">${locationText || ""}</p>
+              </div>
+
+              <div class="lot-info-section">
+                <h5 class="lot-info-heading">Tenure</h5>
+                <p class="lot-info-body">${tenureText || ""}</p>
+              </div>
+
+              <div class="lot-info-section">
+                <h5 class="lot-info-heading">Exterior</h5>
+                <p class="lot-info-body">${exteriorText || ""}</p>
+              </div>
+
+              <div class="lot-info-section">
+                <h5 class="lot-info-heading">Viewing Information</h5>
+                <p class="lot-info-body">${lot.ViewingTimeDescription || ""}</p>
+                ${viewingTimesHtml ? `<ul class="viewing-time-list">${viewingTimesHtml}</ul>` : ""}
+              </div>
+
+              <div class="lot-info-section">
+                <h5 class="lot-info-heading">Additional Fees and Disclaimer</h5>
+                <p class="lot-info-body lot-info-body-small">
+                  The administration charge is £1,200, inclusive of VAT upon the virtual gavel, unless otherwise specified in the addendum.
+                  For details regarding buyers premium and disbursements, please consult the legal pack and addendum to determine any additional
+                  costs that may be payable by the purchaser upon completion. While particulars, images, and video tours on the website and
+                  within the catalogue are believed to be accurate, their precision is not guaranteed. The auctioneers will always strive to
+                  inform prospective purchasers of any variations to the catalogue, should such changes come to their attention. Neither the
+                  auctioneers nor their clients can be held responsible for any losses, damages, or abortive costs incurred in respect of lots
+                  that are withdrawn or sold prior to auction. Information concerning rating matters has been acquired through verbal inquiry only.
+                  Prospective purchasers are advised to conduct their own inquiries with the appropriate authorities. Prospective purchasers are
+                  considered responsible for verifying whether tenanted properties are currently occupied and whether rents are being paid.
+                  All measurements, areas, and distances are approximate only. Potential buyers are urged to verify them. No representation or
+                  warranty is made in respect to the structure of any properties or in relation to their state of repair. Prospective buyers
+                  should arrange for a survey of the particular lot by a professionally qualified person.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right-hand auction finance banner (simplified) -->
+            <aside class="lot-finance-banner">
+              <div class="finance-card">
+                <div class="finance-card-content">
+                  <h5 class="finance-title">Auction Finance</h5>
+                  <p class="finance-subtitle">
+                    Fast, flexible auction finance — done the right way.
+                  </p>
+                  <ul class="finance-list">
+                    <li>Up to 75% LTV</li>
+                    <li>Quick decisions</li>
+                  </ul>
+                  <a href="{{ url_for('auction_finance') }}" class="finance-btn">
+                    Get Pre-Approved in Minutes
+                  </a>
+                  <p class="finance-footnote">
+                    Swift Bridging Finance acts as a referral agent. Lending is provided by third-party finance partners.
+                  </p>
+                </div>
+              </div>
+            </aside>
+          </div>
         </div>
-    </div>
+      </div>
+    `;
 
-    <div class="container">
+    // Inject into page
+    const mainContentContainer = document.getElementById("main-content");
+    mainContentContainer.innerHTML = lotDetailsHtml;
 
-         <div class="row mb-4">
-                <div class="${lot.LotImages && lot.LotImages.length ? 'col-lg-8' : 'col-12'}">
-                    ${lot.LotImages && lot.LotImages.length ? carouselHtml + thumbnailsHtml : `<img src="${lot.LotImages}" class="img-fluid" alt="Thumbnail">`}
-                </div>
+    // ----- PRICE FORMATTING -----
+    if (lot.OnlineAuction && typeof lot.OnlineAuction.StartingPrice === "number") {
+        const formattedPrice = new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GBP"
+        }).format(lot.OnlineAuction.StartingPrice);
 
-                <!-- Updated Button group with responsive layout -->
-                <div class="button-group my-3 d-flex flex-column flex-lg-row">
-                    <div class="px-1 mb-2 mb-lg-0">
-                        <a href="https://passport.eigroup.co.uk/account/log-in" target="_blank" class="btn btn-blue tra-blue-hover btn-uniform">Download Legal Pack</a>
-                    </div>
-                    <div class="px-1 mb-2 mb-lg-0">
-                        <button id="showMapButton" class="btn btn-blue tra-blue-hover btn-uniform">Show Map</button>
-                    </div>
-                    <div class="px-1 mb-2 mb-lg-0">
-                        <a href="#contacts-2" class="btn btn-blue tra-blue-hover btn-uniform">Enquire Now</a>
-                    </div>
-                    <div class="px-1 mb-2 mb-lg-0">
-                        <a href="https://www.youtube.com/@SwiftPropertyAuctions" target="_blank" class="btn btn-blue tra-blue-hover btn-uniform">Virtual Tour</a>
-                    </div>
-                    <div class="px-1 mb-2 mb-lg-0">
-                        <a href="#" onclick="navigateToFinancePage(); return false;" class="btn btn-blue tra-blue-hover btn-uniform">Finance Available</a>
-                    </div>
-                </div>
-             
-                 <div class="description mb-3 py-3">
-                     <h5 class="h5-sm txt-700 text-black">Property Description</h5>
-                     <p class="p-lg text-black">${lot.Description}</p>
-                 </div>
+        document.querySelectorAll("[data-formatted-price]").forEach(el => {
+            el.textContent = formattedPrice;
+        });
+    }
 
-
-                <!-- Parent accordion div to wrap all accordion sections -->
-                <div class="accordion">
-                    <!-- Lot data section with collapsible content -->
-                    <div class="lot-data mb-3 accordion-item2">
-
-                        <!-- Accommodation Heading -->
-                        <h5 class="h5-sm txt-700" id="headingAccommodation">
-                            <button class="btn2 accordion-button text-black txt-700 d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccommodation" aria-expanded="true">
-                            Accommodation
-                            </button>
-                        </h5>
-
-                        <!-- Accommodation Content -->
-                        <div id="collapseAccommodation" class="accordion-collapse collapse show" aria-labelledby="headingAccommodation" >
-                        <div class="content">
-                            <p class="p-lg text-black">${accommodationText}</p>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Parent accordion div to wrap all accordion sections -->
-                <div class="accordion">
-                    <!-- Lot data section with collapsible content -->
-                    <div class="lot-data mb-3 accordion-item2">
-
-                        <!-- Location Heading -->
-                        <h5 class="h5-sm txt-700 mt-2" id="headingLocation">
-                            <button class="btn2 accordion-button text-black txt-700 d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLocation" aria-expanded="true" >
-                            Location
-                            </button>
-                        </h5>
-
-                        <!-- Location Content -->
-                        <div id="collapseLocation" class="accordion-collapse collapse show" aria-labelledby="headingLocation">
-                            <div class="content">
-                                <p class="p-lg text-black">${locationText}</p>
-                                
-                            </div>
-                        </div
-                     </div>
-                </div>        
-
-                <!-- Parent accordion div to wrap all accordion sections -->
-                <div class="accordion">
-                    <!-- Lot data section with collapsible content -->
-                    <div class="lot-data mb-3 accordion-item2">
-
-                        <!-- Tenure Heading -->
-                        <h5 class="h5-sm txt-700 mt-2" id="headingTenure">
-                            <button class="btn2 accordion-button text-black txt-700 d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTenure" aria-expanded="true">
-                            Tenure
-                            </button>
-                        </h5>
-
-                        <!-- Tenure Content -->
-                        <div id="collapseTenure" class="accordion-collapse collapse show" aria-labelledby="headingTenure">
-                            <div class="content">
-                                <p class="p-lg text-black">${tenureText}</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>        
-
-                <!-- Parent accordion div to wrap all accordion sections -->
-                <div class="accordion">
-                    <!-- Lot data section with collapsible content -->
-                    <div class="lot-data mb-3 accordion-item2">
-
-
-                        <!-- Exterior Heading -->
-                        <h5 class="h5-sm txt-700 mt-2" id="headingExterior">
-                        <button class="btn2 accordion-button text-black txt-700 d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExterior" aria-expanded="true" >
-                        Exterior
-                        </button>
-                        </h5>
-
-                        <!-- Exterior Content -->
-                        <div id="collapseExterior" class="accordion-collapse collapse show" aria-labelledby="headingExterior">
-                            <div class="content">
-                                <p class="p-lg text-black">${exteriorText}</p>
-                                
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-                
-                <!-- Parent accordion div to wrap all accordion sections -->
-                <div class="accordion">
-                    <!-- Lot data section with collapsible content -->
-                    <div class="lot-data mb-3 accordion-item2">
-
-                        <!-- Viewing times section with collapsible content -->
-                        <div class="viewing-times mb-3">
-                            <h5 class="h5-sm txt-700" id="headingViewingInformation">
-                            <button class="btn2 accordion-button text-black txt-700 d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#collapseViewingInformation" aria-expanded="true">
-                            Viewing Information
-                            </button>
-                            </h5>
-
-                            <div id="collapseViewingInformation" class="accordion-collapse collapse show" aria-labelledby="headingViewingInformation">
-  <div class="content">
-    <p class="p-lg text-black">${lot.ViewingTimeDescription}</p>
-    <ul class="viewing-time-list">
-      ${lot.ViewingTimes.map(viewing => {
-        const startDate = new Date(viewing.StartDate);
-        const endDate = new Date(viewing.EndDate);
-
-        const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
-        const startFormatted = startDate.toLocaleString('en-US', options);
-        const endFormatted = endDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-
-        // Regex to add the day suffix like 'th', 'nd', 'st', 'rd'
-        const dayOfMonth = startDate.getDate();
-        let daySuffix;
-        if (dayOfMonth > 3 && dayOfMonth < 21) daySuffix = 'th';
-        else if (dayOfMonth % 10 === 1) daySuffix = 'st';
-        else if (dayOfMonth % 10 === 2) daySuffix = 'nd';
-        else if (dayOfMonth % 10 === 3) daySuffix = 'rd';
-        else daySuffix = 'th';
-
-        // Replace the numeric day with the day and its suffix
-        const startWithSuffix = startFormatted.replace(dayOfMonth, `${dayOfMonth}${daySuffix}`);
- 
-        return `
-        <li class="viewing-time-item">
-          ${viewing.Note ? `<p class="p-lg text-black">${viewing.Note} from:` : ''}
-          ${startWithSuffix} - ${endFormatted} </p>
-        </li>
-        `;
-      }).join('')}
-    </ul>
-  </div>
-</div>
-                        </div>
-                    </div>
-                </div>
-
-                 <div class="additional-fees">
-                     <h6 class="h6-sm txt-700 text-black">Additional Fees and Disclaimer</h6>
-                     <p class="p-sm text-black py-2">The administration charge is £1,200, inclusive of VAT upon the virtual gavel, unless otherwise specified in the addendum. For details regarding buyers premium and disbursements, please consult the legal pack and addendum to determine any additional costs that may be payable by the purchaser upon completion. While particulars, images, and video tours on the website and within the catalogue are believed to be accurate, their precision is not guaranteed. The auctioneers will always strive to inform prospective purchasers of any variations to the catalogue, should such changes come to their attention. Neither the auctioneers nor their clients can be held responsible for any losses, damages, or abortive costs incurred in respect of lots that are withdrawn or sold prior to auction. Information concerning rating matters has been acquired through verbal inquiry only. Prospective purchasers are advised to conduct their own inquiries with the appropriate authorities. Prospective purchasers are considered responsible for verifynexing whether tenanted properties are currently occupied and whether rents are being paid. All measurements, areas, and distances are approximate only. Potential buyers are urged to verify them. No representation or warranty is made in respect to the structure of any properties or in relation to their state of repair. Prospective buyers should arrange for a survey of the particular lot by a professionally qualified person.</p>
-                 </div>
-             
-        </div>
-    </div>
- `;
-
- // Set the inner HTML of the main content container with the lot details HTML
- const mainContentContainer = document.getElementById('main-content');
- mainContentContainer.innerHTML = lotDetailsHtml;
-  // Assuming that 'lot' object and 'OnlineAuction' property are already defined with 'StartingPrice'
-const formattedPrice = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(lot.OnlineAuction.StartingPrice);
-
-// Example: Assuming you have the input tag for address in your form as defined earlier
-const propertyAddressInput = document.querySelector("input[name='property_address']");
-if (propertyAddressInput) {
-    const fullAddress = `${lot.StreetNumber}, ${lot.StreetName}, ${lot.StreetName2}, ${lot.Town}, ${lot.County}, ${lot.PostCode}`;
-    propertyAddressInput.value = fullAddress; // Automatically populate the address
-}
-
-// Set the formatted price into the span element
-document.getElementById('formattedPrice').textContent = formattedPrice;
+    // Populate hidden enquiry field with address
+    const propertyAddressInput = document.querySelector("input[name='property_address']");
+    if (propertyAddressInput) {
+        propertyAddressInput.value = fullAddress;
+    }
 }
 
 function renderLotPage() {
