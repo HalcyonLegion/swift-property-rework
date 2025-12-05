@@ -315,7 +315,7 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
           <div class="lot-chip-group">
             <span class="lot-chip lot-chip-lot">LOT ${lot.LotNumber}</span>
             <span class="lot-chip lot-chip-guide">
-              Guide Price: <span data-formatted-price></span>
+                Guide Price:&nbsp;<span data-formatted-price></span>
             </span>
           </div>
 
