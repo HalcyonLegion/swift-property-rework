@@ -1576,3 +1576,26 @@ body {
   padding-top: 0 !important;
 }
 
+/* --- Lot details: header on light background --- */
+body.lot-details-page {
+  background-color: #f0f0f0;
+}
+
+/* Make the glass nav strip visible and centred */
+body.lot-details-page .wsmainfull.menu.auction-info-glass {
+  background: rgba(0, 0, 0, 0.3)!important;
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+}
+
+/* Darken nav text so it isn't "invisible" */
+body.lot-details-page .wsmenu > .wsmenu-list > li > a {
+  color: #ffffff;
+}
+
+/* Keep hover colour on brand */
+body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
+  color: #AD1D18;
+}
+
+
