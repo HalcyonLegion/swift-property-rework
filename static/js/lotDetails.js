@@ -489,26 +489,39 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
               </aside>
 
 
-            <aside class="lot-finance-banner">
-              <div class="finance-card">
-                <div class="finance-card-content">
-                  <h5 class="finance-title">Auction Finance</h5>
-                  <p class="finance-subtitle">
-                    Fast, flexible auction finance — done the right way.
-                  </p>
-                  <ul class="finance-list">
-                    <li>Up to 75% LTV</li>
-                    <li>Quick decisions</li>
-                  </ul>
-                  <a href="${auctionFinanceUrl}" class="finance-btn">
-                    Get Pre-Approved in Minutes
-                  </a>
-                  <p class="finance-footnote">
-                    Swift Bridging Finance acts as a referral agent. Lending is provided by third-party finance partners.
-                  </p>
-                </div>
-              </div>
-            </aside>
+                        <!-- Right-hand auction finance banner -->
+                        <aside class="lot-finance-banner">
+                        <div class="finance-card">
+                            <!-- blurred background image + circular image are handled by CSS -->
+                            <div class="finance-card-content">
+                            <div class="finance-header">
+                                <div class="finance-logo">
+                                    <img src="${sbfLogoUrl}" alt="SBF logo" class="finance-logo-img">
+                                </div>
+                                <h5 class="finance-title">AUCTION FINANCE</h5>
+                            </div>
+
+                            <p class="finance-subtitle">
+                                Fast, flexible auction finance — done the right way.
+                            </p>
+
+                            <ul class="finance-list">
+                                <li>Up to 75% LTV</li>
+                                <li>Quick decisions</li>
+                            </ul>
+
+                            <a href="${auctionFinanceUrl}" class="finance-btn">
+                                Get Pre-Approved in Minutes
+                            </a>
+
+                            <p class="finance-footnote">
+                                Swift Bridging Finance acts as a referral agent. Lending is provided by
+                                third-party finance partners.
+                            </p>
+                            </div>
+                        </div>
+                        </aside>
+
           </div>
         </div>
       </div>
