@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory, current_app, render_template
+from flask import Flask, request, jsonify, send_from_directory, current_app, render_template, url_for
 import requests
 from flask_cors import CORS
 from flask_mail import Mail, Message
@@ -16,11 +16,33 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 
-def versioned_url(url):
+def versioned_url(path: str) -> str:
     """
-    Appends a timestamp to URLs to prevent caching
+    Accepts paths like:
+      'static/images/favicon.ico'  or  'images/favicon.ico'
+    and returns a cache-busted static URL like:
+      '/static/images/favicon.ico?v=1234567890'
     """
-    return f"{url}?v={int(time.time())}"
+    # Normalise input: strip leading slash
+    filename = path.lstrip('/')
+
+    # If it starts with 'static/', strip that so we only pass the relative part to url_for
+    if filename.startswith('static/'):
+        filename = filename[len('static/'):]
+
+    # Build absolute file path
+    file_path = os.path.join(app.static_folder, filename)
+
+    # If the file exists, append its mtime as a version param
+    if os.path.exists(file_path):
+        v = int(os.path.getmtime(file_path))
+        return url_for('static', filename=filename, v=v)
+
+    # Fallback: no version param
+    return url_for('static', filename=filename)
+
+# Make it available to ALL templates automatically
+app.jinja_env.globals['versioned_url'] = versioned_url
 
 # Configure Flask-Mail using environment variables
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
@@ -134,35 +156,34 @@ def proxy_3():
 ### CURRENT LOTS DYNAMIC RENDERING  
 
 API_BASE_URL = 'https://ams-services.eigroup.co.uk/v2/lots/details/'
-    
+
 @app.route('/lot_details/<int:lot_id>')
 def lot_details(lot_id):
+    EIGroupToken = os.getenv('EIGROUP_TOKEN')
+    if not EIGroupToken:
+        app.logger.error('API token not set in environment')
+        return "Internal server error: EI Group token not configured.", 500
+
+    url = f"{API_BASE_URL}{lot_id}"
     try:
-        # Obtain API token from environment variable
-        EIGroupToken = os.getenv('EIGROUP_TOKEN')
-        if not EIGroupToken:
-            app.logger.error('API token not set in environment')
-            return render_template('error.html'), 500
-            
-        response = requests.get(f"{API_BASE_URL}/{lot_id}", headers={'Authorization': f'Bearer {EIGroupToken}'})
+        response = requests.get(url, headers={'Authorization': f'Bearer {EIGroupToken}'}, timeout=10)
+    except requests.RequestException:
+        app.logger.exception("Network-related error fetching lot details")
+        return render_template('error.html'), 500
 
-        if response.status_code == 200:
-            # Parse the lot data from the response
+    if response.status_code == 200:
+        try:
             lot_data = response.json()
-            return render_template('lot_details.html', lot=lot_data)
-        else:
-            # Log the error and render a 404 page if the lot is not found
-            app.logger.error(f"Failed to fetch lot data: {response.status_code} - {response.text}")
-            return render_template('404.html'), 404
+        except ValueError:
+            app.logger.exception("Failed to decode JSON from EI Group")
+            return render_template('error.html'), 500
 
-    except requests.RequestException as e:
-        # Handle specific requests exceptions
-        app.logger.exception("A network-related error occurred")
-        return render_template('error.html'), 500
-    except Exception as e:
-        # Log the error and return a generic 500 error page
-        app.logger.exception("An unexpected error occurred")
-        return render_template('error.html'), 500
+        return render_template('lot_details.html', lot=lot_data)
+
+    # Treat 204 and other non-200 as "not found"
+    app.logger.error(f"Failed to fetch lot data {lot_id}: {response.status_code} - {response.text[:500]}")
+    return render_template('404.html'), 404
+
     
 @app.route('/api/lot_details/<int:lot_id>')
 def api_lot_details(lot_id):
@@ -172,7 +193,7 @@ def api_lot_details(lot_id):
             app.logger.error('API token not set in environment')
             return jsonify({'error': 'Internal server error'}), 500
         
-        response = requests.get(f"{API_BASE_URL}/{lot_id}", headers={'Authorization': f'Bearer {EIGroupToken}'})
+        response = requests.get(f"{API_BASE_URL}{lot_id}", headers={'Authorization': f'Bearer {EIGroupToken}'})
 
         data = response.json()
         if response.status_code == 200:
@@ -275,7 +296,7 @@ def generate_map():
 @app.route('/')
 def home():
     eigroup_token = os.getenv('EIGROUP_TOKEN')
-    return render_template('home.html', versioned_url=versioned_url, eigroup_token=eigroup_token)
+    return render_template('home.html', eigroup_token=eigroup_token)
 
 @app.route('/about')
 def about():
@@ -356,6 +377,14 @@ def complaint_procedure():
 @app.route('/valuation')
 def valuation():
     return render_template('valuation.html')
+
+@app.route('/error')
+def error():
+    return render_template('error.html')
+
+@app.route('/404')
+def erroring():
+    return render_template('404.html')
 
 # @app.route('/bbs')
 # def bbs():

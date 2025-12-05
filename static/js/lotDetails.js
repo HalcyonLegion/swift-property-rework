@@ -8,11 +8,9 @@ function navigateToValuationPage() {
 }
 
 function navigateToLot(lotId) {
-    // Logic to navigate to the lot's details page.
-    // For example, you might change the window location:
-    window.location.href = `/lot_details/${lotId}`;
-    // Please adjust the above URL to match your application's routing structure.
+  window.location.href = `/lot_details/${lotId}`;
 }
+
 
 function navigateToCurrent() {
     // Logic to navigate to the lot's details page.
@@ -35,66 +33,61 @@ function getCurrentLotId() {
 }
 
 
-// Async function to update lots by fetching them from the API
 async function updateLots() {
-    try {
-        // Set up the query parameters
-        const params = new URLSearchParams({
-            LastModifiedSince: '2023-08-01',
-            IsShownOnWeb: true,
-            Limit: 10,
-            Offset: 0,
-            // Add more query parameters as needed
-        });
+  try {
+    // Set up the query parameters
+    const params = new URLSearchParams({
+      LastModifiedSince: '2023-08-01',
+      IsShownOnWeb: true,
+      Limit: 10,
+      Offset: 0,
+    });
 
-        // Call your API endpoint including the query parameters
-        const apiUrl = '/api/proxy/lots'; // Proxy endpoint on your Flask server;
-        const response = await fetch(`${apiUrl}?${params.toString()}`);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        // Retrieve the array directly from the response
-        const responseBody = await response.json();
-
-        // Make sure the responseBody is an array
-        if (!Array.isArray(responseBody)) {
-          throw new Error("Response does not contain a 'lots' array");
-        }
-
-        allLots = responseBody; // Store the fetched lots for later use
-
-         // Find the index of the current lot in the array
-         const currentIndex = allLots.findIndex(lot => lot.Id === currentLotId);
-         const previousLotId = currentIndex > 0 ? allLots[currentIndex - 1].Id : null;
-         const nextLotId = currentIndex < allLots.length - 1 ? allLots[currentIndex + 1].Id : null;
- 
-         const lotsContainer = document.querySelector('#lots-container');
-         lotsContainer.innerHTML = '';
-
-        // If the array is empty, you might want to show a message
-        if (allLots.length === 0) {
-            lotsContainer.innerHTML = '<p>No lots available.</p>';
-            return;
-        }
-
-         // Generate HTML for Previous and Next buttons based on available data
-         const navigationHtml = `
-        <div class="navigation-buttons col-md-12 d-flex mb-20">
-            ${previousLotId !== null ? `<a href="#" class="txt-700 text-white mr-15" onclick="navigateToLot(${previousLotId}); return false;">&lt; Previous Lot</a>` : ''}
-            <a href="#" onclick="navigateToCurrent(); return false;" class="txt-700 text-white mr-15">All Lots &#x2191;</a>
-            ${nextLotId !== null ? `<a href="#" class="txt-700 text-white" onclick="navigateToLot(${nextLotId}); return false;">Next Lot &gt;</a>` : ''}
-        </div>
-     `;
-
-     lotsContainer.innerHTML = navigationHtml;
-
-    } catch (error) {
-        console.error('Error fetching lots:', error);
-        // Update the UI to notify the user of the error
-        const lotsContainer = document.querySelector('#lots-container');
-        lotsContainer.innerHTML = '<p>Error fetching lots. Please try again later.</p>';
+    const apiUrl = '/api/proxy/lots';
+    const response = await fetch(`${apiUrl}?${params.toString()}`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
     }
+
+    const responseBody = await response.json();
+
+    if (!Array.isArray(responseBody)) {
+      throw new Error("Response does not contain a 'lots' array");
+    }
+
+    allLots = responseBody;
+
+    // 🔴 NEW: bail out gracefully if the nav container isn’t there yet
+    const lotsContainer = document.querySelector('#lots-container');
+    if (!lotsContainer) {
+      console.warn('updateLots: #lots-container not found, skipping nav render');
+      return;
+    }
+
+    lotsContainer.innerHTML = '';
+
+    const currentLotId = getCurrentLotId();
+    const currentIndex = allLots.findIndex(lot => String(lot.Id) === String(currentLotId));
+    const previousLotId = currentIndex > 0 ? allLots[currentIndex - 1].Id : null;
+    const nextLotId = currentIndex < allLots.length - 1 ? allLots[currentIndex + 1].Id : null;
+
+    const navigationHtml = `
+      <div class="navigation-buttons col-md-12 d-flex mb-20">
+        ${previousLotId !== null ? `<a href="#" class="txt-700 text-white mr-15" onclick="navigateToLot(${previousLotId}); return false;">&lt; Previous Lot</a>` : ''}
+        <a href="#" onclick="navigateToCurrent(); return false;" class="txt-700 text-white mr-15">All Lots &#x2191;</a>
+        ${nextLotId !== null ? `<a href="#" class="txt-700 text-white" onclick="navigateToLot(${nextLotId}); return false;">Next Lot &gt;</a>` : ''}
+      </div>
+    `;
+
+    lotsContainer.innerHTML = navigationHtml;
+
+  } catch (error) {
+    console.error('Error fetching lots:', error);
+    const lotsContainer = document.querySelector('#lots-container');
+    if (lotsContainer) {
+      lotsContainer.innerHTML = '<p>Error fetching lots. Please try again later.</p>';
+    }
+  }
 }
 
 
@@ -476,11 +469,6 @@ if (propertyAddressInput) {
 document.getElementById('formattedPrice').textContent = formattedPrice;
 }
 
-
-function navigateToLot(lotId) {
-    window.location.href = `/lot_details/${lotId}`;
-}
-
 function renderLotPage() {
     // Extract the lot ID from the URL
     const pathParts = window.location.pathname.split('/');
@@ -524,15 +512,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-window.addEventListener('popstate', function(event) {
-    // Update the page content according to the new URL
-    updatePageContentWithLotId(getCurrentLotId());
+document.addEventListener('DOMContentLoaded', async () => {
+  // 1. Render the lot content for the current /lot_details/:id
+  await renderLotPage();
+
+  // 2. Once the lot details HTML exists (including #lots-container), build prev/next nav
+  updateLots();
 });
-
-document.addEventListener('DOMContentLoaded', updateLots);
-
-// Assuming this is run when the lot details route is encountered
-renderLotPage();
-
-// Call this function when the page loads
-updateLots();

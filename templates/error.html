@@ -12,7 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 				
   		<!-- SITE TITLE -->
-		<title>Lot Details</title>
+		<title>Swift Property Auctions</title>
 							
 		<!-- FAVICON AND TOUCH ICONS -->
 		<link rel="shortcut icon" href="{{ versioned_url('static/images/favicon.ico') }}" type="image/x-icon">
@@ -137,113 +137,22 @@
 			<!-- END HEADER -->
 
 
-            <!-- HERO-14
-			============================================= -->	
-			<section id="hero-10" class="bg-fixed pb-60 hero-section division">
-				<div class="container">	
-					<div class="row d-flex align-items-center justify-content-center text-center">
 
 
-						<!-- HERO TEXT -->
-						<div class="col-sm-10 col-md-9 col-lg-9">
-							<div class="hero-14-txt white-color wow fadeInRight">
-
-								<!-- Title -->
-								<h2 class="h2-title-md">Lot Details</h2>
-
+			<!-- HERO SECTION (Updated Layout) -->
+					<section id="hero-14" class="hero-section division bg-fixed">
+						<div class="ml-36 mr-36 h-100 d-flex flex-column justify-content-center mb-160">
+							<div class="row align-items-start justify-content-start">
+								<!-- Left Section (Title, Subtitle, Buttons) -->
+								<div class="col-lg-9 col-md-10 text-left text-white">
+									<h2 class="h2-title-md mb-100">SOMETHING WENT WRONG</h2>
+								</div>
 							</div>
-						</div>	<!-- END HERO TEXT -->	
-
-
-					</div>    <!-- End row --> 	
-				</div>	   <!-- End container --> 	
-			</section>	<!-- END HERO-14 -->
-
-
-            <!-- FEATURES-8 ============================================= -->
-			<section id="features-8" class="bg-snow wide-0 features-section division">
-    			
-
-					<!-- Placeholder for dynamically-loaded lot details -->
-        			<div id="main-content">
-		    		<!-- Lot details will be rendered by JavaScript -->
-					</div>
-
-			</section> <!-- END FEATURES-8 -->
-
-
-
-
-			<!-- CONTACTS-2 ============================================= -->
-		<section id="contacts-2" class="bg-blue wide-60 contacts-section division white-color">
-			<div class="container">
-				<!-- SECTION TITLE -->
-				<div class="row justify-content-center">
-					<div class="col-md-10 col-lg-8">
-						<div class="section-title title-02 mb-80">
-							<!-- Title -->
-							<h5 class="h5-lg txt-700">Enquire about this property</h5>
-							<!-- Text -->
-							<p class="p-lg">Whether you're just starting out in the auction process, looking for advice on potential returns or seeking an auction valuation on your property, feel free to get in touch.</p>
 						</div>
-					</div>
-				</div>
-				<!-- CONTACT FORM -->
-				<div class="row justify-content-center">
-					<div class="col-lg-10 col-xl-8">
-						<div class="form-holder">
-							<form name="contactform" class="row contact-form">
-								<!-- Contact Form Input -->
-								<div class="col-md-6">
-									<p class="p-lg">Your Name: *</p>
-									<input type="text" name="first_name" class="form-control name" placeholder="First Name" required>
-								</div>
-								<div class="col-md-6">
-									<p class="p-lg">Last Name: *</p>
-									<input type="text" name="last_name" class="form-control name" placeholder="Last Name" required>
-								</div>
-								<div class="col-md-6">
-									<p class="p-lg">Your Email Address: *</p>
-									<input type="text" name="email" class="form-control email" placeholder="Email Address" required>
-								</div>
-								<div class="col-md-6">
-									<p class="p-lg">Telephone Number: *</p>
-									<input type="text" name="telephone" class="form-control number" placeholder="Telephone Number" required>
-								</div>
-								<div class="col-md-12">
-									<p class="p-lg">Property Address/Name: *</p>
-									<input type="text" name="property_address" class="form-control" placeholder="Property Address or Name" required readonly>
-								</div>
-								<div class="col-md-12">
-									<p class="p-lg">Enquiry? *</p>
-									<textarea class="form-control message" name="message" rows="3" placeholder="Regarding Lot Number..." required></textarea>
-								</div>
 
-								<!-- Terms and Conditions Checkbox -->
-								<div class="terms-and-conditions-checkbox">
-									<p class="p-md">By clicking 'Submit Enquiry' I accept the Company's <strong><a href="/static/pdf/terms_conditions.pdf" target="_blank" style="text-decoration: underline;" class="tra-red-hover">Terms and Conditions of Service</a></strong> and <strong><a href="{{ url_for('privacy') }}" target="_blank" style="text-decoration: underline;" class="tra-red-hover">Privacy Policy</strong></a></label>
-								</div>
+						
+					</section>
 
-								<!-- Contact Form Button -->
-								<div class="col-md-12 mt-15 form-btn text-center">
-									<button type="submit" class="btn btn-red tra-red-hover submit">Submit Enquiry</button>
-								</div>
-								<!-- Contact Form Message -->
-								<div class="col-lg-12 contact-form-msg">
-									<span class="loading"></span>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div> <!-- END CONTACT FORM -->
-			</div> <!-- End container -->
-		</section> <!-- END CONTACTS-2 -->
-
-		<!-- DIVIDER LINE -->
-		<hr class="divider">
-
-
-			
 
             <!-- NEWSLETTER + FOOTER CARD
 			============================================= -->
@@ -483,54 +392,61 @@
 
 
 
-
 		</div>	<!-- END PAGE CONTENT -->	
 			
-
-
-
-		<!-- EXTERNAL SCRIPTS -->
-		<script defer="defer" id="eig-online" src="https://widget.eigonlineauctions.com/loader.js" type="text/javascript"></script>
-		<script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/modernizr.custom.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/jquery.easing.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/jquery.appear.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/jquery.scrollto.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/menu.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/isotope.pkgd.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/quick-form.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/request-form.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/wow.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/lotDetails.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/enquiry-form.js') }}"></script>
-
-
-		<!-- Include Bootstrap JS (Bootstrap 5) -->
-		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script> -->
-
-		<!-- Custom Script -->
+		<!-- EXTERNAL SCRIPTS -->	
+		<script src="{{ versioned_url('static/js/jquery-3.6.0.min.js') }}"></script>
+		<script src="{{ versioned_url('static/js/bootstrap.min.js') }}"></script>	
+		<script src="{{ versioned_url('static/js/modernizr.custom.js') }}"></script>
+		<script src="{{ versioned_url('static/js/jquery.easing.js') }}"></script>
+		<script src="{{ versioned_url('static/js/jquery.appear.js') }}"></script>
+		<script src="{{ versioned_url('static/js/jquery.scrollto.js') }}"></script>	
+		<script src="{{ versioned_url('static/js/menu.js') }}"></script>
+		<script src="{{ versioned_url('static/js/imagesloaded.pkgd.min.js') }}"></script>
+		<script src="{{ versioned_url('static/js/isotope.pkgd.min.js') }}"></script>
+		<script src="{{ versioned_url('static/js/owl.carousel.min.js') }}"></script>
+		<script src="{{ versioned_url('static/js/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ versioned_url('static/js/quick-form.js') }}"></script>	
+		<script src="{{ versioned_url('static/js/request-form.js') }}"></script>	
+		<script src="{{ versioned_url('static/js/jquery.validate.min.js') }}"></script>
+		<script src="{{ versioned_url('static/js/jquery.ajaxchimp.min.js') }}"></script>	
+		<script src="{{ versioned_url('static/js/wow.js') }}"></script>
+		<script src="{{ versioned_url('static/js/countdown.js') }}"></script>
+		<script src="{{ versioned_url('static/js/updateLots.js') }}"></script>
+		<script src="{{ versioned_url('static/js/addtoCalendar.js') }}"></script>
+				
+		<!-- Custom Script -->		
 		<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
-				<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
-				<!--
-				<script>
-					var _gaq = _gaq || [];
-					_gaq.push(['_setAccount', 'UA-XXXXX-X']);
-					_gaq.push(['_trackPageview']);
+		<script>
+			// Wait for the DOM to fully load
+			document.addEventListener("DOMContentLoaded", function() {
+				// Target the dropdown selects
+				document.querySelectorAll('#max-price-filter, #property-type-filter').forEach(dropdown => {
+					dropdown.addEventListener('click', function() { // Listen for click
+						// Find the next sibling with the .css-arrow class and toggle the .rotate-arrow class
+						this.nextElementSibling.classList.toggle('rotate-arrow');
+					});
+				});
+			});
+		</script>
 
-					(function() {
-						var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-						ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-					})();
-				</script>
-				-->
+
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->															
+		<!--
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		-->
 
 
 

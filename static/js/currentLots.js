@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Check if the required fields are present
         const description = lot.Tagline || 'No description available.';
-        const detailsUrl = lot.LotDetailsUrl || '#';
+        // const detailsUrl = lot.LotDetailsUrl || '#';
+        const detailsUrl = `/lot_details/${lot.Id}`;
         const thumbnail = lot.Thumbnail || 'static/images/lotsimg.png';
         const startingPrice = lot.GuidePrice || 'N/A';
 
