@@ -13435,3 +13435,191 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .prev-lot-details-btn:hover{
   color: #AD1D18!important;
 }
+
+/* Section spacing */
+.guide-reserve-section {
+  padding: 40px 0 60px;
+}
+
+/* Base card */
+.gr-card {
+  position: relative;
+  height: 293px;                 /* matches Figma */
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+/* Background image */
+.gr-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bottom gradient overlay */
+.gr-gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 174px;                 /* from Figma */
+  background: linear-gradient(0deg, #000000 0%, rgba(102, 102, 102, 0) 100%);
+}
+
+/* Swift badge top-right */
+.gr-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 157px;
+  height: 96px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.gr-badge-top {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.gr-badge-line {
+  margin: 4px 0;
+  width: 100%;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+.gr-badge-bottom {
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 200;
+}
+
+/* Bottom-left text block */
+.gr-content {
+  position: absolute;
+  left: 16px;
+  bottom: 24px;
+  max-width: 560px;
+  color: #FFFFFF;
+}
+
+.gr-title {
+  margin: 0 0 10px;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.gr-copy {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+/* Tweak for smaller screens so it doesn’t feel cramped */
+@media (max-width: 991.98px) {
+  .gr-card {
+    height: 260px;
+    margin-bottom: 16px;
+  }
+  .gr-content {
+    max-width: 90%;
+  }
+}
+
+.guide-reserve-section-container{
+  padding: 36px 36px
+}
+
+.auction-pricing-section-container{
+  padding: 36px 36px;
+}
+
+.auction-pricing-section {
+  padding: 60px 0 80px;
+}
+
+/* Headings */
+.ap-heading {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #0F2848;
+  margin-bottom: 16px;
+}
+
+.ap-accent {
+  color: #AD1D18;
+}
+
+/* Body copy */
+.ap-copy {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #0F2848;
+  margin-bottom: 12px;
+}
+
+/* Image cards */
+.ap-image-card {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+  background: #ffffff;
+}
+
+/* Maintain a nice aspect ratio similar to the Figma */
+.ap-image-card::before {
+  content: "";
+  display: block;
+  padding-top: 60%; /* ~16:10 ratio */
+}
+
+.ap-image-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile tweaks */
+@media (max-width: 991.98px) {
+  .ap-heading {
+    font-size: 24px;
+  }
+  .auction-pricing-section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
