@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Check if SoldStatus is "Postponed"
         if (lot.SoldStatus === "Postponed") {
           soldBanner = `
-              <div class="sold-banner text-white" style="top: 0; right: 0; background-color: red;">
+              <div class="sold-banner text-white" style="top: 3px; right: 3px; background-color: red;">
                   POSTPONED
               </div>`;
         }
@@ -76,26 +76,26 @@ document.addEventListener('DOMContentLoaded', async () => {
             switch (lot.SoldStatusStage) {
                 case 1: // Regular
                     soldBanner = `
-                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: red;">
+                        <div class="sold-banner text-white" style="top: 3px; right: 3px; background-color: red;">
                             SOLD
                         </div>`;
                     break;
                 case 2: // Prior
                     soldBanner = `
-                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: red;">
+                        <div class="sold-banner text-white" style="top: 3px; right: 3px; background-color: red;">
                             SOLD PRIOR
                         </div>`;
                     break;
                 case 3: // Post
                     soldBanner = `
-                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: red;">
+                        <div class="sold-banner text-white" style="top: 3px; right: 3px; background-color: red;">
                             SOLD POST
                         </div>`;
                     break;
                 case 0: // Unknown
                 default:
                     soldBanner = `
-                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: gray;">
+                        <div class="sold-banner text-white" style="top: 3px; right: 3px; background-color: gray;">
                             SOLD
                         </div>`;
                     break;
@@ -137,9 +137,14 @@ document.addEventListener('DOMContentLoaded', async () => {
               <p class="description">${description}</p>
 
               <div class="btn-row">
-                <a href="#" class="btn-sm btn-gray text-black">Legal Pack</a>
+                <a href="#" class="btn-sm btn-tra-blue tra-red-hover text-black">Legal Pack</a>
                 <a href="${detailsUrl}" target="_blank" class="btn-sm btn-red2">View Details</a>
-                <a id="finance-btn" href="/auction_finance" class="btn-sm btn-gray text-black">Finance</a>
+                <a href="https://www.swiftbridgingfinance.co.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-sm btn-tra-blue tra-red-hover text-black">
+                    Finance
+                  </a>
               </div>
             </div>
 

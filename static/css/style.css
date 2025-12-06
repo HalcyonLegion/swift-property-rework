@@ -8315,7 +8315,6 @@ nav a#pull {
   margin-right: 3rem;
   flex-grow: 1;
   min-width: 30%;
-  margin-bottom: 1rem;
 }
 
 /* Ensure .guide-price is a flex container centered both ways */
@@ -8324,7 +8323,6 @@ nav a#pull {
   flex-grow: 1;
   flex-shrink: 4;
   min-width: 40%;
-  margin-bottom: 1rem;
 }
 
 @media (max-width: 991px) {
@@ -8674,66 +8672,6 @@ nav a#pull {
 
 .new-svg-btn:hover .default {
   opacity: 0;
-}
-
-
-/* Card container */
-.lot-card {
-  width: 436px;
-  height: 600px;
-  border-radius: 16px;
-  background: #fff;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-/* Lot banner */
-.lot-banner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #fff;
-  padding: 6px 14px;
-  font-weight: 700;
-  color: #e3342f;
-  border-bottom-right-radius: 12px;
-  z-index: 10;
-}
-
-/* Image */
-.lot-image img {
-  width: 436px;
-  height: 436px;
-  object-fit: cover;
-  transition: transform 0.6s ease-in-out;
-  border-radius: 0.5rem;
-}
-
-.lot-image:hover img {
-  transform: scale(1.05); /* Zoom in effect */
-}
-
-/* Content */
-.lot-content {
-  padding: 16px 18px;
-  height: calc(600px - 436px); /* ensures perfect total height */
-}
-
-/* Address */
-.lot-content .address {
-  margin-bottom: 6px;
-}
-
-/* Description */
-.lot-content .description {
-  margin-bottom: 10px;
-  font-size: 14px;
-  color: #333;
-}
-
-/* Price */
-.lot-content .price {
-  margin-bottom: 18px;
 }
 
 /* Button row */
@@ -10694,8 +10632,6 @@ nav a#pull {
 
 #features-8.features-section {
   background: #f0f0f0;
-  padding-top: 40px;
-  padding-bottom: 80px;
 }
 
 .lot-details-wrapper {
@@ -13621,5 +13557,329 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
     padding-top: 40px;
     padding-bottom: 60px;
   }
+}
+
+.lot-filtering-container {
+  padding: 16px 36px;
+}
+
+.features-8-container{
+  padding: 36px 36px;
+}
+
+/* ==== CURRENT LOTS SECTION CONTAINER ==== */
+
+/* Use a flex grid rather than relying purely on Bootstrap cols */
+#lots-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+/* Each JS-inserted item */
+.lot-item {
+  flex: 1 1 calc(33.333% - 16px);
+  max-width: 448px;
+  display: flex;
+}
+
+/* ===== CARD SHELL ===== */
+
+.lot-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 4px 16px;
+  gap: 16px;
+  isolation: isolate;
+
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #F2F2F2;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+  border-radius: 16px;
+  position: relative;
+}
+
+/* ===== IMAGE AREA ===== */
+
+.lot-image {
+  position: relative;
+  width: 100%;
+  height: 436px;          /* matches Figma proportions */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lot-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* LOT N pill top-left */
+
+.lot-banner {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 75px;
+  height: 50px;
+  background: #ffffff;
+  backdrop-filter: blur(20px);
+  border-radius: 8px 0 8px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 110%;
+  color: #AD1D18; /* red */
+}
+
+/* SOLD / POSTPONED label top-right */
+
+.sold-banner {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 110%;
+  text-transform: uppercase;
+  background-color: #AD1D18;
+  color: #ffffff;
+  z-index: 4;
+}
+
+/* Guide price glass bar at bottom of image */
+
+.guide-price {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  padding: 16px;
+  padding-right: 24px;
+  max-width: calc(100% - 8px);
+
+  background: rgba(166, 166, 166, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: 0 8px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 110%;
+  color: #ffffff;
+}
+
+.guide-price .price-red {
+  color: #AD1D18;
+  font-weight: 700;
+}
+
+/* ===== CARD CONTENT ===== */
+
+.lot-content {
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lot-content .address {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 110%;
+  color: #0F2848;
+  margin: 0;
+}
+
+.lot-content .description {
+  margin: 0;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ===== BUTTON ROW ===== */
+
+.btn-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Base button style matching Figma */
+#lots-container .btn-sm {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+  text-decoration: none;
+}
+
+/* Grey pill buttons (Legal Pack, Finance) */
+#lots-container .btn-gray {
+  background: rgba(228, 228, 228, 0.6);
+  backdrop-filter: blur(25px);
+  color: #0F2848;
+}
+
+/* Red primary button (View Details) */
+#lots-container .btn-red2 {
+  background: #AD1D18;
+  backdrop-filter: blur(25px);
+  color: #ffffff;
+}
+
+/* Remove Bootstrap’s default button padding/font from these */
+#lots-container .btn-sm.btn-gray,
+#lots-container .btn-sm.btn-red2 {
+  border-radius: 8px !important;
+}
+
+/* ===== RESPONSIVE (stack cards on small screens) ===== */
+
+@media (max-width: 1199.98px) {
+  .lot-item {
+    flex: 1 1 calc(50% - 16px);
+    max-width: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .lot-item {
+    flex: 1 1 100%;
+  }
+}
+
+/* Make the image wrapper the positioning context */
+.lot-card .lot-image {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;            /* clip overlay to image corners */
+}
+
+/* Guide price pill – bottom-left overlay */
+.lot-card .guide-price {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  padding: 16px 20px;
+  background: rgba(166, 166, 166, 0.5);
+  backdrop-filter: blur(20px);
+  border-radius: 0 8px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 110%;
+  color: #ffffff;
+  white-space: nowrap;         /* keep whole label on one line */
+}
+
+.lot-card .guide-price .price-red {
+  color: #AD1D18;              /* or your red brand colour */
+  font-weight: 700;
+}
+
+
+/* Button row layout */
+.lot-card .btn-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Shared button style for Legal Pack / View Details / Finance */
+.lot-card .btn-row .btn-sm {
+  flex: 0 0 auto;
+  border-radius: 8px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+  white-space: nowrap;          /* <<< keeps them on one line */
+}
+
+/* Grey buttons */
+.lot-card .btn-gray {
+  background: rgba(228, 228, 228, 0.6);
+  color: #0F2848;
+  border: none;
+}
+
+/* Red primary button */
+.lot-card .btn-red2 {
+  background: #AD1D18;
+  color: #ffffff;
+  border: none;
+}
+
+/* ============================
+   UPCOMING AUCTIONS PAGE GRID
+   ============================ */
+
+#upcoming-auctions #lots-container {
+  display: grid;
+  gap: 24px;              /* similar to g-4 spacing */
+}
+
+/* 1 column on mobile */
+@media (max-width: 767.98px) {
+  #upcoming-auctions #lots-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2 columns on tablet */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  #upcoming-auctions #lots-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 3 columns on desktop (your Figma layout) */
+@media (min-width: 1200px) {
+  #upcoming-auctions #lots-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Make each injected card fill its grid cell */
+#upcoming-auctions #lots-container > div {
+  width: 100%;
 }
 
