@@ -112,7 +112,7 @@
 
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('home') }}">Home</a></li>
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('about') }}">About</a></li>
-							<li class="nl-simple" aria-haspopup="true"><a href="#">Auctions</a></li>
+							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('future_auctions_dates') }}">Auctions</a></li>
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('current_lots') }}">Current Lots</a></li>
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('valuation') }}">Auction Valuation</a></li>
 							</li>
@@ -463,7 +463,7 @@
 						<li><a href="{{ url_for('valuation') }}" class="tra-red-hover">Free Valuation</a></li>
 						<li><a href="{{ url_for('future_auctions_dates') }}" class="tra-red-hover">Future Auction Dates</a></li>
 						<li><a href="{{ url_for('previous_auctions') }}" class="tra-red-hover">Previous Auctions</a></li>
-						<li><a href="{{ url_for('auction_finance') }}" class="tra-red-hover">Auction Finance</a></li>
+						<!-- <li><a href="{{ url_for('auction_finance') }}" class="tra-red-hover">Auction Finance</a></li> -->
 						<!-- <li><a href="{{ url_for('auction_buying_guide') }}" class="tra-red-hover">Auction Buying Guide</a></li> -->
 						<li><a href="{{ url_for('auction_selling_guide') }}" class="tra-red-hover">Auction Selling Guide</a></li>
 						<li><a href="{{ url_for('benefits_of_auctions') }}" class="tra-red-hover">Benefits of Auctions</a></li>
