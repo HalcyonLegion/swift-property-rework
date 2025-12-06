@@ -13142,7 +13142,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid #f2f2f2;
-  padding: 28px 24px 20px;
+  padding: 16px 24px 20px;
   box-shadow:
     17px 14px 9px rgba(0, 0, 0, 0.01),
     10px 8px 7px rgba(0, 0, 0, 0.05),
@@ -13181,7 +13181,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* Body rows */
 .prev-auction-body {
-  margin-top: 64px; /* clears badge & pill */
+  margin-top: 36px; /* clears badge & pill */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -13245,4 +13245,193 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .previous-auctions-container{
   padding: 36px 36px;
+}
+
+.prev-auction-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.prev-auction-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+/* Filled (left) button */
+.prev-auction-btn-primary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0F2848;
+  box-shadow:
+    0 18px 27px rgba(0, 0, 0, 0.05),
+    0 10px 23px rgba(0, 0, 0, 0.05),
+    0 5px 17px rgba(0, 0, 0, 0.09),
+    0 1px 9px rgba(0, 0, 0, 0.1);
+}
+
+/* Outlined (right) button */
+.prev-auction-btn-secondary {
+  background: rgba(255, 255, 255, 0.4);
+  color: #0F2848;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Hover / focus */
+.prev-auction-btn:hover,
+.prev-auction-btn:focus {
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 22px rgba(0, 0, 0, 0.05),
+    0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Small tweak for mobile so they don't crush */
+@media (max-width: 576px) {
+  .prev-auction-actions {
+    flex-direction: column;
+  }
+}
+
+/* Grid inside the collapse */
+.prev-auction-lots-row {
+  margin-top: 1.5rem;
+}
+
+/* Lot card */
+.prev-lot-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow:
+    0 18px 27px rgba(0, 0, 0, 0.01),
+    0 10px 23px rgba(0, 0, 0, 0.05),
+    0 5px 17px rgba(0, 0, 0, 0.09),
+    0 1px 9px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Image wrapper keeps a nice aspect ratio */
+.prev-lot-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* adjust to taste */
+  overflow: hidden;
+}
+
+.prev-lot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Status pill (Sold / Withdrawn etc.) */
+.prev-lot-status-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  background: #ffffff;
+  color: #ad1d18;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.prev-lot-status-badge.status-withdrawn {
+  color: #555;
+}
+
+/* Card body */
+.prev-lot-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  flex: 1;
+}
+
+/* Description – a couple of lines, no huge white gulf */
+.prev-lot-description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #0f2848;
+  max-height: 3.8em; /* ~2–3 lines */
+  overflow: hidden;
+}
+
+/* End date + price */
+.prev-lot-end,
+.prev-lot-price {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #0f2848;
+}
+
+.prev-lot-end span,
+.prev-lot-price span {
+  color: #ad1d18;
+  font-weight: 700;
+}
+
+/* View details button */
+.prev-lot-details-btn {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 40, 72, 0.12);
+  background: #ffffff;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0f2848;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.prev-lot-details-btn:hover,
+.prev-lot-details-btn:focus {
+  background: #f2f2f2;
+  transform: translateY(-1px);
+  box-shadow:
+    0 10px 18px rgba(0, 0, 0, 0.08),
+    0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile: lots stay neat and not too tall */
+@media (max-width: 576px) {
+  .prev-lot-description {
+    max-height: 4.5em;
+  }
+}
+
+.prev-lot-details-btn:hover{
+  color: #AD1D18!important;
 }
