@@ -13130,3 +13130,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .auction-card-actions-top > a:hover {
   color: #AD1D18!important;
 }
+
+.footer-card-container {
+  padding: 36px 36px;
+}
