@@ -12065,5 +12065,235 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   padding: 64px 36px;
 }
 
+/* === CAREERS & OPPORTUNITIES BANNER === */
 
+.careers-banner-card {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid #bdbdbd;
+  overflow: hidden;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+  min-height: 320px;
+}
+
+/* Background image */
+.careers-banner-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8); /* make image darker */
+}
+
+/* Inner layout */
+.careers-banner-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 64px;
+  color: #ffffff;
+}
+
+/* LEFT SIDE */
+
+.careers-banner-left {
+  max-width: 480px;
+}
+
+.careers-left-title {
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.careers-left-body {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+/* RIGHT GLASS PANEL */
+
+.careers-panel {
+  flex: 0 0 46%;
+  max-width: 640px;
+  background: rgba(104, 104, 104, 0.4);
+  backdrop-filter: blur(15px);
+  border-radius: 8px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+}
+
+/* Panel header */
+
+.careers-panel-header {
+  margin-bottom: 24px;
+}
+
+.careers-panel-title {
+  margin: 0 0 10px;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.careers-panel-underline {
+  width: 100%;
+  height: 2px;
+  background: #ad1d18; /* red */
+  margin-bottom: 10px;
+}
+
+.careers-panel-subtitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+/* Roles list */
+
+.careers-role-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.careers-role-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.careers-role-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: #ffffff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.careers-role-icon img {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.careers-role-text {
+  white-space: normal;
+}
+
+/* Footer (button + badge) */
+
+.careers-panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* SVG CTA (reuses new-svg-btn behaviour) */
+.careers-cta {
+  display: inline-block;
+}
+
+/* JOIN THE SWIFT glass badge */
+
+.careers-join-badge {
+  width: 177px;
+  height: 96px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.careers-join-badge-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 145px;
+  gap: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.careers-join-top {
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.careers-join-line {
+  width: 145px;
+  height: 0;
+  border-top: 2px solid #ffffff;
+}
+
+.careers-join-bottom {
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 200;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 991.98px) {
+  .careers-banner-inner {
+    flex-direction: column;
+    padding: 40px 24px;
+  }
+
+  .careers-panel {
+    flex: 1 1 auto;
+  }
+
+  .careers-panel-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .careers-join-badge {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .careers-left-title {
+    font-size: 26px;
+  }
+
+  .careers-panel-title {
+    font-size: 26px;
+  }
+
+  .careers-role-list li {
+    font-size: 20px;
+  }
+}
+
+.careers-container{
+  padding: 64px 36px;
+}
 
