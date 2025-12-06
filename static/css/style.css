@@ -9278,6 +9278,11 @@ nav a#pull {
   padding: 64px 36px;
 }
 
+/* === Section wrapper === */
+.auction-feature-section2 {
+  padding: 36px 36px;
+}
+
 /* === White card === */
 .auction-feature-card {
   box-sizing: border-box;
@@ -9419,7 +9424,7 @@ nav a#pull {
   min-width: 169px;
   height: 54px;
 
-  background: rgba(0, 0, 0, 0.3);
+  /* background: rgba(0, 0, 0, 0.3); */
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border-radius: 8px;
@@ -11645,11 +11650,420 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   }
 }
 
+/* === ABOUT HERO LAYOUT === */
+
+.about-hero {
+  background: #f4f4f4;
+}
+
+.about-hero-row {
+  display: flex;          /* make the row a flex container */
+  flex-wrap: wrap;        /* stack on small screens */
+  align-items: stretch;
+  gap: 24px;
+}
+
+/* LEFT IMAGE CARD */
+
+.about-hero-image-card {
+  position: relative;
+  background: #f4f4f4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    27px 37px 18px rgba(0, 0, 0, 0.01),
+    15px 21px 16px rgba(0, 0, 0, 0.05),
+    7px 9px 12px rgba(0, 0, 0, 0.09),
+    2px 2px 6px rgba(0, 0, 0, 0.10);
+}
+
+.about-hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* RIGHT COPY CARD */
+
+.about-hero-copy-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 48px 40px;
+  height: 100%;
+  box-shadow:
+    27px 37px 18px rgba(0, 0, 0, 0.01),
+    15px 21px 16px rgba(0, 0, 0, 0.05),
+    7px 9px 12px rgba(0, 0, 0, 0.09),
+    2px 2px 6px rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-hero-heading {
+  font-size: 48px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #0f2848;
+  margin-bottom: 20px;
+}
+
+.about-hero-underline {
+  width: 312px;
+  max-width: 100%;
+  height: 2px;
+  background: #ad1d18;
+  margin-bottom: 24px;
+}
+
+.about-hero-body {
+  font-size: 20px;
+  line-height: 1.3;
+  color: #0f2848;
+  margin-bottom: 32px;
+}
+
+/* CTA */
+
+.about-hero-cta-row {
+  display: flex;
+  align-items: center;
+}
+
+/* reuse your SVG hover pattern */
+.new-svg-btn {
+  position: relative;
+  display: inline-block;
+}
+
+.new-svg-btn .cta-img {
+  display: block;
+}
+
+.new-svg-btn .hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.new-svg-btn .default {
+  opacity: 1;
+}
+
+.new-svg-btn:hover .hover {
+  opacity: 1;
+}
+
+.new-svg-btn:hover .default {
+  opacity: 0;
+}
+
+/* Responsive tweaks */
+
+/* Let the two columns sit side-by-side on larger screens */
+@media (min-width: 992px) {
+  .about-hero-row > .col-12.col-lg-7 {
+    flex: 0 0 58%;        /* ~7/12 */
+  }
+  .about-hero-row > .col-12.col-lg-5 {
+    flex: 0 0 42%;        /* ~5/12 */
+  }
+}
+
+/* ===== ABOUT: "THE PEOPLE BEHIND THE PROCESS" ===== */
+
+.auction-feature-section2 {
+  padding: 40px 0 80px;
+  background: #f4f4f4;
+}
+
+/* Flex card containing image + white text card */
+.auction-feature-section2 .auction-feature-card {
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* LEFT IMAGE CARD */
+.auction-feature-section2 .auction-feature-image-wrapper {
+  flex: 0 0 55%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f4f4f4;
+  box-shadow:
+    27px 37px 18px rgba(0, 0, 0, 0.01),
+    15px 21px 16px rgba(0, 0, 0, 0.05),
+    7px 9px 12px rgba(0, 0, 0, 0.09),
+    2px 2px 6px rgba(0, 0, 0, 0.10);
+}
+
+.auction-feature-section2 .about-hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* RIGHT WHITE CARD (Frame 213) */
+.auction-feature-section2 .auction-feature-intro {
+  flex: 0 0 43%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 64px 48px 56px;
+  box-shadow:
+    27px 37px 18px rgba(0, 0, 0, 0.01),
+    15px 21px 16px rgba(0, 0, 0, 0.05),
+    7px 9px 12px rgba(0, 0, 0, 0.09),
+    2px 2px 6px rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Heading + red underline */
+.auction-feature-section2 .auction-feature-title {
+  font-size: 48px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #0f2848;
+  margin: 0 0 24px;
+  position: relative;
+}
+
+.auction-feature-section2 .auction-feature-title::after {
+  content: "";
+  display: block;
+  width: 312px;
+  max-width: 100%;
+  height: 2px;
+  background: #ad1d18;
+  margin-top: 20px;
+}
+
+/* Body text */
+.auction-feature-section2 .auction-feature-body {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #0f2848;
+  max-width: 492px;
+  margin: 24px 0 32px;
+}
+
+/* CTA row */
+.auction-feature-section2 .auction-feature-cta {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive: stack on tablet/mobile */
+@media (max-width: 991.98px) {
+  .auction-feature-section2 .auction-feature-card {
+    flex-direction: column;
+  }
+
+  .auction-feature-section2 .auction-feature-intro {
+    padding: 40px 24px 32px;
+  }
+
+  .auction-feature-section2 .auction-feature-title {
+    font-size: 36px;
+  }
+
+  .auction-feature-section2 .auction-feature-body {
+    font-size: 18px;
+  }
+}
 
 
+/* === AUCTION TEAM GRID (ABOUT PAGE) === */
 
+.team-grid-section {
+  padding: 40px 0 80px;
+}
 
+.team-grid-section .team-grid-header {
+  margin-bottom: 24px;
+}
 
+.team-grid-section .team-grid-header h4 {
+  margin: 0;
+}
+
+/* Card container */
+.team-grid-section .team-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #f2f2f2;
+  background: #ffffff;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+  height: 100%;
+}
+
+/* Wrapper for the two stacked images */
+.team-grid-section .team-card-photo {
+  position: relative;
+  width: 100%;
+  /* Enforce ~448x293 aspect ratio from Figma (293/448 ≈ 65%) */
+  padding-top: 65%;
+  overflow: hidden;
+}
+
+/* Background image (plants / office) */
+.team-grid-section .team-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Foreground portrait */
+.team-grid-section .team-card-portrait {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  /* optional: subtle shadow so they pop off the background a bit */
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+/* Bottom gradient overlay (Frame 1000007219) */
+.team-grid-section .team-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 65%;
+  background: linear-gradient(
+    0deg,
+    #000000 0%,
+    rgba(102, 102, 102, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure overlay/content sit above gradient */
+.team-grid-section .team-card-badge,
+.team-grid-section .team-card-content {
+  position: absolute;
+  z-index: 2;
+}
+
+/* Top-right glass badge "THE SWIFT / PROPERTY / AUCTIONS TEAM" */
+.team-grid-section .team-card-badge {
+  top: 16px;
+  right: 16px;
+  width: 157px;
+  height: 96px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-grid-section .team-card-badge-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 145px;
+  gap: 4px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.team-grid-section .badge-top {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.team-grid-section .badge-line {
+  width: 145px;
+  height: 0;
+  border-top: 2px solid #ffffff;
+}
+
+.team-grid-section .badge-bottom {
+  font-weight: 200;
+  font-size: 16px;
+}
+
+/* Text content in the gradient area */
+.team-grid-section .team-card-content {
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Name */
+.team-grid-section .team-card-name {
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Role */
+.team-grid-section .team-card-role {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Short bio */
+.team-grid-section .team-card-bio {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  .team-grid-section .team-card-name {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .team-grid-section .team-card-badge {
+    top: 12px;
+    right: 12px;
+    transform: scale(0.9);
+    transform-origin: top right;
+  }
+}
+
+.team-grid-section{
+  padding: 64px 36px;
+}
 
 
 

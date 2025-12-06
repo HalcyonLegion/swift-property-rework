@@ -12,7 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 				
   		<!-- SITE TITLE -->
-		<title>About</title>
+		<title>About Us</title>
 							
 		<!-- FAVICON AND TOUCH ICONS -->
 		<link rel="shortcut icon" href="{{ versioned_url('static/images/favicon.ico') }}" type="image/x-icon">
@@ -53,7 +53,7 @@
 
 
 
-	<body>
+	<body class="lot-details-page">
 
 		<!-- PRELOADER SPINNER
 		============================================= -->	
@@ -61,7 +61,7 @@
 			<div id="loading" class="preloader">
 				<div id="loading-center">
 					<div id="loading-center-absolute">
-						<img src="static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
+						<img src="/static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
 					</div>
 				</div>
 			</div>
@@ -119,7 +119,7 @@
 							<!-- Contact button hard right -->
 							<li class="nl-simple nav-contact" aria-haspopup="true">
 							<a href="{{ url_for('contact') }}" class="btn contact-svg-btn" aria-label="Contact Us">
-								<img src="{{ url_for('static', filename='images/contact-default.svg') }}"
+								<img src="{{ url_for('static', filename='images/contact-default2.svg') }}"
 									alt="Contact Us" class="contact-img default">
 								<img src="{{ url_for('static', filename='images/contact-hover.svg') }}"
 									alt="Contact Us" class="contact-img hover">
@@ -137,112 +137,298 @@
 			<!-- END HEADER -->
 
 
-            <!-- HERO-13
-			============================================= -->	
-			<section id="hero-19" class="bg-fixed hero-section division pb-100">
-				<div class="container">	
-					<div class="row d-flex align-items-center justify-content-center text-center">
+            <!-- ABOUT HERO : PEOPLE BEHIND THE PROCESS -->
+				<section class="auction-feature-section2">
+				<div class="auction-feature-card">
 
+					<!-- LEFT: IMAGE CARD -->
+					<div class="auction-feature-image-wrapper">
+						<!-- Main image -->
+						<img
+							src="{{ url_for('static', filename='images/about-team-hero.jpg') }}"
+							alt="Swift Property Auctions team"
+							class="about-hero-image"
+						>
 
-						<!-- HERO TEXT -->
-						<div class="col-sm-10 col-md-9 col-lg-10">
-							<div class="hero-14-txt white-color wow fadeInRight">
+					</div>
 
-								<!-- Title -->
-								<h2 class="h2-title-md">Meet the Team</h2>
+					<!-- RIGHT: COPY CARD -->
+					<div class="auction-feature-intro">
+							<h3 class="auction-feature-title">
+							THE PEOPLE BEHIND<br>
+							THE PROCESS
+						</h3>
 
-								<!-- Text -->
-								<p class="p-md">
-								</p>
+						<p class="auction-feature-body">
+							Selling a property is a significant step, and you
+							deserve to feel supported and informed throughout
+							the journey. At Swift, you’ll have a single, reliable
+							point of contact backed by a team that genuinely cares
+							about achieving the best result for you.
+						</p>
 
+							<div class="auction-feature-cta">
+											<a
+											href="{{ url_for('valuation') }}"
+											class="auction-feature-cta-main"
+											aria-label="Valuation"
+											>
+											<img
+												src="{{ url_for('static', filename='images/freeValuation-default.svg') }}"
+												alt="Free Valuation"
+												class="contact-img default"
+											>
+											</a>
 							</div>
-						</div>	<!-- END HERO TEXT -->	
-
-
-					</div>    <!-- End row --> 	
-				</div>	   <!-- End container --> 	
-			</section>	<!-- END HERO-13 -->
-
-
-
-
-			<!-- TEAM-1
-			============================================= -->
-			<section id="team-1" class="wide-0 pb-20 team-section division">
-				<div class="container">
-
-					<!-- HERO TEXT -->
-					<div class="col-sm-10 col-md-9 col-lg-9">
-						<div class="hero-14-txt white-color wow fadeInRight">
-
-							<!-- Title -->
-							<h4 class="h4-lg text-black">The Auction Team</h4>
-							<br>
-
 						</div>
-					</div>	<!-- END HERO TEXT -->	
+					</div>
+
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+				</section>
 
 
-					<!-- TEAM MEMBERS HOLDER -->
-					<div class="team-members-wrapper text-center">
-						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-
-							<!-- TEAM MEMBER #5 -->
-							<div class="col">
-								<div class="team-member wow fadeInUp">
-
-									<!-- Team Member Photo -->
-									<div class="team-member-photo">
-										<img class="img-fluid" src="static/images/team-4.jpg" alt="team-member-foto">
-									</div>
-																			
-									<!-- Team Member Data -->		
-									<div class="team-member-data">
-										<br>	
-										<h5 class="h5-sm pb-5 txt-700 text-black">Shloime Breuer</h5>
-										<p class="p pb-5">Partner</p>
-										<p class="tm-social">
-											<!-- Visible only on larger screens: -->
-											<a href="mailto:shloime@swiftpropertyauctions.co.uk" class="d-none d-xl-inline text-secondary underline-on-hover text-black" title="shloime@swiftpropertyauctions.co.uk">shloime@swiftpropertyauctions.co.uk</a>
-											<!-- Visible on smaller screens: -->
-											<a href="mailto:shloime@swiftpropertyauctions.co.uk" class="d-xl-none text-secondary underline-on-hover text-black" title="shloime@swiftpropertyauctions.co.uk"><span class="d-flex txt-700 justify-content-center align-items-end"> Email</span></a>
-										</p>
-									</div>	
-
-								</div>
-							</div>	<!-- END TEAM MEMBER #5 -->
-
-							<!-- TEAM MEMBER #4 -->
-							<div class="col">
-								<div class="team-member wow fadeInUp">
-
-									<!-- Team Member Photo -->
-									<div class="team-member-photo">
-										<img class="img-fluid focused-image" src="static/images/team-2.jpg" alt="team-member-foto">
-									</div>
-																			
-									<!-- Team Member Data -->		
-									<div class="team-member-data">
-										<br>	
-										<h5 class="h5-sm pb-5 txt-700 text-black">Ranjit Gill</h5>
-										<p class="p pb-5">Partner</p>
-										<p class="tm-social">
-											<!-- Visible only on larger screens: -->
-											<a href="mailto:ranjit@swiftpropertyauctions.co.uk" class="d-none d-xl-inline underline-on-hover text-black text-secondary" title="ranjit@swiftpropertyauctions.co.uk">ranjit@swiftpropertyauctions.co.uk</a>
-											<!-- Visible on smaller screens: -->
-											<a href="mailto:ranjit@swiftpropertyauctions.co.uk" class="d-xl-none text-secondary underline-on-hover text-black" title="ranjit@swiftpropertyauctions.co.uk"><span class="d-flex txt-700 underline-on-hover justify-content-center align-items-end"> Email</span></a>
-										</p>
-									</div>	
-
-								</div>
-							</div>	<!-- END TEAM MEMBER #4 -->
-												
-						</div>	<!-- TEAM MEMBERS ROW -->
-					</div>	<!-- TEAM MEMBERS HOLDER -->   
 
 
-				</div>	    <!-- End container -->
-			</section>	<!-- END TEAM-1 -->
+
+			<!-- TEAM-1 : THE AUCTION TEAM -->
+				<section id="team-1" class="team-grid-section">
+				<div class="team-grid-section">
+
+					<!-- 6 TEAM CARDS (3 per row on large screens) -->
+					<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 team-grid">
+
+					<!-- CARD 1 -->
+					<div class="col">
+						<article class="team-card">
+						<div class="team-card-photo">
+							<!-- BACKGROUND (plants / office) -->
+							<img
+							src="{{ url_for('static', filename='images/team-bg.jpg') }}"
+							alt=""
+							class="team-card-bg"
+							>
+							<!-- PORTRAIT -->
+							<img
+							src="{{ url_for('static', filename='images/team-shloime.png') }}"
+							alt="Shloime Breuer"
+							class="team-card-portrait"
+							>
+						</div>
+
+						<!-- Top-right Swift badge -->
+						<div class="team-card-badge">
+							<div class="team-card-badge-inner">
+							<span class="badge-top">THE SWIFT</span>
+							<span class="badge-line"></span>
+							<span class="badge-bottom">
+								PROPERTY<br>AUCTIONS TEAM
+							</span>
+							</div>
+						</div>
+
+						<!-- Text overlay -->
+						<div class="team-card-content">
+							<h3 class="team-card-name">Shloime Breuer</h3>
+							<p class="team-card-role">PARTNER</p>
+							<p class="team-card-bio">
+							Partner at Swift Property Auctions, providing clear, grounded
+							advice across all property types.
+							</p>
+						</div>
+						</article>
+					</div>
+
+					<!-- CARD 2 -->
+					<div class="col">
+						<article class="team-card">
+						<div class="team-card-photo">
+							<img
+							src="{{ url_for('static', filename='images/team-bg.jpg') }}"
+							alt=""
+							class="team-card-bg"
+							>
+							<img
+							src="{{ url_for('static', filename='images/team-emilia.png') }}"
+							alt="Emilia Novak"
+							class="team-card-portrait"
+							>
+						</div>
+
+						<div class="team-card-badge">
+							<div class="team-card-badge-inner">
+							<span class="badge-top">THE SWIFT</span>
+							<span class="badge-line"></span>
+							<span class="badge-bottom">
+								PROPERTY<br>AUCTIONS TEAM
+							</span>
+							</div>
+						</div>
+
+						<div class="team-card-content">
+							<h3 class="team-card-name">Emilia Novak</h3>
+							<p class="team-card-role">AUCTION ADMINISTRATOR</p>
+							<p class="team-card-bio">
+							Keeps auctions running smoothly, organising documents,
+							bidders and timelines.
+							</p>
+						</div>
+						</article>
+					</div>
+
+					<!-- CARD 3 -->
+					<div class="col">
+						<article class="team-card">
+						<div class="team-card-photo">
+							<img
+							src="{{ url_for('static', filename='images/team-bg.jpg') }}"
+							alt=""
+							class="team-card-bg"
+							>
+							<img
+							src="{{ url_for('static', filename='images/team-ranjit.png') }}"
+							alt="Ranjit Gill"
+							class="team-card-portrait"
+							>
+						</div>
+
+						<div class="team-card-badge">
+							<div class="team-card-badge-inner">
+							<span class="badge-top">THE SWIFT</span>
+							<span class="badge-line"></span>
+							<span class="badge-bottom">
+								PROPERTY<br>AUCTIONS TEAM
+							</span>
+							</div>
+						</div>
+
+						<div class="team-card-content">
+							<h3 class="team-card-name">Ranjit Gill</h3>
+							<p class="team-card-role">AUCTION SALES</p>
+							<p class="team-card-bio">
+							Guides buyers and sellers with clear, practical advice
+							throughout the auction process.
+							</p>
+						</div>
+						</article>
+					</div>
+
+					<!-- CARD 4 -->
+					<div class="col">
+						<article class="team-card">
+						<div class="team-card-photo">
+							<img
+							src="{{ url_for('static', filename='images/team-bg.jpg') }}"
+							alt=""
+							class="team-card-bg"
+							>
+							<img
+							src="{{ url_for('static', filename='images/team-lina.png') }}"
+							alt="Lina Wei-Hartmann"
+							class="team-card-portrait"
+							>
+						</div>
+
+						<div class="team-card-badge">
+							<div class="team-card-badge-inner">
+							<span class="badge-top">THE SWIFT</span>
+							<span class="badge-line"></span>
+							<span class="badge-bottom">
+								PROPERTY<br>AUCTIONS TEAM
+							</span>
+							</div>
+						</div>
+
+						<div class="team-card-content">
+							<h3 class="team-card-name">Lina Wei-Hartmann</h3>
+							<p class="team-card-role">MARKETING MANAGER</p>
+							<p class="team-card-bio">
+							Drives Swift’s campaigns and shapes each property story
+							to maximise visibility.
+							</p>
+						</div>
+						</article>
+					</div>
+
+					<!-- CARD 5 -->
+					<div class="col">
+						<article class="team-card">
+						<div class="team-card-photo">
+							<img
+							src="{{ url_for('static', filename='images/team-bg.jpg') }}"
+							alt=""
+							class="team-card-bg"
+							>
+							<img
+							src="{{ url_for('static', filename='images/team-charles.png') }}"
+							alt="Charles Thomas"
+							class="team-card-portrait"
+							>
+						</div>
+
+						<div class="team-card-badge">
+							<div class="team-card-badge-inner">
+							<span class="badge-top">THE SWIFT</span>
+							<span class="badge-line"></span>
+							<span class="badge-bottom">
+								PROPERTY<br>AUCTIONS TEAM
+							</span>
+							</div>
+						</div>
+
+						<div class="team-card-content">
+							<h3 class="team-card-name">Charles Thomas</h3>
+							<p class="team-card-role">ADVISOR</p>
+							<p class="team-card-bio">
+							Provides behind-the-scenes guidance with expert insight
+							as a pioneer in the modern auction space.
+							</p>
+						</div>
+						</article>
+					</div>
+
+					<!-- CARD 6 -->
+					<div class="col">
+						<article class="team-card">
+						<div class="team-card-photo">
+							<img
+							src="{{ url_for('static', filename='images/team-bg.jpg') }}"
+							alt=""
+							class="team-card-bg"
+							>
+							<img
+							src="{{ url_for('static', filename='images/team-sofia.png') }}"
+							alt="Sofia Kelle"
+							class="team-card-portrait"
+							>
+						</div>
+
+						<div class="team-card-badge">
+							<div class="team-card-badge-inner">
+							<span class="badge-top">THE SWIFT</span>
+							<span class="badge-line"></span>
+							<span class="badge-bottom">
+								PROPERTY<br>AUCTIONS TEAM
+							</span>
+							</div>
+						</div>
+
+						<div class="team-card-content">
+							<h3 class="team-card-name">Sofia Kelle</h3>
+							<p class="team-card-role">BUSINESS DEVELOPMENT MANAGER</p>
+							<p class="team-card-bio">
+							Builds strong seller and partner relationships to grow
+							Swift’s auction network.
+							</p>
+						</div>
+						</article>
+					</div>
+
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+				</section>
+
+
 
 			<!-- HERO-14
 			============================================= -->	
@@ -715,7 +901,6 @@
 						</div>
 
 			</section>
-
 
 
 
