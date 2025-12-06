@@ -12606,3 +12606,216 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   line-height: 1.1;
   color: #ffffff;
 }
+
+/* === VALUATION ENQUIRY CARD === */
+
+.valuation-enquiry-section {
+  padding: 80px 0;
+}
+
+/* Outer card */
+.valuation-enquiry-card {
+  /* max-width: 1376px; */
+  margin: 0 auto;
+  background: #f6f6f6;
+  border-radius: 16px;
+  box-shadow:
+    95px 32px 40px rgba(0, 0, 0, 0.01),
+    53px 18px 34px rgba(0, 0, 0, 0.05),
+    24px 8px 25px rgba(0, 0, 0, 0.09),
+    6px 2px 14px rgba(0, 0, 0, 0.10);
+  padding: 56px 48px 48px;
+}
+
+/* Header */
+.valuation-enquiry-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.valuation-enquiry-title {
+  margin: 0 0 8px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.1;
+  color: #0f2848;
+}
+
+.valuation-accent {
+  color: #ad1d18;
+}
+
+.valuation-enquiry-underline {
+  width: 100%;
+  max-width: 420px;
+  height: 2px;
+  margin: 4px auto 16px;
+  background: #ad1d18;
+  border-radius: 999px;
+}
+
+.valuation-enquiry-subtitle {
+  margin: 0 auto;
+  max-width: 460px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #0f2848;
+}
+
+/* === FORM LAYOUT === */
+
+.valuation-form {
+  max-width: 1163px;
+  margin: 0 auto;
+}
+
+.valuation-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 16px;
+}
+
+.valuation-field {
+  width: 100%;
+}
+
+.valuation-field.half {
+  grid-column: span 1;
+}
+
+.valuation-field.full {
+  grid-column: 1 / -1;
+}
+
+/* Inputs / select / textarea styled as Figma white cards */
+.valuation-field input,
+.valuation-field select,
+.valuation-field textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  padding: 14px 24px;
+  background: #ffffff;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #0f2848;
+  box-shadow:
+    65px 18px 27px rgba(0, 0, 0, 0.01),
+    36px 10px 23px rgba(0, 0, 0, 0.05),
+    16px 5px 17px rgba(0, 0, 0, 0.09),
+    4px 1px 9px rgba(0, 0, 0, 0.10);
+}
+
+/* Placeholder colour to match Figma */
+.valuation-field input::placeholder,
+.valuation-field textarea::placeholder {
+  color: rgba(15, 40, 72, 0.5);
+}
+
+/* Select arrow reset (we keep browser arrow for now) */
+.valuation-field select {
+  color: rgba(15, 40, 72, 0.5);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+}
+
+/* Longer textarea */
+.valuation-field.textarea textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Checkbox row */
+.valuation-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.1;
+  color: rgba(15, 40, 72, 0.6);
+  margin-top: 8px;
+}
+
+.valuation-checkbox-row input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+  box-shadow:
+    2px 2px 1px rgba(0, 0, 0, 0.01),
+    1px 1px 1px rgba(0, 0, 0, 0.05),
+    1px 1px 1px rgba(0, 0, 0, 0.09);
+}
+
+.valuation-checkbox-row a {
+  text-decoration: underline;
+}
+
+/* Submit button (SVG) */
+.valuation-field.submit-field {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.valuation-submit {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.valuation-submit-svg {
+  display: block;
+  max-width: 220px; /* keeps it tidy on smaller screens */
+  height: auto;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 991.98px) {
+  .valuation-enquiry-card {
+    padding: 40px 24px 32px;
+  }
+
+  .valuation-enquiry-title {
+    font-size: 36px;
+  }
+
+  .valuation-enquiry-subtitle {
+    font-size: 18px;
+  }
+
+  .valuation-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .valuation-field.half,
+  .valuation-field.full {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .valuation-enquiry-card {
+    padding: 32px 16px 28px;
+  }
+
+  .valuation-enquiry-title {
+    font-size: 30px;
+  }
+}
+
+.speak-to-our-auction-team {
+  padding: 36px 36px;
+}
