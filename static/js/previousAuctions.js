@@ -1,196 +1,267 @@
-let globalAuctions = []; // This will store the auctions fetched from the server
+let globalAuctions = []; // All lots fetched from the server
+
+// Groups you care about
+const PREVIOUS_GROUP_IDS = [62007, 60309, 63759, 69639, 73072, 73121];
+const API_URL = '/api/proxy/online-auctions';
+
+// ================= MAIN FETCH / INITIAL RENDER =================
 
 async function updateLots() {
-    try {
-        const groupIds = [62007, 60309, 63759, 69639, 73072, 73121]; // Define the Group IDs to fetch
-        const apiUrl = '/api/proxy/online-auctions';
-        const allAuctions = [];
+  try {
+    const allAuctions = [];
 
-        // Fetch data for each GroupId
-        for (const groupId of groupIds) {
-            const params = new URLSearchParams({
-                OnlineAuctionGroupId: groupId,  // Pass the current group ID
-                IsShownOnWeb: true,
-            });
+    // Fetch data for each GroupId
+    for (const groupId of PREVIOUS_GROUP_IDS) {
+      const params = new URLSearchParams({
+        OnlineAuctionGroupId: groupId,
+        IsShownOnWeb: true,
+      });
 
-            const response = await fetch(`${apiUrl}?${params.toString()}`);
-            
-            if (!response.ok) {
-                throw new Error(`Network response for GroupId ${groupId} was not ok`);
-            }
+      const response = await fetch(`${API_URL}?${params.toString()}`);
+      if (!response.ok) {
+        console.error(`Network response for GroupId ${groupId} was not ok`);
+        continue;
+      }
 
-            const responseBody = await response.json();
-            const auctions = responseBody.Auctions;
+      const responseBody = await response.json();
+      const auctions = responseBody.Auctions;
 
-            if (!Array.isArray(auctions)) {
-                throw new Error('Response is not an array');
-            }
+      if (!Array.isArray(auctions)) {
+        console.error('Response for GroupId', groupId, 'is not an array');
+        continue;
+      }
 
-            // Add the auctions to the allAuctions array
-            allAuctions.push(...auctions);
-        }
-
-        // Group auctions by GroupId (60309, 63759, 62007, 69639. 73072, 73121 - 65993 removed)
-        const auctionsByGroupId = allAuctions.reduce((groups, auction) => {
-            const groupId = auction.GroupId;
-            if (groupId === 60309 || groupId === 62007 || groupId === 63759 || groupId === 69639 || groupId === 73072 || groupId === 73121) {
-                groups[groupId] = groups[groupId] || [];
-                groups[groupId].push(auction);
-            }
-            return groups;
-        }, {});
-
-        const auctionsContainer = document.querySelector('#auctions-container');
-        auctionsContainer.innerHTML = ''; // Clear existing content
-
-        // Process each group (62007 and 60309)
-        Object.entries(auctionsByGroupId).forEach(([groupId, auctions], index) => {
-            const offeredAuctions = auctions.filter(auction => auction.SoldStatus !== "Withdrawn" && auction.SoldStatus !== "Postponed");
-            const soldAuctions = auctions.filter(auction => auction.SoldStatus === "Sold");
-
-            const totalOffered = offeredAuctions.length;
-            const totalSold = soldAuctions.length;
-            const successRate = totalSold / totalOffered * 100;
-            const totalRaised = soldAuctions.reduce((acc, auction) => acc + (auction.SalePrice || 0), 0);
-
-            const formattedRaised = new Intl.NumberFormat('en-GB', { 
-                style: 'currency', 
-                currency: 'GBP',
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0 
-            }).format(totalRaised);
-
-            // Map GroupId to readable date
-            const formattedEndDate = 
-            groupId === "60309" ? "16th July 2024" : 
-            groupId === "62007" ? "8th October 2024" : 
-            groupId === "63759" ? "12th November 2024" :
-            groupId === "69639" ? "13th May 2025" :
-            groupId === "73072" ? "5th August 2025" :
-            groupId === "73121" ? "30th September 2025" : "Unknown Date";
-            const groupIdIndex = `group-${index}`;
-
-            // Header HTML includes dynamic stats for each group
-            const headerHtml = `
-            <div class="accordion-item">
-                <h6 class="accordion-header" id="heading${groupIdIndex}">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${groupIdIndex}" aria-expanded="true" aria-controls="collapse${groupIdIndex}">
-                        <strong>
-                            <span class="info-date">Auction Date: ${formattedEndDate}</span>
-                        </strong>
-                    </button>
-                    <div class="list-group align-items-start pl-20">
-                        <span class="info-offered"><strong>Offered:</strong> ${totalOffered}</span>
-                        <span class="info-sold"><strong>Sold:</strong> ${totalSold}</span>
-                        <span class="info-success"><strong>Success:</strong> ${successRate.toFixed(2)}%</span>
-                        <span class="info-raised"><strong>Raised:</strong> ${formattedRaised}</span><br>
-                    </div>
-                </h6>
-                <div id="collapse${groupIdIndex}" class="accordion-collapse collapse" aria-labelledby="heading${groupIdIndex}" data-bs-parent="#auctions-container">
-                    <div class="accordion-body">
-                        <div id="lots-container" class="row row-cols-1 row-cols-md-3 d-flex">`;
-
-            let propertiesHtml = auctions.map(auction => {
-                const shouldHidePrice = auction.LotNumber === 14 || auction.LotNumber === 15 || auction.SoldStatusStage === 2 || auction.SoldStatus === "No Bids" || auction.SoldStatus === "Unsold";
-                const formattedPrice = new Intl.NumberFormat('en-GB', { 
-                    style: 'currency', 
-                    currency: 'GBP',
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0 
-                }).format(auction.SalePrice);
-                const detailsUrl = auction.LotDetailsUrl || '#';
-                const description = auction.Tagline.replace("TEST PROPERTY, ", "") || 'No description available.';
-                const streetNumber = auction.StreetNumber || '';
-                const streetName = auction.StreetName || '';
-                const streetName2 = auction.StreetName2 || '';
-                const town = auction.Town || '';
-                const county = auction.County || '';
-                const postCode = auction.PostCode || '';
-                
-                return `
-                    <div class="col">
-                        <div class="fbox-8 mb-40 wow fadeInUp position-relative">
-                            <!-- Lot Number Banner -->
-                            <div class="lot-banner position-absolute" style="top: 0; left: 0; padding: 5px 10px;">
-                                Lot ${auction.SoldStatus}
-                            </div>
-                            <div class="fbox-img bg-white">
-                                <img class="img-fluid" src="${auction.Thumbnail || 'static/images/lotsimg.png'}" alt="feature-icon" style="width: 100%; height: auto; max-height: 300px; object-fit: cover;" />
-                            </div>
-                            <div class="lot-details p-3">
-                                <h6 class="text-left"><strong>${streetNumber} ${streetName}, ${streetName2}</strong></h6>
-                                <h6 class="text-left"><strong>${town}, ${county}, ${postCode}</strong></h6>
-                                <p class="p-md text-black text-left">${description}</p>
-                                <p class="p-md text-black text-left">
-                                    <strong>End Date: <span class="red-color">
-                                    ${auction.EndDate
-                                        ? new Intl.DateTimeFormat('en-GB', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(new Date(auction.EndDate))
-                                        : 'N/A'}
-                                    </span></strong>
-                                </p>
-                                ${!shouldHidePrice ? `<h6 class="h6-md text-left"><strong>Sold For: ${formattedPrice}</strong></h6>` : ''}
-                                <div class="row justify-content-center text-center">
-                                    <p class="p-lg txt-upcase">
-                                        <a href="${detailsUrl}" target="_blank" class="btn btn-md btn-tra-black blue-hover">View Details</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-            }).join('');
-
-            const footerHtml = `</div> <!-- End of lots-container -->
-            </div>
-            </div>
-            </div>`;
-
-            // Combine HTML parts and append to the container
-            auctionsContainer.insertAdjacentHTML('beforeend', headerHtml + propertiesHtml + footerHtml);
-        });
-
-    } catch (error) {
-        console.error('Error fetching lots:', error);
+      allAuctions.push(...auctions);
     }
+
+    globalAuctions = allAuctions;
+
+    // Render all auctions in the new card layout
+    renderAuctions(globalAuctions);
+
+  } catch (error) {
+    console.error('Error fetching lots:', error);
+  }
 }
 
-
-document.addEventListener('DOMContentLoaded', updateLots);
+// ================= RENDER CARDS (NEW LAYOUT) =================
 
 function renderAuctions(auctionsToRender) {
   const auctionsContainer = document.querySelector('#auctions-container');
+  if (!auctionsContainer) return;
+
   auctionsContainer.innerHTML = '';
 
-  if (auctionsToRender.length === 0) {
-      auctionsContainer.innerHTML = '<p class="p-lg txt-700">No auctions available.</p>';
-      return;
+  if (!auctionsToRender || auctionsToRender.length === 0) {
+    auctionsContainer.innerHTML = '<p class="p-lg txt-700">No auctions available.</p>';
+    return;
   }
 
-  // Assumes a similar structure function for auctionsToRender.forEach similar to renderLots
-}
+  // Group by GroupId, but only the GroupIds we care about
+  const auctionsByGroupId = auctionsToRender.reduce((groups, auction) => {
+    const groupId = auction.GroupId;
+    if (PREVIOUS_GROUP_IDS.includes(groupId)) {
+      if (!groups[groupId]) groups[groupId] = [];
+      groups[groupId].push(auction);
+    }
+    return groups;
+  }, {});
 
-function attachFilterEvent() {
-  document.getElementById('apply-filter-button').addEventListener('click', updateFilteredAuctions);
-  document.getElementById('reset-filter-button').addEventListener('click', function() {
-      resetFilters();
-      renderAuctions(globalAuctions); // Resets to show all auctions
+  // For each group, build one “Market Highlights” card
+  Object.entries(auctionsByGroupId).forEach(([groupId, auctions]) => {
+    const cardHtml = buildPreviousAuctionCard(groupId, auctions);
+    auctionsContainer.insertAdjacentHTML('beforeend', cardHtml);
   });
 }
 
+// Build a single summary card for one GroupId
+function buildPreviousAuctionCard(groupId, auctions) {
+  // Filter out withdrawn / postponed for stats
+  const offeredAuctions = auctions.filter(
+    (auction) => auction.SoldStatus !== 'Withdrawn' && auction.SoldStatus !== 'Postponed'
+  );
+  const soldAuctions = offeredAuctions.filter(
+    (auction) => auction.SoldStatus === 'Sold'
+  );
+
+  const totalOffered = offeredAuctions.length;
+  const totalSold = soldAuctions.length;
+  const successRate = totalOffered > 0 ? (totalSold / totalOffered) * 100 : 0;
+
+  const totalRaised = soldAuctions.reduce(
+    (acc, auction) => acc + (auction.SalePrice || 0),
+    0
+  );
+
+  const formattedRaised = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(totalRaised);
+
+  const auctionDateRange = formatAuctionDateRange(auctions);
+
+  // 🔁 TODO: update this to whatever URL shows the lot list for this past auction
+  const viewLotsUrl = '#'; // e.g. `${window.location.origin}/previous_auctions?groupId=${groupId}`
+
+  const wantToSellUrl = `${window.location.origin}/valuation`;
+
+  return `
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="prev-auction-card wow fadeInUp">
+
+        <!-- Swift badge (top-left) -->
+        <div class="prev-auction-badge">
+          <img
+            src="static/images/swift-card-badge.svg"
+            alt="THE SWIFT PROPERTY AUCTIONS TEAM"
+          >
+        </div>
+
+        <!-- Market Highlights pill (top-right) -->
+        <div class="prev-auction-pill">
+          Market Highlights
+        </div>
+
+        <!-- Card body -->
+        <div class="prev-auction-body">
+          <div class="prev-auction-row">
+            <img
+              src="static/images/icon-calendar.svg"
+              alt=""
+              class="prev-auction-icon"
+            >
+            <span class="prev-auction-label">Auction:</span>
+            <span class="prev-auction-value prev-auction-value-red">
+              ${auctionDateRange}
+            </span>
+          </div>
+
+          <div class="prev-auction-row">
+            <img
+              src="static/images/icon-trend.svg"
+              alt=""
+              class="prev-auction-icon"
+            >
+            <span class="prev-auction-label">Sale Rate:</span>
+            <span class="prev-auction-value prev-auction-value-red">
+              ${Math.round(successRate)}%
+            </span>
+          </div>
+
+          <div class="prev-auction-row">
+            <img
+              src="static/images/icon-pound.svg"
+              alt=""
+              class="prev-auction-icon"
+            >
+            <span class="prev-auction-label">Total Raised:</span>
+            <span class="prev-auction-value prev-auction-value-red">
+              ${formattedRaised}
+            </span>
+          </div>
+        </div>
+
+        <!-- Footer buttons -->
+        <div class="prev-auction-footer">
+          <!-- If you have SVG button assets, drop them in these <a> tags -->
+          <a href="${viewLotsUrl}" class="prev-auction-btn prev-auction-btn-view">
+            View Lots
+          </a>
+
+          <a href="${wantToSellUrl}" class="prev-auction-btn prev-auction-btn-sell">
+            Want to Sell?
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ================= DATE HELPERS =================
+
+// Turn a group of lots into something like: "12-13 Nov 2025"
+function formatAuctionDateRange(auctions) {
+  const dates = auctions
+    .map((a) => (a.EndDate ? new Date(a.EndDate) : null))
+    .filter((d) => d && !isNaN(d));
+
+  if (!dates.length) return 'Unknown Date';
+
+  const min = new Date(Math.min(...dates));
+  const max = new Date(Math.max(...dates));
+
+  const day1 = min.getDate();
+  const day2 = max.getDate();
+  const monthShort1 = min.toLocaleString('en-GB', { month: 'short' });
+  const year1 = min.getFullYear();
+
+  const sameDay = min.toDateString() === max.toDateString();
+  const sameMonthYear =
+    min.getMonth() === max.getMonth() && min.getFullYear() === max.getFullYear();
+
+  if (sameDay) {
+    // 12 Nov 2025
+    return `${day1} ${monthShort1} ${year1}`;
+  }
+
+  if (sameMonthYear) {
+    // 12-13 Nov 2025
+    return `${day1}-${day2} ${monthShort1} ${year1}`;
+  }
+
+  const monthShort2 = max.toLocaleString('en-GB', { month: 'short' });
+  const year2 = max.getFullYear();
+
+  // 30 Sep 2025 - 1 Oct 2025 (fallback if it straddles months/years)
+  return `${day1} ${monthShort1} ${year1} - ${day2} ${monthShort2} ${year2}`;
+}
+
+// ================= FILTER LOGIC (REUSED) =================
+
+function attachFilterEvent() {
+  const applyBtn = document.getElementById('apply-filter-button');
+  const resetBtn = document.getElementById('reset-filter-button');
+
+  if (applyBtn) {
+    applyBtn.addEventListener('click', updateFilteredAuctions);
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      resetFilters();
+      renderAuctions(globalAuctions); // Resets to show all auctions
+    });
+  }
+}
+
 function resetFilters() {
-  document.getElementById('auction-address-filter').value = '';
-  document.getElementById('max-price-filter').value = '';
-  document.getElementById('auction-type-filter').value = '';
+  const addressInput = document.getElementById('auction-address-filter');
+  const maxPriceInput = document.getElementById('max-price-filter');
+  const typeSelect = document.getElementById('auction-type-filter');
+
+  if (addressInput) addressInput.value = '';
+  if (maxPriceInput) maxPriceInput.value = '';
+  if (typeSelect) typeSelect.value = '';
 }
 
 function updateFilteredAuctions() {
-  const addressValue = document.getElementById('auction-address-filter').value;
-  let maxPriceValue = document.getElementById('max-price-filter').value;
-  const auctionTypeValue = document.getElementById('auction-type-filter').value;
-  
+  const addressInput = document.getElementById('auction-address-filter');
+  const maxPriceInput = document.getElementById('max-price-filter');
+  const typeSelect = document.getElementById('auction-type-filter');
+
+  const addressValue = addressInput ? addressInput.value : '';
+  let maxPriceValue = maxPriceInput ? maxPriceInput.value : '';
+  const auctionTypeValue = typeSelect ? typeSelect.value : '';
+
   const filteredAuctions = filterAuctions({
-      address: addressValue,
-      maxPrice: maxPriceValue.length > 0 ? Number(maxPriceValue.replace(/[£,]+/g, '')) : undefined,
-      auctionType: auctionTypeValue,
+    address: addressValue,
+    maxPrice:
+      maxPriceValue && maxPriceValue.length > 0
+        ? Number(maxPriceValue.replace(/[£,]+/g, ''))
+        : undefined,
+    auctionType: auctionTypeValue,
   });
 
   renderAuctions(filteredAuctions);
@@ -198,37 +269,42 @@ function updateFilteredAuctions() {
 
 function filterAuctions(criteria) {
   return globalAuctions.filter((auction) => {
-      const fullAddress = `${auction.StreetNumber}, ${auction.StreetName}, ${auction.StreetName2}, ${auction.Town}, ${auction.County}, ${auction.PostCode}`.toLowerCase();
-      const finalPrice = `${auction.SalePrice}`;
-      let matchesCriteria = true;
+    const fullAddress = `${auction.StreetNumber}, ${auction.StreetName}, ${auction.StreetName2}, ${auction.Town}, ${auction.County}, ${auction.PostCode}`.toLowerCase();
+    const finalPrice = auction.SalePrice || 0;
+    let matchesCriteria = true;
 
-      if (criteria.address && !fullAddress.includes(criteria.address.toLowerCase())) {
-          matchesCriteria = false;
-      }
+    if (criteria.address && !fullAddress.includes(criteria.address.toLowerCase())) {
+      matchesCriteria = false;
+    }
 
-      if (criteria.maxPrice && finalPrice > criteria.maxPrice) {
-          matchesCriteria = false;
-      }
+    if (criteria.maxPrice && finalPrice > criteria.maxPrice) {
+      matchesCriteria = false;
+    }
 
-      // Assuming auctionType is a meaningful filter derived from content
-      if (criteria.auctionType && auction.AuctionType !== criteria.auctionType) {
-          matchesCriteria = false;
-      }
+    if (criteria.auctionType && auction.AuctionType !== criteria.auctionType) {
+      matchesCriteria = false;
+    }
 
-      return matchesCriteria;
+    return matchesCriteria;
   });
 }
 
-document.getElementById('auctions-filter-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
-  updateFilteredAuctions();
-});
+// ================= INIT =================
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-      await updateLots();
+    await updateLots();
+
+    // Only wire filters if the form exists on this page
+    const filterForm = document.getElementById('auctions-filter-form');
+    if (filterForm) {
+      filterForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        updateFilteredAuctions();
+      });
       attachFilterEvent();
+    }
   } catch (error) {
-      console.error('Initialization failed:', error);
+    console.error('Initialization failed:', error);
   }
 });

@@ -13134,3 +13134,115 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .footer-card-container {
   padding: 36px 36px;
 }
+
+/* ========== Previous Auctions cards ========== */
+
+.prev-auction-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #f2f2f2;
+  padding: 28px 24px 20px;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Swift badge top-left */
+.prev-auction-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.prev-auction-badge img {
+  display: block;
+  height: 60px;
+}
+
+/* Market Highlights pill top-right */
+.prev-auction-pill {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: #0f2848;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Body rows */
+.prev-auction-body {
+  margin-top: 64px; /* clears badge & pill */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prev-auction-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.prev-auction-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.prev-auction-label {
+  font-weight: 600;
+  color: #0f2848;
+}
+
+.prev-auction-value {
+  font-weight: 500;
+}
+
+.prev-auction-value-red {
+  color: #ad1d18;
+}
+
+/* Footer buttons */
+.prev-auction-footer {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.prev-auction-btn {
+  flex: 1;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  background: rgba(244, 244, 244, 0.95);
+  color: #0f2848;
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.prev-auction-btn:hover {
+  color: #AD1D18!important;
+  background: #eaeaea;
+  box-shadow: 0 0 0 1px rgba(173, 29, 24, 0.25);
+}
+
+.previous-auctions-container{
+  padding: 36px 36px;
+}
