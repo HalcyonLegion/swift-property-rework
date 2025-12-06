@@ -1,14 +1,15 @@
-
-function navigateToFinancePage() {
-    window.location.href = '/auction_finance';
-}
-
 function navigateToValuationPage() {
     window.location.href = '/valuation';
 }
 
+// Go to a specific lot (simplest & most robust: full page load)
 function navigateToLot(lotId) {
   window.location.href = `/lot_details/${lotId}`;
+}
+
+// Go back to the current lots page
+function navigateToAllLots() {
+  window.location.href = '/current_lots';
 }
 
 
@@ -92,30 +93,44 @@ async function updateLots() {
 
 
 async function fetchLotData(lotId) {
-    try {
-        const response = await fetch(`/api/lot_details/${lotId}`);
-        const json = await response.json(); // Capture JSON response before any conditional checks
+  // normalise to number for comparisons
+  const numericLotId = Number(lotId);
 
-        // Log the complete JSON response for debugging purposes
-        // console.log('API response:', json);
+  try {
+    const response = await fetch(`/api/lot_details/${numericLotId}`);
+    const json = await response.json();
 
-
-        if (!response.ok) {
-            throw new Error(`Network response was not ok, status ${response.status}`);
-        }
-
-        const { lot } = json;
-        // Assuming the response includes lot data, previous lot ID, and next lot ID
-        // Get index of current lot
-        const currentIndex = allLots.findIndex(item => item.Id === lotId);
-        // Calculate PreviousLotId and NextLotId
-        const PreviousLotId = currentIndex > 0 ? allLots[currentIndex - 1].Id : null;
-        const NextLotId = currentIndex < allLots.length - 1 ? allLots[currentIndex + 1].Id : null;
-        return {lot, PreviousLotId, NextLotId};
-    } catch (error) {
-        console.error('Error fetching lot data:', error);
+    if (!response.ok) {
+      throw new Error(`Network response was not ok, status ${response.status}`);
     }
+
+    const { lot } = json;
+
+    // Default to no neighbours
+    let PreviousLotId = null;
+    let NextLotId = null;
+
+    // Only try to work them out if we already have the lot list
+    if (Array.isArray(allLots) && allLots.length > 0) {
+      const currentIndex = allLots.findIndex(
+        item => Number(item.Id) === numericLotId
+      );
+
+      if (currentIndex !== -1) {
+        PreviousLotId = currentIndex > 0 ? allLots[currentIndex - 1].Id : null;
+        NextLotId =
+          currentIndex < allLots.length - 1
+            ? allLots[currentIndex + 1].Id
+            : null;
+      }
+    }
+
+    return { lot, PreviousLotId, NextLotId };
+  } catch (error) {
+    console.error('Error fetching lot data:', error);
+  }
 }
+
 
 function navigateToLot(lotId) {
     // Update the browser's history stack
@@ -387,7 +402,7 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
                class="lot-cta-btn">
               Virtual Tour
             </a>
-            <a href="#contacts-2" class="lot-cta-btn">
+            <a href="#newsletter-2" class="lot-cta-btn">
               Enquire Now
             </a>
           </div>
