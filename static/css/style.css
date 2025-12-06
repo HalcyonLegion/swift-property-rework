@@ -12819,3 +12819,314 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .speak-to-our-auction-team {
   padding: 36px 36px;
 }
+
+
+/* === Compact "Next Auction" badge === */
+
+.auction-next-compact {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  z-index: 3;
+  max-width: 100%;
+}
+
+.auction-next-compact-inner {
+  width: 371px;
+  max-width: 100%;
+  padding: 16px;
+  background: rgba(72, 72, 72, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 16px;
+  color: #ffffff;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+}
+
+/* header row: title + bell */
+.auction-next-compact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.auction-next-compact-title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+/* bell square */
+.auction-next-compact-bell {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.auction-next-compact-bell img {
+  width: 12px;
+  height: 12px;
+}
+
+/* text lines */
+.auction-next-compact-date,
+.auction-next-compact-count {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.auction-next-compact-date {
+  margin-bottom: 4px;
+}
+
+.auction-next-compact-count {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 14px;
+}
+
+/* buttons row */
+.auction-next-compact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.auction-next-compact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 300;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* primary (filled) */
+.auction-next-compact-btn.primary {
+  background: rgba(255, 255, 255, 0.6);
+  color: #0f2848;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: none;
+}
+
+/* secondary (outlined) */
+.auction-next-compact-btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+/* small hover polish */
+.auction-next-compact-btn.primary:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.auction-next-compact-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* mobile tweak: center + full width at bottom */
+@media (max-width: 767.98px) {
+  .auction-next-compact {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .auction-next-compact-inner {
+    width: auto;
+  }
+
+  .auction-next-compact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .auction-next-compact-btn {
+    width: 100%;
+  }
+}
+
+.hero-auction-banner {
+  position: relative;
+}
+
+
+/* === Upcoming Auction Cards === */
+
+.auction-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #f2f2f2;
+  border-radius: 16px;
+  padding: 32px 24px 20px;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Season pill top-left */
+.auction-card-season-pill {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgb(44 43 43 / 56%);
+  color: #bdbdbd;
+}
+
+/* Swift badge top-right */
+.auction-card-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.auction-card-badge img {
+  display: block;
+  height: 60px; /* tweak to match your SVG */
+}
+
+/* Sections (Date / Time) */
+.auction-card-section {
+  margin-top: 56px; /* first one gets pushed down under header */
+}
+
+.auction-card-section + .auction-card-section {
+  margin-top: 24px;
+}
+
+.auction-card-label {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #828282;
+  text-align: left;
+}
+
+.auction-card-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auction-card-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.auction-card-date {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ad1d18; /* red date */
+}
+
+.auction-card-time-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.auction-card-time {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f2848;
+}
+
+.auction-card-sub {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f2848;
+}
+
+/* Buttons */
+.auction-card-actions-top {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.auction-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  height: 50px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Grey buttons (Request / View Lots) */
+.auction-card-btn-light {
+  flex: 1;
+  background: rgba(244, 244, 244, 0.95);
+  color: #0f2848;
+}
+
+/* Red full-width button (Add to calendar) */
+.auction-card-btn-primary {
+  width: 100%;
+  margin-top: 12px;
+  background: #ad1d18;
+  color: #ffffff;
+}
+
+/* Simple hovers */
+.auction-card-btn-light:hover {
+  box-shadow: 0 0 0 1px rgba(173, 29, 24, 0.25);
+}
+
+.auction-card-btn-primary:hover {
+  background: #b6231c;
+}
+
+/* Mobile tweaks */
+@media (max-width: 575.98px) {
+  .auction-card {
+    padding: 28px 18px 18px;
+  }
+
+  .auction-card-badge img {
+    height: 52px;
+  }
+
+  .auction-card-section {
+    margin-top: 48px;
+  }
+}
+
+
+.auction-card-actions-top > a:hover {
+  color: #AD1D18!important;
+}

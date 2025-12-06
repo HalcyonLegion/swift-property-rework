@@ -54,7 +54,7 @@
 
 
 
-	<body>
+	<body class="lot-details-page">
 
 		<!-- PRELOADER SPINNER
 		============================================= -->	
@@ -62,7 +62,7 @@
 			<div id="loading" class="preloader">
 				<div id="loading-center">
 					<div id="loading-center-absolute">
-						<img src="static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
+						<img src="/static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
 					</div>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 							<!-- Contact button hard right -->
 							<li class="nl-simple nav-contact" aria-haspopup="true">
 							<a href="{{ url_for('contact') }}" class="btn contact-svg-btn" aria-label="Contact Us">
-								<img src="{{ url_for('static', filename='images/contact-default.svg') }}"
+								<img src="{{ url_for('static', filename='images/contact-default2.svg') }}"
 									alt="Contact Us" class="contact-img default">
 								<img src="{{ url_for('static', filename='images/contact-hover.svg') }}"
 									alt="Contact Us" class="contact-img hover">
@@ -138,96 +138,127 @@
 			<!-- END HEADER -->
 
 
-            <!-- HERO-14
-			============================================= -->	
-			<section id="hero-20" class="bg-fixed pb-60 hero-section division">
-				<div class="container">	
-					<div class="row d-flex align-items-center justify-content-center text-center">
+            <section class="strategy-section">
+				<div class="strategy-grid">
 
-
-						<!-- HERO TEXT -->
-						<div class="col-sm-10 col-md-9 col-lg-12">
-							<div class="hero-14-txt white-color wow fadeInRight">
-
-								<!-- Title -->
-								<h2 class="h2-title-md">Future Auction Dates</h2>
-
+					<!-- TOP-LEFT: SPEECH BUBBLE CARD -->
+					<div class="strategy-bubble">
+						<div class="strategy-bubble-card">
+							<div class="strategy-bubble-inner">
+								<div class="strategy-bubble-text">
+									<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
+										<div class="strategy-bubble-line1">
+										UPCOMING <span class="strategy-bubble-clear">AUCTION</span>
+										</div>
+									<div class="strategy-bubble-line2 ">DATES</div>
+								</div>
 							</div>
-						</div>	<!-- END HERO TEXT -->	
+						</div>
+					</div>
 
+					<!-- TOP-RIGHT: HEADING + RED LINE + SHORT BODY -->
+					<div class="strategy-heading">
+						<div class="strategy-heading-inner">
+							<h3 class="strategy-heading-title">
+							AHEAD IN THE AUCTION DIARY
+							</h3>
 
-					</div>    <!-- End row --> 	
-				</div>	   <!-- End container --> 	
-			</section>	<!-- END HERO-14 -->
+							<hr class="strategy-heading-divider">
 
-			<!-- SIMPLE-COUNTDOWN-ROW =================================================== -->
-			<div id="simple-countdown-row" class="simple-countdown bg-blue signaturebg py-3">
+							<p class="strategy-heading-body">
+							Our auction calendar is updated throughout the year with new sale dates and catalogues. Keep an eye on this section for upcoming releases and registration openings.
+							</p>
+						</div>
+					</div>
+
+					<!-- BOTTOM-LEFT: LONG COPY + CTA -->
+					<div class="strategy-copy">
+						<p>
+							Each auction is prepared months in advance, with new lots added as they are confirmed. This section gives you a clear overview of our upcoming sales so you can plan ahead, follow catalogue releases and register your interest early.
+						</p>
+
+						<!-- CTA: reuse your Free Valuation SVG button -->
+						<div class="auction-feature-cta">
+											<a
+											href="{{ url_for('valuation') }}"
+											class="auction-feature-cta-main"
+											aria-label="Valuation"
+											>
+											<img
+												src="{{ url_for('static', filename='images/freeValuation-default.svg') }}"
+												alt="Free Valuation"
+												class="contact-img default"
+											>
+											</a>
+										</div>
+					</div>
+
+					<!-- BOTTOM-RIGHT: IMAGE + BADGE -->
+					<div class="strategy-image-wrapper">
+						<img
+							src="{{ url_for('static', filename='images/futureAuction.jpg') }}"
+							alt="Swift Property Auctions team meeting"
+							class="strategy-image"
+						>
+
+						<!-- Compact Next Auction badge -->
+						<div class="auction-next-compact">
+							<div class="auction-next-compact-inner">
+
+								<div class="auction-next-compact-header">
+								<h5 class="auction-next-compact-title">Next Auction:</h5>
+
+								<!-- Bell icon -->
+								<div class="auction-next-compact-bell">
+									<img src="{{ url_for('static', filename='images/bellIcon.svg') }}"
+										alt="Auction reminder">
+								</div>
+								</div>
+
+								<p class="auction-next-compact-date">
+								17th February 2026 · 12:00pm
+								</p>
+
+								<p class="auction-next-compact-count">
+								We're Live in:
+								<span id="days"></span> Days
+								<span id="hours"></span> Hours
+								<span id="minutes"></span> Mins
+								</p>
+
+								<div class="auction-next-compact-actions">
+								<a href="#add-calendar"
+									class="auction-next-compact-btn primary">
+									Add to Calendar
+								</a>
+
+								<a href="/static/pdf/Auction_Guide.pdf"
+									target="_blank"
+									class="auction-next-compact-btn secondary">
+									Auction Guide
+								</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- This bit stays the same -->
+				<section id="features-8" class="bg-snow wide-60 features-section division">
 				<div class="container">
-					<div class="row align-items-center justify-content-between text-center text-md-start">
-			
-						<!-- NEXT AUCTION DATE -->
-						<div class="col-12 col-sm-6 col-lg-4 mb-3 mb-lg-0">
-							<h5 class=" h5-md text-white mb-0">Next Auction:</h5>
-							<p class="text-white p-lg">17th February 2026 at 12:00pm</p>
-						</div>
-			
-						<!-- ADD TO CALENDAR LINK -->
-						<div class="col-6 col-sm-3 col-lg-2 mb-3 mb-lg-0 text-center">
-							<a href="#add-calendar" class="btn3 btn-tra-white red-hover btn-sm btn-block txt-700">Add to Calendar</a>
-						</div>
-			
-						<!-- AUCTION GUIDE LINK -->
-						<div class="col-6 col-sm-3 col-lg-2 mb-3 mb-lg-0 text-center">
-							<a href="/static/pdf/Auction_Guide.pdf" target="_blank" class="btn3 btn-tra-white red-hover btn-sm btn-block txt-700">Auction Guide</a>
-						</div>
-			
-						<!-- COUNTDOWN TIMER -->
-						<div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-end">
-							<p class="text-white p-lg mb-0 me-2">We're Live in: </p>
-							<p class="text-white p-lg mb-0 me-2"><span id="days"></span> Days</p>
-							<p class="text-white p-lg mb-0 me-2"><span id="hours"></span> Hours</p>
-							<p class="text-white p-lg mb-0"><span id="minutes"></span> Mins</p>
-						</div>
-			
+					<div class="fbox-8-wrapper text-center">
+
+					<!-- Just add g-4 for spacing between cards -->
+					<div id="lots-container" class="row g-4">
+						<!-- cards injected by JS -->
+					</div>
+
 					</div>
 				</div>
-			</div>
-			<!-- END SIMPLE-COUNTDOWN-ROW -->
+				</section>
 
-
-			<!-- SECTION TITLE -->	
-			<div class="row justify-content-center">	
-				<div class="col-md-10 col-lg-8">
-					<div class="section-title title-02 mt-40 mb-40">			
-
-						<!-- Title -->	
-						<h2 class="h2-title-md">Upcoming Auctions</h2>	
-
-						<!-- Text -->	
-						<p class="p-lg text-black">Mark the dates and bid for our next upcoming auctions.
-						</p>	
-
-					</div>	
-				</div>
-			</div>
-
-			<!-- FEATURES-8 -->
-			<section id="features-8" class="bg-snow wide-60 features-section division">
-				<div class="container">                                   
-	
-	  				<!-- FEATURES-8 WRAPPER -->
-	  				<div class="fbox-8-wrapper text-center">
-  
-						<!-- This is where the auction lots will be inserted -->
-						<div id="lots-container" class="row"> <!-- Removed row-cols-md-3 class -->
-  
-		  				<!-- Auction lots will dynamically populate here -->
-  
-						</div> <!-- End #lots-container -->    
-	  				</div>  <!-- END FEATURES-8 WRAPPER -->
-  
-				</div>   <!-- End container -->    
-  			</section>  <!-- END FEATURES-8 -->
 
             <!-- PAGE PAGINATION
 			============================================= -->

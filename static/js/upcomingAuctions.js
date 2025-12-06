@@ -4,47 +4,125 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// === CONFIG: UPCOMING AUCTIONS ===
+const auctions = [
+  {
+    season: 'Spring Auction',
+    date: new Date(2026, 1, 17, 12, 0), // 17 Feb 2026, 12:00
+  },
+  {
+    season: 'Spring Auction',
+    date: new Date(2026, 2, 31, 12, 0), // 31 Mar 2026, 12:00
+  },
+  {
+    season: 'Spring Auction',
+    date: new Date(2026, 4, 14, 12, 0), // 14 May 2026, 12:00
+  },
+  {
+    season: 'Summer Auction',
+    date: new Date(2026, 5, 25, 12, 0), // 25 Jun 2026, 12:00
+  },
+  {
+    season: 'Summer Auction',
+    date: new Date(2026, 7, 6, 12, 0), // 6 Aug 2026, 12:00
+  },
+  {
+    season: 'Autumn Auction',
+    date: new Date(2026, 8, 17, 12, 0), // 17 Sep 2026, 12:00
+  },
+  {
+    season: 'Autumn Auction',
+    date: new Date(2026, 9, 29, 12, 0), // 29 Oct 2026, 12:00
+  },
+  {
+    season: 'Autumn Auction',
+    date: new Date(2026, 11, 10, 12, 0), // 10 Dec 2026, 12:00
+  },
+];
+
+// === RENDER CARDS ===
 async function updateLots() {
   try {
-    const hardcodedDates = [
-      new Date(2024, 10, 12, 12, 0),  // 12th November 12:00
-      new Date(2025, 1, 27, 12, 0),   // 27th February 12:00
-      new Date(2025, 4, 13, 12, 0),   // 13th May 12:00
-      new Date(2025, 8, 30, 12, 0),  // 30th September 12:00
-      new Date(2025, 10, 27, 12, 0),   // 27th November 12:00
-      new Date(2026, 1, 17, 12, 0),   // 17th February 12:00
-    ];
-
     const lotsContainer = document.querySelector('#lots-container');
-    lotsContainer.innerHTML = '';  // Clear current content
+    lotsContainer.innerHTML = '';
 
-    hardcodedDates.forEach((date) => {
-      const dateHtml = date.toLocaleDateString('en-GB', { weekday: 'long', day: '2-digit', month: 'short', year: 'numeric' });
-      const timeHtml = formatTime(date);
+    auctions.forEach((auction) => {
+      const { season, date } = auction;
+
+      const dateHtml = formatAuctionDate(date);
+      const timeHtml = formatDisplayTime(date); // 12:00 Midday style
+      const isoDateTime = date.toISOString();
 
       const lotHtml = `
-        <div class="col-12 auction-item-container">
-          <div class="auction-item d-flex wow fadeInUp justify-content-between align-items-center">
-            <div class="auction-image">
-              <img class="img-fluid bg-blue padding-blue-background" src="static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="Auction Item" />
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="auction-card wow fadeInUp">
+            
+            <!-- Season pill -->
+            <div class="auction-card-season-pill">
+              ${season.toUpperCase()}
             </div>
-            <div class="auction-info d-flex flex-column justify-content-between">
-              <div class="auction-date-time">
-                <br>
-                <h5 class="auction-date red-color txt-700">${dateHtml}</h5>
-                <p class="auction-time txt-700 text-black mb-0">${timeHtml}</p>
-                <span class="txt-700 text-black">Remote Bidding</span>
+
+            <!-- Swift badge top-right -->
+            <div class="auction-card-badge">
+              <img 
+                src="static/images/swift-card-badge.svg" 
+                alt="The Swift Property Auctions Team"
+              >
+            </div>
+
+            <!-- Auction Date -->
+            <div class="auction-card-section">
+              <p class="auction-card-label">Auction Date</p>
+              <div class="auction-card-row">
+                <img
+                  src="static/images/icon-calendar.svg"
+                  alt=""
+                  class="auction-card-icon"
+                >
+                <span class="auction-card-date">${dateHtml}</span>
               </div>
             </div>
-            <div class="auction-buttons">
-              <a href="${window.location.origin}/current_lots" target="_blank" class="btn3 btn-sm btn-tra-red red-hover">View Catalogue</a>
-              <div class="d-flex">
-                <a href="#add-calendar" class="btn3 btn-sm btn-blue tra-blue-hover btn-add-to-calendar">Add to Calendar</a>
-                <a href="${window.location.origin}/bidder_registration" class="btn3 btn-sm btn-red tra-red-hover">Register to Bid</a>
+
+            <!-- Auction Time -->
+            <div class="auction-card-section">
+              <p class="auction-card-label">Auction Time</p>
+              <div class="auction-card-row">
+                <img
+                  src="static/images/icon-clock.svg"
+                  alt=""
+                  class="auction-card-icon"
+                >
+                <div class="auction-card-time-wrap">
+                  <p class="auction-card-time mb-0">${timeHtml}</p>
+                  <p class="auction-card-sub mb-0">Entries Invited</p>
+                </div>
               </div>
             </div>
+
+            <!-- Top buttons -->
+            <div class="auction-card-actions-top">
+              <a href="${window.location.origin}/valuation"
+                 class="auction-card-btn auction-card-btn-light">
+                Request a valuation
+              </a>
+              <a href="${window.location.origin}/current_lots"
+                 class="auction-card-btn auction-card-btn-light">
+                View Lots
+              </a>
+            </div>
+
+            <!-- Bottom full-width button -->
+            <button
+              type="button"
+              class="auction-card-btn auction-card-btn-primary btn-add-to-calendar"
+              data-datetime="${isoDateTime}"
+            >
+              Add to calendar
+            </button>
           </div>
-        </div>`;
+        </div>
+      `;
+
       lotsContainer.insertAdjacentHTML('beforeend', lotHtml);
     });
   } catch (error) {
@@ -52,23 +130,22 @@ async function updateLots() {
   }
 }
 
-// Attach calendar
+// === CALENDAR HOOK-UP ===
 function attachCalendarEventListeners() {
   const addToCalendarButtons = document.querySelectorAll('.btn-add-to-calendar');
 
-  addToCalendarButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
+  addToCalendarButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
       e.preventDefault();
-      const auctionItemContainer = e.target.closest('.auction-item-container');
-      const dateText = auctionItemContainer.querySelector('.auction-date').textContent;
-      const timeText = auctionItemContainer.querySelector('.auction-time').textContent.split(' ')[0]; // Splits and takes the first part to avoid weekday from timeHtml
 
-      const dateTimeString = `${dateText} ${timeText}`;
-      const auctionDateTime = new Date(dateTimeString); // Using JavaScript's Date parsing for simplification
+      const isoString = button.dataset.datetime;
+      if (!isoString) return;
+
+      const auctionDateTime = new Date(isoString);
 
       const startTime = formatDateToICS(auctionDateTime);
-      auctionDateTime.setHours(auctionDateTime.getHours() + 1); // Assuming 1 hour duration
-      const endTime = formatDateToICS(auctionDateTime);
+      const endDt = new Date(auctionDateTime.getTime() + 60 * 60 * 1000); // +1 hour
+      const endTime = formatDateToICS(endDt);
 
       generateAndDownloadICS(startTime, endTime);
     });
@@ -77,11 +154,19 @@ function attachCalendarEventListeners() {
 
 function formatDateToICS(dateTime) {
   const pad = (num) => (num < 10 ? '0' + num : num);
-  return `${dateTime.getUTCFullYear()}${pad(dateTime.getUTCMonth() + 1)}${pad(dateTime.getUTCDate())}T${pad(dateTime.getUTCHours())}${pad(dateTime.getUTCMinutes())}00Z`;
+  return (
+    dateTime.getUTCFullYear().toString() +
+    pad(dateTime.getUTCMonth() + 1) +
+    pad(dateTime.getUTCDate()) +
+    'T' +
+    pad(dateTime.getUTCHours()) +
+    pad(dateTime.getUTCMinutes()) +
+    '00Z'
+  );
 }
 
 function generateAndDownloadICS(startTime, endTime) {
-  const uid = `uid-${Date.now()}@example.com`;
+  const uid = `uid-${Date.now()}@swiftpropertyauctions`;
   const icsContent = `BEGIN:VCALENDAR
 VERSION:2.0
 BEGIN:VEVENT
@@ -95,17 +180,45 @@ LOCATION:
 END:VEVENT
 END:VCALENDAR`;
 
-// Creating a blob and downloading it
- const blob = new Blob([icsContent], {type: 'text/calendar;charset=utf-8'}); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'AuctionEvent.ics'; document.body.appendChild(a); a.click(); document.body.removeChild(a); }
+  const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Swift_Auction_Event.ics';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
 
-function formatTime(date) {
+// === DISPLAY HELPERS ===
+function formatAuctionDate(date) {
+  const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const months = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  const day = String(date.getDate()).padStart(2, '0');
+  const weekday = weekdays[date.getDay()];
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  // 17 Tue, February 2026
+  return `${day} ${weekday}, ${month} ${year}`;
+}
+
+function formatDisplayTime(date) {
   let hours = date.getHours();
   let minutes = date.getMinutes();
-  const ampm = hours >= 12 ? 'PM' : 'AM';
 
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
+  // Special-case midday to match design
+  if (hours === 12 && minutes === 0) {
+    return '12:00 Midday';
+  }
+
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12;
   minutes = minutes < 10 ? '0' + minutes : minutes;
 
-  return hours + ':' + minutes + ' ' + ampm;
+  return `${hours}:${minutes} ${ampm}`;
 }
