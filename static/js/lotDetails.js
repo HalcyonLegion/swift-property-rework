@@ -375,9 +375,13 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
                class="lot-cta-btn">
               Register to Bid
             </a>
-            <a href="#" onclick="navigateToFinancePage(); return false;" class="lot-cta-btn">
-              Auction Finance
-            </a>
+            <a href="${auctionFinanceUrl}"
+                class="lot-cta-btn"
+                target="_blank"
+                rel="noopener noreferrer">
+                Auction Finance
+                </a>
+
             <a href="https://www.youtube.com/@SwiftPropertyAuctions"
                target="_blank"
                class="lot-cta-btn">
@@ -510,7 +514,7 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
                                 <li>Quick decisions</li>
                             </ul>
 
-                            <a href="${auctionFinanceUrl}" class="finance-btn">
+                            <a href="${auctionFinanceUrl}" class="finance-btn" target="_blank">
                                 Get Pre-Approved in Minutes
                             </a>
 
