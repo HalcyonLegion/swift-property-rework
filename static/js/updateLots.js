@@ -57,10 +57,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Check if the required fields are present
         const description = lot.Tagline || 'No description available.';
-        const detailsUrl = lot.LotDetailsUrl || '#';
+        const detailsUrl = `/lot_details/${lot.Id}`;
         let thumbnail = lot.Thumbnail || 'static/images/lotsimg.png';
         thumbnail = thumbnail.replace('_web_small', '_web_medium');
         const startingPrice = lot.GuidePrice || 'N/A';
+        const rawLegalUrl   = lot.LegalDocumentUrl || '';   // what comes from API
+        const hasLegalPack  = rawLegalUrl.trim() !== '';
+        const legalPackHref = hasLegalPack ? rawLegalUrl : '#';
+        const legalPackAttr = hasLegalPack
+          ? 'target="_blank" rel="noopener noreferrer"'
+          : 'aria-disabled="true" tabindex="-1"';
+
 
         let soldBanner = '';
 
@@ -114,43 +121,53 @@ document.addEventListener('DOMContentLoaded', async () => {
             .join(', ');
 
         const lotHtml = `
-          <div class="lot-item pb-15">
-          <div class="lot-card position-relative">
+  <div class="lot-item pb-15">
+    <div class="lot-card position-relative">
 
-            <div class="lot-banner">LOT ${lot.LotNumber}</div>
+      <div class="lot-banner">LOT ${lot.LotNumber}</div>
 
-            ${soldBanner}
+      ${soldBanner}
 
-            <div class="lot-image">
-              <a href="${detailsUrl}" target="_blank">
-                <img src="${thumbnail}" alt="property image" />
-              </a>
+      <div class="lot-image">
+        <a href="${detailsUrl}" target="_blank">
+          <img src="${thumbnail}" alt="property image" />
+        </a>
 
-              <div class="guide-price text-white">
-                Guide Price: <span class="price-red">${startingPrice}</span>
-              </div>
-            </div>
-
-            <div class="lot-content">
-              <h5 class="address"><strong>${addressLine1}<br>${addressLine2}</strong></h5>
-
-              <p class="description">${description}</p>
-
-              <div class="btn-row">
-                <a href="#" class="btn-sm btn-tra-blue tra-red-hover text-black">Legal Pack</a>
-                <a href="${detailsUrl}" target="_blank" class="btn-sm btn-red2">View Details</a>
-                <a href="https://www.swiftbridgingfinance.co.uk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-sm btn-tra-blue tra-red-hover text-black">
-                    Finance
-                  </a>
-              </div>
-            </div>
-
-          </div>
+        <div class="guide-price text-white">
+          Guide Price: <span class="price-red">${startingPrice}</span>
         </div>
-        `;
+      </div>
+
+      <div class="lot-content">
+        <h5 class="address"><strong>${addressLine1}<br>${addressLine2}</strong></h5>
+
+        <p class="description">${description}</p>
+
+        <div class="btn-row">
+          <a href="${legalPackHref}"
+            ${legalPackAttr}
+            class="btn-sm btn-tra-blue tra-red-hover text-black ${hasLegalPack ? '' : 'btn-disabled'}">
+            Legal Pack
+          </a>
+
+          <a href="${detailsUrl}" target="_blank" class="btn-sm btn-red2">
+            View Details
+          </a>
+
+          <a href="https://www.swiftbridgingfinance.co.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-sm btn-tra-blue tra-red-hover text-black">
+            Finance
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+`;
+
         document.getElementById('lots-container').insertAdjacentHTML('beforeend', lotHtml);
     });
 }

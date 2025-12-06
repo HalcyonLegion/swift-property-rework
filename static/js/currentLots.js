@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderLots(globalLots);
     } catch (error) {
         console.error('Error fetching or processing lots:', error);
-        document.querySelector('#lots-container').innerHTML = '<p>November Listings Will Be Added Shortly.</p>';
+        document.querySelector('#lots-container').innerHTML = '<p>Listings Will Be Added Shortly.</p>';
     }
   }
   
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Check if the required fields are present
         const description = lot.Tagline || 'No description available.';
-        const detailsUrl = lot.LotDetailsUrl || '#';
+        const detailsUrl = `/lot_details/${lot.Id}`;
         let thumbnail = lot.Thumbnail || 'static/images/lotsimg.png';
         thumbnail = thumbnail.replace('_web_small', '_web_medium');
         const startingPrice = lot.GuidePrice || 'N/A';

@@ -13883,3 +13883,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   width: 100%;
 }
 
+.btn-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
