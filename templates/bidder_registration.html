@@ -54,7 +54,7 @@
 
 
 
-	<body>
+	<body class="lot-details-page">
 
 		<!-- PRELOADER SPINNER
 		============================================= -->	
@@ -62,7 +62,7 @@
 			<div id="loading" class="preloader">
 				<div id="loading-center">
 					<div id="loading-center-absolute">
-						<img src="static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
+						<img src="/static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
 					</div>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 							<!-- Contact button hard right -->
 							<li class="nl-simple nav-contact" aria-haspopup="true">
 							<a href="{{ url_for('contact') }}" class="btn contact-svg-btn" aria-label="Contact Us">
-								<img src="{{ url_for('static', filename='images/contact-default.svg') }}"
+								<img src="{{ url_for('static', filename='images/contact-default2.svg') }}"
 									alt="Contact Us" class="contact-img default">
 								<img src="{{ url_for('static', filename='images/contact-hover.svg') }}"
 									alt="Contact Us" class="contact-img hover">
@@ -137,129 +137,210 @@
 			</header>
 			<!-- END HEADER -->
 
-            <!-- BLOG POSTS LISTING
-			============================================= -->
-			<section id="hero-15" class="bg-fixed division">
-				<div class="container">
+            <section class="strategy-section">
+				<div class="strategy-grid">
 
-
-					<!-- SECTION TITLE -->	
-					<div class="row justify-content-center white-color">	
-						<div class="col-md-10 col-lg-8">
-							<div class="section-title title-02 mb-85 mt-85">	
-								<h4 class="h4-sm">Bidder Registration</h4>
-                                <p class="p-lg"> 
-                                    Want to Bid at one of our Auctions? Here's your guide to Online Property Auctions and Bidding.</p>
-							</div>	
+					<!-- TOP-LEFT: SPEECH BUBBLE CARD -->
+					<div class="strategy-bubble">
+						<div class="strategy-bubble-card">
+							<div class="strategy-bubble-inner">
+								<div class="strategy-bubble-text">
+									<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
+										<div class="strategy-bubble-line1">
+										GET <span class="strategy-bubble-clear">VERIFIED</span>
+										</div>
+									<div class="strategy-bubble-line2">READY TO BID</div>
+								</div>
+							</div>
 						</div>
 					</div>
-                </div>
-            </section>
+
+					<!-- TOP-RIGHT: HEADING + RED LINE + SHORT BODY -->
+					<div class="strategy-heading">
+						<div class="strategy-heading-inner">
+							<h3 class="strategy-heading-title">
+							REGISTER TO TAKE PART <br>
+							IN OUR NEXT AUCTION
+							</h3>
+
+							<hr class="strategy-heading-divider">
+
+							<p class="strategy-heading-body">
+							Provide your information, confirm your identification and obtain bidding approval. Once verified, you'll be ready to participate in any lot across our upcoming auctions..
+							</p>
+						</div>
+					</div>
+
+					<!-- BOTTOM-LEFT: LONG COPY + CTA -->
+					<div class="strategy-copy">
+						<p>
+							Swift offers three ways to bid: internet bidding, telephone bidding and proxy bidding. Each method is available during the registration process, allowing you to choose the approach that best fits your needs.
+
+						</p>
+						<p>
+							When you’re ready to take part, you can bid in real-time as your lot appears, or rely on our team to assist you by phone or act on your behalf through a proxy bid submitted in advance. Whichever method you choose, our team ensures a smooth and secure bidding experience throughout the auction day.
+						</p>
+
+						<!-- CTA: reuse your Free Valuation SVG button -->
+						<div class="auction-feature-cta">
+											<a
+											href="{{ url_for('valuation') }}"
+											class="auction-feature-cta-main new-svg-btn"
+											aria-label="Valuation"
+											>
+											<img
+												src="{{ url_for('static', filename='images/register-default.svg') }}"
+												alt="Free Valuation"
+												class="contact-img default"
+											>
+											</a>
+										</div>
+					</div>
+
+					<!-- BOTTOM-RIGHT: IMAGE + BADGE -->
+					<div class="strategy-image-wrapper">
+						<img
+							src="{{ url_for('static', filename='images/valuation-team.jpg') }}"
+							alt="Swift Property Auctions team meeting"
+							class="strategy-image"
+						>
+
+						<!-- Bottom-right frosted badge (reusing your badge pattern) -->
+						<div class="auction-feature-logo-badge">
+							<img
+							src="{{ url_for('static', filename='images/swift-intelligence-badge.svg') }}"
+							alt="Swift Intelligence – Industry Leading"
+							>
+						</div>
+					</div>
+
+				</div>
+			</section>
 
 
-            <!-- FEATURES-2
-			============================================= -->
-			<section id="features-2" class="wide-60 features-section division">
-				<div class="container">
+		 					<!-- BIDDING OPTIONS CARDS -->
+				<div class="bidding-cards-wrapper">
+
+				<div class="row g-4">
+
+					<!-- CARD 1: Internet Bidding -->
+					<div class="col-12 col-md-4">
+					<article class="bidding-card wow fadeInUp">
+
+						<!-- Background image -->
+						<img
+						src="{{ url_for('static', filename='images/bid-internet.jpg') }}"
+						alt="Internet bidding"
+						class="bidding-card-img"
+						>
+
+						<!-- Swift chip -->
+						<div class="bidding-swift-tag">
+						<span class="bidding-swift-top">THE SWIFT</span>
+						<span class="bidding-swift-divider"></span>
+						<span class="bidding-swift-bottom">
+							PROPERTY<br>AUCTIONS TEAM
+						</span>
+						</div>
+
+						<!-- Bottom content -->
+						<div class="bidding-card-content">
+							<span class="bidding-card-icon-wrap" aria-hidden="true">
+								<img
+								src="{{ url_for('static', filename='images/internetIcon.svg') }}"
+								alt=""
+								class="bidding-card-icon-svg"
+								>
+							</span>
+							<h5 class="bidding-card-title">Internet Bidding</h5>
+							</div>
 
 
-					<!-- FEATURES-2 WRAPPER -->
-					<div class="fbox-2-wrapper text-center">
-						<div class="row row-cols-1 row-cols-md-3">
+					</article>
+					</div>
 
+					<!-- CARD 2: Proxy Bidding -->
+					<div class="col-12 col-md-4">
+					<article class="bidding-card wow fadeInUp">
 
-							<!-- FEATURE BOX #1 -->
-		 					<div class="col">
-		 						<div class="fbox-2 mb-40 wow fadeInUp">
+						<img
+						src="{{ url_for('static', filename='images/bid-proxy.jpg') }}"
+						alt="Proxy bidding"
+						class="bidding-card-img"
+						>
 
-		 							<!-- Icon -->
-									<div class="fbox-ico-center ico-65 shape-ico blue-color">
-		 								<img class="ico-bkg" src="static/images/ico-bkg.png" alt="ico-bkg">
-										<span class="flaticon-phone-call"></span>
-									</div>
+						<div class="bidding-swift-tag">
+						<span class="bidding-swift-top">THE SWIFT</span>
+						<span class="bidding-swift-divider"></span>
+						<span class="bidding-swift-bottom">
+							PROPERTY<br>AUCTIONS TEAM
+						</span>
+						</div>
 
-									<!-- Text -->
-									<div class="fbox-txt-center">
-		
-										<!-- Title -->
-										<h5 class="h5-md txt-700">Telephone</h5>
-											
-										<!-- Text -->
-										<p class="p-lg text-black">This is a great option if you can't attend the auction via the internet but still want to be able to bid live. A member of our team will call you live in the auction room and you can instruct us to bid for you.
-										</p>
+						<div class="bidding-card-content">
+						<span class="bidding-card-icon-wrap" aria-hidden="true">
+							<img
+							src="{{ url_for('static', filename='images/documenty.svg') }}"
+							alt=""
+							class="bidding-card-icon-svg"
+							>
+						</span>
+						<h5 class="bidding-card-title">Proxy Bidding</h5>
+						</div>
 
-									</div>
+					</article>
+					</div>
 
-		 						</div>
-		 					</div>	
+					<!-- CARD 3: Telephone Bidding -->
+					<div class="col-12 col-md-4">
+					<article class="bidding-card wow fadeInUp">
 
+						<img
+						src="{{ url_for('static', filename='images/bid-telephone.jpg') }}"
+						alt="Telephone bidding"
+						class="bidding-card-img"
+						>
 
-		 					<!-- FEATURE BOX #2 -->
-		 					<div class="col">
-		 						<div class="fbox-2 mb-40 wow fadeInUp">
+						<div class="bidding-swift-tag">
+						<span class="bidding-swift-top">THE SWIFT</span>
+						<span class="bidding-swift-divider"></span>
+						<span class="bidding-swift-bottom">
+							PROPERTY<br>AUCTIONS TEAM
+						</span>
+						</div>
 
-		 							<!-- Icon -->
-									<div class="fbox-ico-center ico-65 shape-ico blue-color">
-		 								<img class="ico-bkg" src="static/images/ico-bkg.png" alt="ico-bkg">
-										<span class="flaticon-internet"></span>
-									</div>
+						<div class="bidding-card-content">
+						<span class="bidding-card-icon-wrap" aria-hidden="true">
+							<img
+							src="{{ url_for('static', filename='images/proPhone.svg') }}"
+							alt=""
+							class="bidding-card-icon-svg"
+							>
+						</span>
+						<h5 class="bidding-card-title">Telephone Bidding</h5>
+						</div>
 
-									<!-- Text -->
-									<div class="fbox-txt-center">
-		
-										<!-- Title --> 
-										<h5 class="h5-md txt-700">Internet</h5>
-											
-										<!-- Text -->
-										<p class="p-lg text-black">This is a convenient way to bid on our auctions from anywhere in the world. You can view the auction live and bid online in real time.
+					</article>
+					</div>
 
-										</p>
+				</div><!-- /.row -->
 
-									</div>
+				<!-- REGISTER TO BID CTA -->
+				<div class="bidding-register-cta wow fadeInUp">
+					<a href="{{ url_for('bidder_registration') }}"
+					class="bidding-register-link"
+					aria-label="Register to bid">
+					<span class="bidding-register-main">
+						Register to bid
+					</span>
+					<span class="bidding-register-arrow">
+						<span class="bidding-register-arrow-icon">➝</span>
+					</span>
+					</a>
+				</div>
 
-		 						</div>
-		 					</div>	
+				</div><!-- /.bidding-cards-wrapper -->
 
-
-		 					<!-- FEATURE BOX #3 -->
-		 					<div class="col">
-		 						<div class="fbox-2 mb-40 wow fadeInUp">
-
-		 							<!-- Icon -->
-									<div class="fbox-ico-center ico-65 shape-ico blue-color">
-		 								<img class="ico-bkg" src="static/images/ico-bkg.png" alt="ico-bkg">
-										<span class="flaticon-key"></span>
-									</div>
-
-									<!-- Text -->
-									<div class="fbox-txt-center">
-		
-										<!-- Title -->
-										<h5 class="h5-md txt-700">Proxy</h5>
-											
-										<!-- Text -->
-										<p class="p-lg text-black">This is a good option if you're not sure how much you're willing to spend. You can authorise the auctioneer to bid on your behalf up to a specified amount.
-										</p>
-
-									</div>
-
-		 						</div>
-		 					</div>	
-
-
-		 				</div>
-
-                        <!-- Buttons Group -->
-								<div class="btns-group wow fadeInUp">
-									<a href="/static/pdf/Auction_Guide.pdf" target="_blank" class="btn btn-lg btn-red blue-hover mr-15 mb-2">Online Auction Buying Guide</a>
-								</div>
-					</div>    <!-- END FEATURES-2 WRAPPER -->
-
-                     
-
-
-				</div>     <!-- End container --> 	
-			</section>	<!-- END FEATURES-2 -->
 
 
 

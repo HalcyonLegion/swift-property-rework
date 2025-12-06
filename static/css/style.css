@@ -9788,6 +9788,7 @@ nav a#pull {
   height: 100%;
   object-fit: cover;
   display: block;
+  filter : brightness(0.75);
 }
 
 
@@ -12296,3 +12297,312 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   padding: 64px 36px;
 }
 
+/* === Bidding Options Cards (Internet / Proxy / Telephone) === */
+
+.bidding-cards-wrapper {
+  padding: 64px 36px;
+}
+
+/* Core card */
+.bidding-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #f2f2f2;
+  min-height: 293px;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bidding-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    20px 18px 14px rgba(0, 0, 0, 0.02),
+    12px 10px 10px rgba(0, 0, 0, 0.06),
+    6px 4px 8px rgba(0, 0, 0, 0.12),
+    2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* Main image */
+.bidding-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bottom gradient overlay */
+.bidding-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%; /* roughly 126px of 293 */
+  background: linear-gradient(
+    0deg,
+    #000000 0%,
+    rgba(102, 102, 102, 0) 100%
+  );
+  pointer-events: none;
+}
+
+/* "THE SWIFT PROPERTY AUCTIONS TEAM" chip */
+.bidding-swift-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 157px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 0 0 0 8px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.bidding-swift-top {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.bidding-swift-divider {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 4px 0;
+  background: #ffffff;
+}
+
+.bidding-swift-bottom {
+  display: block;
+  font-size: 14px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* Bottom text + icon */
+.bidding-card-content {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+/* Icon wrapper + SVG inside bidding cards */
+.bidding-card-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bidding-card-icon-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.bidding-card-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/* Register to bid CTA */
+.bidding-register-cta {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.bidding-register-link {
+  display: inline-flex;
+  align-items: stretch;
+  text-decoration: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.bidding-register-main {
+  background: #bdbdbd;
+  color: #ffffff;
+  padding: 16px 40px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.bidding-register-arrow {
+  min-width: 72px;
+  background: #d4d4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bidding-register-arrow-icon {
+  font-size: 20px;
+  color: #ad1d18;
+}
+
+/* Hover state for CTA */
+.bidding-register-link:hover .bidding-register-main {
+  background: #a5a5a5;
+}
+
+.bidding-register-link:hover .bidding-register-arrow {
+  background: #c4c4c4;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  .bidding-card-title {
+    font-size: 26px;
+  }
+
+  .bidding-card-content {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .bidding-card-title {
+    font-size: 22px;
+  }
+
+  /* Icon wrapper + SVG inside bidding cards */
+.bidding-card-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bidding-card-icon-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+
+  .bidding-register-main {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+
+  .bidding-register-arrow {
+    min-width: 64px;
+  }
+}
+
+/* === BIDDING CARDS LAYOUT (3 in a row, same size) === */
+
+.bidding-card-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;                 /* spacing between cards */
+}
+
+/* Each card: same height + rounded + shadow */
+.bidding-card {
+  position: relative;
+  height: 293px;             /* match Figma: 293px */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+/* Background image fills card, regardless of original aspect ratio */
+.bidding-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient at the bottom (if you’re not already doing this) */
+.bidding-card-gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 126px;   /* from Figma */
+  background: linear-gradient(0deg, #000000 0%, rgba(102, 102, 102, 0) 100%);
+}
+
+/* Footer content (icon + title) locked to bottom */
+.bidding-card-footer {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 18px;
+}
+
+/* Icon + text row */
+.bidding-card-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* SVG icon wrapper (from previous message, repeated here for completeness) */
+.bidding-card-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bidding-card-icon-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Title text */
+.bidding-card-title {
+  margin: 0;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.1;
+  color: #ffffff;
+}
