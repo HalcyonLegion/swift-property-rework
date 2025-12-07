@@ -12934,8 +12934,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: rgb(44 43 43 / 56%);
-  color: #bdbdbd;
+  background: rgb(44 43 43 / 30%);
+  color: #0F2848;
 }
 
 /* Swift badge top-right */
@@ -12947,7 +12947,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .auction-card-badge img {
   display: block;
-  height: 60px; /* tweak to match your SVG */
+  height: 90px; /* tweak to match your SVG */
 }
 
 /* Sections (Date / Time) */
