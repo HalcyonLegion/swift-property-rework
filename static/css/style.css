@@ -13888,3 +13888,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   pointer-events: none;
   cursor: default;
 }
+
+.swift-red{
+  color: #AD1D18!important;
+}

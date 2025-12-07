@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Check if SoldStatus is "Postponed"
         if (lot.SoldStatus === "Postponed") {
           soldBanner = `
-              <div class="sold-banner text-white" style="top: 0; right: 0; background-color: red;">
+              <div class="sold-banner text-white" style="top: 0; right: 0; background-color: #AD1D18;">
                   POSTPONED
               </div>`;
         }
@@ -76,19 +76,19 @@ document.addEventListener('DOMContentLoaded', async () => {
             switch (lot.SoldStatusStage) {
                 case 1: // Regular
                     soldBanner = `
-                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: red;">
+                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: #AD1D18;">
                             SOLD
                         </div>`;
                     break;
                 case 2: // Prior
                     soldBanner = `
-                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: red;">
+                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: #AD1D18;">
                             SOLD PRIOR
                         </div>`;
                     break;
                 case 3: // Post
                     soldBanner = `
-                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: red;">
+                        <div class="sold-banner text-white" style="top: 0; right: 0; background-color: #AD1D18;">
                             SOLD POST
                         </div>`;
                     break;

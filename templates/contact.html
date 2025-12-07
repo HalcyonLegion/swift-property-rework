@@ -13,7 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 				
   		<!-- SITE TITLE -->
-		<title>Contact Us</title>
+		<title>Current Lots</title>
 							
 		<!-- FAVICON AND TOUCH ICONS -->
 		<link rel="shortcut icon" href="{{ versioned_url('static/images/favicon.ico') }}" type="image/x-icon">
@@ -54,7 +54,7 @@
 
 
 
-	<body>
+	<body class="lot-details-page">
 
 		<!-- PRELOADER SPINNER
 		============================================= -->	
@@ -62,7 +62,7 @@
 			<div id="loading" class="preloader">
 				<div id="loading-center">
 					<div id="loading-center-absolute">
-						<img src="static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
+						<img src="/static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
 					</div>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 							<!-- Contact button hard right -->
 							<li class="nl-simple nav-contact" aria-haspopup="true">
 							<a href="{{ url_for('contact') }}" class="btn contact-svg-btn" aria-label="Contact Us">
-								<img src="{{ url_for('static', filename='images/contact-default.svg') }}"
+								<img src="{{ url_for('static', filename='images/contact-default2.svg') }}"
 									alt="Contact Us" class="contact-img default">
 								<img src="{{ url_for('static', filename='images/contact-hover.svg') }}"
 									alt="Contact Us" class="contact-img hover">
@@ -137,134 +137,131 @@
 			</header>
 			<!-- END HEADER -->
 
-			<!-- HERO-14
-			============================================= -->	
-			<section id="hero-17" class="bg-fixed hero-section division">
-				<div class="container">	
-					<div class="row d-flex align-items-center justify-content-center text-center">
-
-
-						<!-- HERO TEXT -->
-						<div class="col-sm-10 col-md-10 col-lg-10">
-							<div class="hero-14-txt white-color">
-
-								<!-- Title -->
-								<h2 class="h2-title-md">Swift Property Auctions</h2>
-
-								<!-- Text -->
-								<h4 class="h4-sm txt-700">Connecting Buyers and Sellers Through The Power of Auction
-								</h4>
-							</div>
-						</div>
-												
-						<div class="btn-wrapper">
-							<a href="{{ url_for('valuation') }}" class="btn3 btn-md btn-tra-white red-hover">Free Valuation</a>
-						</div>
-						<div class="btn-wrapper">
-							<a href="{{ url_for('current_lots') }}" class="btn3 btn-md btn-tra-white red-hover">Current Lots</a>
-						</div>
-						<div class="btn-wrapper">
-							<a href="{{ url_for('available_lots') }}" class="btn3 btn-md btn-tra-white red-hover">Available Lots</a>
-						</div>
-						<div class="btn-wrapper">
-							<a href="{{ url_for('bidder_registration') }}" class="btn3 btn-md btn-tra-white red-hover">Bidder Registration</a>
-						</div>
-								<br><br>
-								<br><br>
-
-
-					</div>    <!-- End row --> 	
-				</div>	   <!-- End container --> 	
-			</section>	<!-- END HERO-14 -->
-
-            <!-- CONTACTS-2
+           <!-- CONTACTS-2
 			============================================= -->
-			<section id="contacts-2" class="bg-snow wide-50 contacts-section division dark-color">				
-				<div class="container">
+			<section id="contacts-2"
+					class="valuation-enquiry-section bg-snow wide-50 contacts-section division">
+			<div class="speak-to-our-auction-team">
 
+				<div class="valuation-enquiry-card">
 
-					<!-- SECTION TITLE -->	
-					<div class="row justify-content-center">	
-						<div class="col-md-10 col-lg-8">
-							<div class="section-title title-02 mb-80">			
+				<!-- HEADER -->
+				<header class="valuation-enquiry-header">
+					<h2 class="valuation-enquiry-title">
+					Speak With Our <span class="valuation-accent">Auction Team.</span>
+					</h2>
+					<div class="valuation-enquiry-underline"></div>
+					<p class="valuation-enquiry-subtitle">
+					Share a few details about your property and one of our valuation specialists
+					will get in touch.
+					</p>
+				</header>
 
-								<!-- Title -->	
-								<h2 class="h2-title-md">Get in Touch</h2>	
+				<!-- FORM -->
+				<form name="contactform"
+						class="valuation-form contact-form"
+						novalidate>
 
-								<!-- Text -->	
-								<p class="p-lg text-black">Whether you're seeking advice or need assistance on your Auction journey, we invite you to reach out. Our dedicated team are eager to answer your questions and provide the guidance you need — let us know how we can help.
-								</p>	
+					<div class="valuation-form-grid">
 
-							</div>	
-						</div>
+					<!-- Row 1: First / Last name -->
+					<div class="valuation-field half">
+						<input type="text"
+							name="first_name"
+							class="form-control name"
+							placeholder="First Name"
+							required>
 					</div>
 
+					<div class="valuation-field half">
+						<input type="text"
+							name="last_name"
+							class="form-control name"
+							placeholder="Last Name"
+							required>
+					</div>
 
-			 		<!-- CONTACT FORM -->
-				 	<div class="row justify-content-center">	
-				 		<div class="col-lg-10 col-xl-8">
-				 			<div class="form-holder">
-								<form name="contactform" class="row contact-form">
+					<!-- Row 2: Telephone / Email -->
+					<div class="valuation-field half">
+						<input type="text"
+							name="telephone"
+							class="form-control phone"
+							placeholder="Telephone"
+							required>
+					</div>
 
-									<!-- Form Select -->
-									<div class="col-md-12 input-subject">
-										<p class="p-lg text-black"><strong>This question is about: </strong></p>
-										<span class="text-black">Choose a topic, so we know who to send your request to: </span>
-										<select class="form-select subject" name="subject" aria-label="Default select example">
-									    	<option selected>This question is about...</option>	
-											<option>Auctions</option>
-											<option>Free Valuation</option>
-											<option>Registration</option>
-											<option>Buying</option>
-											<option>Selling & Private Treaty</option>
-											<option>Other</option>
-									    </select>
-									</div>
-																						
-									<!-- Contact Form Input -->
-									<div class="col-md-12">
-										<p class="p-lg text-black"><strong>Your Name: </strong></p>
-										<span class="text-black">Please enter your full name: </span>
-										<input type="text" name="name" class="form-control name" placeholder="Your Name*"> 
-									</div>
-												
-									<div  class="col-md-12">
-										<p class="p-lg text-black"><strong>Your Email Address: </strong></p>
-										<span class="text-black">Please carefully check your email address for accuracy</span>
-										<input type="text" name="email" class="form-control email" placeholder="Email Address*"> 
-									</div>
-		
-									<div class="col-md-12">
-										<p class="p-lg text-black"><strong>How can we help? </strong></p>
-										<textarea class="form-control message" name="message" rows="6" placeholder="I would like to ask about..."></textarea>
-									</div>
+					<div class="valuation-field half">
+						<input type="email"
+							name="email"
+							class="form-control email"
+							placeholder="Email"
+							required>
+					</div>
 
-                                    <!-- Terms and Conditions Checkbox -->
-    							    <div class="terms-and-conditions-checkbox text-black">
-									    <p class="p-sm text-black">By clicking 'Submit Request' I accept the Company's <strong><a href="/static/pdf/terms_conditions.pdf" target="_blank" style="text-decoration: underline;" class="text-black tra-blue-hover">Terms and Conditions of Service</a></strong> and <strong><a href="{{ url_for('privacy') }}" target="_blank" style="text-decoration: underline;" class="text-black tra-blue-hover">Privacy Policy</strong></a></label>
-	  							    </div>
-																						
-									<!-- Contact Form Button -->
-									<div class="col-md-12 mt-15 form-btn text-right">	
-										<button type="submit" class="btn btn-red blue-hover submit">Submit Request</button>	
-									</div>
-																															
-									<!-- Contact Form Message -->
-									<div class="col-lg-12 contact-form-msg">
-										<span class="loading"></span>
-									</div>	
-																							
-								</form>	
-				 			</div>	
-				 		</div>	
-				 	</div>	   <!-- END CONTACT FORM -->
-				 	
+					<!-- Row 3: Property type -->
+					<div class="valuation-field full">
+						<select name="property_type"
+								class="form-select type"
+								required>
+						<option value="" disabled selected>Property Type</option>
+						<option value="Residential">Residential</option>
+						<option value="Commercial">Commercial</option>
+						<option value="Land">Land</option>
+						<option value="Other">Other</option>
+						</select>
+					</div>
 
-				</div>	   <!-- End container -->	
-			</section>	<!-- END CONTACTS-2 -->
+					<!-- Row 4: Further information -->
+					<div class="valuation-field full textarea">
+						<textarea name="further_information"
+								class="form-control message"
+								rows="4"
+								placeholder="Further information"></textarea>
+					</div>
 
-			<!-- DIVIDER LINE -->
-			<hr class="divider">
+					<!-- Row 5: Checkbox -->
+					<div class="valuation-field full valuation-checkbox-row">
+						<input type="checkbox"
+							id="valuation-updates"
+							name="valuation_updates">
+						<label for="valuation-updates">
+						Tick this box if you’d like auction updates delivered by email,
+						ensuring you never miss a lot. You can unsubscribe whenever you wish.
+						Our
+						<strong>
+							<a href="{{ url_for('privacy') }}"
+							target="_blank"
+							class="tra-red-hover">
+							Privacy Policy
+							</a>
+						</strong>
+						explains how we use your data.
+						</label>
+					</div>
+
+					<!-- Row 6: Submit button (SVG) -->
+					<div class="valuation-field submit-field">
+						<button type="submit"
+								class="valuation-submit submit"
+								aria-label="Submit valuation request">
+						<img src="{{ url_for('static', filename='images/submitNew.svg') }}"
+							alt="Submit valuation request"
+							class="valuation-submit-svg">
+						</button>
+					</div>
+
+					</div>
+
+					<!-- Existing message hook if you wire up AJAX later -->
+					<div class="contact-form-msg">
+					<span class="loading"></span>
+					</div>
+
+				</form>
+				</div>
+
+			</div>
+			</section>
 
 
 			<!-- NEWSLETTER + FOOTER CARD
