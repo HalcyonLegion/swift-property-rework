@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         </a>
 
         <div class="guide-price text-white">
-          Guide Price: <span>${startingPrice}</span>
+          Guide Price: <span class="bold-price">${startingPrice}</span>
         </div>
       </div>
 

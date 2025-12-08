@@ -14203,4 +14203,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   transform: none;
 }
 
+.bold-price{
+  font-size: 18px;
+  font-weight: 700;
+}
 
