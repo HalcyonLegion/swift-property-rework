@@ -11412,6 +11412,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* White card container */
 .newsletter-footer-card {
+  max-width: 1376px;
   margin: 0 auto;
   background: #FFFFFF;
   border-radius: 16px;
@@ -11807,7 +11808,9 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* === AUCTION TEAM GRID (ABOUT PAGE) === */
 
 .team-grid-section {
-  padding: 40px 0 80px;
+  max-width: 1376px;
+  margin: 0 auto;
+  padding: 0 3rem;
 }
 
 .team-grid-section .team-grid-header {
@@ -12215,14 +12218,19 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   }
 }
 
-.careers-container{
-  padding: 64px 36px;
+.careers-container {
+  max-width: 1376px;
+  margin: 0 auto;
+  padding: 0 3rem;
 }
+
 
 /* === Bidding Options Cards (Internet / Proxy / Telephone) === */
 
 .bidding-cards-wrapper {
-  padding: 64px 36px;
+   max-width: 1376px;
+  margin: 0 auto;
+  padding: 0 3rem;
 }
 
 /* Core card */
@@ -14476,5 +14484,32 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
   .about-hero-cta-main {
     flex: 1;
+  }
+}
+
+/* Desktop / laptop: give the email box more room */
+@media (min-width: 992px) {
+  .newsletter-main-row {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 16px;              /* a bit less gap */
+  }
+
+  /* Left: email input gets most of the width */
+  .newsletter-input-wrap {
+    flex: 1 1 540px;               /* start fairly wide */
+    min-width: 0;                  /* allow flexbox to shrink without overflow */
+  }
+
+  .newsletter-input {
+    padding: 18px 24px;            /* slightly less padding to fit text */
+    font-size: 15px;               /* tiny reduction to help the long placeholder fit */
+  }
+
+  /* Right: button + T&Cs column a bit narrower */
+  .newsletter-side-column {
+    flex: 0 0 260px;               /* fixed-ish width for button + text */
+    max-width: 260px;
+    gap: 10px;
   }
 }
