@@ -9469,7 +9469,7 @@ nav a#pull {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.4fr);
   grid-template-rows: auto auto;
-  gap: 48px 56px;
+  gap: 24px 24px;
 }
 
 /* Grid areas */
@@ -9640,6 +9640,7 @@ nav a#pull {
 
 .strategy-copy {
   max-width: 545px;
+  margin-top: 43px;
 }
 
 .strategy-copy p {
@@ -9684,7 +9685,7 @@ nav a#pull {
   height: 100%;
   object-fit: cover;
   display: block;
-  filter : brightness(0.75);
+  filter : brightness(0.9);
 }
 
 
@@ -14766,4 +14767,266 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
     width: 100%;
   }
 }
+
+/* ───── TOP-LEFT SPEECH BUBBLE CARD ───── */
+
+.strategy-bubble {
+  /* whatever grid area / margin you already have is fine */
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Outer white card – Figma: 559 x 292, radius 16 */
+.strategy-bubble-card {
+  position: relative;
+  width: 559px;
+  height: 292px;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow:
+    27px 37px 18px rgba(0, 0, 0, 0.01),
+    15px 21px 16px rgba(0, 0, 0, 0.05),
+    7px 9px 12px rgba(0, 0, 0, 0.09),
+    2px 2px 6px rgba(0, 0, 0, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner light-grey card – Figma: 459 x 212, centred */
+.strategy-bubble-inner {
+  position: relative;
+  width: 459px;
+  height: 212px;
+  max-width: 100%;
+  background: #f5f5f5;
+  border-radius: 16px;
+  box-shadow:
+    65px 38px 30px rgba(0, 0, 0, 0.01),
+    36px 21px 25px rgba(0, 0, 0, 0.05),
+    16px 9px 19px rgba(0, 0, 0, 0.09),
+    4px 2px 10px rgba(0, 0, 0, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text block – Figma: 317 x 104, centred */
+.strategy-bubble-text {
+  width: 317px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+/* === Speech bubble text block (match Figma) =================== */
+
+.strategy-bubble-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center all text horizontally */
+}
+
+/* SWIFT PROPERTY */
+.strategy-bubble-eyebrow {
+  margin: 0;
+  width: 317px;
+  text-align: center;
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1;      /* 110% */
+  text-transform: uppercase;
+  color: #0F2848;
+}
+
+/* SELL WITH CLEAR – single line */
+.strategy-bubble-line1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;           /* tiny space between WITH and CLEAR */
+  width: 317px;
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 0.6;
+  text-transform: uppercase;
+  color: #0F2848;
+  white-space: nowrap;   /* keep SELL WITH CLEAR on one line on desktop */
+}
+
+/* CLEAR should not break line or be italic */
+.strategy-bubble-clear {
+  display: inline;
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* STRATEGY */
+.strategy-bubble-line2 {
+  margin: 4px 0 0 0;     /* 4px gap under SELL WITH CLEAR */
+  width: 317px;
+  text-align: center;
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0F2848;
+}
+
+/* TOP-RIGHT HEADING BLOCK */
+.strategy-heading {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin-left: 62px;
+}
+
+.strategy-heading-inner {
+  max-width: 533px;              /* Figma width */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title: 32px, 110% line-height, uppercase */
+.strategy-heading-title {
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.1;              /* 110% */
+  text-transform: uppercase;
+  color: #0F2848;
+  margin: 0;                     /* Figma has gap handled outside */
+}
+
+/* Red line: 108px wide, 2px tall, 16px gap from title */
+.strategy-heading-divider {
+  width: 108px;
+  border: 0;
+  border-top: 2px solid #AD1D18;
+  margin: 16px 0 0;              /* 16px from title, no bottom margin */
+}
+
+/* Body copy: 16px, 110%, 8px gap from line, 402px text width */
+.strategy-heading-body {
+  max-width: 402px;              /* Figma width so it wraps like the design */
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #0F2848;
+  margin: 8px 0 0;               /* 8px from the red line */
+}
+
+/* Tablet tweak */
+@media (max-width: 1024px) {
+  .strategy-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .strategy-heading,
+  .strategy-image-wrapper {
+    grid-column: 1;
+  }
+
+  .strategy-heading-inner {
+    max-width: 100%;
+  }
+
+  .strategy-heading-title {
+    font-size: 26px;
+  }
+}
+
+.strategy-bubble {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;         /* so the connector can be placed against it */
+}
+
+.strategy-bubble-connector {
+  position: absolute;
+  width: 81.41px;             /* Figma: width 74.41px */
+  height: 74.41px;            /* Figma: height 24.74px */
+  border-radius: 100px;       /* matches the pill shape if SVG is plain rect */
+  bottom: -52px;              /* sits slightly below the bubble – tweak if needed */
+  right: -42px;                /* horizontal offset – tweak until it visually matches */
+  transform-origin: center;   /* rotate around centre like Figma */
+  pointer-events: none;       /* decorative only */
+}
+
+
+/* Outer slot in the grid */
+.strategy-image-wrapper {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  max-width: 796px;         /* Figma width */
+  width: 100%;
+}
+
+/* The actual card frame */
+.strategy-image-frame {
+  position: relative;
+  background: #F4F4F4;
+  border-radius: 16px;      /* Figma radius */
+  overflow: hidden;
+  aspect-ratio: 796 / 435;  /* keep proportions while scaling */
+}
+
+/* If you kept the original HTML (no .strategy-image-frame),
+   you can copy these styles onto .strategy-image-wrapper instead. */
+
+/* Image fills the frame */
+.strategy-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.auction-feature-logo-badge {
+  position: absolute;
+  width: 177px;                  /* Figma width */
+  height: 96px;                  /* Figma height */
+  right: 16px;                   /* nudge until it visually matches */
+  bottom: 16px;
+  border-radius: 5px;            /* Figma radius */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);   /* frosted glass */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.auction-feature-logo-badge img {
+  width: 177px;        /* inner frame width from Figma */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.strategy-image-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 231px;
+  height: 231px;
+  left: -149px;
+  top: -164px;
+  background: #FFFFFF;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+
 
