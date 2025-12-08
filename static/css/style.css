@@ -9226,16 +9226,16 @@ nav a#pull {
   box-sizing: border-box;
   /* max-width: 1376px; */
   margin: 0 auto;
-  background: #FFFFFF;
-  border: 1px solid #BDBDBD;
+  /* background: #FFFFFF; */
+  /* border: 1px solid #BDBDBD; */
   border-radius: 16px;
 
   /* Figma multi-shadow */
-  box-shadow:
+  /* box-shadow:
     17px 14px 9px rgba(0, 0, 0, 0.01),
     10px 8px 7px rgba(0, 0, 0, 0.05),
     4px 3px 6px rgba(0, 0, 0, 0.09),
-    1px 1px 3px rgba(0, 0, 0, 0.10);
+    1px 1px 3px rgba(0, 0, 0, 0.10); */
   display: flex;
   gap: 48px;
   padding: 32px;
@@ -14216,11 +14216,11 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   border-radius: 16px;
 
   /* Figma multi-shadow */
-  box-shadow:
+  /* box-shadow:
     17px 14px 9px rgba(0, 0, 0, 0.01),
     10px 8px 7px rgba(0, 0, 0, 0.05),
     4px 3px 6px rgba(0, 0, 0, 0.09),
-    1px 1px 3px rgba(0, 0, 0, 0.10);
+    1px 1px 3px rgba(0, 0, 0, 0.10); */
   display: flex;
   gap: 48px;
   padding: 32px;
