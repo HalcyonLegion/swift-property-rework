@@ -127,15 +127,7 @@
 								</li>
 							</ul>
 							</li>
-							<li class="nl-simple" aria-haspopup="true"><a href="#lots-container">Current Lots</a>
-							<ul class="sub-menu">
-								<li aria-haspopup="true">
-								<a href="{{ url_for('home') }}#lots-container">Current Auction</a>
-								</li>
-								<li aria-haspopup="true">
-								<a href="{{ url_for('available_lots') }}">Available Lots</a>
-								</li>
-						<li class="nl-simple" aria-haspopup="true"><a href="#">Current Lots</a>
+							<li class="nl-simple" aria-haspopup="true"><a href="#">Current Lots</a>
 							<ul class="sub-menu">
 								<li aria-haspopup="true">
 								<a href="{{ url_for('home') }}#lots-container">Current Auction</a>
@@ -144,10 +136,6 @@
 								<a href="{{ url_for('available_lots') }}">Available Lots</a>
 								</li>
 								<li aria-haspopup="true">
-								<a href="{{ url_for('bidder_registration') }}">Bidder Registration</a>
-								</li>
-							</ul>
-							</li>		<li aria-haspopup="true">
 								<a href="{{ url_for('bidder_registration') }}">Bidder Registration</a>
 								</li>
 							</ul>
@@ -216,23 +204,24 @@
 						cares about achieving the best result for you.
 						</p>
 
-						<div class="about-hero-cta">
-						<a
-							href="{{ url_for('valuation') }}"
-							class="about-hero-cta-main"
-						>
-							Free Valuation
-						</a>
+						<div class="auction-feature-cta">
+											<a
+											href="{{ url_for('valuation') }}"
+											class="auction-feature-cta-main"
+											aria-label="Valuation"
+											>
+											<!-- Background SVG with text -->
+											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
+												alt=""
+												class="svg-pill-bg">
 
-						<a
-							href="{{ url_for('valuation') }}"
-							class="about-hero-cta-arrow"
-							aria-label="Go to Free Valuation"
-						>
-							<!-- simple arrow, you can swap to SVG if you like -->
-							<span class="about-hero-arrow-icon">→</span>
-						</a>
-						</div>
+											<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
+											</a>
+										</div>
 					</div>
 					</article>
 
