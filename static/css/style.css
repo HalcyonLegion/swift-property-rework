@@ -8228,12 +8228,6 @@ nav a#pull {
   transform: translateY(-50%); /* Center vertically */
 }
 
-/* Ensures padding inside the select to not overlap the icon */
-#property-type-filter {
-  padding-left: 40px; /* Adjust as needed, depending on the icon's width */
-}
-
-
 .form-control2 {
   display:block;
   width:100%;
@@ -9202,16 +9196,16 @@ nav a#pull {
   box-sizing: border-box;
   max-width: 1376px;
   margin: 0 auto;
-  /* background: #FFFFFF; */
-  /* border: 1px solid #BDBDBD; */
+  background: #FFFFFF;
+  border: 1px solid #BDBDBD;
   border-radius: 16px;
 
   /* Figma multi-shadow */
-  /* box-shadow:
+  box-shadow:
     17px 14px 9px rgba(0, 0, 0, 0.01),
     10px 8px 7px rgba(0, 0, 0, 0.05),
     4px 3px 6px rgba(0, 0, 0, 0.09),
-    1px 1px 3px rgba(0, 0, 0, 0.10); */
+    1px 1px 3px rgba(0, 0, 0, 0.10);
   display: flex;
   gap: 48px;
   padding: 32px;
@@ -13581,14 +13575,14 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .lot-image {
   position: relative;
-  width: 100%;
+  width: 99%;
   height: 436px;          /* matches Figma proportions */
   border-radius: 8px;
   overflow: hidden;
 }
 
 .lot-image img {
-  width: 100%;
+  width: 99%;
   height: 100%;
   object-fit: cover;
   display: block;
@@ -13598,12 +13592,11 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .lot-banner {
   position: absolute;
-  top: 4px;
+  top: 0px;
   left: 0px;
   width: 75px;
   height: 50px;
   background: #ffffff;
-  backdrop-filter: blur(20px);
   border-radius: 8px 0 8px 8px;
   display: flex;
   align-items: center;
@@ -13764,8 +13757,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* Guide price pill – bottom-left overlay */
 .lot-card .guide-price {
   position: absolute;
-  left: 4px;
-  bottom: 4px;
+  left: 0px;
+  bottom: 0px;
   padding: 16px 20px;
   background: rgba(166, 166, 166, 0.5);
   backdrop-filter: blur(20px);
@@ -13963,7 +13956,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 }
 
 #apply-filter-button{
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45); */
   border-radius: 8px;
 }
 
@@ -14187,8 +14180,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 }
 
 .bold-price{
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .auction-feature-card2 {
@@ -14517,11 +14510,260 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* Under 1470px: adjust spacing & size, but KEEP flex */
 @media (max-width: 1470px) {
   .header-datetime {
-    margin-left: 40px;   /* or 60px if you prefer */
+    margin-left: 100px;   /* or 60px if you prefer */
     margin-right: 10px;
     font-size: 16px;
     white-space: nowrap;
   }
 }
 
+/* === LOT FILTER BAR – Figma-style === */
+
+/* Outer section */
+.lot-filter-section {
+  margin: 32px 0 24px;
+}
+
+/* 1376px content width with 32px side padding on big screens */
+.lot-filter-inner {
+  max-width: 1376px;
+  margin: 0 auto;
+}
+
+/* Main flex row: left input + right pills */
+.lot-filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;          /* matches Figma Filter gap */
+  flex-wrap: nowrap;
+}
+
+/* LEFT: search field (Frame 62, 448x50) */
+.lot-filter-search {
+  flex: 0 0 448px;
+}
+
+.lot-filter-input {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  padding: 0 32px;
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #0F2848;
+  background: #FFFFFF;
+  box-shadow:
+    11px 11px 6px rgba(0, 0, 0, 0.01),
+    6px 6px 5px rgba(0, 0, 0, 0.05),
+    3px 3px 4px rgba(0, 0, 0, 0.09),
+    1px 1px 2px rgba(0, 0, 0, 0.10);
+}
+
+.lot-filter-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* RIGHT side container */
+.lot-filter-controls {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+/* Min / Max pair */
+.lot-filter-range-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 50px;
+}
+
+/* === Base pill box === */
+
+.filter-pill {
+  height: 50px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0F2848;
+}
+
+/* Individual widths + shadows from Figma */
+
+/* No Min: 162px */
+.filter-pill-min {
+  width: 162px;
+  box-shadow:
+    17px 7px 7px rgba(0, 0, 0, 0.01),
+    10px 4px 6px rgba(0, 0, 0, 0.05),
+    4px 2px 5px rgba(0, 0, 0, 0.09),
+    1px 0px 2px rgba(0, 0, 0, 0.10);
+}
+
+/* No Max: 166px */
+.filter-pill-max {
+  width: 166px;
+  box-shadow:
+    12px 10px 6px rgba(0, 0, 0, 0.01),
+    7px 6px 5px rgba(0, 0, 0, 0.05),
+    3px 2px 4px rgba(0, 0, 0, 0.09),
+    1px 1px 2px rgba(0, 0, 0, 0.10);
+}
+
+/* Property Type: 199px */
+.filter-pill-property {
+  width: 199px;
+  box-shadow:
+    18px 8px 8px rgba(0, 0, 0, 0.01),
+    10px 5px 7px rgba(0, 0, 0, 0.05),
+    4px 2px 5px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+/* Search: 139px */
+.filter-pill-search {
+  width: 139px;
+  box-shadow:
+    19px 10px 8px rgba(0, 0, 0, 0.01),
+    10px 6px 7px rgba(0, 0, 0, 0.05),
+    5px 3px 5px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+/* Map View: 139px */
+.filter-pill-map {
+  width: 139px;
+  box-shadow:
+    12px 9px 6px rgba(0, 0, 0, 0.01),
+    6px 5px 5px rgba(0, 0, 0, 0.05),
+    3px 2px 4px rgba(0, 0, 0, 0.09),
+    1px 1px 2px rgba(0, 0, 0, 0.10);
+}
+
+/* === Selects inside pills (No Min / No Max / Property Type) === */
+
+.filter-select {
+  width: 100%;
+  height: 100%;
+  padding: 0 36px 0 32px;   /* left 32px, right 36px to leave space for icon */
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Make dropdown options readable even when parent text goes white */
+.filter-select option {
+  color: #0F2848;
+  background: #FFFFFF;
+}
+
+/* Chevron icons for select pills – fixed position, no jumping */
+.filter-pill-icon-select {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+
+/* === Button-style pills (Search / Map View) === */
+
+.filter-button {
+  justify-content: center;
+  gap: 8px;
+  padding: 0 24px;
+  border: none;
+  background: #FFFFFF;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.filter-pill-icon-inline {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Red hover effect: Property Type, Search, Map View */
+.filter-pill-accent-hover:hover,
+.filter-pill-accent-hover:focus-visible {
+  background: #AD1D18;
+  color: #FFFFFF;
+  box-shadow: none;
+}
+
+.filter-pill-accent-hover:hover .filter-select,
+.filter-pill-accent-hover:focus-visible .filter-select {
+  color: #FFFFFF;
+}
+
+/* If your icons are dark, this roughly inverts them on red */
+.filter-pill-accent-hover:hover .filter-pill-icon-inline,
+.filter-pill-accent-hover:focus-visible .filter-pill-icon-inline {
+  filter: brightness(0) invert(1);
+}
+
+/* === Responsive tweaks === */
+
+@media (max-width: 1200px) {
+  .lot-filter-form {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .lot-filter-search {
+    flex: 1 1 100%;
+  }
+
+  .lot-filter-controls {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .lot-filter-inner {
+    padding: 0 16px;
+  }
+
+  .lot-filter-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lot-filter-range-group {
+    width: 100%;
+  }
+
+  /* Full-width pills on small screens */
+  .filter-pill-min,
+  .filter-pill-max,
+  .filter-pill-property,
+  .filter-pill-search,
+  .filter-pill-map {
+    width: 100%;
+  }
+}
 

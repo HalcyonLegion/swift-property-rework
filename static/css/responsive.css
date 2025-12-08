@@ -6180,13 +6180,6 @@
   }
 }
 
-/* 1470 and down – just reduce side padding a bit */
-@media (max-width: 1470px) {
-  .auction-feature-card {
-    padding: 0 1.75rem;
-  }
-}
-
 /* 1199px – keep grid but a bit tighter */
 @media (max-width: 1199.98px) {
   .auction-feature-intro {

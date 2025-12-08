@@ -370,120 +370,151 @@
 
 
 			<!-- Filtering Section -->
-			<section id="lot-filtering" class="division">
-			<div class="lot-filtering-container">
-				<div class="row justify-content-center">
-					<div class="col-lg-12">
+				<section id="lot-filtering" class="lot-filter-section">
+				<div class="lot-filter-inner">
+					<form id="lots-filter-form" class="lot-filter-form" onsubmit="return false;">
 
-						<br>
-
-						<!-- Filter Form -->
-						<form id="lots-filter-form" class="row align-items-center">
-
-							<!-- Lot No, Postcode, Address Filter -->
-							<div class="col-md-4">
-								<input type="text" id="lot-address-filter" class="form-control2 mb-2" placeholder="Postcode, Address or Lot No">
-							</div>
-
-							<!-- Minimum Price Filter -->
-							<div class="col-md-2 position-relative">
-								<select id="min-price-filter" class="form-control2 mb-2">
-									<option value="">No Min</option>
-									<option>£50,000</option>
-									<option>£100,000</option>
-									<option>£150,000</option>
-									<option>£200,000</option>
-									<option>£250,000</option>
-									<option>£300,000</option>
-									<option>£350,000</option>
-									<option>£400,000</option>
-									<option>£450,000</option>
-									<option>£500,000</option>
-									<option>£550,000</option>
-									<option>£600,000</option>
-									<option>£650,000</option>
-									<option>£700,000</option>
-									<option>£750,000</option>
-									<option>£800,000</option>
-									<option>£850,000</option>
-									<option>£900,000</option>
-									<option>£950,000</option>
-									<option>£1,000,000</option>
-									<option>£1,100,000</option>
-									<option>£1,200,000</option>
-									<option>£1,300,000</option>
-									<option>£1,400,000</option>
-									<option>£1,500,000+</option>
-								</select>
-								<div class="css-arrow"></div>
-							</div>
-
-
-							<!-- Maximum Price Filter -->
-							<div class="col-md-2 position-relative">
-								<select id="max-price-filter" class="form-control2 mb-2">
-									<option value="">No Max</option>
-									<option>£50,000</option>
-									<option>£100,000</option>
-									<option>£150,000</option>
-									<option>£200,000</option>
-									<option>£250,000</option>
-									<option>£300,000</option>
-									<option>£350,000</option>
-									<option>£400,000</option>
-									<option>£450,000</option>
-									<option>£500,000</option>
-									<option>£550,000</option>
-									<option>£600,000</option>
-									<option>£650,000</option>
-									<option>£700,000</option>
-									<option>£750,000</option>
-									<option>£800,000</option>
-									<option>£850,000</option>
-									<option>£900,000</option>
-									<option>£950,000</option>
-									<option>£1,000,000</option>
-									<option>£1,100,000</option>
-									<option>£1,200,000</option>
-									<option>£1,300,000</option>
-									<option>£1,400,000</option>
-									<option>£1,500,000+</option>
-								</select>
-								<div class="css-arrow"></div>
-							</div>
-
-							<!-- Property Type Filter -->
-							<div class="col-md-2 position-relative">
-								<img src="/static/images/swift-property-auctions-icon-only-black.svg" alt="House" class="dropdown-icon">
-								<select id="property-type-filter" class="form-control2 mb-2">
-									<option value="">Property Type</option>
-									<option>Commercial</option>
-									<option>Residential</option>
-									<option>Land</option>
-									<option>Other</option>
-								</select>
-								<div class="css-arrow"></div>
-							</div>
-
-							<!-- Apply Filter Button -->
-							<div class="col-md-2 text-center">
-								<a id="apply-filter-button" class="btn3glass new-svg-btn btn-md mt-1" aria-label="Search">
-									<img src="{{ url_for('static', filename='images/searchButton.svg') }}" 
-										alt="Search default" 
-										class="contact-img default">
-
-									<img src="{{ url_for('static', filename='images/search-hover.svg') }}" 
-										alt="Search hover" 
-										class="contact-img hover">
-								</a>
-							</div>
-
-						</form>
+					<!-- LEFT: Postcode / Address / Lot search -->
+					<div class="lot-filter-search">
+						<input
+						type="text"
+						id="lot-address-filter"
+						class="lot-filter-input"
+						placeholder="Postcode, Address or Lot No"
+						>
 					</div>
+
+					<!-- RIGHT: Min / Max / Property Type / Search / Map View -->
+					<div class="lot-filter-controls">
+
+						<!-- Min / Max group -->
+						<div class="lot-filter-range-group">
+
+						<!-- No Min (162px) -->
+						<div class="filter-pill filter-pill-min">
+							<select id="min-price-filter" class="filter-select filter-select-min">
+							<option value="">No Min</option>
+							<option>£50,000</option>
+							<option>£100,000</option>
+							<option>£150,000</option>
+							<option>£200,000</option>
+							<option>£250,000</option>
+							<option>£300,000</option>
+							<option>£350,000</option>
+							<option>£400,000</option>
+							<option>£450,000</option>
+							<option>£500,000</option>
+							<option>£550,000</option>
+							<option>£600,000</option>
+							<option>£650,000</option>
+							<option>£700,000</option>
+							<option>£750,000</option>
+							<option>£800,000</option>
+							<option>£850,000</option>
+							<option>£900,000</option>
+							<option>£950,000</option>
+							<option>£1,000,000</option>
+							<option>£1,100,000</option>
+							<option>£1,200,000</option>
+							<option>£1,300,000</option>
+							<option>£1,400,000</option>
+							<option>£1,500,000+</option>
+							</select>
+							<!-- arrow icon for No Min -->
+							<img
+							src="/static/images/icon-min.svg"
+							alt=""
+							class="filter-pill-icon-select"
+							>
+						</div>
+
+						<!-- No Max (166px) -->
+						<div class="filter-pill filter-pill-max">
+							<select id="max-price-filter" class="filter-select filter-select-max">
+							<option value="">No Max</option>
+							<option>£50,000</option>
+							<option>£100,000</option>
+							<option>£150,000</option>
+							<option>£200,000</option>
+							<option>£250,000</option>
+							<option>£300,000</option>
+							<option>£350,000</option>
+							<option>£400,000</option>
+							<option>£450,000</option>
+							<option>£500,000</option>
+							<option>£550,000</option>
+							<option>£600,000</option>
+							<option>£650,000</option>
+							<option>£700,000</option>
+							<option>£750,000</option>
+							<option>£800,000</option>
+							<option>£850,000</option>
+							<option>£900,000</option>
+							<option>£950,000</option>
+							<option>£1,000,000</option>
+							<option>£1,100,000</option>
+							<option>£1,200,000</option>
+							<option>£1,300,000</option>
+							<option>£1,400,000</option>
+							<option>£1,500,000+</option>
+							</select>
+							<!-- arrow icon for No Max (swap to icon-max.svg when you have it) -->
+							<img
+							src="/static/images/icon-min.svg"
+							alt=""
+							class="filter-pill-icon-select"
+							>
+						</div>
+						</div>
+
+						<!-- Property Type (199px, red hover) -->
+						<div class="filter-pill filter-pill-property filter-pill-accent-hover">
+						<select id="property-type-filter" class="filter-select filter-select-property">
+							<option value="">Property Type</option>
+							<option>Commercial</option>
+							<option>Residential</option>
+							<option>Land</option>
+							<option>Other</option>
+						</select>
+						<!-- property icon placeholder -->
+						<img
+							src="/static/images/icon-min.svg"
+							alt=""
+							class="filter-pill-icon-select"
+						>
+						</div>
+
+						<!-- Search button (139px, red hover) -->
+						<button
+						id="apply-filter-button"
+						type="button"
+						class="filter-pill filter-pill-search filter-button filter-pill-accent-hover"
+						aria-label="Search"
+						>
+						<img
+							src="/static/images/icon-search.svg"
+							alt=""
+							class="filter-pill-icon-inline"
+						>
+						<span>Search</span>
+						</button>
+
+						<!-- Map View button (139px, red hover) -->
+						<button
+						type="button"
+						id="map-view-toggle"
+						class="filter-pill filter-pill-map filter-button filter-pill-accent-hover"
+						>
+						<!-- drop in a map icon here if you want -->
+						<span>Map View</span>
+						</button>
+
+					</div>
+					</form>
 				</div>
-			</div>
-			<br>
-		</section>
+				</section>
+
+
 
 			<!-- END Filtering Section -->
 
