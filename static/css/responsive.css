@@ -5557,3 +5557,415 @@
         width: 100%;
     }
 }
+
+/* =========================================================
+   1) DESKTOP TWEAKS – up to 1470px (client's resolution)
+   ========================================================= */
+@media (max-width: 1470px) {
+
+  /* Header: give the nav more room, hide datetime if tight */
+  .header-datetime {
+    display: none;
+  }
+
+  .wsmenu > .wsmenu-list > li > a {
+    padding: 10px 20px 10px 14px;
+    font-size: 14px;
+  }
+
+  .nav-contact a.contact-svg-btn {
+    padding: 0;        /* keep the pill snug */
+  }
+
+  /* Hero: reduce big side margins and vertical spacing */
+  #hero-14 .ml-36,
+  #hero-14 .mr-36 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  #hero-14 .h2-title-md {
+    font-size: clamp(2.4rem, 3vw, 3rem);
+    margin-bottom: 3rem;   /* was very tall on big screens */
+  }
+
+  #hero-14 .h4-sm {
+    font-size: 1.1rem;
+  }
+
+  .auction-info-glass {
+    padding: 1.5rem;
+  }
+
+  /* Hero buttons: allow wrapping nicely on laptops */
+  .hero-cta-row {
+    gap: 1.5rem;
+  }
+
+  .hero-button-group .svg-pill-btn {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Auction feature / strategy / advantage: soften padding */
+  .auction-feature-section,
+  .strategy-section,
+  .services-grid-section,
+  .advantage-section,
+  .newsletter-modern {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* =========================================================
+   2) LARGE TABLET / SMALL DESKTOP  (≤ 1199px)
+   ========================================================= */
+@media (max-width: 1199.98px) {
+
+  /* Hero title & spacing */
+  #hero-14 .h2-title-md {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  #hero-14 .mb-160 {
+    margin-bottom: 4rem;
+  }
+
+  /* Keep hero content a bit narrower */
+  #hero-14 .ml-36,
+  #hero-14 .mr-36 {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+  }
+
+  /* Hero CTA row: buttons left, scroll hint below */
+  .hero-cta-row {
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .hero-scroll-hint {
+    align-self: flex-start;
+    margin-left: 0;
+    margin-top: .5rem;
+  }
+
+  /* Auction feature card: move towards stacked layout */
+  .auction-feature-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .auction-feature-content {
+    padding-top: 0;
+  }
+
+  /* Services grid: drop to 2 columns */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  /* Footer columns: 2×2 style */
+  .footer-main-row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  }
+
+  .footer-col,
+  .footer-col-logo,
+  .footer-col-follow {
+    flex: 1 1 50%;
+  }
+
+  .footer-col-follow {
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   3) TABLET PORTRAIT / MID SIZES  (≤ 991px)
+   ========================================================= */
+@media (max-width: 991.98px) {
+
+  /* Hero section becomes more “stacked” */
+  #hero-14 {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+
+  #hero-14 .ml-36,
+  #hero-14 .mr-36 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  #hero-14 .h2-title-md {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #hero-14 .h4-sm {
+    font-size: 1rem;
+  }
+
+  /* Auction info glass naturally drops under heading via Bootstrap,
+     just add a bit more separation */
+  #hero-14 .auction-info-glass {
+    margin-top: 1.5rem;
+  }
+
+  /* Hero buttons: full-width row, scroll hint under */
+  .hero-cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-scroll-hint {
+    order: 2;
+    margin-top: .75rem;
+  }
+
+  .hero-button-group {
+    padding-left: 0 !important;
+  }
+
+  .hero-button-group .svg-pill-btn {
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Auction feature card: stacked */
+  .auction-feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .auction-feature-image-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .auction-feature-content {
+    padding: 0;
+  }
+
+  /* Strategy section: 1-column grid */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+
+  .strategy-heading,
+  .strategy-copy {
+    max-width: 700px;
+  }
+
+  /* Services: still 2 columns at this size, but tighter */
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Advantage card: stack text over image */
+  .advantage-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .advantage-card-image-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Newsletter bar: form stacks nicely */
+  .newsletter-main-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  .newsletter-input-wrap {
+    width: 100%;
+  }
+
+  .newsletter-side-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+  }
+
+  /* Footer bottom bar: columns instead of single line */
+  .footer-bottom-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .footer-meta-left .footer-meta-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: .25rem;
+    column-gap: 1rem;
+  }
+
+  .footer-meta-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+  }
+}
+
+/* =========================================================
+   4) MOBILE & SMALL TABLET  (≤ 767px)
+   ========================================================= */
+@media (max-width: 767.98px) {
+
+  /* Global horizontal padding */
+  #hero-14 .ml-36,
+  #hero-14 .mr-36,
+  .auction-feature-section,
+  .strategy-section,
+  .services-grid-section,
+  .advantage-section,
+  .newsletter-modern,
+  .lot-filtering-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Hero text scaling */
+  #hero-14 .h2-title-md {
+    font-size: 1.8rem;
+  }
+
+  #hero-14 .h4-sm {
+    font-size: .95rem;
+  }
+
+  /* Hero buttons: vertical, nice touch targets */
+  .hero-button-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .hero-button-group .svg-pill-btn {
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  /* Filter form: 1 field per row */
+  #lots-filter-form .col-md-4,
+  #lots-filter-form .col-md-2,
+  #lots-filter-form .col-md-2.text-center {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  #lots-filter-form .col-md-2.text-center {
+    text-align: left;
+  }
+
+  #apply-filter-button {
+    margin-top: .5rem;
+  }
+
+  /* Lots grid: single column */
+  #lots-container.row {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  /* Services: single column */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer columns: 1 per row */
+  .footer-col,
+  .footer-col-logo,
+  .footer-col-follow {
+    flex: 1 1 100%;
+  }
+
+  .footer-col-follow .footer-heading {
+    text-align: left;
+  }
+
+  .footer-meta-left .footer-meta-list {
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   5) EXTRA-SMALL (≤ 480px) – tighten a touch more
+   ========================================================= */
+@media (max-width: 480px) {
+
+  #hero-14 {
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+  }
+
+  #hero-14 .h2-title-md {
+    font-size: 1.6rem;
+  }
+
+  .auction-feature-title,
+  .strategy-heading-title,
+  .advantage-card-heading {
+    font-size: 1.25rem;
+  }
+
+  .newsletter-title {
+    font-size: 1.4rem;
+  }
+
+  .credential-image {
+    max-width: 120px;
+  }
+}
+
+.col-lg-9 {
+    flex: 0 0 auto;
+    width: 72%;
+}
+
+@media (min-width: 992px) {
+    .col-lg-9 {
+        flex: 0 0 auto;
+        width: 72%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 28%;
+    }
+  }
+
+  @media (max-width: 1470px) {
+    .header-datetime {
+        display: block;
+        margin-right: 20px;
+        margin-left: 60px;
+    }
+}
