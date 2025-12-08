@@ -13999,3 +13999,21 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   border-radius: 14px;
   filter: brightness(1.05);
 }
+
+/* Base text colour for all filters */
+.form-control2 {
+  color: #0F2848 !important;
+}
+
+/* Ensure options themselves inherit the same colour */
+.form-control2 option {
+  color: #0F2848;
+}
+
+/* (Optional) if your first option is treated as a placeholder */
+#min-price-filter option[value=""],
+#max-price-filter option[value=""],
+#property-type-filter option[value=""] {
+  color: #0F2848;
+}
+

@@ -148,7 +148,7 @@
 								<div class="strategy-bubble-text">
 									<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
 										<div class="strategy-bubble-line1">
-										BROWSE OUR <span class="strategy-bubble-clear">AVAILABLE</span>
+										BROWSE OUR <span class="strategy-bubble-clear">CURRENT</span>
 										</div>
 									<div class="strategy-bubble-line2">LOTS</div>
 								</div>
@@ -181,17 +181,23 @@
 						</p>
 
 						<!-- CTA: reuse your Free Valuation SVG button -->
+						<!-- CTA: reuse your Free Valuation SVG button -->
 						<div class="auction-feature-cta">
 											<a
 											href="{{ url_for('valuation') }}"
-											class="auction-feature-cta-main new-svg-btn"
+											class="auction-feature-cta-main"
 											aria-label="Valuation"
 											>
-											<img
-												src="{{ url_for('static', filename='images/freeValuation-default.svg') }}"
-												alt="Free Valuation"
-												class="contact-img default"
-											>
+											<!-- Background SVG with text -->
+											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
+												alt=""
+												class="svg-pill-bg">
+
+											<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 											</a>
 										</div>
 					</div>
@@ -340,6 +346,7 @@
 				  <div class="fbox-8-wrapper">
 					<div id="lots-container" class="row row-cols-xl-3 d-flex justify-content-center"></div> <!-- End row -->
 					<div class="row text-center justify-content-center mt-20">
+
 					</div>
 				  </div> <!-- END FEATURES-8 WRAPPER -->
 				</div> <!-- End container -->

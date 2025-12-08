@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderLots(globalLots);
     } catch (error) {
         console.error('Error fetching or processing lots:', error);
-        document.querySelector('#lots-container').innerHTML = '<p>November Listings Will Be Added Shortly.</p>';
+        document.querySelector('#lots-container').innerHTML = '<p>Listings Will Be Added Shortly.</p>';
     }
   }
   

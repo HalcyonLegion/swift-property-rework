@@ -54,7 +54,7 @@
 
 
 
-	<body>
+	<body class="lot-details-page">
 
 		<!-- PRELOADER SPINNER
 		============================================= -->	
@@ -62,7 +62,7 @@
 			<div id="loading" class="preloader">
 				<div id="loading-center">
 					<div id="loading-center-absolute">
-						<img src="static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
+						<img src="/static/images/logo_nobg.png" alt="Company Logo" id="preloader-logo">
 					</div>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 							<!-- Contact button hard right -->
 							<li class="nl-simple nav-contact" aria-haspopup="true">
 							<a href="{{ url_for('contact') }}" class="btn contact-svg-btn" aria-label="Contact Us">
-								<img src="{{ url_for('static', filename='images/contact-default.svg') }}"
+								<img src="{{ url_for('static', filename='images/contact-default2.svg') }}"
 									alt="Contact Us" class="contact-img default">
 								<img src="{{ url_for('static', filename='images/contact-hover.svg') }}"
 									alt="Contact Us" class="contact-img hover">
@@ -138,155 +138,220 @@
 			<!-- END HEADER -->
 
 
-            <!-- HERO-14
-			============================================= -->	
-			<section id="hero-23" class="bg-fixed pb-60 hero-section division">
-				<div class="container">	
-					<div class="row d-flex align-items-center justify-content-center text-center">
+            <section class="strategy-section">
+				<div class="strategy-grid">
 
-
-						<!-- HERO TEXT -->
-						<div class="col-sm-10 col-md-9 col-lg-9">
-							<div class="hero-14-txt white-color wow fadeInRight">
-
-								<!-- Title -->
-								<h2 class="h2-title-md">Available Lots</h2>
-
+					<!-- TOP-LEFT: SPEECH BUBBLE CARD -->
+					<div class="strategy-bubble">
+						<div class="strategy-bubble-card">
+							<div class="strategy-bubble-inner">
+								<div class="strategy-bubble-text">
+									<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
+										<div class="strategy-bubble-line1">
+										BROWSE OUR <span class="strategy-bubble-clear">AVAILABLE</span>
+										</div>
+									<div class="strategy-bubble-line2">LOTS</div>
+								</div>
 							</div>
-						</div>	<!-- END HERO TEXT -->	
-
-
-					</div>    <!-- End row --> 	
-				</div>	   <!-- End container --> 	
-			</section>	<!-- END HERO-14 -->
-
-
-			<!-- Filtering Section -->
-			<section id="lot-filtering" class="bg-blue division">
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-lg-12">
-
-							<br>
-
-							<!-- Filter Form -->
-							<form id="lots-filter-form" class="row">
-								<!-- Lot No, Postcode, Address Filter -->
-								<div class="col-md-3">
-									<input type="text" id="lot-address-filter" class="form-control2 mb-2" placeholder="Lot No, Postcode, Address">
-								</div>
-								<!-- Maximum Price Filter -->
-								<div class="col-md-3 position-relative">
-									<!-- <img src="/static/images/british-pound-symbol.png" alt="Money Sign" class="dropdown-icon"> -->
-									<select id="max-price-filter" class="form-control2 mb-2">
-										<option value="">Max Price</option>
-										<option>£50,000</option>
-										<option>£100,000</option>
-										<option>£150,000</option>
-										<option>£200,000</option>
-										<option>£250,000</option>
-										<option>£300,000</option>
-										<option>£350,000</option>
-										<option>£400,000</option>
-										<option>£450,000</option>
-										<option>£500,000</option>
-										<option>£550,000</option>
-										<option>£600,000</option>
-										<option>£650,000</option>
-										<option>£700,000</option>
-										<option>£750,000</option>
-										<option>£800,000</option>
-										<option>£850,000</option>
-										<option>£900,000</option>
-										<option>£950,000</option>
-										<option>£1,000,000</option>
-										<option>£1,100,000</option>
-										<option>£1,200,000</option>
-										<option>£1,300,000</option>
-										<option>£1,400,000</option>
-										<option>£1,500,000+</option>
-									</select>
-									<div class="css-arrow"></div>
-								</div>
-								<!-- Property Type Filter -->
-								<div class="col-md-3 position-relative">
-									<img src="/static/images/swift-property-auctions-icon-only-white.svg" alt="House" class="dropdown-icon">
-									<select id="property-type-filter" class="form-control2 mb-2">
-										<option value="">Property Type</option>
-										<option>Commercial</option>
-										<option>Residential</option>
-										<option>Land</option>
-										<option>Other</option>
-									</select>
-									<div class="css-arrow"></div>
-								</div>
-								<!-- Apply Filter Button -->
-								<div class="col-md-3 text-center mt-1">
-									<button type="button" id="apply-filter-button" class="btn btn-sm btn-tra-white red-hover">Search</button>
-									<!-- <button type="button" id="reset-filter-button" class="btn btn-sm btn-tra-white red-hover mt-30">Reset</button> -->
-								</div>
-							</form>
 						</div>
 					</div>
+
+					<!-- TOP-RIGHT: HEADING + RED LINE + SHORT BODY -->
+					<div class="strategy-heading">
+						<div class="strategy-heading-inner">
+							<h3 class="strategy-heading-title">
+							THE NEXT STEP AFTER THE AUCTION
+							</h3>
+
+							<hr class="strategy-heading-divider">
+
+							<p class="strategy-heading-body">
+							Although the auction has concluded, a selection of properties are still available. Each listing includes clear guides, and essential information to support your decision-making as you consider post-auction bids.
+							</p>
+						</div>
+					</div>
+
+					<!-- BOTTOM-LEFT: LONG COPY + CTA -->
+					<div class="strategy-copy">
+						<p>
+							Here you’ll find all lots that are available to purchase following recent auctions. If you’re interested in making an offer or want to discuss a property in more detail, our team is ready to assist. We encourage buyers to reach out early, as available opportunities can progress quickly. 
+						</p>
+						<p>
+							Explore the listings below and contact us when you’re ready to take the next step.
+						</p>
+
+						<!-- CTA: reuse your Free Valuation SVG button -->
+						<!-- CTA: reuse your Free Valuation SVG button -->
+						<div class="auction-feature-cta">
+											<a
+											href="{{ url_for('valuation') }}"
+											class="auction-feature-cta-main"
+											aria-label="Valuation"
+											>
+											<!-- Background SVG with text -->
+											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
+												alt=""
+												class="svg-pill-bg">
+
+											<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
+											</a>
+										</div>
+					</div>
+
+					<!-- BOTTOM-RIGHT: IMAGE + BADGE -->
+					<div class="strategy-image-wrapper">
+						<img
+							src="{{ url_for('static', filename='images/currentLotsnew.jpg') }}"
+							alt="Swift Property Auctions team meeting"
+							class="strategy-image"
+						>
+
+						<!-- Bottom-right frosted badge (reusing your badge pattern) -->
+						<div class="auction-feature-logo-badge">
+							<img
+							src="{{ url_for('static', filename='images/swift-intelligence-badge.svg') }}"
+							alt="Swift Intelligence – Industry Leading"
+							>
+						</div>
+					</div>
+
 				</div>
-				<br>
 			</section>
+
+			<!-- Filtering Section -->
+			<section id="lot-filtering" class="division">
+			<div class="lot-filtering-container">
+				<div class="row justify-content-center">
+					<div class="col-lg-12">
+
+						<br>
+
+						<!-- Filter Form -->
+						<form id="lots-filter-form" class="row align-items-center">
+
+							<!-- Lot No, Postcode, Address Filter -->
+							<div class="col-md-4">
+								<input type="text" id="lot-address-filter" class="form-control2 mb-2" placeholder="Postcode, Address or Lot No">
+							</div>
+
+							<!-- Minimum Price Filter -->
+							<div class="col-md-2 position-relative">
+								<select id="min-price-filter" class="form-control2 mb-2">
+									<option value="">No Min</option>
+									<option>£50,000</option>
+									<option>£100,000</option>
+									<option>£150,000</option>
+									<option>£200,000</option>
+									<option>£250,000</option>
+									<option>£300,000</option>
+									<option>£350,000</option>
+									<option>£400,000</option>
+									<option>£450,000</option>
+									<option>£500,000</option>
+									<option>£550,000</option>
+									<option>£600,000</option>
+									<option>£650,000</option>
+									<option>£700,000</option>
+									<option>£750,000</option>
+									<option>£800,000</option>
+									<option>£850,000</option>
+									<option>£900,000</option>
+									<option>£950,000</option>
+									<option>£1,000,000</option>
+									<option>£1,100,000</option>
+									<option>£1,200,000</option>
+									<option>£1,300,000</option>
+									<option>£1,400,000</option>
+									<option>£1,500,000+</option>
+								</select>
+								<div class="css-arrow"></div>
+							</div>
+
+
+							<!-- Maximum Price Filter -->
+							<div class="col-md-2 position-relative">
+								<select id="max-price-filter" class="form-control2 mb-2">
+									<option value="">No Max</option>
+									<option>£50,000</option>
+									<option>£100,000</option>
+									<option>£150,000</option>
+									<option>£200,000</option>
+									<option>£250,000</option>
+									<option>£300,000</option>
+									<option>£350,000</option>
+									<option>£400,000</option>
+									<option>£450,000</option>
+									<option>£500,000</option>
+									<option>£550,000</option>
+									<option>£600,000</option>
+									<option>£650,000</option>
+									<option>£700,000</option>
+									<option>£750,000</option>
+									<option>£800,000</option>
+									<option>£850,000</option>
+									<option>£900,000</option>
+									<option>£950,000</option>
+									<option>£1,000,000</option>
+									<option>£1,100,000</option>
+									<option>£1,200,000</option>
+									<option>£1,300,000</option>
+									<option>£1,400,000</option>
+									<option>£1,500,000+</option>
+								</select>
+								<div class="css-arrow"></div>
+							</div>
+
+							<!-- Property Type Filter -->
+							<div class="col-md-2 position-relative">
+								<img src="/static/images/swift-property-auctions-icon-only-black.svg" alt="House" class="dropdown-icon">
+								<select id="property-type-filter" class="form-control2 mb-2">
+									<option value="">Property Type</option>
+									<option>Commercial</option>
+									<option>Residential</option>
+									<option>Land</option>
+									<option>Other</option>
+								</select>
+								<div class="css-arrow"></div>
+							</div>
+
+							<!-- Apply Filter Button -->
+							<div class="col-md-2 text-center">
+								<a id="apply-filter-button" class="btn3glass new-svg-btn btn-md mt-1" aria-label="Search">
+									<img src="{{ url_for('static', filename='images/searchButton.svg') }}" 
+										alt="Search default" 
+										class="contact-img default">
+
+									<img src="{{ url_for('static', filename='images/search-hover.svg') }}" 
+										alt="Search hover" 
+										class="contact-img hover">
+								</a>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+			<br>
+		</section>
+
 			<!-- END Filtering Section -->
 
-			<!-- FEATURES-8
-			============================================= -->
-			<section id="features-8" class="bg-snow wide-60 features-section division">
-				<div class="container">										
+			<section id="features-8" class="bg-white wide-20 features-section division">
+				<div class="features-8-container">
+				  <!-- FEATURES-8 WRAPPER -->
+				  <div class="fbox-8-wrapper">
+					<div id="lots-container" class="row row-cols-xl-3 d-flex justify-content-center"></div> <!-- End row -->
+					<div class="row text-center justify-content-center mt-20">
 
-					<!-- FEATURES-8 WRAPPER -->	
-			 		<div class="fbox-8-wrapper text-center">
+					</div>
+				  </div> <!-- END FEATURES-8 WRAPPER -->
+				</div> <!-- End container -->
+			  </section> <!-- END FEATURES-8 -->
 
-			 			<div id="lots-container" class="row row-cols-1 row-cols-md-3 d-flex justify-content-center">
-
-
-							<p class="p-lg"></p>
-
-
-				 		</div>  <!-- End row -->	
-				 	</div>	<!-- END FEATURES-8 WRAPPER -->	
-
-					 
-
-
-				</div>	   <!-- End container -->		
-			</section>	<!-- END FEATURES-8 -->
-
-            <!-- PAGE PAGINATION
-			============================================= -->
-			<!-- <div class="bg-snow pb-100 page-pagination division">
-				<div class="container">
-					<div class="row">	
-						<div class="col-md-12">
-							<nav aria-label="Page navigation example">
-								<ul class="pagination ico-20 justify-content-center">
-							    	<li class="page-item disabled">
-								      <a class="page-link" href="#" tabindex="-1">
-								        <span class="flaticon-back"></span>
-								      </a>
-								    </li>
-								    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-								    <li class="page-item"><a class="page-link" href="#">2</a></li>
-								    <li class="page-item"><a class="page-link" href="#">3</a></li>
-								    <li class="page-item">
-								      <a class="page-link" href="#" aria-label="Next">
-								        <span class="flaticon-next"></span>
-								      </a>
-							    	</li>
-								</ul>
-							</nav>
-						</div> -->
-					<!-- </div>   End row -->	
-				<!-- </div>  End container -->
-			<!-- </div>	 END PAGE PAGINATION -->
-
-            <!-- DIVIDER LINE -->
-			<br><br>
-			<hr class="divider">
 
             <!-- NEWSLETTER + FOOTER CARD
 			============================================= -->
