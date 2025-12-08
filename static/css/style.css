@@ -13932,10 +13932,10 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 }
 
 .auction-feature-cta > a:hover .svg-pill-arrow{
-  transform: translate(4px, -4px) rotate(-45deg);
+  /* transform: translate(4px, -4px) rotate(-45deg); */
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
   background: #ffffff;   /* dark tile, same family as button */
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 
 /* Background SVG (with text) */
@@ -13955,10 +13955,10 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 
 /* Hover / focus: move arrow UP + RIGHT and rotate to diagonal */
-.hero-button-group .svg-pill-btn:hover .svg-pill-arrow,
+/* .hero-button-group .svg-pill-btn:hover .svg-pill-arrow,
 .hero-button-group .svg-pill-btn:focus-visible .svg-pill-arrow {
   transform: translate(4px, -4px) rotate(-45deg);
-}
+} */
 
 
 /* Arrow “chip” (dark square by default) */
@@ -13973,7 +13973,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .hero-button-group .svg-pill-btn:focus-visible .svg-pill-arrow {
   background: #ffffff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
-  transform: translate(4px, -4px) rotate(-45deg);      
+  /* transform: translate(4px, -4px) rotate(-45deg);       */
   filter: brightness(1.05);          
 }
 
@@ -13993,8 +13993,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .news-feature-cta-main:focus-visible .svg-pill-arrow {
   background: #ffffff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
-  transform: translate(4px, -4px) rotate(-45deg);
-  border-radius: 14px;
+  /* transform: translate(4px, -4px) rotate(-45deg); */
+  border-radius: 8px;
   filter: brightness(1.05);
 }
 
