@@ -1576,4 +1576,18 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   color: #AD1D18;
 }
 
+/* --- NAV SPACING TWEAKS TO MATCH FIGMA --- */
+
+/* tighten spacing between menu items */
+.wsmainfull.menu .wsmenu-list {
+  gap: 18px; /* was 25px – tweak 16–20px if you want it tighter/looser */
+}
+
+/* keep the text links compact, but don't touch the Contact SVG button */
+.wsmainfull.menu .wsmenu-list > li:not(.nav-contact) > a {
+  padding-left: 6px;
+  padding-right: 6px;          /* was 18/32px in the old rule */
+}
+
+
 

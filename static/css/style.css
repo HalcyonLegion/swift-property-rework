@@ -14519,7 +14519,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   .header-datetime {
     margin-left: 40px;   /* or 60px if you prefer */
     margin-right: 10px;
-    font-size: 15px;
+    font-size: 16px;
     white-space: nowrap;
   }
 }
