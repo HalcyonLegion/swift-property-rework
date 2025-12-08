@@ -5983,3 +5983,283 @@
         margin-bottom: 3rem;
     }
 }
+
+/* Make sure nav + datetime + contact button play nicely together */
+
+/* Contact button hard-right in the nav */
+.wsmenu > .wsmenu-list > li.nav-contact {
+  margin-left: auto;
+  padding-right: 0;
+}
+
+/* Slightly tighten nav links on mid/large screens so they don't wrap too early */
+@media (max-width: 1470px) {
+  .wsmenu > .wsmenu-list {
+    gap: 18px;
+  }
+
+  .wsmenu > .wsmenu-list > li > a {
+    padding: 10px 20px 10px 14px;
+    font-size: 14px;
+  }
+
+  /* Keep your datetime visible but not too far out */
+  .header-datetime {
+    display: block;
+    margin-left: 40px;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+}
+
+/* =======================
+   ABOUT HERO – BASE
+   ======================= */
+.auction-feature-section2 {
+  padding: 6rem 0 4rem;
+}
+
+.auction-feature-section2 .auction-feature-card {
+  max-width: 1376px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Left: image */
+.auction-feature-section2 .auction-feature-image-wrapper {
+  flex: 0 0 50%;
+}
+
+.about-hero-image {
+  display: block;
+  width: 100%;
+  max-height: 436px; /* from your Figma */
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Right: copy */
+.auction-feature-section2 .auction-feature-intro {
+  flex: 1 1 0;
+  max-width: 480px;
+}
+
+.auction-feature-section2 .auction-feature-title {
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 2.8rem;
+  line-height: 1.1;
+  color: #0F2848;
+  margin-bottom: 1.5rem;
+}
+
+.auction-feature-section2 .auction-feature-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 1.75rem;
+}
+
+/* CTA pill reuse – keep aligned */
+.auction-feature-section2 .auction-feature-cta {
+  display: flex;
+  align-items: center;
+}
+
+/* ABOUT HERO – force equal card heights on desktop */
+@media (min-width: 1200px) {
+  .auction-feature-section2 .auction-feature-card {
+    max-width: 1376px;       /* your Figma total width */
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+    height: 457px;           /* Figma height for both cards */
+  }
+
+  /* LEFT: image card */
+  .auction-feature-section2 .auction-feature-image-wrapper {
+    flex: 0 0 59%;           /* ≈ 812px of 1376 */
+    max-width: 59%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 16px;
+    overflow: hidden;        /* stop image from spilling */
+    background: #FFFFFF;
+    box-shadow:
+      27px 37px 18px rgba(0, 0, 0, 0.01),
+      15px 21px 16px rgba(0, 0, 0, 0.05),
+      7px 9px 12px rgba(0, 0, 0, 0.09),
+      2px 2px 6px rgba(0, 0, 0, 0.10);
+  }
+
+  .about-hero-image {
+    width: 100%;
+    height: 100%;            /* fill the card height */
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+  }
+
+  /* RIGHT: white copy card */
+  .auction-feature-section2 .auction-feature-intro {
+    flex: 0 0 41%;           /* ≈ 564px of 1376 */
+    max-width: 41%;
+    height: 100%;
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+    box-shadow:
+      27px 37px 18px rgba(0, 0, 0, 0.01),
+      15px 21px 16px rgba(0, 0, 0, 0.05),
+      7px 9px 12px rgba(0, 0, 0, 0.09),
+      2px 2px 6px rgba(0, 0, 0, 0.10);
+    border-radius: 16px;
+
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Title + body Figma sizing */
+  .auction-feature-section2 .auction-feature-title {
+    font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 500;
+    font-size: 3rem;    /* 48px */
+    line-height: 1;
+    text-transform: uppercase;
+    color: #0F2848;
+    margin: 25px 0 24px;
+  }
+
+  .auction-feature-section2 .auction-feature-body {
+    max-width: 492px;
+    font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #0F2848;
+    margin-bottom: 32px;
+  }
+
+  .auction-feature-section2 .auction-feature-cta {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 52px;
+  }
+}
+
+/* Slightly reduce side padding at 1470 so it breathes on laptops */
+@media (max-width: 1470px) and (min-width: 1200px) {
+  .auction-feature-section2 .auction-feature-card {
+    padding: 0 2rem;
+  }
+}
+
+/* Tablet and down – stack nicely */
+@media (max-width: 1199.98px) {
+  .auction-feature-section2 {
+    padding: 4rem 0 3.5rem;
+  }
+
+  .auction-feature-section2 .auction-feature-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1.5rem;
+    gap: 2rem;
+  }
+
+  .auction-feature-section2 .auction-feature-image-wrapper,
+  .auction-feature-section2 .auction-feature-intro {
+    flex: 1 1 auto;
+    max-width: 100%;
+    min-height: auto;   /* let them shrink naturally on small screens */
+  }
+
+  .about-hero-image {
+    height: auto;
+    max-height: 360px;
+  }
+
+  .auction-feature-section2 .auction-feature-intro {
+    box-shadow:
+      17px 24px 14px rgba(0, 0, 0, 0.02),
+      8px 12px 10px rgba(0, 0, 0, 0.05);
+    padding: 32px 24px;
+  }
+
+  .auction-feature-section2 .auction-feature-title {
+    font-size: 2.1rem;
+  }
+
+  .auction-feature-section2 .auction-feature-body {
+    font-size: 0.98rem;
+  }
+}
+
+/* 1470 and down – just reduce side padding a bit */
+@media (max-width: 1470px) {
+  .auction-feature-card {
+    padding: 0 1.75rem;
+  }
+}
+
+/* 1199px – keep grid but a bit tighter */
+@media (max-width: 1199.98px) {
+  .auction-feature-intro {
+    padding: 40px 28px;
+  }
+
+  .auction-feature-title {
+    font-size: 2.6rem;
+  }
+}
+
+/* 991px – STACK: image on top, card below */
+@media (max-width: 991.98px) {
+  .auction-feature-card {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .auction-feature-intro {
+    padding: 32px 24px;
+  }
+
+  .auction-feature-title {
+    font-size: 2.1rem;
+  }
+
+  .auction-feature-title::after {
+    width: 220px;
+  }
+
+  .auction-feature-body {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobiles – tweak padding/badge */
+@media (max-width: 575.98px) {
+  .auction-feature-card {
+    padding: 0 1.25rem;
+  }
+
+  .about-hero-badge {
+    left: 16px;
+    bottom: 16px;
+    transform: scale(0.9);
+    transform-origin: bottom left;
+  }
+
+  .auction-feature-title {
+    font-size: 1.7rem;
+  }
+}
+
+

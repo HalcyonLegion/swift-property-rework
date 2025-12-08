@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   async function updateLots() {
     try {
         const params = new URLSearchParams({
-            EndDateTimeFrom: '2025-10-01', // EndDatetime should be From AFTER the previous auction to make sure the old lots aren't included
+            EndDateTimeFrom: '2025-11-28', // EndDatetime should be From AFTER the previous auction to make sure the old lots aren't included
             IsShownOnWeb: true
         });
   
