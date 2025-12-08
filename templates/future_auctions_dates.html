@@ -120,7 +120,7 @@
 							<!-- Contact button hard right -->
 							<li class="nl-simple nav-contact" aria-haspopup="true">
 							<a href="{{ url_for('contact') }}" class="btn contact-svg-btn" aria-label="Contact Us">
-								<img src="{{ url_for('static', filename='images/contact-default2.svg') }}"
+								<img src="{{ url_for('static', filename='images/contact-default.svg') }}"
 									alt="Contact Us" class="contact-img default">
 								<img src="{{ url_for('static', filename='images/contact-hover.svg') }}"
 									alt="Contact Us" class="contact-img hover">
@@ -177,18 +177,22 @@
 							Each auction is prepared months in advance, with new lots added as they are confirmed. This section gives you a clear overview of our upcoming sales so you can plan ahead, follow catalogue releases and register your interest early.
 						</p>
 
-						<!-- CTA: reuse your Free Valuation SVG button -->
 						<div class="auction-feature-cta">
 											<a
 											href="{{ url_for('valuation') }}"
 											class="auction-feature-cta-main"
 											aria-label="Valuation"
 											>
-											<img
-												src="{{ url_for('static', filename='images/freeValuation-default.svg') }}"
-												alt="Free Valuation"
-												class="contact-img default"
-											>
+											<!-- Background SVG with text -->
+											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
+												alt=""
+												class="svg-pill-bg">
+
+											<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 											</a>
 										</div>
 					</div>
@@ -297,17 +301,22 @@
 						<div class="newsletter-side-column">
 
 						<!-- Subscribe button -->
-						<div class="newsletter-cta-row">
+						<div class="auction-feature-cta">
 							<button
 							type="submit"
-							class="newsletter-btn"
+							class="news-feature-cta-main"
 							aria-label="Subscribe"
 							>
 							<img
-								src="{{ url_for('static', filename='images/subscribe-default.svg') }}"
+								src="{{ url_for('static', filename='images/subbtnnew.svg') }}"
 								alt="Subscribe"
 								class="newsletter-svg default"
 							>
+							<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 							</button>
 						</div>
 

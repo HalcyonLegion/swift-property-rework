@@ -11707,7 +11707,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* Flex card containing image + white text card */
 .auction-feature-section2 .auction-feature-card {
-  margin: 0 auto;
+  margin: 32px 32px;
   display: flex;
   gap: 32px;
   align-items: stretch;
@@ -11715,7 +11715,6 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* LEFT IMAGE CARD */
 .auction-feature-section2 .auction-feature-image-wrapper {
-  flex: 0 0 55%;
   border-radius: 16px;
   overflow: hidden;
   background: #f4f4f4;
@@ -11736,7 +11735,6 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* RIGHT WHITE CARD (Frame 213) */
 .auction-feature-section2 .auction-feature-intro {
-  flex: 0 0 43%;
   background: #ffffff;
   border-radius: 16px;
   padding: 64px 48px 56px;
