@@ -185,14 +185,19 @@
 						<div class="auction-feature-cta">
 											<a
 											href="{{ url_for('valuation') }}"
-											class="auction-feature-cta-main new-svg-btn"
+											class="auction-feature-cta-main"
 											aria-label="Valuation"
 											>
-											<img
-												src="{{ url_for('static', filename='images/register-default.svg') }}"
-												alt="Free Valuation"
-												class="contact-img default"
-											>
+											<!-- Background SVG with text -->
+											<img src="{{ url_for('static', filename='images/regtobidnew.svg') }}"
+												alt=""
+												class="svg-pill-bg">
+
+											<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 											</a>
 										</div>
 					</div>
@@ -327,7 +332,8 @@
 
 				<!-- REGISTER TO BID CTA -->
 				<div class="bidding-register-cta wow fadeInUp">
-					<a href="{{ url_for('bidder_registration') }}"
+					<a href="https://passport.eigroup.co.uk/account/log-in"
+               		target="_blank"
 					class="bidding-register-link"
 					aria-label="Register to bid">
 					<span class="bidding-register-main">
@@ -389,17 +395,22 @@
 						<div class="newsletter-side-column">
 
 						<!-- Subscribe button -->
-						<div class="newsletter-cta-row">
+						<div class="auction-feature-cta">
 							<button
 							type="submit"
-							class="newsletter-btn"
+							class="news-feature-cta-main"
 							aria-label="Subscribe"
 							>
 							<img
-								src="{{ url_for('static', filename='images/subscribe-default.svg') }}"
+								src="{{ url_for('static', filename='images/subbtnnew.svg') }}"
 								alt="Subscribe"
 								class="newsletter-svg default"
 							>
+							<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 							</button>
 						</div>
 

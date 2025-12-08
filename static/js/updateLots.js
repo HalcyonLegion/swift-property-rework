@@ -146,21 +146,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="btn-row">
           <a href="${legalPackHref}"
             ${legalPackAttr}
-            class="btn-sm btn-tra-blue tra-red-hover text-black ${hasLegalPack ? '' : 'btn-disabled'}">
+            class="lot-btn lot-btn-ghost ${hasLegalPack ? '' : 'btn-disabled'}">
             Legal Pack
           </a>
 
-          <a href="${detailsUrl}" target="_blank" class="btn-sm btn-red2">
+          <a href="${detailsUrl}" target="_blank"
+            class="lot-btn lot-btn-primary">
             View Details
           </a>
 
           <a href="https://www.swiftbridgingfinance.co.uk"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-sm btn-tra-blue tra-red-hover text-black">
+            class="lot-btn lot-btn-ghost">
             Finance
           </a>
         </div>
+
 
       </div>
 
