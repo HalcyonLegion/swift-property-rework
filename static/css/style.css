@@ -8741,7 +8741,7 @@ nav a#pull {
   font-size: 16px;
   margin-bottom: 10px;
   display: -webkit-box;
-  -webkit-line-clamp: 1;     /* → max number of lines */
+  -webkit-line-clamp: 3;     /* → max number of lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
