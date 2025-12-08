@@ -9224,7 +9224,7 @@ nav a#pull {
 /* === White card === */
 .auction-feature-card {
   box-sizing: border-box;
-  /* max-width: 1376px; */
+  max-width: 1376px;
   margin: 0 auto;
   /* background: #FFFFFF; */
   /* border: 1px solid #BDBDBD; */
@@ -9493,7 +9493,7 @@ nav a#pull {
 }
 
 .strategy-grid {
-  /* max-width: 1376px; */
+  max-width: 1376px;
   margin: 0 auto;
 
   display: grid;
@@ -9773,7 +9773,7 @@ nav a#pull {
 }
 
 .services-grid {
-  /* max-width: 1376px; */
+  max-width: 1376px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -10167,7 +10167,7 @@ nav a#pull {
 }
 
 .newsletter-footer-card {
-  /* max-width: 1376px; */
+  max-width: 1376px;
   margin: 0 auto;
   background: #FFFFFF;
   border: 1px solid #F2F2F2;
@@ -10623,7 +10623,7 @@ nav a#pull {
 }
 
 .lot-details-wrapper {
-  /* max-width: 1376px; */
+  max-width: 1376px;
   margin: 0 auto;
 }
 
@@ -12537,7 +12537,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* Outer card */
 .valuation-enquiry-card {
-  /* max-width: 1376px; */
+  max-width: 1376px;
   margin: 0 auto;
   background: #f6f6f6;
   border-radius: 16px;
@@ -14209,7 +14209,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .auction-feature-card2 {
   box-sizing: border-box;
-  /* max-width: 1376px; */
+  max-width: 1376px;
   margin: 0 auto;
   /* background: #FFFFFF; */
   /* border: 1px solid #BDBDBD; */
@@ -14250,4 +14250,231 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   border: 0;
   border-top: 2px solid #AD1D18;
   margin: 8px 0px 16px 0px;
+}
+
+/* --- ABOUT HERO WRAPPER --- */
+
+#about-hero {
+  background: #f4f4f4;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.about-hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* --- LEFT: IMAGE CARD --- */
+
+.about-hero-media {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.about-hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Glass badge bottom-left */
+
+.about-hero-badge {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  width: 190px;
+  padding: 14px 18px;
+  border-radius: 5px;
+
+  /* lighter, glassy look */
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(15px);
+
+  color: #fff;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.about-hero-badge-top {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.about-hero-badge-line {
+  margin: 6px 0 8px;
+  width: 100%;
+  border-bottom: 2px solid #ffffff;
+}
+
+.about-hero-badge-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 16px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.about-hero-badge-bottom span:last-child {
+  font-weight: 700;
+}
+
+/* --- RIGHT: WHITE CONTENT CARD --- */
+
+.about-hero-panel {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow:
+    27px 37px 18px rgba(0, 0, 0, 0.01),
+    15px 21px 16px rgba(0, 0, 0, 0.05),
+    7px 9px 12px rgba(0, 0, 0, 0.09),
+    2px 2px 6px rgba(0, 0, 0, 0.10);
+  display: flex;
+}
+
+.about-hero-panel-inner {
+  padding: 43px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Title */
+
+.about-hero-title {
+  margin: 0;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #0f2848;
+}
+
+/* Red underline */
+
+.about-hero-underline {
+  margin-bottom: 24px;
+  border-bottom: 2px solid #ad1d18;
+}
+
+/* Body copy */
+
+.about-hero-text {
+  margin: 0 0 32px;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #0f2848;
+}
+
+/* --- CTA BUTTONS --- */
+
+.about-hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.about-hero-cta-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(25px);
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.about-hero-cta-arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(25px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.about-hero-arrow-icon {
+  font-size: 22px;
+  color: #ea150d;
+}
+
+/* Hover states */
+
+.about-hero-cta-main:hover,
+.about-hero-cta-main:focus-visible {
+  background: #ad1d18;
+  transform: translateY(-1px);
+}
+
+.about-hero-cta-arrow:hover,
+.about-hero-cta-arrow:focus-visible {
+  background: #0f2848;
+  transform: translateY(-1px);
+}
+
+/* --- RESPONSIVE TWEAKS --- */
+
+@media (max-width: 992px) {
+  .about-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-panel-inner {
+    padding: 32px 24px 32px;
+  }
+
+  .about-hero-title {
+    font-size: 36px;
+  }
+
+  .about-hero-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  #about-hero {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .about-hero-badge {
+    left: 16px;
+    bottom: 16px;
+    width: 170px;
+  }
+
+  .about-hero-title {
+    font-size: 30px;
+  }
+
+  .about-hero-cta {
+    margin-top: 8px;
+  }
+
+  .about-hero-cta-main {
+    flex: 1;
+  }
 }

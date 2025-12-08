@@ -162,83 +162,68 @@
 
 
             <!-- ABOUT HERO : PEOPLE BEHIND THE PROCESS -->
-				<section class="auction-feature-section">
-							<div class="auction-feature-card2">
+				<section id="about-hero">
+				<div class="about-hero-inner">
 
-								<!-- LEFT: IMAGE + OVERLAYS -->
-								<div class="auction-feature-image-wrapper">
-									<!-- Main image -->
-									<img
-										src="{{ url_for('static', filename='images/citbgnew.jpg') }}"
-										alt="Regent Street, London"
-										class="auction-feature-image"
-									>
+					<!-- LEFT: IMAGE CARD -->
+					<div class="about-hero-media">
+					<img
+						src="{{ url_for('static', filename='images/citbgnew.jpg') }}"
+						alt="City skyline view"
+						class="about-hero-image"
+					>
 
-									<!-- Bottom-left: white Swift logo (image) -->
-									<img
-										src="/static/images/newlogo.svg" alt="header-logo"
-										alt="Swift Property Auctions"
-										class="auction-feature-logo-main"
-									>
+					<!-- Glass badge in bottom-left -->
+					<div class="about-hero-badge">
+						<div class="about-hero-badge-top">THE SWIFT</div>
+						<div class="about-hero-badge-line"></div>
+						<div class="about-hero-badge-bottom">
+						<span>PROPERTY</span>
+						<span>AUCTIONS TEAM</span>
+						</div>
+					</div>
+					</div>
 
-									<!-- Bottom-right: SWIFT / INTELLIGENCE / INDUSTRY LEADING badge (image) -->
-									<!-- Bottom-right: badge with background blur -->
-									<div class="auction-feature-logo-badge">
-									<img
-										src="{{ url_for('static', filename='images/propaucteam.svg') }}"
-										alt="Swift Intelligence – Industry Leading"
-									>
-									</div>
+					<!-- RIGHT: WHITE CONTENT CARD -->
+					<article class="about-hero-panel">
+					<div class="about-hero-panel-inner">
+						<h2 class="about-hero-title">
+						THE PEOPLE BEHIND<br>
+						THE PROCESS
+						</h2>
 
-								</div>
+						<div class="about-hero-underline"></div>
 
-								<!-- RIGHT: TEXT CONTENT -->
-								<div class="auction-feature-content">
+						<p class="about-hero-text">
+						Selling a property is a significant step, and you deserve to feel
+						supported and informed throughout the journey. At Swift, you’ll have
+						a single, reliable point of contact backed by a team that genuinely
+						cares about achieving the best result for you.
+						</p>
 
-									<!-- Top block: heading, body, red line -->
-									<div class="auction-feature-intro2">
-										<h3 class="auction-feature-title2">
-										THE PEOPLE BEHIND<br>
-										THE PROCESS
-										</h3>
+						<div class="about-hero-cta">
+						<a
+							href="{{ url_for('valuation') }}"
+							class="about-hero-cta-main"
+						>
+							Free Valuation
+						</a>
 
-										<hr class="auction-feature-divider2">
+						<a
+							href="{{ url_for('valuation') }}"
+							class="about-hero-cta-arrow"
+							aria-label="Go to Free Valuation"
+						>
+							<!-- simple arrow, you can swap to SVG if you like -->
+							<span class="about-hero-arrow-icon">→</span>
+						</a>
+						</div>
+					</div>
+					</article>
 
-										<p class="auction-feature-body">
-										Selling a property is a significant step, and you deserve to feel supported and informed throughout the journey. At Swift, you’ll have a single, reliable point of contact backed by a team that genuinely cares about achieving the best result for you.
-										</p>
+				</div>
+				</section>
 
-										
-									</div>
-
-									<!-- Bottom block: subheading, body, CTA -->
-									<div class="auction-feature-sell">
-
-										<div class="auction-feature-cta">
-											<a
-											href="{{ url_for('valuation') }}"
-											class="auction-feature-cta-main"
-											aria-label="Valuation"
-											>
-											<!-- Background SVG with text -->
-											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
-												alt=""
-												class="svg-pill-bg">
-
-											<!-- Separate arrow icon -->
-											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
-												alt=""
-												aria-hidden="true"
-												class="svg-pill-arrow">
-											</a>
-										</div>
-									</div>
-
-
-								</div>
-
-							</div>
-					</section>
 
 
 			<!-- TEAM-1 : THE AUCTION TEAM -->
