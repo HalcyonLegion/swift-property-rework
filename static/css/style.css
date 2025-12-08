@@ -13912,6 +13912,20 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
+/* Lighter arrow square for the Free Valuation CTA */
+.auction-feature-cta-main .svg-pill-arrow {
+  background: rgba(255, 255, 255, 0.7);  /* lighter than the dark grey */
+  border-radius: 8px;
+  filter: none;                          /* override any darkening filters */
+}
+
+/* Optional: make it full white on hover */
+.auction-feature-cta-main:hover .svg-pill-arrow,
+.auction-feature-cta-main:focus-visible .svg-pill-arrow {
+  background: #ffffff;
+  filter: brightness(1.05);
+}
+
 /* Hover / focus state: arrow moves & rotates */
 .svg-pill-btn:hover .svg-pill-arrow,
 .svg-pill-btn:focus-visible .svg-pill-arrow {
