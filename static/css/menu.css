@@ -1467,28 +1467,6 @@ body.wsactive {
   width: auto;
 }
 
-.header-datetime {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  margin-right: 120px;    /* increase separation before Home */
-  margin-left: 120px;
-
-  font-family: "Stack Sans Headline", system-ui, sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.header-datetime::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #E4E5E9;
-}
-
 /* keep this so the contact button stays hard-right */
 .nav-contact {
   margin-left: auto;

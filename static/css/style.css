@@ -3392,7 +3392,7 @@ p.terms-txt a,
   margin-top: -100px;   /* pull hero up: roughly header height */
   padding-top: 350px;   /* push hero content back down */
     /* padding-bottom: 160px; */
-    /* min-height: 100vh; */
+    min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -9032,13 +9032,6 @@ nav a#pull {
     DATE/TIME + NEWS item
 **************************************/
 
-.header-datetime {
-    margin-left: 15px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #fff;
-    opacity: 0.85;
-}
 
 .nav-news-item {
     display: block;
@@ -9053,6 +9046,11 @@ nav a#pull {
 /* Wrapper margins (you can tweak if needed) */
 .header-wrapper {
   margin: 36px 36px 0;
+  /* lighter, glassy look */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  color: #fff;
 }
 
 .wsmainfull.menu.auction-info-glass {
@@ -9088,28 +9086,6 @@ nav a#pull {
 .desktoplogo img {
   height: 48px;
   width: auto;
-}
-
-.header-datetime {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  margin-right: 120px;    /* increase separation before Home */
-  margin-left: 120px;
-
-  font-family: "Stack Sans Headline", system-ui, sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.header-datetime::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #E4E5E9;
 }
 
 /* keep this so the contact button stays hard-right */
@@ -14513,3 +14489,39 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
     gap: 10px;
   }
 }
+
+/* Base datetime style – applies on all screen sizes */
+.header-datetime {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-left: 120px;
+  margin-right: 120px;
+
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* The bullet dot */
+.header-datetime::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #E4E5E9;
+}
+
+/* Under 1470px: adjust spacing & size, but KEEP flex */
+@media (max-width: 1470px) {
+  .header-datetime {
+    margin-left: 40px;   /* or 60px if you prefer */
+    margin-right: 10px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}
+
+

@@ -5563,11 +5563,6 @@
    ========================================================= */
 @media (max-width: 1470px) {
 
-  /* Header: give the nav more room, hide datetime if tight */
-  .header-datetime {
-    display: none;
-  }
-
   .wsmenu > .wsmenu-list > li > a {
     padding: 10px 20px 10px 14px;
     font-size: 14px;
@@ -5962,14 +5957,6 @@
     }
   }
 
-  @media (max-width: 1470px) {
-    .header-datetime {
-        display: block;
-        margin-right: 20px;
-        margin-left: 60px;
-    }
-}
-
 @media (max-width: 1470px) {
     #hero-14 .h4-sm {
         font-size: 31px;
@@ -5979,7 +5966,7 @@
 
 @media (max-width: 1470px) {
     #hero-14 .h2-title-md {
-        font-size: 70px;
+        font-size: 67px;
         margin-bottom: 3rem;
     }
 }
@@ -6001,14 +5988,6 @@
   .wsmenu > .wsmenu-list > li > a {
     padding: 10px 20px 10px 14px;
     font-size: 14px;
-  }
-
-  /* Keep your datetime visible but not too far out */
-  .header-datetime {
-    display: block;
-    margin-left: 40px;
-    margin-right: 10px;
-    white-space: nowrap;
   }
 }
 
