@@ -9740,7 +9740,7 @@ nav a#pull {
 /* === Section & Grid === */
 
 .services-grid-section {
-  padding: 64px 36px;
+  padding: 36px 36px;
 }
 
 .services-grid {
@@ -9754,6 +9754,7 @@ nav a#pull {
 /* === Card shell === */
 
 .service-card {
+  filter : brightness(0.9);
   position: relative;
   box-sizing: border-box;
   height: 293px;                         /* matches Figma */
@@ -9815,7 +9816,7 @@ nav a#pull {
 .service-card-body {
   font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 110%;
   color: #FFFFFF;
@@ -9826,20 +9827,17 @@ nav a#pull {
 
 .service-card-badge {
   position: absolute;
-  right: 24px;
-  bottom: 24px;
-
-  padding: 17px 16px;
+  right: 16px;
+  bottom: 16px;
+  padding: 17px 14px;
   width: 185px;
+  height: 96px;
   border-radius: 5px;
-
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 
 /* Top label (CORPORATE / FINANCE / etc.) */
@@ -9958,10 +9956,8 @@ nav a#pull {
 .advantage-card-content {
   position: relative;
   z-index: 2;
-
-  flex: 0 0 55%;
-  padding: 72px 48px 48px 48px;
-
+  flex: 0 0 51%;
+  padding: 125px 32px 32px 32px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -10047,20 +10043,17 @@ nav a#pull {
 
 .advantage-badge {
   position: absolute;
-  right: 32px;
-  bottom: 32px;
-
+  right: 16px;
+  bottom: 16px;
   padding: 17px 16px;
   width: 185px;
   border-radius: 5px;
-
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  /* gap: 6px; */
   z-index: 2;
 }
 
@@ -10087,6 +10080,7 @@ nav a#pull {
   font-size: 16px;
   line-height: 110%;
   color: #FFFFFF;
+  margin-top: 6px;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -10882,6 +10876,7 @@ nav a#pull {
   width: 100%;
   height: 2px;
   background: #ffffff;
+  margin-top: 2px;
 }
 
 .badge-subline,
@@ -15028,5 +15023,30 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   pointer-events: none;
 }
 
+.badge-line2 {
+  display: block;
+  width: 78%;
+  height: 2px;
+  background: #ffffff;
+  border-top: 2px solid #FFFFFF;
+  margin-top: 2px;
+}
 
+.badge-line3 {
+  display: block;
+  width: 71%;
+  height: 2px;
+  background: #ffffff;
+  border-top: 2px solid #FFFFFF;
+  margin-top: 2px;
+}
+
+.badge-line4 {
+  display: block;
+  width: 91%;
+  height: 2px;
+  border-top: 2px solid #FFFFFF;
+  background: #ffffff;
+  margin-top: 2px;
+}
 
