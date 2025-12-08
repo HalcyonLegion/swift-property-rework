@@ -13933,9 +13933,11 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .auction-feature-cta > a:hover .svg-pill-arrow{
   /* transform: translate(4px, -4px) rotate(-45deg); */
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
-  background: #ffffff;   /* dark tile, same family as button */
-  /* border-radius: 12px; */
+  background: #ffffff;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.45);
+  /* transform: translate(4px, -4px) rotate(-45deg); */
+  border-radius: 8px;
+  filter: brightness(1.05);
 }
 
 /* Background SVG (with text) */
