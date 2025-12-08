@@ -2256,7 +2256,7 @@ p.terms-txt a,
 }
 
 #preloader-logo {
-  height: auto; /* Preserve aspect ratio */
+  height: 300px; /* Preserve aspect ratio */
   animation: fadingLogo 2s infinite;
 }
 
