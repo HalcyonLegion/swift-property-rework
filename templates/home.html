@@ -176,45 +176,80 @@
 						<hr class="mb-36 hr-grey">
 
 							<div class="ml-36 mr-36 h-100 d-flex flex-column justify-content-center">
-							<div class="hero-cta-row d-flex justify-content-between align-items-end mb-36">
+								<div class="hero-cta-row d-flex justify-content-between align-items-end mb-36">
 
-								<!-- Left: button group -->
-								<div class="hero-button-group d-flex flex-wrap" style="padding-left: 0;">
-								<a href="{{ url_for('current_lots') }}" class="btn3 btn3glass new-svg-btn btn-md" aria-label="Current Lots">
-									<img src="{{ url_for('static', filename='images/currentLots-default2.svg') }}"
-										alt="Contact Us" class="contact-img default">
-									<img src="{{ url_for('static', filename='images/currentLots-default2.svg') }}"
-										alt="Contact Us" class="contact-img hover">
-								</a>
+									<!-- Left: button group -->
+									<div class="hero-button-group d-flex flex-wrap" style="padding-left: 0;">
+										<a href="{{ url_for('current_lots') }}" 
+											class="btn3 btn3glass btn-md svg-pill-btn" 
+											aria-label="Current Lots">
 
-								<a href="{{ url_for('valuation') }}" class="btn3 btn3glass new-svg-btn btn-md" aria-label="Valuation">
-									<img src="{{ url_for('static', filename='images/freeValuation-default2.svg') }}"
-										alt="Contact Us" class="contact-img default">
-									<img src="{{ url_for('static', filename='images/freeValuation-default2.svg') }}"
-										alt="Contact Us" class="contact-img hover">
-								</a>
+												<!-- Button background -->
+												<img src="{{ url_for('static', filename='images/currentlotsdnew.svg') }}" 
+													alt="" 
+													class="svg-pill-bg">
 
-								<a href="{{ url_for('available_lots') }}" class="btn3 btn3glass new-svg-btn btn-md" aria-label="Available Lots">
-									<img src="{{ url_for('static', filename='images/availablelots-default2.svg') }}"
-										alt="Contact Us" class="contact-img default">
-									<img src="{{ url_for('static', filename='images/availablelots-default2.svg') }}"
-										alt="Contact Us" class="contact-img hover">
-								</a>
+												<!-- Arrow icon -->
+												<img src="{{ url_for('static', filename='images/superArrow.svg') }}" 
+													alt="" 
+													class="svg-pill-arrow">
+											</a>
 
-								<a href="{{ url_for('bidder_registration') }}" class="btn3 btn3glass new-svg-btn btn-md" aria-label="Bidder Registration">
-									<img src="{{ url_for('static', filename='images/bidderReg-default2.svg') }}"
-										alt="Contact Us" class="contact-img default">
-									<img src="{{ url_for('static', filename='images/bidderReg-default2.svg') }}"
-										alt="Contact Us" class="contact-img hover">
-								</a>
+										<!-- Example: Free Valuation -->
+										<a href="{{ url_for('valuation') }}"
+											class="btn3 btn3glass btn-md svg-pill-btn"
+											aria-label="Free Valuation">
+
+											<!-- Background SVG with text -->
+											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
+												alt=""
+												class="svg-pill-bg">
+
+											<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
+										</a>
+
+
+										<a href="{{ url_for('available_lots') }}" 
+											class="btn3 btn3glass btn-md svg-pill-btn"
+											aria-label="Current Lots">
+
+												<!-- Button background -->
+												<img src="{{ url_for('static', filename='images/availablelotsdnew.svg') }}" 
+													alt="" 
+													class="svg-pill-bg">
+
+												<!-- Arrow icon -->
+												<img src="{{ url_for('static', filename='images/superArrow.svg') }}" 
+													alt="" 
+													class="svg-pill-arrow">
+											</a>
+
+										<a href="{{ url_for('bidder_registration') }}" 
+											class="btn3 btn3glass btn-md svg-pill-btn"
+											aria-label="Bidder Registration">
+
+												<!-- Button background -->
+												<img src="{{ url_for('static', filename='images/bidderregdnew.svg') }}" 
+													alt="" 
+													class="svg-pill-bg">
+
+												<!-- Arrow icon -->
+												<img src="{{ url_for('static', filename='images/superArrow.svg') }}" 
+													alt="" 
+													class="svg-pill-arrow">
+											</a>
+									</div>
+
+									<!-- Right: scroll hint -->
+									<div class="hero-scroll-hint text-white opacity-75">
+									<span>Scroll down ↓</span>
+									</div>
+
 								</div>
-
-								<!-- Right: scroll hint -->
-								<div class="hero-scroll-hint text-white opacity-75">
-								<span>Scroll down ↓</span>
-								</div>
-
-							</div>
 							</div>
 
 
@@ -289,11 +324,16 @@
 											class="auction-feature-cta-main"
 											aria-label="Valuation"
 											>
-											<img
-												src="{{ url_for('static', filename='images/freeValuation-default.svg') }}"
-												alt="Free Valuation"
-												class="contact-img default"
-											>
+											<!-- Background SVG with text -->
+											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
+												alt=""
+												class="svg-pill-bg">
+
+											<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 											</a>
 										</div>
 									</div>
@@ -489,19 +529,19 @@
 						<div class="auction-feature-cta">
 											<a
 											href="{{ url_for('valuation') }}"
-											class="auction-feature-cta-main new-svg-btn"
+											class="auction-feature-cta-main"
 											aria-label="Valuation"
 											>
-											<img
-												src="{{ url_for('static', filename='images/freeValuation-default.svg') }}"
-												alt="Free Valuation"
-												class="contact-img default"
-											>
-											<img
-												src="{{ url_for('static', filename='images/freeValuation-default.svg') }}"
-												alt="Free Valuation"
-												class="contact-img hover"
-											>
+											<!-- Background SVG with text -->
+											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
+												alt=""
+												class="svg-pill-bg">
+
+											<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 											</a>
 										</div>
 					</div>
@@ -728,17 +768,22 @@
 						<div class="newsletter-side-column">
 
 						<!-- Subscribe button -->
-						<div class="newsletter-cta-row">
+						<div class="auction-feature-cta">
 							<button
 							type="submit"
-							class="newsletter-btn"
+							class="news-feature-cta-main"
 							aria-label="Subscribe"
 							>
 							<img
-								src="{{ url_for('static', filename='images/subscribe-default.svg') }}"
+								src="{{ url_for('static', filename='images/subbtnnew.svg') }}"
 								alt="Subscribe"
 								class="newsletter-svg default"
 							>
+							<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 							</button>
 						</div>
 

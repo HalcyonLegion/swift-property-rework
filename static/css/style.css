@@ -766,7 +766,7 @@ ol.digit-list p {
 }
 
 .btn3 {
-  background-color: transparent;
+  /* background-color: transparent; */
   color: #fff;
   line-height: 1;
   font-weight: 300;
@@ -801,8 +801,8 @@ ol.digit-list p {
 /* Hover: brighter and more defined */
 .btn3glass:hover,
 .btn3glass:focus {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px);
+    /* background: rgb(250, 250, 250);
+    /* transform: translateY(-2px); */
     /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); */
     text-decoration: none;
 }
@@ -9399,13 +9399,6 @@ nav a#pull {
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover states */
-.auction-feature-cta-main:hover,
-.auction-feature-cta-arrow:hover {
-  background: rgba(0, 0, 0, 0.45);
-  transform: translateY(-1px);
-}
-
 /* === Responsive tweaks === */
 @media (max-width: 1024px) {
   .auction-feature-card {
@@ -9488,6 +9481,8 @@ nav a#pull {
 .auction-feature-cta-main img {
   height: 52px;     /* or whatever your hero uses */
   width: auto;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.45);
 }
 
 
@@ -9700,12 +9695,6 @@ nav a#pull {
 
 .auction-feature-cta-main .contact-img {
   display: block;
-}
-
-.auction-feature-cta-main:hover {
-  background: rgba(0, 0, 0, 0.45);
-  transform: translateY(-1px);
-  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 /* ===== IMAGE + BADGE ===== */
@@ -13891,4 +13880,112 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .swift-red{
   color: #AD1D18!important;
+}
+
+/* Wrapper: uses your existing sizing from btn3/btn-md */
+.svg-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;              /* background SVG controls height */
+  border: none;
+  background: transparent;
+  text-decoration: none;
+}
+
+/* Background SVG with the text */
+.svg-pill-bg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;    /* clicks go to the <a>, not the image */
+  margin-right: 4px;
+}
+
+/* Arrow icon overlay */
+.svg-pill-arrow {
+  right: 24px;
+  top: 50%;
+  pointer-events: none;
+
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Hover / focus state: arrow moves & rotates */
+.svg-pill-btn:hover .svg-pill-arrow,
+.svg-pill-btn:focus-visible .svg-pill-arrow {
+
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
+}
+
+.auction-feature-cta > a:hover .svg-pill-arrow{
+   transform: translate(4px, -4px) rotate(-45deg);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
+  background: #ffffff;   /* dark tile, same family as button */
+  border-radius: 14px;
+}
+
+/* Background SVG (with text) */
+.hero-button-group .svg-pill-bg {
+  display: block;
+  width: auto;
+}
+
+/* Arrow SVG – sits on top, vertically centred */
+.hero-button-group .svg-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;              /* the SVG supplies the visual padding */
+  border-radius: 14px;
+}
+
+
+/* Hover / focus: move arrow UP + RIGHT and rotate to diagonal */
+.hero-button-group .svg-pill-btn:hover .svg-pill-arrow,
+.hero-button-group .svg-pill-btn:focus-visible .svg-pill-arrow {
+  transform: translate(6px, -6px) rotate(-45deg);
+}
+
+
+/* Arrow “chip” (dark square by default) */
+.hero-button-group .svg-pill-arrow {
+
+  background: #6c757d;   /* dark tile, same family as button */
+  border-radius: 14px;
+}
+
+/* Hover: chip goes white + arrow swivels up-right */
+.hero-button-group .svg-pill-btn:hover .svg-pill-arrow,
+.hero-button-group .svg-pill-btn:focus-visible .svg-pill-arrow {
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  transform: rotate(-45deg);      
+  filter: brightness(1.05);          
+}
+
+#apply-filter-button{
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+}
+
+.news-feature-cta-main{
+  height: 52px;     /* or whatever your hero uses */
+  width: auto;
+  border-radius: 8px;
+  border: none;
+}
+
+.news-feature-cta-main:hover .svg-pill-arrow,
+.news-feature-cta-main:focus-visible .svg-pill-arrow {
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  transform: rotate(-45deg);
+  border-radius: 14px;
+  filter: brightness(1.05);
+}
+
+.news-feature-cta-main .newsletter-svg{
+  margin-right: 3px;
 }
