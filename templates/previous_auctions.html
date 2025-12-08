@@ -188,11 +188,16 @@
 											class="auction-feature-cta-main"
 											aria-label="Valuation"
 											>
-											<img
-												src="{{ url_for('static', filename='images/freeValuation-default.svg') }}"
-												alt="Free Valuation"
-												class="contact-img default"
-											>
+											<!-- Background SVG with text -->
+											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
+												alt=""
+												class="svg-pill-bg">
+
+											<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 											</a>
 										</div>
 					</div>
@@ -268,17 +273,22 @@
 						<div class="newsletter-side-column">
 
 						<!-- Subscribe button -->
-						<div class="newsletter-cta-row">
+						<div class="auction-feature-cta">
 							<button
 							type="submit"
-							class="newsletter-btn"
+							class="news-feature-cta-main"
 							aria-label="Subscribe"
 							>
 							<img
-								src="{{ url_for('static', filename='images/subscribe-default.svg') }}"
+								src="{{ url_for('static', filename='images/subbtnnew.svg') }}"
 								alt="Subscribe"
 								class="newsletter-svg default"
 							>
+							<!-- Separate arrow icon -->
+											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow">
 							</button>
 						</div>
 
