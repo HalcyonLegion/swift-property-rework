@@ -13900,7 +13900,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   max-width: 100%;
   height: auto;
   pointer-events: none;    /* clicks go to the <a>, not the image */
-  margin-right: 4px;
+  margin-right: 2px;
 }
 
 /* Arrow icon overlay */
@@ -13920,10 +13920,10 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 }
 
 .auction-feature-cta > a:hover .svg-pill-arrow{
-   transform: translate(4px, -4px) rotate(-45deg);
+  transform: translate(4px, -4px) rotate(-45deg);
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
   background: #ffffff;   /* dark tile, same family as button */
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
 /* Background SVG (with text) */
@@ -13938,14 +13938,14 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   display: inline-flex;
   align-items: center;
   padding: 0;              /* the SVG supplies the visual padding */
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
 
 /* Hover / focus: move arrow UP + RIGHT and rotate to diagonal */
 .hero-button-group .svg-pill-btn:hover .svg-pill-arrow,
 .hero-button-group .svg-pill-btn:focus-visible .svg-pill-arrow {
-  transform: translate(6px, -6px) rotate(-45deg);
+  transform: translate(4px, -4px) rotate(-45deg);
 }
 
 
@@ -13961,7 +13961,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .hero-button-group .svg-pill-btn:focus-visible .svg-pill-arrow {
   background: #ffffff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
-  transform: rotate(-45deg);      
+  transform: translate(4px, -4px) rotate(-45deg);      
   filter: brightness(1.05);          
 }
 
@@ -13981,11 +13981,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .news-feature-cta-main:focus-visible .svg-pill-arrow {
   background: #ffffff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
-  transform: rotate(-45deg);
+  transform: translate(4px, -4px) rotate(-45deg);
   border-radius: 14px;
   filter: brightness(1.05);
-}
-
-.news-feature-cta-main .newsletter-svg{
-  margin-right: 3px;
 }
