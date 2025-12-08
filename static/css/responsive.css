@@ -5969,3 +5969,17 @@
         margin-left: 60px;
     }
 }
+
+@media (max-width: 1470px) {
+    #hero-14 .h4-sm {
+        font-size: 31px;
+        font-weight: 300
+    }
+}
+
+@media (max-width: 1470px) {
+    #hero-14 .h2-title-md {
+        font-size: 70px;
+        margin-bottom: 3rem;
+    }
+}
