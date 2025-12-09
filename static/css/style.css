@@ -13071,7 +13071,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid #f2f2f2;
-  padding: 16px 24px 20px;
+  padding: 16px 16px 16px;
   box-shadow:
     17px 14px 9px rgba(0, 0, 0, 0.01),
     10px 8px 7px rgba(0, 0, 0, 0.05),
@@ -13100,12 +13100,14 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   position: absolute;
   top: 0px;
   right: 0px;
-  padding: 8px 22px;
-  border-radius: 8px 8px 0px 8px;
+  padding: 4px 12px;
+  border-radius: 8px 16px 0px 8px;
   background: #0f2848;
   color: #ffffff;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 300;
+  height: 31px;
+  width: 134px;
 }
 
 /* Body rows */
@@ -13127,6 +13129,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+  margin-bottom: 8px;
 }
 
 .prev-auction-label {
@@ -15818,4 +15821,26 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   margin: 0px;
 }
 
+/* Swift card badge */
+.prev-auction-logo {
+  width: 127px;      /* Figma width */
+  height: 69px;      /* Figma height */
+  display: block;
+  border-radius: 4px;  /* to match the exported SVG corners */
+  
+  /* Optional: subtle shadow to match Figma group */
+  box-shadow:
+    2px 2px 1px rgba(0, 0, 0, 0.01),
+    1px 1px 1px rgba(0, 0, 0, 0.05),
+    1px 1px 1px rgba(0, 0, 0, 0.09);
+}
 
+/* If you ever want to globally soften it a bit */
+.prev-auction-logo.is-muted {
+  opacity: 0.9;          /* tweak as needed */
+}
+
+/* If you want a very slight blur to the *badge itself* (not the background) */
+.prev-auction-logo.is-soft {
+  filter: blur(0.5px);   /* tiny amount, or remove if not needed */
+}

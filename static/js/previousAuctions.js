@@ -167,7 +167,7 @@ async function updateLots() {
           <article class="prev-auction-card flex-fill">
             <div class="prev-auction-card-top">
               <img
-                src="static/images/swift-card-badge.svg"
+                src="static/images/propnew.jpg"
                 alt="The Swift Property Auctions Team"
                 class="prev-auction-logo"
               />
