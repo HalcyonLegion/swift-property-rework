@@ -169,19 +169,31 @@
 				<div class="strategy-grid">
 
 					<!-- TOP-LEFT: SPEECH BUBBLE CARD -->
-					<div class="strategy-bubble">
-						<div class="strategy-bubble-card">
-							<div class="strategy-bubble-inner">
-								<div class="strategy-bubble-text">
-									<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
-										<div class="strategy-bubble-line1">
-										BROWSE OUR <span class="strategy-bubble-clear">AVAILABLE</span>
-										</div>
-									<div class="strategy-bubble-line2">LOTS</div>
-								</div>
-							</div>
+				<div class="strategy-bubble">
+				<div class="strategy-bubble-card">
+					<div class="strategy-bubble-inner">
+					<div class="strategy-bubble-text">
+						<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
+						<div class="strategy-bubble-line1">
+						BROWSE OUR
+						</div>
+						<div class="available-bubble-subheading">
+        					<span class="available-bubble-subheading-main">AVAILABLE</span>
+							<span class="available-bubble-subheading-accent">LOTS</span>
 						</div>
 					</div>
+					</div>
+				</div>
+
+				<!-- Connector pill -->
+				<img
+					src="{{ url_for('static', filename='images/rectangle.svg') }}"
+					alt=""
+					class="strategy-bubble-connector"
+				>
+				</div>
+
+
 
 					<!-- TOP-RIGHT: HEADING + RED LINE + SHORT BODY -->
 					<div class="strategy-heading">
@@ -193,7 +205,7 @@
 							<hr class="strategy-heading-divider">
 
 							<p class="strategy-heading-body">
-							Although the auction has concluded, a selection of properties are still available. Each listing includes clear guides, and essential information to support your decision-making as you consider post-auction bids.
+							Although the auction has concluded, a selection of properties is still available. Each listing includes clear guides, and essential information to support your decision-making as you consider post-auction bids.
 							</p>
 						</div>
 					</div>
@@ -207,7 +219,6 @@
 							Explore the listings below and contact us when you’re ready to take the next step.
 						</p>
 
-						<!-- CTA: reuse your Free Valuation SVG button -->
 						<!-- CTA: reuse your Free Valuation SVG button -->
 						<div class="auction-feature-cta">
 											<a
@@ -231,21 +242,22 @@
 
 					<!-- BOTTOM-RIGHT: IMAGE + BADGE -->
 					<div class="strategy-image-wrapper">
-						<img
+						<div class="strategy-image-frame">
+							<img
 							src="{{ url_for('static', filename='images/currentLotsnew.jpg') }}"
 							alt="Swift Property Auctions team meeting"
 							class="strategy-image"
-						>
-
-						<!-- Bottom-right frosted badge (reusing your badge pattern) -->
-						<div class="auction-feature-logo-badge">
-							<img
-							src="{{ url_for('static', filename='images/swift-intelligence-badge.svg') }}"
-							alt="Swift Intelligence – Industry Leading"
 							>
+
+							<!-- Bottom-right frosted badge -->
+							<div class="auction-feature-logo-badge">
+							<img
+								src="{{ url_for('static', filename='images/swift-intelligence-badge.svg') }}"
+								alt="Swift Intelligence – Industry Leading"
+							>
+							</div>
 						</div>
 					</div>
-
 				</div>
 			</section>
 

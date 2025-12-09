@@ -14861,7 +14861,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* SWIFT PROPERTY */
 .strategy-bubble-eyebrow {
-  margin: 0;
+  margin: 1px;
   width: 317px;
   text-align: center;
   font-family: "Stack Sans Headline", system-ui, sans-serif;
@@ -14918,7 +14918,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 }
 
 .strategy-heading-inner {
-  max-width: 533px;              /* Figma width */
+  max-width: 550px;              /* Figma width */
   display: flex;
   flex-direction: column;
 }
@@ -14945,7 +14945,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* Body copy: 16px, 110%, 8px gap from line, 402px text width */
 .strategy-heading-body {
-  max-width: 402px;              /* Figma width so it wraps like the design */
+  max-width: 510px;              /* Figma width so it wraps like the design */
   font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -15030,8 +15030,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   right: 16px;                   /* nudge until it visually matches */
   bottom: 16px;
   border-radius: 5px;            /* Figma radius */
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);   /* frosted glass */
+  background: rgba(255, 255, 255, 0);
+  /* backdrop-filter: blur(15px);   frosted glass */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15641,3 +15641,106 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .lot-help-badge-img {
   display: block;
 }
+
+/* OUTER WRAPPER – centered on the page */
+.available-bubble {
+  display: flex;
+  justify-content: center;
+  margin: 32px auto 40px; /* tweak as needed */
+}
+
+/* MAIN CARD (459 x 212 from Figma) */
+.available-bubble-card {
+  width: 459px;
+  max-width: 100%;
+  height: 212px;
+  background: #f5f5f5;
+  border-radius: 16px;
+  box-shadow:
+    66px 45px 32px rgba(0, 0, 0, 0.01),
+    37px 25px 27px rgba(0, 0, 0, 0.05),
+    16px 11px 20px rgba(0, 0, 0, 0.09),
+    4px 3px 11px rgba(0, 0, 0, 0.1);
+}
+
+/* INNER STACK (359 x 99 centred inside) */
+.available-bubble-inner {
+  height: 100%;
+  padding: 56px 50px; /* 212-99 = 113 → ~56 top/btm; 459-359 = 100 → 50 left/right */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* TOP EYEBROW: SWIFT PROPERTY */
+.available-bubble-eyebrow {
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #0f2848;
+}
+
+/* BROWSE OUR */
+.available-bubble-heading {
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #0f2848;
+}
+
+/* AVAILABLE LOTS row */
+.available-bubble-subheading {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 4px;
+}
+
+/* AVAILABLE (heavy) */
+.available-bubble-subheading-main {
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0f2848;
+}
+
+/* LOTS (lighter / italic) */
+.available-bubble-subheading-accent {
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #0f2848;
+}
+
+/* Optional small tweak for narrow screens */
+@media (max-width: 600px) {
+  .available-bubble-card {
+    height: auto;
+  }
+
+  .available-bubble-inner {
+    padding: 32px 24px;
+  }
+
+  .available-bubble-heading {
+    font-size: 32px;
+  }
+
+  .available-bubble-subheading-main,
+  .available-bubble-subheading-accent {
+    font-size: 36px;
+  }
+}
+

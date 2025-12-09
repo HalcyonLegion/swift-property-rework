@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Initialization failed:', error);
     }
   });
+
+  const EI_PASSPORT_LOGIN = 'https://passport.eigroup.co.uk/account/log-in';
   
   let globalLots = []; // This will store the lots fetched from the server
   
@@ -61,13 +63,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         let thumbnail = lot.Thumbnail || 'static/images/lotsimg.png';
         thumbnail = thumbnail.replace('_web_small', '_web_medium');
         const startingPrice = lot.GuidePrice || 'N/A';
-        const rawLegalUrl   = lot.LegalDocumentUrl || '';   // what comes from API
+        const rawLegalUrl   = lot.LegalDocumentUrl || '';      // from API
         const hasLegalPack  = rawLegalUrl.trim() !== '';
-        const legalPackHref = hasLegalPack ? rawLegalUrl : '#';
-        const legalPackAttr = hasLegalPack
-          ? 'target="_blank" rel="noopener noreferrer"'
-          : 'aria-disabled="true" tabindex="-1"';
 
+        const legalPackHref = hasLegalPack
+          ? rawLegalUrl
+          : EI_PASSPORT_LOGIN;  // fallback login URL
+
+        // always open in a new tab now
+        const legalPackAttr = 'target="_blank" rel="noopener noreferrer"';
 
         let soldBanner = '';
 
@@ -146,7 +150,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="btn-row">
           <a href="${legalPackHref}"
             ${legalPackAttr}
-            class="lot-btn lot-btn-ghost ${hasLegalPack ? '' : 'btn-disabled'}">
+            class="lot-btn lot-btn-ghost">
             Legal Pack
           </a>
 
