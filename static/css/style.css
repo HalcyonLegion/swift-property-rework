@@ -10686,7 +10686,6 @@ nav a#pull {
 /* Title + tagline */
 .lot-title-block {
   margin-top: 16px;
-  margin-bottom: 16px;
 }
 
 .lot-title-block .lot-title {
@@ -10767,24 +10766,6 @@ nav a#pull {
 .lot-cta-row > a:hover {
   color: #AD1D18!important;
   text-decoration: none;
-}
-
-.lot-cta-btn {
-  flex: 0 0 auto;
-  padding: 16px 28px;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #0f2848;
-  border: none;
-  text-decoration: none;
-  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.1;
-  box-shadow: 24px 19px 12px rgba(0, 0, 0, 0.01),
-              13px 10px 10px rgba(0, 0, 0, 0.05),
-              6px 5px 8px rgba(0, 0, 0, 0.09),
-              1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Right column that holds help card + finance banner */
@@ -10968,7 +10949,7 @@ nav a#pull {
 .lot-bottom-layout {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 16px;
   margin-top: 32px;
 }
 
@@ -10981,6 +10962,7 @@ nav a#pull {
               18px 12px 22px rgba(0, 0, 0, 0.09),
               5px 3px 12px rgba(0, 0, 0, 0.1);
   padding: 32px;
+  width: 912px;
 }
 
 .lot-info-section + .lot-info-section {
@@ -11114,8 +11096,9 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .lot-bottom-layout {
   display: grid;
   grid-template-columns: minmax(0, 2.4fr) minmax(320px, 1fr);
-  gap: 32px;
+  /* gap: 16px; */
   margin-top: 32px;
+  margin-right: 64px;
   align-items: flex-start;
 }
 
@@ -11123,6 +11106,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  height: 368px;
+  width: 448px;
 }
 
 /* nav row + arrow buttons */
@@ -11175,19 +11160,43 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 }
 
 /* keep CTA’s in one row on desktop, wrap nicely on smaller screens */
+
 .lot-cta-row {
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  gap: 14px;
+  display: flex;
+  gap: 16px;
   margin-top: 24px;
   width: 912px;
   height: 52px;
 }
 
+/* merge your .lot-cta-btn rules into one */
 .lot-cta-btn {
+  display: inline-flex;              /* makes centring easy */
+  align-items: center;               /* vertical centre */
+  justify-content: center;           /* horizontal centre */
+
   min-width: 170px;
-  height: 52px
+  height: 52px;
+
+  padding: 0 24px;                   /* horizontal only */
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f2848;
+  border: none;
+  text-decoration: none;
+
+  font-family: "Stack Sans Headline", system-ui, -apple-system,
+               BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  box-shadow:
+    24px 19px 12px rgba(0, 0, 0, 0.01),
+    13px 10px 10px rgba(0, 0, 0, 0.05),
+    6px 5px 8px  rgba(0, 0, 0, 0.09),
+    1px 1px 4px  rgba(0, 0, 0, 0.1);
 }
+
 
 /* responsive: stack right column under info on narrow screens */
 @media (max-width: 991px) {
@@ -15280,5 +15289,112 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   .newsletter-3-terms {
     align-self: flex-start;
   }
+}
+
+/* Row 1: chips only */
+.lot-main-header {
+  margin-bottom: 8px; /* smaller now because title-row adds spacing */
+}
+
+/* Row 2: title/tagline left, nav buttons right */
+.lot-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* line nav buttons up with baseline of tagline */
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.lot-title-block {
+  flex: 1 1 auto;
+  max-width: 70%; /* stops title from crashing into buttons */
+}
+
+/* Your existing nav row styles still work, just make sure it’s flex */
+.lot-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Optional: on mobile, stack buttons under the title */
+@media (max-width: 768px) {
+  .lot-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .lot-title-block {
+    max-width: 100%;
+  }
+
+  .lot-nav-row {
+    flex-wrap: wrap;
+  }
+}
+
+/* Previous & Next pills – 89 × 52 */
+.lot-title-row .lot-nav-row button.lot-nav-pill.previous-svg,
+.lot-title-row .lot-nav-row button.lot-nav-pill.next-svg {
+  width: 89px;
+  height: 52px;
+  flex: 0 0 89px;  /* stop flex from stretching them */
+}
+
+/* All Lots pill – 146 × 52 */
+.lot-title-row .lot-nav-row button.lot-nav-pill.all-lots-btn {
+  width: 146px;
+  height: 52px;
+  flex: 0 0 146px;
+}
+
+ /* nav row */
+.lot-title-row .lot-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* base pill */
+.lot-title-row .lot-nav-row button.lot-nav-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 0;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Left arrow – first item, no gap before it */
+.lot-title-row .lot-nav-row .arrow-previous {
+  margin-left: 0;
+}
+
+/* 2px between Left Arrow and Previous */
+.lot-title-row .lot-nav-row button.lot-nav-pill.previous-svg {
+  margin-left: 2px;
+}
+
+/* 8px between Previous and All Lots */
+.lot-title-row .lot-nav-row button.lot-nav-pill.all-lots-btn {
+  margin-left: 8px;
+}
+
+/* 8px between All Lots and Next */
+.lot-title-row .lot-nav-row button.lot-nav-pill.next-svg {
+  margin-left: 8px;
+}
+
+/* 2px between Next and Right Arrow */
+.lot-title-row .lot-nav-row .arrow-next {
+  margin-left: 2px;
 }
 

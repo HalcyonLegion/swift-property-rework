@@ -6,6 +6,12 @@ function navigateToValuationPage() {
 // function navigateToLot(lotId) {
 //   window.location.href = `/lot_details/${lotId}`;
 // }
+function formatRichTextFromApi(value) {
+  if (!value) return '';
+
+  // Convert CRLF / LF / CR into <br> tags
+  return value.replace(/\r\n|\r|\n/g, '<br>');
+}
 
 // Go back to the current lots page
 function navigateToAllLots() {
@@ -240,6 +246,11 @@ function createMapIframe(fullAddress) {
 // }
 
 function renderLotDetails(lot, PreviousLotId, NextLotId) {
+
+  // figure out if we *have* neighbours
+  const hasPrev = PreviousLotId != null;
+  const hasNext = NextLotId != null;
+
   // ----- IMAGE / MEDIA SETUP -----
   let carouselHtml = "";
   if (lot.LotImages && lot.LotImages.length) {
@@ -299,16 +310,18 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
   let exteriorText = "";
 
   (lot.LotData || []).forEach(data => {
-    if (data.Name === "Accommodation" && data.ShowOnWeb) {
-      accommodationText = data.Value;
-    } else if (data.Name === "Location" && data.ShowOnWeb) {
-      locationText = data.Value;
-    } else if (data.Name === "Tenure" && data.ShowOnWeb) {
-      tenureText = data.Value;
-    } else if (data.Name === "Exterior" && data.ShowOnWeb) {
-      exteriorText = data.Value;
-    }
-  });
+  if (data.Name === "Accommodation" && data.ShowOnWeb) {
+    // keep <b> tags and turn newlines into <br>
+    accommodationText = formatRichTextFromApi(data.Value);
+  } else if (data.Name === "Location" && data.ShowOnWeb) {
+    locationText = data.Value;
+  } else if (data.Name === "Tenure" && data.ShowOnWeb) {
+    tenureText = data.Value;
+  } else if (data.Name === "Exterior" && data.ShowOnWeb) {
+    exteriorText = data.Value;
+  }
+});
+
 
   // Viewing times list – guard for missing array
   const viewingTimesHtml =
@@ -373,54 +386,67 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
 
   // ----- MAIN TEMPLATE -----
   const lotDetailsHtml = `
-    <div class="lot-details-wrapper">
-      <div class="lot-main-card">
+  <div class="lot-details-wrapper">
+    <div class="lot-main-card">
 
-        <!-- TOP: LOT + GUIDE + PREV / ALL / NEXT -->
-        <div class="lot-main-header">
-          <div class="lot-chip-group">
-            <span class="lot-chip lot-chip-lot">LOT ${lot.LotNumber}</span>
-            <span class="lot-chip lot-chip-guide">
-                Guide Price:&nbsp;<span data-formatted-price></span>
-            </span>
-          </div>
-
-          <div class="lot-nav-row">
-            ${
-              PreviousLotId !== null
-                ? `
-              <button class="lot-nav-arrow" onclick="navigateToLot(${PreviousLotId})" aria-label="Previous lot">
-                <img src="/static/images/leftArrow.svg" alt="Previous">
-              </button>
-              <button class="lot-nav-pill" onclick="navigateToLot(${PreviousLotId})">
-                Previous
-              </button>
-            `
-                : ""
-            }
-            <button class="lot-nav-pill" onclick="navigateToAllLots()">
-              All Lots
-            </button>
-            ${
-              NextLotId !== null
-                ? `
-              <button class="lot-nav-pill" onclick="navigateToLot(${NextLotId})">
-                Next
-              </button>
-              <button class="lot-nav-arrow" onclick="navigateToLot(${NextLotId})" aria-label="Next lot">
-                <img src="/static/images/rightArrow.svg" alt="Next">
-              </button>
-            `
-                : ""
-            }
-          </div>
+      <!-- ROW 1: LOT + GUIDE -->
+      <div class="lot-main-header">
+        <div class="lot-chip-group">
+          <span class="lot-chip lot-chip-lot">LOT ${lot.LotNumber}</span>
+          <span class="lot-chip lot-chip-guide">
+            Guide Price:&nbsp;<span data-formatted-price></span>
+          </span>
         </div>
+      </div>
 
-        <!-- TITLE + TAGLINE -->
+      <!-- ROW 2: TITLE + TAGLINE (LEFT)  /  NAV BUTTONS (RIGHT) -->
+      <div class="lot-title-row">
         <div class="lot-title-block">
           <h1 class="lot-title">${fullAddress}</h1>
           ${lot.Tagline ? `<p class="lot-subtitle">${lot.Tagline}</p>` : ""}
         </div>
+
+        <div class="lot-nav-row">
+          <!-- Prev arrow -->
+          <button
+            class="lot-nav-arrow arrow-previous ${hasPrev ? '' : 'is-disabled'}"
+            ${hasPrev ? `onclick="navigateToLot(${PreviousLotId})"` : ''}
+            aria-label="Previous lot"
+          >
+            <img src="/static/images/supeLArrow.svg" alt="Previous">
+          </button>
+
+          <!-- Prev text -->
+          <button
+            class="lot-nav-pill previous-svg ${hasPrev ? '' : 'is-disabled'}"
+            ${hasPrev ? `onclick="navigateToLot(${PreviousLotId})"` : ''}
+          >
+            Previous
+          </button>
+
+          <!-- All lots -->
+          <button class="lot-nav-pill all-lots-btn" onclick="navigateToAllLots()">
+            All Lots
+          </button>
+
+          <!-- Next text -->
+          <button
+            class="lot-nav-pill next-svg ${hasNext ? '' : 'is-disabled'}"
+            ${hasNext ? `onclick="navigateToLot(${NextLotId})"` : ''}
+          >
+            Next
+          </button>
+
+          <!-- Next arrow -->
+          <button
+            class="lot-nav-arrow arrow-next ${hasNext ? '' : 'is-disabled'}"
+            ${hasNext ? `onclick="navigateToLot(${NextLotId})"` : ''}
+            aria-label="Next lot"
+          >
+            <img src="/static/images/supeRArrow.svg" alt="Next">
+          </button>
+        </div>
+      </div>
 
         <!-- MAIN MEDIA ONLY (top level = photos) -->
         <div class="lot-media-wrapper">
