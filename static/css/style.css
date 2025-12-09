@@ -6868,9 +6868,9 @@ h5.posts-category {
   24. FOOTER
   =========================================================================== */
 
-.footer {
+/* .footer {
   padding-top: 50px;
-}
+} */
 
 .footer-info p {
   padding-right: 5%;
@@ -10429,7 +10429,7 @@ nav a#pull {
   align-items: center;
   gap: 2rem;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  /* padding-bottom: 1.5rem; */
   border-top: 1px solid rgba(0, 0, 0, 0.06); /* subtle divider */
 }
 
@@ -13061,7 +13061,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 }
 
 .footer-card-container {
-  padding: 36px 36px 0px;
+  padding: 50px 36px 0px;
 }
 
 /* ========== Previous Auctions cards ========== */
@@ -15398,3 +15398,200 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   margin-left: 2px;
 }
 
+/* Overall padding for this section */
+.newsletter-modern-contact {
+  padding: 32px 32px 48px;
+}
+
+/* Floating grey card from Figma */
+.newsletter-modern-contact .auction-contact-card {
+  width: 1312px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #f6f6f6;
+  border-radius: 16px;
+  box-shadow:
+    95px 32px 40px rgba(0, 0, 0, 0.01),
+    53px 18px 34px rgba(0, 0, 0, 0.05),
+    24px 8px 25px rgba(0, 0, 0, 0.09),
+    6px 2px 14px rgba(0, 0, 0, 0.10);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+  /* prevent the submit button being clipped */
+  height: 339px;
+  overflow: visible;
+}
+
+/* LEFT COPY ---------------------------------------------------------- */
+
+.newsletter-modern-contact .auction-contact-left {
+  flex: 0 0 479px;
+  width: 479px;
+  padding-top: 50px;
+}
+
+.newsletter-modern-contact .auction-contact-title {
+  margin: 0 0 16px;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.1;
+  color: #0f2848;
+}
+
+.newsletter-modern-contact .auction-contact-accent {
+  color: #ad1d18;
+}
+
+.newsletter-modern-contact .auction-contact-body {
+  margin: 0 0 8px;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #0f2848;
+}
+
+/* RIGHT FORM --------------------------------------------------------- */
+
+.newsletter-modern-contact .auction-contact-form {
+  flex: 0 0 auto;
+}
+
+/* 2x2 grid + full-width rows (Êxact Figma-ish widths) */
+.newsletter-modern-contact .auction-contact-grid {
+  display: grid;
+  grid-template-columns: 277px 277px;
+  column-gap: 8px;
+  row-gap: 8px;
+  max-width: 562px;
+}
+
+.newsletter-modern-contact .auction-contact-field.half {
+  width: 100%;
+}
+
+.newsletter-modern-contact .auction-contact-field.full {
+  grid-column: 1 / -1;
+}
+
+/* Inputs (override generic .form-control only inside this card) */
+.newsletter-modern-contact .auction-contact-grid .form-control {
+  width: 100%;
+  height: 50px;
+  padding: 0 32px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #ffffff;
+  box-shadow:
+    65px 18px 27px rgba(0, 0, 0, 0.01),
+    36px 10px 23px rgba(0, 0, 0, 0.05),
+    16px 5px 17px rgba(0, 0, 0, 0.09),
+    4px 1px 9px rgba(0, 0, 0, 0.10);
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #0f2848;
+}
+
+.newsletter-modern-contact .auction-contact-grid .form-control::placeholder {
+  color: rgba(15, 40, 72, 0.5);
+}
+
+/* Checkbox row */
+.newsletter-modern-contact .auction-contact-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 562px;
+}
+
+.newsletter-modern-contact .auction-contact-checkbox-row input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  box-shadow:
+    2px 2px 1px rgba(0, 0, 0, 0.01),
+    1px 1px 1px rgba(0, 0, 0, 0.05),
+    1px 1px 1px rgba(0, 0, 0, 0.09);
+  cursor: pointer;
+}
+
+.newsletter-modern-contact .auction-contact-checkbox-row input[type="checkbox"]:checked {
+  background: #ad1d18;
+  border-color: #ad1d18;
+}
+
+.newsletter-modern-contact .auction-contact-checkbox-row input[type="checkbox"]:checked::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(-45deg);
+  margin: 4px 0 0 4px;
+}
+
+.newsletter-modern-contact .auction-contact-checkbox-row label {
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.1;
+  color: rgba(15, 40, 72, 0.5);
+}
+
+/* Submit SVG pill */
+.newsletter-modern-contact .submit-field {
+  margin-top: 4px;
+}
+
+.newsletter-modern-contact .auction-contact-submit {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.newsletter-modern-contact .auction-contact-submit-svg {
+  display: block;
+  height: 52px; /* pill height from Figma */
+}
+
+/* Responsive: stack form beneath text on smaller screens */
+@media (max-width: 1024px) {
+  .newsletter-modern-contact .auction-contact-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .newsletter-modern-contact .auction-contact-left {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .newsletter-modern-contact .auction-contact-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .newsletter-modern-contact .auction-contact-field.full {
+    grid-column: 1 / 2;
+  }
+
+  .newsletter-modern-contact .auction-contact-checkbox-row {
+    max-width: 100%;
+  }
+}

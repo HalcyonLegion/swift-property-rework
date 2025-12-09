@@ -176,283 +176,252 @@
 
 			
 
-            <!-- NEWSLETTER + FOOTER CARD
-						============================================= -->
-<section id="newsletter-2" class="newsletter-modern">
-  <div class="newsletter-footer-card">
+			<section id="newsletter-2" class="newsletter-modern newsletter-modern-contact">
 
-    <!-- SPEAK WITH OUR AUCTION TEAM CARD -->
-    <div class="newsletter-strip auction-team-strip">
+				<!-- TOP CARD: SPEAK WITH OUR AUCTION TEAM -->
+				<div class="auction-contact-card">
 
-      <!-- Left copy -->
-      <div class="newsletter-strip-copy mt-100">
-        <h2 class="newsletter-title">
-          Speak With Our Auction <span class="newsletter-accent">Team</span>
-        </h2>
+					<!-- Left copy -->
+					<div class="auction-contact-left">
+					<h2 class="auction-contact-title">
+						Speak With Our Auction <span class="auction-contact-accent">Team</span>
+					</h2>
 
-        <p class="newsletter-subtitle">
-          If you need further information about this property or its sale, our
-          team is here to help. Send us your enquiry below and we’ll reply with
-          clear, practical guidance.
-        </p>
+					<p class="auction-contact-body">
+						If you need further information about this property or its sale, our
+						team is here to help. Send us your enquiry below and we’ll reply with
+						clear, practical guidance.
+					</p>
 
-        <p class="newsletter-subtitle">
-          You’re also welcome to get in touch if you have a similar property and
-          are considering selling via auction – we can advise on suitability,
-          pricing and next steps.
-        </p>
-      </div>
+					<p class="auction-contact-body">
+						You’re also welcome to get in touch if you have a similar property and
+						are considering selling via auction – we can advise on suitability,
+						pricing and next steps.
+					</p>
+					</div>
 
-      <!-- Right: compact contact form -->
-      <!-- keep contact-form + quick-form classes for your existing JS -->
-      <form name="contactform"
-            class="newsletter-form quick-form contact-form">
+					<!-- Right: compact contact form -->
+					<!-- keep quick-form + input names/ids for your existing JS -->
+					<form name="contactform" class="auction-contact-form quick-form">
 
-        <div class="newsletter-form-grid">
+					<div class="auction-contact-grid">
 
-          <!-- Row 1: First / Last name -->
-          <div class="newsletter-field half">
-            <input type="text"
-                   name="first_name"
-                   class="form-control name"
-                   placeholder="First Name"
-                   required>
-          </div>
+						<!-- Row 1: First / Last name -->
+						<div class="auction-contact-field half">
+						<input type="text"
+								name="first_name"
+								class="form-control name"
+								placeholder="First Name"
+								required>
+						</div>
 
-          <div class="newsletter-field half">
-            <input type="text"
-                   name="last_name"
-                   class="form-control name"
-                   placeholder="Last Name"
-                   required>
-          </div>
+						<div class="auction-contact-field half">
+						<input type="text"
+								name="last_name"
+								class="form-control name"
+								placeholder="Last Name"
+								required>
+						</div>
 
-          <!-- Row 2: Telephone / Email -->
-          <div class="newsletter-field half">
-            <input type="text"
-                   name="telephone"
-                   class="form-control number"
-                   placeholder="Telephone"
-                   required>
-          </div>
+						<!-- Row 2: Telephone / Email -->
+						<div class="auction-contact-field half">
+						<input type="text"
+								name="telephone"
+								class="form-control number"
+								placeholder="Telephone"
+								required>
+						</div>
 
-          <div class="newsletter-field half">
-            <!-- IMPORTANT: keep id="s-email" for your newsletter JS -->
-            <input type="email"
-                   name="email"
-                   id="s-email"
-                   class="form-control email"
-                   placeholder="Email"
-                   required>
-          </div>
+						<div class="auction-contact-field half">
+						<!-- keep this id for your JS -->
+						<input type="email"
+								name="email"
+								id="s-email"
+								class="form-control email"
+								placeholder="Email"
+								required>
+						</div>
 
-          <!-- Row 3: Enquiry -->
-          <div class="newsletter-field full">
-            <input type="text"
-                   name="message"
-                   class="form-control message"
-                   placeholder="Enquiry"
-                   required>
-          </div>
+						<!-- Row 3: Enquiry -->
+						<div class="auction-contact-field full">
+						<input type="text"
+								name="message"
+								class="form-control message"
+								placeholder="Enquiry"
+								required>
+						</div>
 
-          <!-- Checkbox text from Figma -->
-          <div class="newsletter-field full newsletter-checkbox-row">
-            <input type="checkbox"
-                   id="newsletter-updates"
-                   name="newsletter_updates">
-            <label for="newsletter-updates">
-              Tick this box if you’d like auction updates delivered by email,
-              ensuring you never miss a lot. You can unsubscribe whenever you
-              wish. Our
-              <strong>
-                <a href="{{ url_for('privacy') }}"
-                   target="_blank"
-                   class="tra-red-hover">
-                  Privacy Policy
-                </a>
-              </strong>
-              explains how we use your data.
-            </label>
-          </div>
+						<!-- Checkbox row -->
+						<div class="auction-contact-field full auction-contact-checkbox-row">
+						<input type="checkbox"
+								id="newsletter-updates"
+								name="newsletter_updates">
+						<label for="newsletter-updates">
+							Tick this box if you’d like auction updates delivered by email,
+							ensuring you never miss a lot. You can unsubscribe whenever you
+							wish. Our
+							<strong>
+							<a href="{{ url_for('privacy') }}"
+								target="_blank"
+								class="tra-red-hover">
+								Privacy Policy
+							</a>
+							</strong>
+							explains how we use your data.
+						</label>
+						</div>
 
-          <!-- Submit (SVG button) -->
-          <div class="newsletter-field submit-field">
-            <button type="submit"
-                    class="newsletter-submit submit"
-                    aria-label="Submit enquiry">
-              <img src="{{ url_for('static', filename='images/submitNew.svg') }}"
-                   alt="Submit enquiry"
-                   class="newsletter-submit-svg">
-            </button>
-          </div>
-        </div>
+						<!-- Submit (SVG button) -->
+						<div class="auction-contact-field submit-field">
+						<button type="submit"
+								class="auction-contact-submit submit"
+								aria-label="Submit enquiry">
+							<img src="{{ url_for('static', filename='images/submitNew.svg') }}"
+								alt="Submit enquiry"
+								class="auction-contact-submit-svg">
+						</button>
+						</div>
+					</div>
 
-        <!-- existing JS notification hook -->
-        <label for="s-email" class="form-notification"></label>
-      </form>
-    </div><!-- /.newsletter-strip -->
-
-  </div><!-- /.newsletter-footer-card -->
+					<!-- existing JS notification hook -->
+					<label for="s-email" class="form-notification"></label>
+					</form>
+				</div><!-- /.auction-contact-card -->
 
 
-				<!-- MAIN FOOTER AREA (inside same card) -->
+				<!-- MAIN FOOTER AREA (unchanged) -->
 				<footer id="footer-4" class="footer division footer-card-body">
-				<div class="footer-card-container">
+					<div class="footer-card-container">
 
 					<!-- TOP FOOTER GRID -->
 					<div class="footer-main-row">
-					<!-- Logo + address -->
-					<div class="footer-col footer-col-logo">
-						<img class="footer-logo" src="/static/images/newlogoblue.svg" alt="Swift Property Auctions logo">
-					</div>
+						<!-- Logo + address -->
+						<div class="footer-col footer-col-logo">
+						<img class="footer-logo" src="static/images/newlogoblue.svg" alt="Swift Property Auctions logo">
+						</div>
 
-
-					<!-- Lots column -->
-					<div class="footer-col">
+						<!-- Lots column -->
+						<div class="footer-col">
 						<h6 class="footer-heading">Current Lots</h6>
 						<ul class="footer-link-list">
-						<li><a href="{{ url_for('current_lots') }}" class="tra-red-hover">Current Lots</a></li>
-						<li><a href="{{ url_for('available_lots') }}" class="tra-red-hover">Available Lots</a></li>
-						<li><a href="{{ url_for('bidder_registration') }}" class="tra-red-hover">Bidder Registration</a></li>
-						<!-- <li><a href="{{ url_for('private_sales') }}" class="tra-red-hover">Private Treaty</a></li> -->
+							<li><a href="{{ url_for('current_lots') }}" class="tra-red-hover">Current Lots</a></li>
+							<li><a href="{{ url_for('available_lots') }}" class="tra-red-hover">Available Lots</a></li>
+							<li><a href="{{ url_for('bidder_registration') }}" class="tra-red-hover">Bidder Registration</a></li>
 						</ul>
-					</div>
+						</div>
 
-					<!-- Auctions column -->
-					<div class="footer-col">
+						<!-- Auctions column -->
+						<div class="footer-col">
 						<h6 class="footer-heading">Auctions</h6>
 						<ul class="footer-link-list">
-						<li><a href="{{ url_for('valuation') }}" class="tra-red-hover">Free Valuation</a></li>
-						<li><a href="{{ url_for('future_auctions_dates') }}" class="tra-red-hover">Future Auction Dates</a></li>
-						<li><a href="{{ url_for('previous_auctions') }}" class="tra-red-hover">Previous Auctions</a></li>
-						<!-- <li><a href="{{ url_for('auction_finance') }}" class="tra-red-hover">Auction Finance</a></li> -->
-						<!-- <li><a href="{{ url_for('auction_buying_guide') }}" class="tra-red-hover">Auction Buying Guide</a></li> -->
-						<li><a href="{{ url_for('auction_selling_guide') }}" class="tra-red-hover">Auction Selling Guide</a></li>
-						<!-- <li><a href="{{ url_for('benefits_of_auctions') }}" class="tra-red-hover">Benefits of Auctions</a></li>
-						<li><a href="{{ url_for('frequently_asked_questions') }}" class="tra-red-hover">Frequently Asked Questions</a></li> -->
+							<li><a href="{{ url_for('valuation') }}" class="tra-red-hover">Free Valuation</a></li>
+							<li><a href="{{ url_for('future_auctions_dates') }}" class="tra-red-hover">Future Auction Dates</a></li>
+							<li><a href="{{ url_for('previous_auctions') }}" class="tra-red-hover">Previous Auctions</a></li>
+							<li><a href="{{ url_for('auction_selling_guide') }}" class="tra-red-hover">Auction Selling Guide</a></li>
 						</ul>
-					</div>
+						</div>
 
-					<!-- Contacts column -->
-					<div class="footer-col">
-					<h6 class="footer-heading">Contacts</h6>
-					<ul class="footer-link-list">
-						<li>
-						<a href="{{ url_for('about') }}" class="tra-red-hover">
-							About Us
-						</a>
-						</li>
-						<li>
-						<a href="tel:02089504588" class="tra-red-hover">
-							0208 950 4588
-						</a>
-						</li>
-						<li>
-						<a href="mailto:info@swiftpropertyauctions.co.uk" class="tra-red-hover">
-							info@swiftpropertyauctions.co.uk
-						</a>
-						</li>
-						<li>
-						Swift Property Auctions<br>
-						83 Uxbridge Road,<br>
-						Stanmore,<br>
-						HA7 3NH
-						</li>
-					</ul>
-					</div>
+						<!-- Contacts column -->
+						<div class="footer-col">
+						<h6 class="footer-heading">Contacts</h6>
+						<ul class="footer-link-list">
+							<li>
+							<a href="{{ url_for('about') }}" class="tra-red-hover">About Us</a>
+							</li>
+							<li>
+							<a href="tel:02089504588" class="tra-red-hover">0208 950 4588</a>
+							</li>
+							<li>
+							<a href="mailto:info@swiftpropertyauctions.co.uk" class="tra-red-hover">
+								info@swiftpropertyauctions.co.uk
+							</a>
+							</li>
+							<li>
+							Swift Property Auctions<br>
+							83 Uxbridge Road,<br>
+							Stanmore,<br>
+							HA7 3NH
+							</li>
+						</ul>
+						</div>
 
-
-					<!-- Follow us column -->
-					<div class="footer-col footer-col-follow">
-						<h6 class="footer-heading text-end">Follow us</h6>
+						<!-- Follow us column -->
+						<div class="footer-col footer-col-follow">
+						<h6 class="footer-heading">Follow us</h6>
 						<div class="footer-social-row">
-						<!-- <a href="https://www.facebook.com/profile.php?id=61554772972429" -->
-						 <a href="#"
+							<a href="#"
 							target="_blank" class="footer-social-circle">
 							<span class="flaticon-facebook"></span>
-						</a>
-						<!-- <a href="https://www.instagram.com/swiftpropertyauctions/" -->
-						<a href="#"
+							</a>
+							<a href="#"
 							target="_blank" class="footer-social-circle">
 							<span class="flaticon-instagram"></span>
-						</a>
-						<!-- <a href="https://www.linkedin.com/in/swift-property-auctions-1ab5b42b3/" -->
-						<a href="#"
+							</a>
+							<a href="#"
 							target="_blank" class="footer-social-circle">
 							<span class="flaticon-linkedin"></span>
-						</a>
-						<!-- <a href="https://www.youtube.com" target="_blank" class="footer-social-circle"> -->
+							</a>
 							<a href="#"
 							class="footer-social-circle">
 							<span class="flaticon-youtube"></span>
-						</a>
+							</a>
 						</div>
-					</div>
-					</div> <!-- /footer-main-row -->
+						</div>
+					</div><!-- /footer-main-row -->
 
-					<!-- FOOTER BOTTOM BAR: meta + credentials on one line -->
-						<div class="footer-bottom-bar">
+					<!-- FOOTER BOTTOM BAR -->
+					<div class="footer-bottom-bar">
 						<!-- Left: meta / legal links -->
 						<div class="footer-meta-left">
-							<ul class="footer-meta-list">
+						<ul class="footer-meta-list">
 							<li>All rights reserved</li>
 							<li>
-								<a href="/static/pdf/terms_conditions.pdf"
+							<a href="/static/pdf/terms_conditions.pdf"
 								target="_blank"
 								class="tra-red-hover">
 								Terms and conditions
-								</a>
+							</a>
 							</li>
 							<li>
-								<a href="/static/pdf/AML.pdf"
+							<a href="/static/pdf/AML.pdf"
 								target="_blank"
 								class="tra-red-hover">
 								AML ID Requirements
-								</a>
+							</a>
 							</li>
 							<li>
-								<a href="{{ url_for('complaint_procedure') }}"
+							<a href="{{ url_for('complaint_procedure') }}"
 								class="tra-red-hover">
 								Complaint Procedure
-								</a>
+							</a>
 							</li>
 							<li>
-								<a href="{{ url_for('privacy') }}"
+							<a href="{{ url_for('privacy') }}"
 								class="tra-red-hover">
 								Privacy Policy
-								</a>
+							</a>
 							</li>
-							</ul>
+						</ul>
 						</div>
 
 						<!-- Right: credentials logos -->
 						<div class="footer-meta-right">
-							<a href="https://www.tpos.co.uk/" target="_blank">
-							<img src="/static/images/TPO_TSI_BW_Horizontal.jpg"
+						<a href="https://www.tpos.co.uk/" target="_blank">
+							<img src="static/images/TPO_TSI_BW_Horizontal.jpg"
 								alt="The Property Ombudsman"
 								class="credential-image">
-							</a>
-							<a href="https://ico.org.uk/" target="_blank">
-							<img src="/static/images/icoffice.jpg"
+						</a>
+						<a href="https://ico.org.uk/" target="_blank">
+							<img src="static/images/icoffice.jpg"
 								alt="Information Commissioner's Office"
 								class="credential-image">
-							</a>
-							<!-- Optional extra badges
-							<a href="https://www.propertymark.co.uk/" target="_blank">
-							<img src="static/images/naea.jpg"
-								alt="NAEA"
-								class="credential-image">
-							</a>
-							<a href="https://www.propertymark.co.uk/" target="_blank">
-							<img src="/static/images/nava.jpg"
-								alt="NAVA"
-								class="credential-image">
-							</a>
-							-->
+						</a>
 						</div>
-						</div>
-
+					</div><!-- /.footer-bottom-bar -->
+					</div><!-- /.footer-card-container -->
+				</footer>
 			</section>
+
 
 
 

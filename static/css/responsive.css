@@ -5606,12 +5606,19 @@
   .auction-feature-section,
   .strategy-section,
   .services-grid-section,
-  .advantage-section,
-  .newsletter-modern {
+  .advantage-section {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 5rem;
     padding-top: 7rem;
+  }
+
+  .newsletter-modern {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
   }
 }
 
