@@ -112,6 +112,19 @@
 
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('home') }}">Home</a></li>
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('about') }}">About</a></li>
+							<li class="nl-simple" aria-haspopup="true"><a href="#">Current Lots</a>
+							<ul class="sub-menu">
+								<li aria-haspopup="true">
+								<a href="{{ url_for('home') }}#lots-container">Current Auction</a>
+								</li>
+								<li aria-haspopup="true">
+								<a href="{{ url_for('available_lots') }}">Available Lots</a>
+								</li>
+								<li aria-haspopup="true">
+								<a href="{{ url_for('bidder_registration') }}">Bidder Registration</a>
+								</li>
+							</ul>
+							</li>
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('future_auctions_dates') }}">Auctions</a>
 							<ul class="sub-menu">
 								<li aria-haspopup="true">
@@ -125,27 +138,6 @@
 								</li>
 								<li aria-haspopup="true">
 								<a href="{{ url_for('auction_selling_guide') }}">Auction Selling Guide</a>
-								</li>
-							</ul>
-							</li>
-							<li class="nl-simple" aria-haspopup="true"><a href="#lots-container">Current Lots</a>
-							<ul class="sub-menu">
-								<li aria-haspopup="true">
-								<a href="{{ url_for('home') }}#lots-container">Current Auction</a>
-								</li>
-								<li aria-haspopup="true">
-								<a href="{{ url_for('available_lots') }}">Available Lots</a>
-								</li>
-						<li class="nl-simple" aria-haspopup="true"><a href="#">Current Lots</a>
-							<ul class="sub-menu">
-								<li aria-haspopup="true">
-								<a href="{{ url_for('home') }}#lots-container">Current Auction</a>
-								</li>
-								<li aria-haspopup="true">
-								<a href="{{ url_for('available_lots') }}">Available Lots</a>
-								</li>
-								<li aria-haspopup="true">
-								<a href="{{ url_for('bidder_registration') }}">Bidder Registration</a>
 								</li>
 							</ul>
 							</li>
@@ -356,8 +348,71 @@
 				</div>
 
 
+				<!-- NEWSLETTER + FOOTER CARD
+			============================================= -->
+			<section id="newsletter-2" class="newsletter-modern">
+			<!-- TOP GREY NEWSLETTER STRIP (NEWSLETTER-3) -->
+			<div class="newsletter-3-strip">
+  
+				<!-- Left copy -->
+				<div class="newsletter-3-left">
+					<h2 class="newsletter-3-title">
+					Never Miss a <span class="newsletter-3-accent">Lot.</span>
+					</h2>
+					<p class="newsletter-3-subtitle">
+					Get timely notifications about fresh listings, updates and everything
+					happening in our upcoming auctions.
+					</p>
+				</div>
+
+				<!-- Right: form -->
+				<form class="newsletter-3-form quick-form">
+
+					<!-- Email pill + buttons row -->
+					<div class="newsletter-3-main-row">
+
+					<!-- Email input pill -->
+					<div class="newsletter-3-input-wrap">
+						<input
+						type="email"
+						id="s-email"
+						required
+						autocomplete="off"
+						class="newsletter-3-input"
+						placeholder="Stay Updated - Your Email"
+						>
+					</div>
+
+					<!-- Subscribe + arrow pills -->
+					<!-- Subscribe button --> <div class="auction-feature-cta"> <button type="submit" class="news-feature-cta-main" aria-label="Subscribe" > <img src="{{ url_for('static', filename='images/subbtnnew.svg') }}" alt="Subscribe" class="newsletter-svg default" > <!-- Separate arrow icon --> <img src="{{ url_for('static', filename='images/superArrow.svg') }}" alt="" aria-hidden="true" class="svg-pill-arrow"> </button> </div>
+					</div>
+
+					<!-- T&Cs -->
+					<div class="newsletter-3-terms">
+					<input type="checkbox" id="terms" name="terms" required>
+					<label for="terms">
+						I accept the Company's
+						<strong>
+						<a href="/static/pdf/terms_conditions.pdf" target="_blank" class="tra-red-hover">
+							Terms and Conditions of Service
+						</a>
+						</strong>
+						and
+						<strong>
+						<a href="{{ url_for('privacy') }}" target="_blank" class="tra-red-hover">
+							Privacy Policy
+						</a>
+						</strong>
+					</label>
+					</div>
+
+					<!-- JS notification label (unchanged) -->
+					<label for="s-email" class="form-notification"></label>
+				</form>
+				</div>
+
 				<!-- MAIN FOOTER AREA (inside same card) -->
-				<footer id="footer-4" class="footer division bg-blue footer-card-body">
+				<footer id="footer-4" class="footer division footer-card-body">
 				<div class="footer-card-container">
 
 					<!-- TOP FOOTER GRID -->
@@ -425,7 +480,7 @@
 
 					<!-- Follow us column -->
 					<div class="footer-col footer-col-follow">
-						<h6 class="footer-heading text-end">Follow us</h6>
+						<h6 class="footer-heading">Follow us</h6>
 						<div class="footer-social-row">
 						<!-- <a href="https://www.facebook.com/profile.php?id=61554772972429" -->
 						 <a href="#"
@@ -444,7 +499,7 @@
 						</a>
 						<!-- <a href="https://www.youtube.com" target="_blank" class="footer-social-circle"> -->
 							<a href="#"
-							class="footer-social-circle">
+								class="footer-social-circle">
 							<span class="flaticon-youtube"></span>
 						</a>
 						</div>

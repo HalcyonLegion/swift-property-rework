@@ -111,6 +111,19 @@
 
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('home') }}">Home</a></li>
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('about') }}">About</a></li>
+							<li class="nl-simple" aria-haspopup="true"><a href="#">Current Lots</a>
+							<ul class="sub-menu">
+								<li aria-haspopup="true">
+								<a href="{{ url_for('home') }}#lots-container">Current Auction</a>
+								</li>
+								<li aria-haspopup="true">
+								<a href="{{ url_for('available_lots') }}">Available Lots</a>
+								</li>
+								<li aria-haspopup="true">
+								<a href="{{ url_for('bidder_registration') }}">Bidder Registration</a>
+								</li>
+							</ul>
+							</li>
 							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('future_auctions_dates') }}">Auctions</a>
 							<ul class="sub-menu">
 								<li aria-haspopup="true">
@@ -124,27 +137,6 @@
 								</li>
 								<li aria-haspopup="true">
 								<a href="{{ url_for('auction_selling_guide') }}">Auction Selling Guide</a>
-								</li>
-							</ul>
-							</li>
-							<li class="nl-simple" aria-haspopup="true"><a href="#lots-container">Current Lots</a>
-							<ul class="sub-menu">
-								<li aria-haspopup="true">
-								<a href="{{ url_for('home') }}#lots-container">Current Auction</a>
-								</li>
-								<li aria-haspopup="true">
-								<a href="{{ url_for('available_lots') }}">Available Lots</a>
-								</li>
-						<li class="nl-simple" aria-haspopup="true"><a href="#">Current Lots</a>
-							<ul class="sub-menu">
-								<li aria-haspopup="true">
-								<a href="{{ url_for('home') }}#lots-container">Current Auction</a>
-								</li>
-								<li aria-haspopup="true">
-								<a href="{{ url_for('available_lots') }}">Available Lots</a>
-								</li>
-								<li aria-haspopup="true">
-								<a href="{{ url_for('bidder_registration') }}">Bidder Registration</a>
 								</li>
 							</ul>
 							</li>

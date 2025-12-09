@@ -10429,7 +10429,7 @@ nav a#pull {
   align-items: center;
   gap: 2rem;
   padding-top: 1.5rem;
-  /* padding-bottom: 1.5rem; */
+  padding-bottom: 1.5rem;
   border-top: 1px solid rgba(0, 0, 0, 0.06); /* subtle divider */
 }
 
@@ -15594,4 +15594,50 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   .newsletter-modern-contact .auction-contact-checkbox-row {
     max-width: 100%;
   }
+}
+
+.lot-help-badge-img {
+  width: 177px;  /* tweak to match your design */
+}
+
+/* Badge container */
+.lot-help-badge {
+  position: relative;
+  width: 177px;
+  height: 96px;
+  border-radius: 8px;          /* or 4px if you want it exactly like the figma */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Blurred photo background */
+.lot-help-badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/static/images/auction-finance-bg.jpg") center center / cover no-repeat;
+  filter: blur(6px);           /* tweak blur strength to taste */
+  transform: scale(1.06);      /* avoids blurred edges being clipped */
+}
+
+/* Optional dark tint over the photo (like your old #21202087) */
+.lot-help-badge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);  /* adjust opacity if you want it lighter/darker */
+}
+
+/* SVG sits on top */
+.lot-help-badge-img {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+
+.lot-help-badge-img {
+  display: block;
 }

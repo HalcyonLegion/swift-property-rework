@@ -78,131 +78,95 @@
 
 			<!-- HEADER
 			============================================= -->
-			<header id="header" class="header tra-menu navbar-light">
+			<header id="header" class="header tra-menu navbar-light nofixedmenu">
 				<div class="header-wrapper">
 
-
 					<!-- MOBILE HEADER -->
-					<div class="wsmobileheader clearfix">      
-						<!-- Homepage link around the logo -->
-						<a href="{{ url_for('home') }}" class="smllogo">
-							<img src="/static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="Homepage"/>
-						</a>
-						<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>  
+					<div class="wsmobileheader clearfix">
+					<a href="{{ url_for('home') }}" class="smllogo">
+						<img src="/static/images/newlogo.svg" alt="Homepage" />
+					</a>
+					<a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
 					</div>
 
+					<!-- GLASS NAV BAR -->
+					<div class="wsmainfull menu auction-info-glass nofixedmenu">
+					<div class="wsmainwp clearfix">
 
-				 	<!-- NAVIGATION MENU -->
-				  	<div class="wsmainfull menu d-flex justify-content-center clearfix">
-	    				<div class="wsmainwp clearfix">
+						<!-- LOGO LEFT -->
+						<div class="desktoplogo">
+						<a href="{{ url_for('home') }}" class="logo-white">
+							<img src="/static/images/newlogo.svg" alt="header-logo">
+						</a>
+						</div>
+						<div class="desktoplogo">
+						<a href="{{ url_for('home') }}" class="logo-black">
+							<img src="/static/images/newlogo.svg" alt="header-logo">
+						</a>
+						</div>
 
+						<!-- DATETIME (separate block, not inside <ul>) -->
+						<div class="header-datetime">
+						<span id="live-datetime"></span>
+						</div>
 
-	    					<!-- HEADER LOGO -->
-	    					<div class="desktoplogo"><a href="{{ url_for('home') }}" class="logo-black"><img src="/static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="header-logo"></a></div>
-	    					<div class="desktoplogo"><a href="{{ url_for('home') }}" class="logo-white"><img src="/static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="header-logo"></a></div>
+						<!-- MAIN MENU -->
+						<nav class="wsmenu clearfix text-center">
+						<ul class="wsmenu-list nav-red-hover">
 
+							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('home') }}">Home</a></li>
+							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('about') }}">About</a></li>
+							<li class="nl-simple" aria-haspopup="true"><a href="#">Current Lots</a>
+							<ul class="sub-menu">
+								<li aria-haspopup="true">
+								<a href="{{ url_for('home') }}#lots-container">Current Auction</a>
+								</li>
+								<li aria-haspopup="true">
+								<a href="{{ url_for('available_lots') }}">Available Lots</a>
+								</li>
+								<li aria-haspopup="true">
+								<a href="{{ url_for('bidder_registration') }}">Bidder Registration</a>
+								</li>
+							</ul>
+							</li>
+							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('future_auctions_dates') }}">Auctions</a>
+							<ul class="sub-menu">
+								<li aria-haspopup="true">
+								<a href="{{ url_for('valuation') }}">Free Valuation</a>
+								</li>
+								<li aria-haspopup="true">
+								<a href="{{ url_for('future_auctions_dates') }}">Future Auction Dates</a>
+								</li>
+								<li aria-haspopup="true">
+								<a href="{{ url_for('previous_auctions') }}">Previous Auctions</a>
+								</li>
+								<li aria-haspopup="true">
+								<a href="{{ url_for('auction_selling_guide') }}">Auction Selling Guide</a>
+								</li>
+							</ul>
+							</li>
+							<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('valuation') }}">Auction Valuation</a></li>
+							</li>
 
-	    					<!-- MAIN MENU -->
-	      					<nav class="wsmenu clearfix text-center">
-	        					<ul class="wsmenu-list nav-red-hover">
+							<!-- Contact button hard right -->
+							<li class="nl-simple nav-contact" aria-haspopup="true">
+							<a href="{{ url_for('contact') }}" class="btn contact-svg-btn" aria-label="Contact Us">
+								<img src="{{ url_for('static', filename='images/contact-default.svg') }}"
+									alt="Contact Us" class="contact-img default">
+								<img src="{{ url_for('static', filename='images/contact-hover.svg') }}"
+									alt="Contact Us" class="contact-img hover">
+							</a>
+							</li>
 
-                                    <!-- SIMPLE NAVIGATION LINK -->
-							    	<li class="nl-simple" aria-haspopup="true"><a href="{{ url_for('home') }}">Home</a></li>
+						</ul>
+						</nav>
 
-	        						<!-- DROPDOWN MENU -->
-									<li aria-haspopup="true"><a href="{{ url_for('about') }}">About <span class="wsarrow"></span></a>
-	            						<ul class="sub-menu">
-	            							<li aria-haspopup="true"><a href="{{ url_for('about') }}">About Us</a></li>
-						           		</ul>
-								    </li>
+					</div>
+					</div>
 
-
-	        						<!-- DROPDOWN MENU -->
-						          	<li aria-haspopup="true"><a href="#">Current Lots <span class="wsarrow"></span></a>
-	            						<ul class="sub-menu">
-	            							<li aria-haspopup="true"><a href="{{ url_for('current_lots') }}">Current Lots</a></li>
-	            							<li aria-haspopup="true"><a href="{{ url_for('available_lots') }}">Available Lots</a></li>
-	            							<li aria-haspopup="true"><a href="{{ url_for('bidder_registration') }}">Bidder Registration</a></li>
-	            							<li aria-haspopup="true"><a href="{{ url_for('private_sales') }}">Private Treaty</a></li>
-						           		</ul>
-								    </li>
-
-
-							    	<!-- DROPDOWN MENU -->
-						        	<li aria-haspopup="true"><a href="#">Auctions <span class="wsarrow"></span></a>
-						        		<div class="wsmegamenu clearfix halfmenu">
-						              		<div class="container-fluid">
-						                		<div class="row">
-
-						                			<!-- Links -->
-									                <ul class="col-lg-12 link-list">
-														<li><a href="{{ url_for('valuation') }}">Free Valuation</a></li>
-									                	<li><a href="{{ url_for('future_auctions_dates') }}">Future Auction Dates</a></li>							          
-									                    <li><a href="{{ url_for('previous_auctions') }}">Previous Auctions</a></li>
-									                    <li><a href="{{ url_for('auction_finance') }}">Auction Finance</a></li>
-														<li><a href="https://waterstonelegal.co.uk/jasmine-chaudry-partner/" target="_blank">Auction Solicitors</a></li>
-									                    <li><a href="{{ url_for('auction_buying_guide') }}">Auction Buying Guide</a></li>
-									                </ul>
-
-								                  	<!-- Links -->
-									                <ul class="col-lg-12 link-list">
-														<li><a href="/static/pdf/Auction_Guide.pdf" target="_blank">Buying Guide Download</a></li>
-														<li><a href="{{ url_for('auction_selling_guide') }}">Auction Selling Guide</a></li>	
-									                	<li><a href="{{ url_for('benefits_of_auctions') }}">Benefits of Auctions</a></li>  			               
-									                    <li><a href="{{ url_for('frequently_asked_questions') }}">FAQs Page</a></li>
-									                </ul>
-
-						                		</div>
-						              		</div>
-						            	</div>
-						          	</li>	<!-- END DROPDOWN MENU -->
-
-						          	<!-- DROPDOWN MENU -->
-						          	<li aria-haspopup="true"><a href="#">News & Blogs <span class="wsarrow"></span></a>
-	            						<ul class="sub-menu">
-	            							<li aria-haspopup="true"><a href="{{ url_for('news_and_blogs') }}">Blogs</a></li>
-						           		</ul>
-								    </li>
-
-
-								    <!-- HEADER BUTTON -->
-								    <li class="nl-simple" aria-haspopup="true">
-								    	<a href="{{ url_for('contact') }}" class="btn btn-tra-white red-hover last-link">Contact</a>
-									</li>
-
-									<!-- HEADER SOCIAL LINKS --> 													
-							<!-- <li class="nl-simple white-color header-socials ico-20 clearfix" aria-haspopup="true">
-								<span><a href="https://www.facebook.com/profile.php?id=61554772972429" target="_blank" class="ico-facebook"><span class="flaticon-facebook tra-red-hover"></span></a></span> -->
-								<!-- <span><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fswiftauction" target="_blank" class="ico-twitter"><span class="flaticon-x tra-red-hover"></span></a></span> -->
-								<!-- <span><a href="https://www.linkedin.com/in/swift-property-auctions-1ab5b42b3/" target="_blank" class="ico-linkedin"><span class="flaticon-linkedin tra-red-hover"></span></a></span>
-								<span><a href="https://www.instagram.com/swiftpropertyauctions/" target="_blank" class="ico-instagram"><span class="flaticon-instagram tra-red-hover"></span></a></span>
-								<span><a href="tel:02089504588" class="ico-phone-call"><span class="flaticon-phone-call tra-red-hover mr-50"></a></span>
-								
-							</li> -->
-
-
-									<!-- HEADER SOCIAL LINKS --> 													
-							<!-- <li class="nl-simple white-color header-socials2 ico-20 clearfix" aria-haspopup="true">
-								<span><a href="https://www.facebook.com/profile.php?id=61554772972429" target="_blank" class="ico-facebook"><span class="flaticon-facebook tra-red-hover"></span></a></span> -->
-								<!-- <span><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fswiftauction" target="_blank" class="ico-twitter"><span class="flaticon-x tra-red-hover"></span></a></span> -->
-								<!-- <span><a href="https://www.linkedin.com/in/swift-property-auctions-1ab5b42b3/" target="_blank" class="ico-linkedin"><span class="flaticon-linkedin tra-red-hover"></span></a></span>
-								<span><a href="https://www.instagram.com/swiftpropertyauctions/" target="_blank" class="ico-instagram"><span class="flaticon-instagram tra-red-hover"></span></a></span>
-								<span><a href="tel:02089504588" class="ico-phone-call"><span class="flaticon-phone-call tra-red-hover mr-50"></a></span>
-
-								<span class="smllogo"><img src="/static/images/swift-property-auctions-high-resolution-logo-transparent.svg" alt="mobile-logo"/></span>
-							</li> -->
-
-
-	        					</ul>
-	        				</nav>	<!-- END MAIN MENU -->
-
-
-	    				</div>
-	    			</div>	<!-- END NAVIGATION MENU -->
-
-
-				</div>     <!-- End header-wrapper -->
-			</header>	<!-- END HEADER -->
+				</div>
+			</header>
+			<!-- END HEADER -->
 
 
             <!-- HERO-14

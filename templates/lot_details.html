@@ -61,7 +61,7 @@
 			<div id="loading" class="preloader">
 				<div id="loading-center">
 					<div id="loading-center-absolute">
-						<img src="static/images/newlogodblue.svg" alt="Company Logo" id="preloader-logo">
+						<img src="{{ url_for('static', filename='images/newlogoblue.svg') }}" alt="Company Logo" id="preloader-logo">
 					</div>
 				</div>
 			</div>
@@ -296,9 +296,11 @@
 					<!-- TOP FOOTER GRID -->
 					<div class="footer-main-row">
 						<!-- Logo + address -->
-						<div class="footer-col footer-col-logo">
-						<img class="footer-logo" src="static/images/newlogoblue.svg" alt="Swift Property Auctions logo">
-						</div>
+							<div class="footer-col footer-col-logo">
+							<img class="footer-logo"
+								src="{{ url_for('static', filename='images/newlogoblue.svg') }}"
+								alt="Swift Property Auctions logo">
+							</div>
 
 						<!-- Lots column -->
 						<div class="footer-col">
@@ -407,12 +409,12 @@
 						<!-- Right: credentials logos -->
 						<div class="footer-meta-right">
 						<a href="https://www.tpos.co.uk/" target="_blank">
-							<img src="static/images/TPO_TSI_BW_Horizontal.jpg"
+							<img src="{{ url_for('static', filename='images/TPO_TSI_BW_Horizontal.jpg') }}"
 								alt="The Property Ombudsman"
 								class="credential-image">
 						</a>
 						<a href="https://ico.org.uk/" target="_blank">
-							<img src="static/images/icoffice.jpg"
+							<img src="{{ url_for('static', filename='images/icoffice.jpg') }}"
 								alt="Information Commissioner's Office"
 								class="credential-image">
 						</a>

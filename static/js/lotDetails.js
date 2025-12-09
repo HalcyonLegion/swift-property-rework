@@ -556,11 +556,13 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
 
                   <!-- SWIFT INTELLIGENCE badge -->
                   <div class="lot-help-badge">
-                    <div class="lot-help-badge-text">
-                      <span class="badge-swift">SWIFT</span>
-                      <span class="badge-line"></span>
-                      <span class="badge-subline">INTELLIGENCE</span>
-                      <span class="badge-subline-strong">INDUSTRY LEADING</span>
+                    <!-- SWIFT INTELLIGENCE badge -->
+                    <div class="lot-help-badge">
+                      <img
+                        src="/static/images/swift-intelligence-badge.svg"
+                        alt="Swift Intelligence – Industry Leading"
+                        class="lot-help-badge-img"
+                      >
                     </div>
                   </div>
                 </div>
@@ -604,6 +606,7 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
                             <ul class="finance-list">
                                 <li>Up to 75% LTV</li>
                                 <li>Quick decisions</li>
+                                <li>Finance ready before the auction</li>
                             </ul>
 
                             <a href="${auctionFinanceUrl}" class="finance-btn" target="_blank">
