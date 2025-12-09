@@ -6774,15 +6774,14 @@ h5.posts-category {
 
 .contact-form .form-control,
 .contact-form .form-select {
-  height: 60px;
+  height: 50px;
   background-color: #fff;
   border: 1px solid #ccc;
-  box-shadow: 0 0 0 0;
   color: #3a4a56;
   font-size: 1.1rem;
   font-weight: 400;
-  padding: 0 15px;
-  margin-bottom: 30px;
+  padding: 0 16px;
+  margin-bottom: 16px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -12571,7 +12570,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .valuation-enquiry-underline {
   width: 100%;
-  max-width: 420px;
+  max-width: 675px;
   height: 2px;
   margin: 4px auto 16px;
   background: #ad1d18;
@@ -12611,6 +12610,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .valuation-field.full {
   grid-column: 1 / -1;
+  margin-bottom: 16px;
 }
 
 /* Inputs / select / textarea styled as Figma white cards */
@@ -15950,4 +15950,83 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   text-align: center;
   align-items: center;   /* center all text horizontally */
   height: 100px;
+}
+
+
+.val-bubble-inner {
+  position: relative;
+  width: 459px;
+  height: 212px;
+  max-width: 100%;
+  background: #ffffff;
+  box-shadow:
+    27px 37px 18px rgba(0, 0, 0, 0.01),
+    15px 21px 16px rgba(0, 0, 0, 0.05),
+    7px 9px 12px rgba(0, 0, 0, 0.09),
+    2px 2px 6px rgba(0, 0, 0, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Wrapper so we can position the chevron */
+.valuation-select-wrap {
+  position: relative;
+}
+
+/* The select “pill” itself */
+.valuation-select {
+  width: 100%;
+  height: 52px;
+  padding: 16px 48px 16px 24px; /* space on right for chevron */
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow:
+    24px 19px 12px rgba(0, 0, 0, 0.01),
+    13px 10px 10px rgba(0, 0, 0, 0.05),
+    6px 5px 8px rgba(0, 0, 0, 0.09),
+    1px 1px 4px rgba(0, 0, 0, 0.1);
+
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #0f2848;
+
+  /* Hide native arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+}
+
+/* Placeholder-style option */
+.valuation-select option[disabled] {
+  color: rgba(15, 40, 72, 0.5);
+}
+
+/* Chevron on the right */
+.valuation-select-wrap::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 24px;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #d0d0d0;
+  border-bottom: 2px solid #d0d0d0;
+  transform: translateY(-50%) rotate(-45deg); /* little ▼ */
+}
+
+/* Optional: focus state */
+.valuation-select:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(173, 29, 24, 0.08),
+    24px 19px 12px rgba(0, 0, 0, 0.01),
+    13px 10px 10px rgba(0, 0, 0, 0.05),
+    6px 5px 8px rgba(0, 0, 0, 0.09),
+    1px 1px 4px rgba(0, 0, 0, 0.1);
 }

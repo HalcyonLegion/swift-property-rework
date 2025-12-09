@@ -169,25 +169,34 @@
 				<div class="strategy-grid">
 
 					<!-- TOP-LEFT: SPEECH BUBBLE CARD -->
-					<div class="strategy-bubble">
-						<div class="strategy-bubble-card">
-							<div class="strategy-bubble-inner">
-								<div class="strategy-bubble-text">
-									<div class="strategy-bubble-eyebrow">REQUEST</div>
-										<div class="strategy-bubble-line1">
-										AN <span class="strategy-bubble-clear">AUCTION</span>
-										</div>
-									<div class="strategy-bubble-line2">VALUATION</div>
-								</div>
-							</div>
+				<div class="strategy-bubble">
+				<div class="strategy-bubble-card">
+					<div class="val-bubble-inner">
+					<div class="strategy-bubble-text">
+						<div class="strategy-bubble-eyebrow mb-5">REQUEST</div>
+						<div class="strategy-bubble-line1">
+						AN <span class="strategy-bubble-clear">AUCTION</span>
 						</div>
+						<div class="strategy-bubble-line2">VALUATION</div>
 					</div>
+					</div>
+				</div>
+
+				<!-- Connector pill -->
+				<img
+					src="{{ url_for('static', filename='images/rectangle.svg') }}"
+					alt=""
+					class="strategy-bubble-connector"
+				>
+				</div>
+
+
 
 					<!-- TOP-RIGHT: HEADING + RED LINE + SHORT BODY -->
 					<div class="strategy-heading">
 						<div class="strategy-heading-inner">
 							<h3 class="strategy-heading-title">
-							EXPERT AUCTION VALUATIONS <br>
+							EXPERT AUCTION VALUATIONS<br>
 							FOR EVERY PROPERTY TYPE
 							</h3>
 
@@ -204,6 +213,7 @@
 						<p>
 							Our valuations are grounded in real auction performance. We review comparable sales, buyer activity, property condition and local market trends to give you an accurate, confidence-building guide price.
 
+
 						</p>
 						<p>
 							Whether you’re selling a house, flat, land or commercial unit, our team will explain the process, answer your questions and outline next steps.
@@ -212,21 +222,22 @@
 
 					<!-- BOTTOM-RIGHT: IMAGE + BADGE -->
 					<div class="strategy-image-wrapper">
-						<img
+						<div class="strategy-image-frame">
+							<img
 							src="{{ url_for('static', filename='images/register-to-bid.jpg') }}"
 							alt="Swift Property Auctions team meeting"
 							class="strategy-image"
-						>
-
-						<!-- Bottom-right frosted badge (reusing your badge pattern) -->
-						<div class="auction-feature-logo-badge">
-							<img
-							src="{{ url_for('static', filename='images/highBid.svg') }}"
-							alt="Swift Intelligence – Industry Leading"
 							>
+
+							<!-- Bottom-right frosted badge -->
+							<div class="auction-feature-logo-badge">
+							<img
+								src="{{ url_for('static', filename='images/highBid.svg') }}"
+								alt="Swift Intelligence – Industry Leading"
+							>
+							</div>
 						</div>
 					</div>
-
 				</div>
 			</section>
 
@@ -292,17 +303,18 @@
 					</div>
 
 					<!-- Row 3: Property type -->
-					<div class="valuation-field full">
-						<select name="property_type"
-								class="form-select type"
-								required>
+					<div class="valuation-field full valuation-select-wrap">
+					<select name="property_type"
+							class="valuation-select"
+							required>
 						<option value="" disabled selected>Property Type</option>
 						<option value="Residential">Residential</option>
 						<option value="Commercial">Commercial</option>
 						<option value="Land">Land</option>
 						<option value="Other">Other</option>
-						</select>
+					</select>
 					</div>
+
 
 					<!-- Row 4: Further information -->
 					<div class="valuation-field full textarea">
