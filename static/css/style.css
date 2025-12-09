@@ -11095,11 +11095,11 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* bottom layout: left = info, right = help + finance */
 .lot-bottom-layout {
   display: grid;
-  grid-template-columns: minmax(0, 2.4fr) minmax(320px, 1fr);
-  /* gap: 16px; */
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+  gap: 16px;
   margin-top: 32px;
-  margin-right: 64px;
-  align-items: flex-start;
+  /* margin-right: 16px; */
+  justify-items: center;
 }
 
 .lot-right-column {
