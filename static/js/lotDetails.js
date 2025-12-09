@@ -3,9 +3,9 @@ function navigateToValuationPage() {
 }
 
 // Go to a specific lot (simplest & most robust: full page load)
-function navigateToLot(lotId) {
-  window.location.href = `/lot_details/${lotId}`;
-}
+// function navigateToLot(lotId) {
+//   window.location.href = `/lot_details/${lotId}`;
+// }
 
 // Go back to the current lots page
 function navigateToAllLots() {
@@ -20,19 +20,58 @@ function navigateToCurrent() {
     // Please adjust the above URL to match your application's routing structure.
 }
 
+// Single source of truth for routing ID
+function getLotRouteId(lot) {
+  return Number(lot.lotId);   // 👈 this is the one we care about
+}
+
 // Array to hold the fetched lot data
 let allLots = [];
 let currentLotId = getCurrentLotId(); // This should be a function that retrieves the current lot's ID
 
 // This function needs to be adjusted to handle the path structure.
 function getCurrentLotId() {
-    // Assumes the URL is like: http://127.0.0.1:5000/lot_details/{lotId}
-    const pathname = window.location.pathname;
-    const segments = pathname.split('/');
-    const lotIdSegment = segments.pop() || segments.pop();  // Handle potential trailing slash
-    return parseInt(lotIdSegment, 10);
+  const segments = window.location.pathname.split('/');
+  const lotIdSegment = segments.pop() || segments.pop();
+  return Number(lotIdSegment);
 }
 
+async function renderLotPage() {
+  const lotId = getCurrentLotId();
+  await updatePageContentWithLotId(lotId);
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  // get list of lots first so prev/next can be computed
+  await updateLots();
+  await renderLotPage();
+});
+
+
+async function updatePageContentWithLotId(lotId) {
+  const numericLotId = Number(lotId);
+
+  try {
+    const data = await fetchLotData(numericLotId);
+
+    if (!data || !data.lot) {
+      document.getElementById('main-content').innerHTML =
+        '<p>Lot not found or an error occurred.</p>';
+      return;
+    }
+
+    const { lot, PreviousLotId, NextLotId } = data;
+
+    renderLotDetails(lot, PreviousLotId, NextLotId);
+
+    // optional but nice: scroll back to top of card
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (err) {
+    console.error('Failed to update lot content:', err);
+    document.getElementById('main-content').innerHTML =
+      '<p>Lot not found or an error occurred.</p>';
+  }
+}
 
 async function updateLots() {
   try {
@@ -68,9 +107,17 @@ async function updateLots() {
     lotsContainer.innerHTML = '';
 
     const currentLotId = getCurrentLotId();
-    const currentIndex = allLots.findIndex(lot => String(lot.Id) === String(currentLotId));
-    const previousLotId = currentIndex > 0 ? allLots[currentIndex - 1].Id : null;
-    const nextLotId = currentIndex < allLots.length - 1 ? allLots[currentIndex + 1].Id : null;
+    const currentIndex = allLots.findIndex(
+    lot => getLotRouteId(lot) === currentLotId
+  );
+
+  const previousLotId =
+    currentIndex > 0 ? getLotRouteId(allLots[currentIndex - 1]) : null;
+
+  const nextLotId =
+    currentIndex !== -1 && currentIndex < allLots.length - 1
+      ? getLotRouteId(allLots[currentIndex + 1])
+      : null;
 
     const navigationHtml = `
       <div class="navigation-buttons col-md-12 d-flex mb-20">
@@ -113,16 +160,19 @@ async function fetchLotData(lotId) {
     // Only try to work them out if we already have the lot list
     if (Array.isArray(allLots) && allLots.length > 0) {
       const currentIndex = allLots.findIndex(
-        item => Number(item.Id) === numericLotId
-      );
+      item => getLotRouteId(item) === numericLotId
+    );
 
-      if (currentIndex !== -1) {
-        PreviousLotId = currentIndex > 0 ? allLots[currentIndex - 1].Id : null;
-        NextLotId =
-          currentIndex < allLots.length - 1
-            ? allLots[currentIndex + 1].Id
-            : null;
-      }
+    if (currentIndex !== -1) {
+      PreviousLotId =
+        currentIndex > 0 ? getLotRouteId(allLots[currentIndex - 1]) : null;
+
+      NextLotId =
+        currentIndex < allLots.length - 1
+          ? getLotRouteId(allLots[currentIndex + 1])
+          : null;
+    }
+
     }
 
     return { lot, PreviousLotId, NextLotId };
@@ -133,15 +183,16 @@ async function fetchLotData(lotId) {
 
 
 function navigateToLot(lotId) {
-    // Update the browser's history stack
-    history.pushState(null, '', `/lot_details/${lotId}`);
+  // Update the browser's history stack
+  history.pushState(null, '', `/lot_details/${lotId}`);
 
-    // Update the page content for the new lot
-    updatePageContentWithLotId(lotId);
-    
-    // Refresh navigation - this might be optional if you build the navigation when the page content updates
-    updateLots();
+  // Update the page content for the new lot
+  updatePageContentWithLotId(lotId);
+  
+  // Refresh navigation
+  updateLots();
 }
+
 
 function createMapIframe(fullAddress) {
     // Remove any reference to the API key
@@ -232,7 +283,7 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
         ${sideImages.map((image, index) => `
           <div class="lot-side-image-wrapper">
             <img src="${image.Url}"
-                 class="img-fluid lot-side-image"
+                 class="lot-side-image"
                  alt="Thumbnail ${index + 2}"
                  onclick="$('#lotImageCarousel').carousel(${index + 1});">
           </div>

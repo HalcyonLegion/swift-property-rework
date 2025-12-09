@@ -7973,8 +7973,7 @@ nav a#pull {
 
 
 .carousel-item-container {
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio. Adjust as needed. */
+  width: 912px;
 }
 
 .carousel-item img {
@@ -10584,18 +10583,18 @@ nav a#pull {
 
 .lot-details-wrapper {
   max-width: 1376px;
-  margin: 0 auto;
+  margin:32px auto;
 }
 
 .lot-main-card {
-  background: #ffffff;
+  /* background: #ffffff; */
   border-radius: 16px;
   border: 1px solid #f2f2f2;
-  box-shadow: 17px 14px 9px rgba(0, 0, 0, 0.01),
+  /* box-shadow: 17px 14px 9px rgba(0, 0, 0, 0.01),
               10px 8px 7px rgba(0, 0, 0, 0.05),
               4px 3px 6px rgba(0, 0, 0, 0.09),
-              1px 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 32px;
+              1px 1px 3px rgba(0, 0, 0, 0.1); */
+  /* padding: 32px; */
 }
 
 /* Top row: LOT + guide + navigation */
@@ -10686,8 +10685,8 @@ nav a#pull {
 
 /* Title + tagline */
 .lot-title-block {
-  margin-top: 24px;
-  margin-bottom: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .lot-title-block .lot-title {
@@ -10705,6 +10704,7 @@ nav a#pull {
   font-size: 18px;
   line-height: 1.3;
   color: #0f2848;
+  margin-bottom: 0px;
 }
 
 /* Media + help column */
@@ -10727,13 +10727,14 @@ nav a#pull {
 }
 
 .lot-media {
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
+  width: 912px;
+  height: 606px;
 }
 
 .lot-media img {
-  border-radius: 16px;
-  width: 100%;
-  height: 100%;
+  width: 912px;
+  height: 606px;
   object-fit: cover;
 }
 
@@ -10745,12 +10746,11 @@ nav a#pull {
 .lot-side-image-wrapper {
   flex: 1 1 0;
   overflow: hidden;
-  border-radius: 16px;
 }
 
 .lot-side-image {
-  width: 100%;
-  height: 100%;
+  width: 448px;
+  height: 299px;
   object-fit: cover;
   cursor: pointer;
 }
@@ -10758,9 +10758,10 @@ nav a#pull {
 /* CTA row under images */
 .lot-cta-row {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 16px;
   margin-top: 24px;
+  justify-content: flex-start;
 }
 
 .lot-cta-row > a:hover {
@@ -11175,14 +11176,17 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* keep CTA’s in one row on desktop, wrap nicely on smaller screens */
 .lot-cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  gap: 14px;
   margin-top: 24px;
+  width: 912px;
+  height: 52px;
 }
 
 .lot-cta-btn {
-  min-width: 160px;
+  min-width: 170px;
+  height: 52px
 }
 
 /* responsive: stack right column under info on narrow screens */
@@ -11209,7 +11213,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .lot-chip-guide [data-formatted-price] {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 110%;
 }
 
