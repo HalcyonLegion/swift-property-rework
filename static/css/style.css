@@ -13098,10 +13098,10 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* Market Highlights pill top-right */
 .prev-auction-pill {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 0px;
+  right: 0px;
   padding: 8px 22px;
-  border-radius: 999px;
+  border-radius: 8px 8px 0px 8px;
   background: #0f2848;
   color: #ffffff;
   font-size: 13px;
@@ -13214,7 +13214,11 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .prev-auction-btn-secondary {
   background: rgba(255, 255, 255, 0.4);
   color: #0F2848;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 18px 27px rgba(0, 0, 0, 0.05),
+    0 10px 23px rgba(0, 0, 0, 0.05),
+    0 5px 17px rgba(0, 0, 0, 0.09),
+    0 1px 9px rgba(0, 0, 0, 0.1);
 }
 
 /* Hover / focus */
@@ -15743,4 +15747,75 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
     font-size: 36px;
   }
 }
+
+/* Wrapper for the PREVIOUS AUCTIONS RESULTS bubble */
+.results-bubble {
+  display: flex;
+  justify-content: center;
+}
+
+/* If you want this card to be centred & sized similarly to the others,
+   you can uncomment / tweak these lines. Otherwise it will inherit
+   any existing .strategy-bubble-card styles. */
+/*
+.results-bubble-card {
+  width: 459px;
+  max-width: 100%;
+  height: 212px;
+}
+*/
+
+.results-bubble-inner {
+  /* 218 x 88 inner frame centred in the card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* STACK: eyebrow / "PREVIOUS AUCTIONS" / "RESULTS" */
+.results-bubble-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* SWIFT PROPERTY (24px, uppercase) */
+.results-bubble-eyebrow {
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0f2848;
+  margin-bottom: 1px; /* Figma gap */
+}
+
+/* PREVIOUS AUCTIONS (24px, uppercase) */
+.results-bubble-line1 {
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0f2848;
+  margin-bottom: 1px; /* small gap before RESULTS */
+}
+
+/* If you want AUCTIONS a touch different (optional) */
+.results-bubble-line1 .strategy-bubble-clear {
+  font-weight: 400;
+}
+
+/* RESULTS (48px Roboto, uppercase) */
+.results-bubble-line2 {
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0f2848;
+  margin: 0px;
+}
+
 
