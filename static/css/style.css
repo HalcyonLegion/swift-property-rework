@@ -9180,7 +9180,7 @@ nav a#pull {
 
 /* === Section wrapper === */
 .auction-feature-section {
-  padding: 64px 36px;
+  padding: 128px 36px;
 }
 
 /* === Section wrapper === */
@@ -9191,7 +9191,6 @@ nav a#pull {
 /* === White card === */
 .auction-feature-card {
   box-sizing: border-box;
-  max-width: 1376px;
   margin: 0 auto;
   background: #FFFFFF;
   border: 1px solid #BDBDBD;
@@ -12003,7 +12002,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 635px; /* left text + 635px glass panel */
   column-gap: 40px;
-  padding: 32px;
+  padding-left: 64px;
   box-sizing: border-box;
   align-items: center;
 }
@@ -12045,7 +12044,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   background: rgba(104, 104, 104, 0.4);
   backdrop-filter: blur(15px);
   border-radius: 8px;
-  padding: 32px;
+  padding: 32px 16px 32px 32px;
+  margin-right: 16px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -12057,7 +12057,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .careers-panel-header {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 2px;
   max-width: 462px;
 }
 
@@ -12105,7 +12105,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   border-radius: 4px;
   background: #FFFFFF;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   flex-shrink: 0;
 }
@@ -12127,7 +12127,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .careers-panel-footer {
   margin-top: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 16px;
 }
 
@@ -12157,7 +12157,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   width: 145px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .careers-join-top {
