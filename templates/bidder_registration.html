@@ -398,68 +398,95 @@
 
 
 
-            <!-- NEWSLETTER + FOOTER CARD
-			============================================= -->
-			<section id="newsletter-2" class="newsletter-modern">
-			<!-- TOP GREY NEWSLETTER STRIP (NEWSLETTER-3) -->
-			<div class="newsletter-3-strip">
-  
-				<!-- Left copy -->
-				<div class="newsletter-3-left">
+            <section id="newsletter-2" class="newsletter-modern">
+				<!-- TOP GREY NEWSLETTER STRIP (NEWSLETTER-3) -->
+				<div class="newsletter-3-strip">
+					<!-- Left copy -->
+					<div class="newsletter-3-left">
 					<h2 class="newsletter-3-title">
-					Always Stay <span class="newsletter-3-accent">Connected.</span>
+						Always Stay <span class="newsletter-3-accent">Connected.</span>
 					</h2>
 					<p class="newsletter-3-subtitle">
-					Get timely notifications about fresh listings, updates and everything
-					happening in our upcoming auctions.
+						Get timely notifications about fresh listings, updates and everything
+						happening in our upcoming auctions.
 					</p>
-				</div>
+					</div>
 
-				<!-- Right: form -->
-				<form class="newsletter-3-form quick-form">
-
+					<!-- Right: form -->
+					<form class="newsletter-3-form quick-form">
 					<!-- Email pill + buttons row -->
 					<div class="newsletter-3-main-row">
-
-					<!-- Email input pill -->
-					<div class="newsletter-3-input-wrap">
+						<!-- Email input pill -->
+						<div class="newsletter-3-input-wrap">
 						<input
-						type="email"
-						id="s-email"
-						required
-						autocomplete="off"
-						class="newsletter-3-input"
-						placeholder="Stay Updated - Your Email"
+							type="email"
+							id="s-email"
+							required
+							autocomplete="off"
+							class="newsletter-3-input"
+							placeholder="Stay Updated - Your Email"
 						>
-					</div>
+						</div>
 
-					<!-- Subscribe + arrow pills -->
-					<!-- Subscribe button --> <div class="auction-feature-cta"> <button type="submit" class="news-feature-cta-main" aria-label="Subscribe" > <img src="{{ url_for('static', filename='images/subbtnnew.svg') }}" alt="Subscribe" class="newsletter-svg default" > <!-- Separate arrow icon --> <img src="{{ url_for('static', filename='images/superArrow.svg') }}" alt="" aria-hidden="true" class="svg-pill-arrow"> </button> </div>
-					</div>
+						<!-- Subscribe + arrow pills -->
+						<div class="auction-feature-cta">
+						<button
+							type="submit"
+							class="news-feature-cta-main newsletter-pill-btn"
+							aria-label="Subscribe"
+						>
+							<!-- Background pill SVG -->
+							<img
+							src="{{ url_for('static', filename='images/subbtnnew.svg') }}"
+							alt="Subscribe"
+							class="newsletter-pill-bg"
+							>
+
+							<!-- Arrow square with 2 stacked arrows -->
+							<span class="newsletter-arrow-wrap">
+							<!-- Default right arrow -->
+							<img
+								src="{{ url_for('static', filename='images/superArrow.svg') }}"
+								alt=""
+								aria-hidden="true"
+								class="svg-pill-arrow svg-arrow-default"
+							>
+							<!-- Hover upright arrow -->
+							<img
+								src="{{ url_for('static', filename='images/uprightArrow.svg') }}"
+								alt=""
+								aria-hidden="true"
+								class="svg-pill-arrow svg-arrow-hover"
+							>
+							</span>
+						</button>
+						</div>
+					</div> <!-- /.newsletter-3-main-row ✅ -->
 
 					<!-- T&Cs -->
 					<div class="newsletter-3-terms">
-					<input type="checkbox" id="terms" name="terms" required>
-					<label for="terms">
+						<input type="checkbox" id="terms" name="terms" required>
+						<label for="terms">
 						I accept the Company's
 						<strong>
-						<a href="/static/pdf/terms_conditions.pdf" target="_blank" class="tra-red-hover">
+							<a href="/static/pdf/terms_conditions.pdf" target="_blank" class="tra-red-hover">
 							Terms and Conditions of Service
-						</a>
+							</a>
 						</strong>
 						and
 						<strong>
-						<a href="{{ url_for('privacy') }}" target="_blank" class="tra-red-hover">
+							<a href="{{ url_for('privacy') }}" target="_blank" class="tra-red-hover">
 							Privacy Policy
-						</a>
+							</a>
 						</strong>
-					</label>
+						</label>
 					</div>
 
 					<!-- JS notification label (unchanged) -->
 					<label for="s-email" class="form-notification"></label>
-				</form>
-				</div>
+					</form>
+				</div> <!-- /.newsletter-3-strip -->
+
 
 				<!-- MAIN FOOTER AREA (inside same card) -->
 				<footer id="footer-4" class="footer division footer-card-body">
