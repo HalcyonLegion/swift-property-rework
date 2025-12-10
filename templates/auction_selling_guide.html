@@ -169,25 +169,35 @@
 				<div class="strategy-grid">
 
 					<!-- TOP-LEFT: SPEECH BUBBLE CARD -->
-					<div class="strategy-bubble">
-						<div class="strategy-bubble-card">
-							<div class="strategy-bubble-inner">
-								<div class="strategy-bubble-text">
-									<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
-										<div class="strategy-bubble-line1">
-										THE AUCTION <span class="strategy-bubble-clear">SELLING</span>
-										</div>
-									<div class="strategy-bubble-line2">GUIDE</div>
-								</div>
-							</div>
+				<div class="strategy-bubble">
+				<div class="strategy-bubble-card">
+					<div class="strategy-bubble-inner">
+					<div class="strategy-bubble-text">
+						<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
+						<div class="strategy-bubble-line7">
+						THE AUCTION <span class="strategy-bubble-clear">SELLING</span>
 						</div>
+						<div class="strategy-bubble-line9">GUIDE</div>
 					</div>
+					</div>
+				</div>
+
+				<!-- Connector pill -->
+				<img
+					src="{{ url_for('static', filename='images/rectangle.svg') }}"
+					alt=""
+					class="strategy-bubble-connector"
+				>
+				</div>
+
+
 
 					<!-- TOP-RIGHT: HEADING + RED LINE + SHORT BODY -->
 					<div class="strategy-heading">
 						<div class="strategy-heading-inner">
 							<h3 class="strategy-heading-title">
-							COMPETITIVE BIDDING. STRONGER RESULTS
+							COMPETITIVE BIDDING,<br>
+							STRONGER RESULTS.
 							</h3>
 
 							<hr class="strategy-heading-divider">
@@ -202,6 +212,8 @@
 					<div class="strategy-copy">
 						<p>
 							If you’re new to auction, we ensure the process is easy to follow from the outset. We’ll advise on an appropriate reserve price, discuss timing, outline the legal steps, and explain how bidding and completion work. 
+
+
 						</p>
 						<p>
 							With clear guidance at each stage, your property is presented in the strongest possible position for a successful sale.
@@ -230,189 +242,193 @@
 
 					<!-- BOTTOM-RIGHT: IMAGE + BADGE -->
 					<div class="strategy-image-wrapper">
-						<img
+						<div class="strategy-image-frame">
+							<img
 							src="{{ url_for('static', filename='images/auctionSelling.jpg') }}"
 							alt="Swift Property Auctions team meeting"
 							class="strategy-image"
-						>
-
-						<!-- Bottom-right frosted badge (reusing your badge pattern) -->
-						<div class="auction-feature-logo-badge">
-							<img
-							src="{{ url_for('static', filename='images/swift-intelligence-badge.svg') }}"
-							alt="Swift Intelligence – Industry Leading"
 							>
+
+							<!-- Bottom-right frosted badge -->
+							<div class="auction-feature-logo-badge">
+							<img
+								src="{{ url_for('static', filename='images/swift-intelligence-badge.svg') }}"
+								alt="Swift Intelligence – Industry Leading"
+							>
+							</div>
 						</div>
 					</div>
-
 				</div>
 			</section>
 
 
-				<section id="guide-reserve" class="guide-reserve-section">
-					<div class="guide-reserve-section-container">
-						<div class="row g-4">
+						<section id="guide-reserve" class="guide-reserve-section">
+							<div class="guide-reserve-section-container">
+								<div class="row g-4">
 
-						<!-- GUIDE PRICE CARD -->
-						<div class="col-12 col-lg-6">
-							<div class="gr-card">
-							<img
-								src="{{ url_for('static', filename='images/guide-price-bg.jpg') }}"
-								alt="Guide price backdrop"
-								class="gr-card-bg"
-							>
+								<!-- GUIDE PRICE CARD -->
+								<div class="col-12 col-lg-6">
+									<div class="gr-card">
+									<img
+										src="{{ url_for('static', filename='images/guide-price-bg.jpg') }}"
+										alt="Guide price backdrop"
+										class="gr-card-bg"
+									>
 
-							<!-- Swift badge -->
-							<div class="gr-badge">
-								<span class="gr-badge-top">THE SWIFT</span>
-								<span class="gr-badge-line"></span>
-								<span class="gr-badge-bottom">PROPERTY<br>AUCTIONS TEAM</span>
+									<!-- Swift badge -->
+									<div class="gr-badge">
+										<span class="gr-badge-top">THE SWIFT</span>
+										<span class="gr-badge-line"></span>
+										<span class="gr-badge-bottom">PROPERTY<br>AUCTIONS TEAM</span>
+									</div>
+
+									<!-- Dark gradient at bottom -->
+									<div class="gr-gradient"></div>
+
+									<!-- Content -->
+									<div class="gr-content">
+										<h3 class="gr-title">The Guide Price</h3>
+										<p class="gr-copy">
+										The guide price is the figure we advertise to buyers. It sets expectations
+										and helps generate interest. A guide price must sit within 10% of the
+										reserve price. Successful auction sales start with a guide low enough to
+										attract bidders, create momentum, and often achieve a stronger final figure.
+										</p>
+									</div>
+									</div>
+								</div>
+
+								<!-- RESERVE PRICE CARD -->
+								<div class="col-12 col-lg-6">
+									<div class="gr-card">
+									<img
+										src="{{ url_for('static', filename='images/reserve-price-bg.jpg') }}"
+										alt="Reserve price backdrop"
+										class="gr-card-bg"
+									>
+
+									<!-- Swift badge -->
+									<div class="gr-badge">
+										<span class="gr-badge-top">THE SWIFT</span>
+										<span class="gr-badge-line"></span>
+										<span class="gr-badge-bottom">PROPERTY<br>AUCTIONS TEAM</span>
+									</div>
+
+									<!-- Dark gradient at bottom -->
+									<div class="gr-gradient"></div>
+
+									<!-- Content -->
+									<div class="gr-content">
+										<h3 class="gr-title">The Reserve Price</h3>
+										<p class="gr-copy">
+										The reserve price is the minimum figure you are prepared to accept.
+										It protects you from selling below a level you’re comfortable with.
+										If bidding doesn’t reach the reserve, the property simply doesn’t sell –
+										and we’ll continue marketing it immediately after the auction.
+										</p>
+									</div>
+									</div>
+								</div>
+
+								</div>
 							</div>
+						</section>
 
-							<!-- Dark gradient at bottom -->
-							<div class="gr-gradient"></div>
+		<section id="auction-pricing-comparison" class="auction-pricing-section bg-snow">
+			<div class="auction-pricing-section-container">
 
-							<!-- Content -->
-							<div class="gr-content">
-								<h3 class="gr-title">The Guide Price</h3>
-								<p class="gr-copy">
-								The guide price is the figure we advertise to buyers. It sets expectations
-								and helps generate interest. A guide price must sit within 10% of the
-								reserve price. Successful auction sales start with a guide low enough to
-								attract bidders, create momentum, and often achieve a stronger final figure.
-								</p>
-							</div>
-							</div>
-						</div>
+				<!-- ROW 1: Text left, image right -->
+				<div class="row ap-row-top g-4 mb-5">
+				<!-- Text column -->
+				<div class="col-12 col-lg-6 ap-text-col">
+					<h3 class="ap-heading">
+					AUCTION VS <span class="ap-accent">ESTATE AGENCY</span> PRICING
+					</h3>
 
-						<!-- RESERVE PRICE CARD -->
-						<div class="col-12 col-lg-6">
-							<div class="gr-card">
-							<img
-								src="{{ url_for('static', filename='images/reserve-price-bg.jpg') }}"
-								alt="Reserve price backdrop"
-								class="gr-card-bg"
-							>
+					<p class="ap-copy">
+					Many sellers compare an auction valuation with figures given by estate agents
+					and notice a difference. This is normal — the two methods operate on completely
+					different pricing models.
+					</p>
 
-							<!-- Swift badge -->
-							<div class="gr-badge">
-								<span class="gr-badge-top">THE SWIFT</span>
-								<span class="gr-badge-line"></span>
-								<span class="gr-badge-bottom">PROPERTY<br>AUCTIONS TEAM</span>
-							</div>
+					<p class="ap-copy">
+					Estate agency pricing is designed for a private-treaty market. Agents often
+					start with an asking price that leaves room for negotiation. Buyers expect to
+					negotiate downward, and properties can sit on the market while offers come in
+					one by one. Price reductions are common, and the final agreed figure may be
+					below the original asking price.
+					</p>
+				</div>
 
-							<!-- Dark gradient at bottom -->
-							<div class="gr-gradient"></div>
-
-							<!-- Content -->
-							<div class="gr-content">
-								<h3 class="gr-title">The Reserve Price</h3>
-								<p class="gr-copy">
-								The reserve price is the minimum figure you are prepared to accept.
-								It protects you from selling below a level you’re comfortable with.
-								If bidding doesn’t reach the reserve, the property simply doesn’t sell –
-								and we’ll continue marketing it immediately after the auction.
-								</p>
-							</div>
-							</div>
-						</div>
-
-						</div>
+				<!-- Image column -->
+				<div class="col-12 col-lg-6 ap-image-col">
+					<div class="ap-image-card ap-image-card-wide">
+					<img
+						src="{{ url_for('static', filename='images/auction-vs-estate.jpg') }}"
+						alt="City architecture - auction vs estate agency">
 					</div>
-				</section>
+				</div>
+				</div>
 
-				<section id="auction-pricing-comparison" class="auction-pricing-section bg-snow">
-					<div class="auction-pricing-section-container">
+			</div>
+			</section>
 
-						<!-- ROW 1: Text left, image right -->
-						<div class="row align-items-center g-4 mb-5">
-						<!-- Text column -->
-						<div class="col-12 col-lg-6">
-							<h3 class="ap-heading">
-							AUCTION VS <span class="ap-accent">ESTATE AGENCY</span> PRICING
-							</h3>
+		<section id="auction-pricing-comparison" class="auction-pricing-section bg-snow">
+			<!-- ROW 2: Image left, text right -->
+			<div class="row ap-row-bottom g-4">
+			<!-- Image column -->
+			<div class="col-12 col-lg-6 ap-image-col order-1 order-lg-0">
+				<div class="ap-image-card2 ap-image-card-tall">
+				<img
+					src="{{ url_for('static', filename='images/auction-pricing-reverse.jpg') }}"
+					alt="City architecture - auction pricing works in reverse">
+				</div>
+			</div>
 
-							<p class="ap-copy">
-							Many sellers compare an auction valuation with figures given by estate agents
-							and notice a difference. This is normal — the two methods operate on completely
-							different pricing models.
-							</p>
+			<!-- Text column -->
+			<div class="col-12 col-lg-6 ap-text-col order-0 order-lg-1 ml-135">
+				<h3 class="ap-heading">
+				AUCTION PRICING WORKS IN <span class="ap-accent">REVERSE.</span>
+				</h3>
 
-							<p class="ap-copy">
-							Estate agency pricing is designed for a private-treaty market. Agents often
-							start with an asking price that leaves room for negotiation. Buyers expect to
-							negotiate downward, and properties can sit on the market while offers come in
-							one by one. Price reductions are common, and the final agreed figure may be
-							below the original asking price.
-							</p>
-						</div>
+				<p class="ap-copy">
+				We set a guide price that attracts the widest pool of buyers into the bidding
+				process. Instead of one buyer negotiating down, multiple buyers compete against
+				each other, pushing the price upward. The urgency of a fixed auction date,
+				transparent bidding, and competitive atmosphere encourage buyers to bid to
+				their maximum, not their minimum.
+				</p>
 
-						<!-- Image column -->
-						<div class="col-12 col-lg-6">
-							<div class="ap-image-card">
-							<img
-								src="{{ url_for('static', filename='images/auction-vs-estate.jpg') }}"
-								alt="City architecture - auction vs estate agency"
-							>
-							</div>
-						</div>
-						</div>
+				<p class="ap-copy">
+				A guide price set too high can suppress enquiries, reduce viewings, and limit
+				bidder registration. When interest is low, competition is low — and the final
+				result follows.
+				</p>
 
-						<!-- ROW 2: Image left, text right -->
-						<div class="row align-items-center g-4">
-						<!-- Image column -->
-						<div class="col-12 col-lg-6 order-1 order-lg-0">
-							<div class="ap-image-card">
-							<img
-								src="{{ url_for('static', filename='images/auction-pricing-reverse.jpg') }}"
-								alt="City architecture - auction pricing works in reverse"
-							>
-							</div>
-						</div>
+				<p class="ap-copy">
+				A well-pitched guide price, however, creates momentum. More viewings, more
+				legal pack downloads, more bidders on auction day. When the room (or
+				livestream) is competitive, the price typically moves quickly beyond the
+				guide and toward the property’s true market level — often surpassing what a
+				private-treaty sale would achieve.
+				</p>
 
-						<!-- Text column -->
-						<div class="col-12 col-lg-6 order-0 order-lg-1">
-							<h3 class="ap-heading">
-							AUCTION PRICING WORKS IN <span class="ap-accent">REVERSE.</span>
-							</h3>
+				<p class="ap-copy">
+				The strategy is simple: attract the maximum number of buyers, create
+				competitive tension, and let the market push the price to its strongest
+				level in a transparent environment.
+				</p>
+			</div>
+			</div>
 
-							<p class="ap-copy">
-							We set a guide price that attracts the widest pool of buyers into the bidding
-							process. Instead of one buyer negotiating down, multiple buyers compete against
-							each other, pushing the price upward. The urgency of a fixed auction date,
-							transparent bidding, and competitive atmosphere encourage buyers to bid to
-							their maximum, not their minimum.
-							</p>
+		</div>
+		</section>
 
-							<p class="ap-copy">
-							A guide price set too high can suppress enquiries, reduce viewings, and limit
-							bidder registration. When interest is low, competition is low — and the final
-							result follows.
-							</p>
-
-							<p class="ap-copy">
-							A well-pitched guide price, however, creates momentum. More viewings, more
-							legal pack downloads, more bidders on auction day. When the room (or
-							livestream) is competitive, the price typically moves quickly beyond the
-							guide and toward the property’s true market level — often surpassing what a
-							private-treaty sale would achieve.
-							</p>
-
-							<p class="ap-copy">
-							The strategy is simple: attract the maximum number of buyers, create
-							competitive tension, and let the market push the price to its strongest
-							level in a transparent environment.
-							</p>
-						</div>
-						</div>
-
-					</div>
-					</section>
 
 					<!-- CONTACTS-2
 			============================================= -->
 			<section id="contacts-2"
-					class="valuation-enquiry-section bg-snow wide-50 contacts-section division">
+					class="valuation-enquiry-section wide-50 contacts-section division">
 			<div class="speak-to-our-auction-team">
 
 				<div class="valuation-enquiry-card">
@@ -535,95 +551,71 @@
 			</div>
 			</section>
 
-            <!-- NEWSLETTER + FOOTER CARD
+           <!-- NEWSLETTER + FOOTER CARD
 			============================================= -->
 			<section id="newsletter-2" class="newsletter-modern">
-			<div class="newsletter-footer-card">
-
-				<!-- TOP GREY NEWSLETTER STRIP -->
-				<div class="newsletter-strip">
-
+			<!-- TOP GREY NEWSLETTER STRIP (NEWSLETTER-3) -->
+			<div class="newsletter-3-strip">
+  
 				<!-- Left copy -->
-				<div class="newsletter-strip-copy">
-					<h2 class="newsletter-title">
-					Always Stay <span class="newsletter-accent">Connected.</span>
+				<div class="newsletter-3-left">
+					<h2 class="newsletter-3-title">
+					Always Stay <span class="newsletter-3-accent">Connected.</span>
 					</h2>
-					<p class="newsletter-subtitle">
-					Get timely notifications about fresh listings, updates and everything happening in our upcoming auctions.
+					<p class="newsletter-3-subtitle">
+					Get timely notifications about fresh listings, updates and everything
+					happening in our upcoming auctions.
 					</p>
 				</div>
 
-				<form class="newsletter-form quick-form">
+				<!-- Right: form -->
+				<form class="newsletter-3-form quick-form">
 
-					<!-- MAIN HORIZONTAL ROW -->
-					<div class="newsletter-main-row">
+					<!-- Email pill + buttons row -->
+					<div class="newsletter-3-main-row">
 
-						<!-- Left: email input box -->
-						<div class="newsletter-input-wrap">
-						<input 
-							type="email" 
-							autocomplete="off" 
-							class="newsletter-input" 
-							placeholder="Stay Updated - Enter Your Email Here" 
-							required 
-							id="s-email"
+					<!-- Email input pill -->
+					<div class="newsletter-3-input-wrap">
+						<input
+						type="email"
+						id="s-email"
+						required
+						autocomplete="off"
+						class="newsletter-3-input"
+						placeholder="Stay Updated - Your Email"
 						>
-						</div>
+					</div>
 
-						<!-- Right: button + T&Cs stacked -->
-						<div class="newsletter-side-column">
+					<!-- Subscribe + arrow pills -->
+					<!-- Subscribe button --> <div class="auction-feature-cta"> <button type="submit" class="news-feature-cta-main" aria-label="Subscribe" > <img src="{{ url_for('static', filename='images/subbtnnew.svg') }}" alt="Subscribe" class="newsletter-svg default" > <!-- Separate arrow icon --> <img src="{{ url_for('static', filename='images/superArrow.svg') }}" alt="" aria-hidden="true" class="svg-pill-arrow"> </button> </div>
+					</div>
 
-						<!-- Subscribe button -->
-						<div class="auction-feature-cta">
-							<button
-							type="submit"
-							class="news-feature-cta-main"
-							aria-label="Subscribe"
-							>
-							<img
-								src="{{ url_for('static', filename='images/subbtnnew.svg') }}"
-								alt="Subscribe"
-								class="newsletter-svg default"
-							>
-							<!-- Separate arrow icon -->
-											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
-												alt=""
-												aria-hidden="true"
-												class="svg-pill-arrow">
-							</button>
-						</div>
-
-						<!-- T&Cs (unchanged semantics) -->
-						<div class="terms-and-conditions-checkbox">
-							<input type="checkbox" id="terms" name="terms" required>
-							<label for="terms">
-							I accept the Company's
-							<strong>
-								<a href="/static/pdf/terms_conditions.pdf" target="_blank" class="tra-red-hover">
-								Terms and Conditions of Service
-								</a>
-							</strong>
-							and
-							<strong>
-								<a href="{{ url_for('privacy') }}" target="_blank" class="tra-red-hover">
-								Privacy Policy
-								</a>
-							</strong>
-							</label>
-						</div>
-
-						</div><!-- /.newsletter-side-column -->
-
-					</div><!-- /.newsletter-main-row -->
+					<!-- T&Cs -->
+					<div class="newsletter-3-terms">
+					<input type="checkbox" id="terms" name="terms" required>
+					<label for="terms">
+						I accept the Company's
+						<strong>
+						<a href="/static/pdf/terms_conditions.pdf" target="_blank" class="tra-red-hover">
+							Terms and Conditions of Service
+						</a>
+						</strong>
+						and
+						<strong>
+						<a href="{{ url_for('privacy') }}" target="_blank" class="tra-red-hover">
+							Privacy Policy
+						</a>
+						</strong>
+					</label>
+					</div>
 
 					<!-- JS notification label (unchanged) -->
 					<label for="s-email" class="form-notification"></label>
 				</form>
 				</div>
 
-
 				<!-- MAIN FOOTER AREA (inside same card) -->
-				<footer id="footer-4" class="footer division bg-blue footer-card-body">
+				<footer id="footer-4" class="footer division footer-card-body">
 				<div class="footer-card-container">
 
 					<!-- TOP FOOTER GRID -->
@@ -691,7 +683,7 @@
 
 					<!-- Follow us column -->
 					<div class="footer-col footer-col-follow">
-						<h6 class="footer-heading text-end">Follow us</h6>
+						<h6 class="footer-heading">Follow us</h6>
 						<div class="footer-social-row">
 						<!-- <a href="https://www.facebook.com/profile.php?id=61554772972429" -->
 						 <a href="#"
@@ -710,7 +702,7 @@
 						</a>
 						<!-- <a href="https://www.youtube.com" target="_blank" class="footer-social-circle"> -->
 							<a href="#"
-							class="footer-social-circle">
+								class="footer-social-circle">
 							<span class="flaticon-youtube"></span>
 						</a>
 						</div>

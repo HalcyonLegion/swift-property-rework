@@ -148,6 +148,7 @@ body {
 /*  Margin Left
 /*------------------------------------------*/
 
+.ml-135 {margin-left: 135px;}
 .ml-100 { margin-left: 100px; }
 .ml-95 { margin-left: 95px; }
 .ml-90 { margin-left: 90px; }
@@ -13368,6 +13369,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* Section spacing */
 .guide-reserve-section {
   padding: 40px 0 60px;
+  background: #F4F4F4;
 }
 
 /* Base card */
@@ -13406,8 +13408,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* Swift badge top-right */
 .gr-badge {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 0px;
+  right: 0px;
   width: 157px;
   height: 96px;
   padding: 10px 12px;
@@ -13484,14 +13486,15 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .auction-pricing-section {
   padding: 60px 0 80px;
+  background: #F4F4F4;
 }
 
 /* Headings */
 .ap-heading {
   font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 28px;
+  font-size: 32px;
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #0F2848;
@@ -13505,7 +13508,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* Body copy */
 .ap-copy {
   font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 600;
   line-height: 1.5;
   color: #0F2848;
   margin-bottom: 12px;
@@ -13514,7 +13518,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* Image cards */
 .ap-image-card {
   position: relative;
-  width: 100%;
+  width: 680px;
+  height: 311px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow:
@@ -13533,6 +13538,37 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 }
 
 .ap-image-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ap-image-card2 {
+  position: relative;
+  width: 680px;
+  height: 587px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    17px 14px 9px rgba(0, 0, 0, 0.01),
+    10px 8px 7px rgba(0, 0, 0, 0.05),
+    4px 3px 6px rgba(0, 0, 0, 0.09),
+    1px 1px 3px rgba(0, 0, 0, 0.10);
+  background: #ffffff;
+  margin-left: 36px;
+}
+
+/* Maintain a nice aspect ratio similar to the Figma */
+.ap-image-card2::before {
+  content: "";
+  display: block;
+  padding-top: 60%; /* ~16:10 ratio */
+}
+
+.ap-image-card2 img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -16064,4 +16100,141 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   text-transform: uppercase;
   color: #0F2848;
   white-space: nowrap;   /* keep SELL WITH CLEAR on one line on desktop */
+}
+
+.strategy-bubble-line7 {
+    margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;           /* tiny space between WITH and CLEAR */
+  width: 317px;
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 0.6;
+  text-transform: uppercase;
+  color: #0F2848;
+  white-space: nowrap;   /* keep SELL WITH CLEAR on one line on desktop */
+}
+
+.strategy-bubble-line9{
+  margin: 4px 0 0 0;     /* 4px gap under SELL WITH CLEAR */
+  width: 317px;
+  text-align: center;
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #0F2848;
+}
+
+/* ===== TOP BAND: AUCTION VS ESTATE AGENCY PRICING ===== */
+
+#auction-pricing-comparison.auction-pricing-section {
+  padding: 50px 0;
+  background: #f5f5f5;
+}
+
+#auction-pricing-comparison .auction-pricing-section-container {
+  margin: 0 auto;
+  padding: 0 32px;            /* left/right 32px */
+}
+
+/* Treat the row as a custom flex row so we can match 580 / 680 widths */
+#auction-pricing-comparison .ap-row-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;                  /* space between text + image */
+  margin-bottom: 0;           /* kill bootstrap mb-5 if it's too big */
+}
+
+/* Left text block – 580 x ~311 from Figma */
+#auction-pricing-comparison .ap-text-col {
+  flex: 0 0 622px;
+  width: 610px;
+  height: 311px;          /* helps line up with the 311px image */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Heading */
+#auction-pricing-comparison .ap-heading {
+  margin: 0;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.1;           /* 110% */
+  text-transform: uppercase;
+  color: #0f2848;
+}
+
+/* Copy text (20 / 130%) */
+#auction-pricing-comparison .ap-copy {
+  margin: 0;
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #0f2848;
+}
+
+#auction-pricing-comparison .ap-copy + .ap-copy {
+  margin-top: 8px;
+}
+
+/* Right image block – 680 x 311 from Figma */
+#auction-pricing-comparison .ap-image-col {
+  flex: 0 0 680px;
+  max-width: 680px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#auction-pricing-comparison .ap-image-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  box-shadow:
+    66px 45px 32px rgba(0, 0, 0, 0.01),
+    37px 25px 27px rgba(0, 0, 0, 0.05),
+    16px 11px 20px rgba(0, 0, 0, 0.09),
+    4px 3px 11px rgba(0, 0, 0, 0.1);
+}
+
+/* Lock aspect to 680 × 311 */
+#auction-pricing-comparison .ap-image-card-wide {
+  aspect-ratio: 680 / 311;
+}
+
+#auction-pricing-comparison .ap-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Responsive stacking ---------- */
+@media (max-width: 1200px) {
+  #auction-pricing-comparison .ap-row-top {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  #auction-pricing-comparison .ap-text-col,
+  #auction-pricing-comparison .ap-image-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  #auction-pricing-comparison .ap-image-card-wide {
+    aspect-ratio: 16 / 9;
+  }
 }
