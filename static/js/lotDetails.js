@@ -13,16 +13,16 @@ function formatRichTextFromApi(value) {
   return value.replace(/\r\n|\r|\n/g, '<br>');
 }
 
-// Go back to the current lots page
+// Go back to the available lots page
 function navigateToAllLots() {
-  window.location.href = '/current_lots';
+  window.location.href = '/available_lots';
 }
 
 
 function navigateToCurrent() {
     // Logic to navigate to the lot's details page.
     // For example, you might change the window location:
-    window.location.href = `/current_lots`;
+    window.location.href = `/available_lots`;
     // Please adjust the above URL to match your application's routing structure.
 }
 
