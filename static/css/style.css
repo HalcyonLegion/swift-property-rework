@@ -16615,3 +16615,65 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .lot-info-body strong:first-child {
   margin-top: 0;
 }
+
+/* ========== CONTACT CARD SUBMIT PILL ========== */
+
+.newsletter-modern-contact .contact-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Background SVG */
+.newsletter-modern-contact .contact-pill-bg {
+  display: block;
+  height: 52px;           /* tweak if submitNew.svg is taller/shorter */
+  border-radius: 8px;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+/* Arrow container – lines up with the little grey square on the SVG */
+.newsletter-modern-contact .contact-arrow-wrap {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  margin-left: 8px;       /* nudge until it sits perfectly over the square */
+}
+
+/* Stacked arrows */
+.newsletter-modern-contact .contact-arrow-wrap .svg-pill-arrow {
+  position: absolute;
+  top: 50%;
+  left: 34%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.05s ease;   /* extra snappy for the swap */
+}
+
+/* Default vs hover visibility */
+.newsletter-modern-contact .contact-pill-btn .svg-arrow-default { opacity: 1; }
+.newsletter-modern-contact .contact-pill-btn .svg-arrow-hover  { opacity: 0; }
+
+.newsletter-modern-contact .contact-pill-btn:hover .svg-arrow-default,
+.newsletter-modern-contact .contact-pill-btn:focus-visible .svg-arrow-default {
+  opacity: 0;
+}
+
+.newsletter-modern-contact .contact-pill-btn:hover .svg-arrow-hover,
+.newsletter-modern-contact .contact-pill-btn:focus-visible .svg-arrow-hover {
+  opacity: 1;
+  filter: brightness(0.8);   /* darker upright arrow on hover, like the others */
+}
+
+/* Subtle lift / pop on hover */
+.newsletter-modern-contact .contact-pill-btn:hover .contact-pill-bg,
+.newsletter-modern-contact .contact-pill-btn:focus-visible .contact-pill-bg {
+  filter: brightness(1.05);
+}
+

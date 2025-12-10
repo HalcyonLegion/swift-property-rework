@@ -273,12 +273,35 @@
 
 						<!-- Submit (SVG button) -->
 						<div class="auction-contact-field submit-field">
-						<button type="submit"
-								class="auction-contact-submit submit"
-								aria-label="Submit enquiry">
-							<img src="{{ url_for('static', filename='images/submitNew.svg') }}"
-								alt="Submit enquiry"
-								class="auction-contact-submit-svg">
+						<button
+							type="submit"
+							class="auction-contact-submit submit contact-pill-btn"
+							aria-label="Submit enquiry"
+						>
+							<!-- Background SVG pill -->
+							<img
+							src="{{ url_for('static', filename='images/submitted.svg') }}"
+							alt="Submit enquiry"
+							class="auction-contact-submit-svg contact-pill-bg"
+							>
+
+							<!-- Arrow square with stacked arrows -->
+							<span class="contact-arrow-wrap">
+							<!-- Default right arrow -->
+							<img
+								src="{{ url_for('static', filename='images/superArrow.svg') }}"
+								alt=""
+								aria-hidden="true"
+								class="svg-pill-arrow svg-arrow-default"
+							>
+							<!-- Hover upright arrow -->
+							<img
+								src="{{ url_for('static', filename='images/uprightArrow.svg') }}"
+								alt=""
+								aria-hidden="true"
+								class="svg-pill-arrow svg-arrow-hover"
+							>
+							</span>
 						</button>
 						</div>
 					</div>
