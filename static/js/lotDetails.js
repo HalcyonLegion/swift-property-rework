@@ -569,7 +569,7 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
                     <span>Call Swift</span>
                   </a>
 
-                  <a href="#contacts-2" class="lot-help-btn">
+                  <a href="#newsletter-2" class="lot-help-btn">
                     <img src="/static/images/proQuestion.svg" alt="" class="lot-help-icon">
                     <span>Ask a Question</span>
                   </a>
