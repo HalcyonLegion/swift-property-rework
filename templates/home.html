@@ -348,41 +348,52 @@
 										<hr class="auction-feature-divider">
 									</div>
 
-									<div class="auction-feature-cta">
-										<a
-											href="{{ url_for('valuation') }}"
-											class="auction-feature-cta-main auction-pill-btn"
-											aria-label="Valuation"
-										>
-											<!-- Background pill SVG -->
-											<img
-											src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
-											alt=""
-											class="svg-pill-bg auction-feature-pill-bg"
-											>
+									<!-- Bottom block: subheading, body, CTA -->
+									<div class="auction-feature-sell">
+										<h4 class="auction-feature-subtitle">
+											WANT TO SELL AT AUCTION?
+										</h4>
 
-											<!-- Arrow square with 2 stacked arrows -->
-											<span class="auction-arrow-wrap">
-											<!-- Default right arrow -->
-											<img
-												src="{{ url_for('static', filename='images/superArrow.svg') }}"
-												alt=""
-												aria-hidden="true"
-												class="svg-pill-arrow svg-arrow-default"
+										<p class="auction-feature-body">
+											Speak with our valuation team – we’ll guide you on price, demand, and the best strategy
+											for a successful sale.
+										</p>
+
+										<div class="auction-feature-cta">
+											<a
+												href="{{ url_for('valuation') }}"
+												class="auction-feature-cta-main auction-pill-btn"
+												aria-label="Valuation"
 											>
-											<!-- Hover upright arrow -->
-											<img
-												src="{{ url_for('static', filename='images/uprightArrow.svg') }}"
+												<!-- Background pill SVG -->
+												<img
+												src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
 												alt=""
-												aria-hidden="true"
-												class="svg-pill-arrow svg-arrow-hover"
-											>
-											</span>
-										</a>
+												class="svg-pill-bg auction-feature-pill-bg"
+												>
+
+												<!-- Arrow square with 2 stacked arrows -->
+												<span class="auction-arrow-wrap">
+												<!-- Default right arrow -->
+												<img
+													src="{{ url_for('static', filename='images/superArrow.svg') }}"
+													alt=""
+													aria-hidden="true"
+													class="svg-pill-arrow svg-arrow-default"
+												>
+												<!-- Hover upright arrow -->
+												<img
+													src="{{ url_for('static', filename='images/uprightArrow.svg') }}"
+													alt=""
+													aria-hidden="true"
+													class="svg-pill-arrow svg-arrow-hover"
+												>
+												</span>
+											</a>
+										</div>
+
+
 									</div>
-
-
-								</div>
 
 
 							</div>
