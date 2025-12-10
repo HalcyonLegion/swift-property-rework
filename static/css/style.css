@@ -1089,6 +1089,7 @@ ol.digit-list p {
   color: #fff!important;
   background-color: #AD1D18!important;
   border-color: #AD1D18!important;
+  border-radius: 8px;
 }
 
 .btn-tra-red, 
@@ -13940,7 +13941,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   max-width: 100%;
   height: auto;
   pointer-events: none;    /* clicks go to the <a>, not the image */
-  margin-right: 2px;
+  margin-right: 3px;
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -16074,8 +16075,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   align-items: center;
   min-width: 169px;
   height: 54px;
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  /* backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px); */
   border-radius: 8px;
   border: none;
   font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -16429,3 +16430,151 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   display: flex;
   justify-content: space-evenly;
 }
+
+/* ========= CAREERS CTA PILL (CONTACT PAGE) ========= */
+
+.careers-panel-footer .careers-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Background SVG – reuse shared svg-pill-bg */
+.careers-panel-footer .svg-pill-bg {
+  display: block;
+  height: 52px; /* tweak if your careers SVG is taller/shorter */
+  transition: transform 0.25s ease, filter 0.25s ease;
+  border-radius: 8px;
+}
+
+/* Arrow container – sits over the printed square on the SVG */
+.careers-panel-footer .careers-arrow-wrap {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  margin-left: 8px; /* nudge left/right to line up with the square */
+}
+
+/* Stacked arrows */
+.careers-panel-footer .careers-arrow-wrap .svg-pill-arrow {
+  position: absolute;
+  top: 50%;
+  left: 34%;             /* tweak if the arrow is slightly off-centre */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.05s ease;
+}
+
+/* Default vs hover arrow visibility */
+.careers-panel-footer .svg-arrow-default { opacity: 1;  }
+.careers-panel-footer .svg-arrow-hover  { opacity: 0; }
+
+.careers-panel-footer .careers-pill-btn:hover .svg-arrow-default,
+.careers-panel-footer .careers-pill-btn:focus-visible .svg-arrow-default {
+  opacity: 0;
+}
+
+.careers-panel-footer .careers-pill-btn:hover .svg-arrow-hover,
+.careers-panel-footer .careers-pill-btn:focus-visible .svg-arrow-hover {
+  opacity: 1;
+}
+
+/* Brighten pill on hover */
+.careers-panel-footer .careers-pill-btn:hover .svg-pill-bg,
+.careers-panel-footer .careers-pill-btn:focus-visible .svg-pill-bg {
+  filter: brightness(1.2);
+}
+
+/* ========== REGISTER TO BID CTA PILL ========== */
+
+.auction-feature-cta2 .register-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* Background SVG */
+.auction-feature-cta2 .register-pill-bg,
+.auction-feature-cta2 .svg-pill-bg {
+  display: block;
+  height: 52px; /* tweak if regtobidnew.svg is a different height */
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Arrow container – aligned with the little grey square on the SVG */
+.auction-feature-cta2 .register-arrow-wrap {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  margin-left: 8px; /* adjust to sit perfectly over the printed square */
+}
+
+/* Stacked arrows */
+.auction-feature-cta2 .register-arrow-wrap .svg-pill-arrow {
+  position: absolute;
+  top: 50%;
+  left: 34%;              /* adjust if it’s a touch off-centre */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.05s ease;
+}
+
+/* Default vs hover visibility */
+.auction-feature-cta2 .svg-arrow-default { opacity: 1; }
+.auction-feature-cta2 .svg-arrow-hover  { opacity: 0; }
+
+.auction-feature-cta2 .register-pill-btn:hover .svg-arrow-default,
+.auction-feature-cta2 .register-pill-btn:focus-visible .svg-arrow-default {
+  opacity: 0;
+}
+
+.auction-feature-cta2 .register-pill-btn:hover .svg-arrow-hover,
+.auction-feature-cta2 .register-pill-btn:focus-visible .svg-arrow-hover {
+  opacity: 1;
+}
+
+/* Brighten pill on hover */
+.auction-feature-cta2 .register-pill-btn:hover .svg-pill-bg,
+.auction-feature-cta2 .register-pill-btn:focus-visible .svg-pill-bg {
+  filter: brightness(1);
+}
+
+/* Outer wrapper around the SVG button */
+.auction-feature-cta2 {
+  display: inline-flex;        /* or inline-block */
+  border-radius: 8px;
+  overflow: hidden;            /* <- this is the important bit */
+}
+
+/* The <a> itself */
+.auction-feature-cta2-main {
+  display: inline-flex;
+  border-radius: 8px;          /* match the parent */
+}
+
+/* Background SVG inside */
+.auction-feature-cta2 .svg-pill-bg {
+  display: block;
+  border-radius: 8px;          /* extra insurance */
+}
+
+/* Make the visible arrow darker on hover */
+
+/* Give both arrow layers a filter transition */
+.svg-pill-arrow {
+  transition: opacity 0.05s ease, filter 0.2s ease;
+}
+
+/* When any pill is hovered, darken the hover arrow */
+.auction-feature-cta2-main:hover .svg-arrow-hover,
+.auction-feature-cta2-main:focus-visible .svg-arrow-hover {
+  /* brightness < 1 = darker; tweak to taste */
+  filter: brightness(0.8);
+}
+
+

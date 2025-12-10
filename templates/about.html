@@ -558,28 +558,47 @@
 							<!-- CTA row -->
 							<div class="careers-panel-footer">
 							<!-- SVG button for Careers & Opportunities -->
-								<a
+							<a
 								href="{{ url_for('contact') }}"
-								class="careers-cta"
+								class="careers-cta careers-pill-btn"
 								aria-label="Careers and Opportunities"
-								>
+							>
+								<!-- Background pill SVG -->
 								<img
-									src="{{ url_for('static', filename='images/careers-default.svg') }}"
-									alt="Careers and Opportunities"
-									class="contact-img default"
+								src="{{ url_for('static', filename='images/careers-default.svg') }}"
+								alt="Careers and Opportunities"
+								class="contact-img default svg-pill-bg careers-pill-bg"
 								>
-								</a>
 
-								<!-- JOIN THE SWIFT badge -->
-								<div class="careers-join-badge">
-									<div class="careers-join-badge-inner">
-										<span class="careers-join-top">JOIN THE SWIFT</span>
-										<span class="careers-join-line"></span>
-										<span class="careers-join-bottom">
-										PROPERTY<br><b>AUCTIONS TEAM</b>
-										</span>
-									</div>
+								<!-- Arrow square with stacked arrows -->
+								<span class="careers-arrow-wrap">
+								<!-- Default right arrow -->
+								<img
+									src="{{ url_for('static', filename='images/superArrow.svg') }}"
+									alt=""
+									aria-hidden="true"
+									class="svg-pill-arrow svg-arrow-default"
+								>
+								<!-- Hover upright arrow -->
+								<img
+									src="{{ url_for('static', filename='images/uprightArrow.svg') }}"
+									alt=""
+									aria-hidden="true"
+									class="svg-pill-arrow svg-arrow-hover"
+								>
+								</span>
+							</a>
+
+							<!-- JOIN THE SWIFT badge -->
+							<div class="careers-join-badge">
+								<div class="careers-join-badge-inner">
+								<span class="careers-join-top">JOIN THE SWIFT</span>
+								<span class="careers-join-line"></span>
+								<span class="careers-join-bottom">
+									PROPERTY<br><b>AUCTIONS TEAM</b>
+								</span>
 								</div>
+							</div>
 							</div>
 						</aside>
 					</div><!-- /.careers-banner-inner -->
