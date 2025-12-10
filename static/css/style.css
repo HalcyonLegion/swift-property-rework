@@ -16148,7 +16148,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 #auction-pricing-comparison .ap-row-top {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 32px;                  /* space between text + image */
   margin-bottom: 0;           /* kill bootstrap mb-5 if it's too big */
 }
@@ -16423,4 +16423,9 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .auction-feature-cta .auction-pill-btn:hover .svg-pill-bg,
 .auction-feature-cta .auction-pill-btn:focus-visible .svg-pill-bg {
   filter: brightness(1.1);
+}
+
+.ap-row-bottom{
+  display: flex;
+  justify-content: space-evenly;
 }

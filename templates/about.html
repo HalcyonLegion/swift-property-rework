@@ -204,24 +204,38 @@
 						cares about achieving the best result for you.
 						</p>
 
-						<div class="auction-feature-cta">
-											<a
+									<div class="auction-feature-cta">
+										<a
 											href="{{ url_for('valuation') }}"
-											class="auction-feature-cta-main"
+											class="auction-feature-cta-main auction-pill-btn"
 											aria-label="Valuation"
+										>
+											<!-- Background pill SVG -->
+											<img
+											src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
+											alt=""
+											class="svg-pill-bg auction-feature-pill-bg"
 											>
-											<!-- Background SVG with text -->
-											<img src="{{ url_for('static', filename='images/freevaldnew.svg') }}"
-												alt=""
-												class="svg-pill-bg">
 
-											<!-- Separate arrow icon -->
-											<img src="{{ url_for('static', filename='images/superArrow.svg') }}"
+											<!-- Arrow square with 2 stacked arrows -->
+											<span class="auction-arrow-wrap">
+											<!-- Default right arrow -->
+											<img
+												src="{{ url_for('static', filename='images/superArrow.svg') }}"
 												alt=""
 												aria-hidden="true"
-												class="svg-pill-arrow">
-											</a>
-										</div>
+												class="svg-pill-arrow svg-arrow-default"
+											>
+											<!-- Hover upright arrow -->
+											<img
+												src="{{ url_for('static', filename='images/uprightArrow.svg') }}"
+												alt=""
+												aria-hidden="true"
+												class="svg-pill-arrow svg-arrow-hover"
+											>
+											</span>
+										</a>
+									</div>
 					</div>
 					</article>
 
@@ -541,32 +555,32 @@
 							</li>
 						</ul>
 
-						<!-- CTA row -->
-						<div class="careers-panel-footer">
+							<!-- CTA row -->
+							<div class="careers-panel-footer">
 							<!-- SVG button for Careers & Opportunities -->
-							<a
-							href="{{ url_for('contact') }}"
-							class="careers-cta"
-							aria-label="Careers and Opportunities"
-							>
-							<img
-								src="{{ url_for('static', filename='images/careers-default.svg') }}"
-								alt="Careers and Opportunities"
-								class="contact-img default"
-							>
-							</a>
+								<a
+								href="{{ url_for('contact') }}"
+								class="careers-cta"
+								aria-label="Careers and Opportunities"
+								>
+								<img
+									src="{{ url_for('static', filename='images/careers-default.svg') }}"
+									alt="Careers and Opportunities"
+									class="contact-img default"
+								>
+								</a>
 
-							<!-- JOIN THE SWIFT badge -->
-							<div class="careers-join-badge">
-							<div class="careers-join-badge-inner">
-								<span class="careers-join-top">JOIN THE SWIFT</span>
-								<span class="careers-join-line"></span>
-								<span class="careers-join-bottom">
-								PROPERTY<br><b>AUCTIONS TEAM</b>
-								</span>
+								<!-- JOIN THE SWIFT badge -->
+								<div class="careers-join-badge">
+									<div class="careers-join-badge-inner">
+										<span class="careers-join-top">JOIN THE SWIFT</span>
+										<span class="careers-join-line"></span>
+										<span class="careers-join-bottom">
+										PROPERTY<br><b>AUCTIONS TEAM</b>
+										</span>
+									</div>
+								</div>
 							</div>
-							</div>
-						</div>
 						</aside>
 					</div><!-- /.careers-banner-inner -->
 					</div><!-- /.careers-banner-card -->
