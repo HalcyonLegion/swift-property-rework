@@ -137,6 +137,7 @@ body {
 .mb-35 { margin-bottom: 35px; }
 .mb-30 { margin-bottom: 30px; }
 .mb-25 { margin-bottom: 25px; }
+.mb-24 { margin-bottom: 24px; }
 .mb-20 { margin-bottom: 20px; }
 .mb-15 { margin-bottom: 15px; }
 .mb-10 { margin-bottom: 10px; }
@@ -9324,8 +9325,6 @@ nav a#pull {
   padding: 16px 32px;
   min-width: 169px;
   height: 54px;
-
-  /* background: rgba(0, 0, 0, 0.3); */
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border-radius: 8px;
@@ -9606,7 +9605,6 @@ nav a#pull {
   font-weight: 500;
   font-size: 32px;
   line-height: 1.1;
-  text-transform: uppercase;
   color: #0F2848;
   margin: 0;
 }
@@ -12748,8 +12746,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .auction-next-compact {
   position: absolute;
-  right: 32px;
-  bottom: 32px;
+  right: 16px;
+  bottom: 16px;
   z-index: 3;
   max-width: 100%;
 }
@@ -12913,10 +12911,10 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 /* Season pill top-left */
 .auction-card-season-pill {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 0px;
+  left: 0px;
   padding: 6px 18px;
-  border-radius: 999px;
+  border-radius: 16px 8px 8px 0px;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -12934,22 +12932,22 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .auction-card-badge img {
   display: block;
-  height: 90px; /* tweak to match your SVG */
+  height: 69px; /* tweak to match your SVG */
 }
 
 /* Sections (Date / Time) */
 .auction-card-section {
-  margin-top: 56px; /* first one gets pushed down under header */
+  margin-top: 36px; /* first one gets pushed down under header */
 }
 
 .auction-card-section + .auction-card-section {
-  margin-top: 24px;
+  margin-top: 8px;
 }
 
 .auction-card-label {
-  margin: 0 0 4px;
-  font-size: 14px;
-  font-weight: 500;
+  margin: 0px;
+  font-size: 12px;
+  font-weight: 300;
   color: #828282;
   text-align: left;
 }
@@ -12968,7 +12966,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .auction-card-date {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   color: #ad1d18; /* red date */
 }
 
@@ -12979,7 +12977,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 .auction-card-time {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   color: #0f2848;
 }
 
@@ -12987,6 +12985,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   font-size: 14px;
   font-weight: 500;
   color: #0f2848;
+  margin-left: -16px;
 }
 
 /* Buttons */
@@ -13847,7 +13846,6 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 #upcoming-auctions #lots-container {
   display: grid;
-  gap: 24px;              /* similar to g-4 spacing */
 }
 
 /* 1 column on mobile */
@@ -13905,6 +13903,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   height: auto;
   pointer-events: none;    /* clicks go to the <a>, not the image */
   margin-right: 2px;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Arrow icon overlay */
@@ -14931,7 +14930,6 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   font-weight: 500;
   font-size: 32px;
   line-height: 1.1;              /* 110% */
-  text-transform: uppercase;
   color: #0F2848;
   margin: 0;                     /* Figma has gap handled outside */
 }
@@ -16029,4 +16027,41 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
     13px 10px 10px rgba(0, 0, 0, 0.05),
     6px 5px 8px rgba(0, 0, 0, 0.09),
     1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main CTA button (glass dark) */
+.auction-feature-cta2-main {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 169px;
+  height: 54px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 8px;
+  border: none;
+  font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  color: #FFFFFF;
+  text-decoration: none;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.strategy-bubble-line5 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;           /* tiny space between WITH and CLEAR */
+  width: 317px;
+  font-family: "Stack Sans Headline", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 0.6;
+  text-transform: uppercase;
+  color: #0F2848;
+  white-space: nowrap;   /* keep SELL WITH CLEAR on one line on desktop */
 }

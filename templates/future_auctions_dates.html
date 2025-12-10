@@ -169,26 +169,37 @@
 				<div class="strategy-grid">
 
 					<!-- TOP-LEFT: SPEECH BUBBLE CARD -->
-					<div class="strategy-bubble">
-						<div class="strategy-bubble-card">
-							<div class="strategy-bubble-inner">
-								<div class="strategy-bubble-text">
-									<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
-										<div class="strategy-bubble-line1">
-										UPCOMING <span class="strategy-bubble-clear">AUCTION</span>
-										</div>
-									<div class="strategy-bubble-line2 ">DATES</div>
-								</div>
-							</div>
+				<div class="strategy-bubble">
+				<div class="strategy-bubble-card">
+					<div class="strategy-bubble-inner">
+					<div class="strategy-bubble-text">
+						<div class="strategy-bubble-eyebrow">SWIFT PROPERTY</div>
+						<div class="strategy-bubble-line5">
+						UPCOMING
+						</div>
+						<div class="available-bubble-subheading">
+        					<span class="available-bubble-subheading-main">AUCTION</span>
+							<span class="available-bubble-subheading-accent">DATES</span>
 						</div>
 					</div>
+					</div>
+				</div>
+
+				<!-- Connector pill -->
+				<img
+					src="{{ url_for('static', filename='images/rectangle.svg') }}"
+					alt=""
+					class="strategy-bubble-connector"
+				>
+				</div>
+
+
 
 					<!-- TOP-RIGHT: HEADING + RED LINE + SHORT BODY -->
 					<div class="strategy-heading">
 						<div class="strategy-heading-inner">
 							<h3 class="strategy-heading-title">
 							AHEAD IN THE AUCTION DIARY
-							</h3>
 
 							<hr class="strategy-heading-divider">
 
@@ -204,6 +215,7 @@
 							Each auction is prepared months in advance, with new lots added as they are confirmed. This section gives you a clear overview of our upcoming sales so you can plan ahead, follow catalogue releases and register your interest early.
 						</p>
 
+						<!-- CTA: reuse your Free Valuation SVG button -->
 						<div class="auction-feature-cta">
 											<a
 											href="{{ url_for('valuation') }}"
@@ -226,11 +238,12 @@
 
 					<!-- BOTTOM-RIGHT: IMAGE + BADGE -->
 					<div class="strategy-image-wrapper">
-						<img
+						<div class="strategy-image-frame">
+							<img
 							src="{{ url_for('static', filename='images/futureAuction.jpg') }}"
 							alt="Swift Property Auctions team meeting"
 							class="strategy-image"
-						>
+							>
 
 						<!-- Compact Next Auction badge -->
 						<div class="auction-next-compact">

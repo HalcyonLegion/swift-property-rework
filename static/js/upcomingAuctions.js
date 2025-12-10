@@ -7,35 +7,35 @@ document.addEventListener('DOMContentLoaded', () => {
 // === CONFIG: UPCOMING AUCTIONS ===
 const auctions = [
   {
-    season: 'Spring Auction',
+    season: 'THE NEW YEAR AUCTION',
     date: new Date(2026, 1, 17, 12, 0), // 17 Feb 2026, 12:00
   },
   {
-    season: 'Spring Auction',
+    season: 'THE SPRING LAUNCH AUCTION',
     date: new Date(2026, 2, 31, 12, 0), // 31 Mar 2026, 12:00
   },
   {
-    season: 'Spring Auction',
+    season: 'THE MID-SPRING AUCTION',
     date: new Date(2026, 4, 14, 12, 0), // 14 May 2026, 12:00
   },
   {
-    season: 'Summer Auction',
+    season: 'THE SUMMER OPENING AUCTION',
     date: new Date(2026, 5, 25, 12, 0), // 25 Jun 2026, 12:00
   },
   {
-    season: 'Summer Auction',
+    season: 'THE SUMMER PEAK AUCTION',
     date: new Date(2026, 7, 6, 12, 0), // 6 Aug 2026, 12:00
   },
   {
-    season: 'Autumn Auction',
+    season: 'THE EARLY AUTUMN AUCTION',
     date: new Date(2026, 8, 17, 12, 0), // 17 Sep 2026, 12:00
   },
   {
-    season: 'Autumn Auction',
+    season: 'THE LATE AUTUMN AUCTION',
     date: new Date(2026, 9, 29, 12, 0), // 29 Oct 2026, 12:00
   },
   {
-    season: 'Autumn Auction',
+    season: 'THE END OF YEAR AUCTION',
     date: new Date(2026, 11, 10, 12, 0), // 10 Dec 2026, 12:00
   },
 ];
@@ -65,7 +65,7 @@ async function updateLots() {
             <!-- Swift badge top-right -->
             <div class="auction-card-badge">
               <img 
-                src="static/images/swift-card-badge.svg" 
+                src="static/images/propnew.jpg"
                 alt="The Swift Property Auctions Team"
               >
             </div>
@@ -90,7 +90,7 @@ async function updateLots() {
                 <img
                   src="static/images/icon-clock.svg"
                   alt=""
-                  class="auction-card-icon"
+                  class="auction-card-icon mb-24"
                 >
                 <div class="auction-card-time-wrap">
                   <p class="auction-card-time mb-0">${timeHtml}</p>
