@@ -13499,7 +13499,6 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
   color: #0F2848;
   margin-bottom: 16px;
 }
@@ -16171,7 +16170,6 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   font-weight: 500;
   font-size: 32px;
   line-height: 1.1;           /* 110% */
-  text-transform: uppercase;
   color: #0f2848;
 }
 
@@ -16180,7 +16178,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   margin: 0;
   font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 20px;
   line-height: 1.3;
   color: #0f2848;
