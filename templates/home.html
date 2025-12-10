@@ -399,6 +399,71 @@
 							</div>
 					</section>
 
+					<!-- NEXT AUCTION BUBBLE -->
+					<section class="next-auction-section">
+					<div class="strategy-bubble next-auction-bubble">
+						<div class="strategy-bubble-card">
+						<div class="strategy-bubble-inner next-auction-inner">
+
+							<!-- Left: copy -->
+							<div class="next-auction-text">
+							<p class="next-auction-label">Next Auction</p>
+
+							<p class="next-auction-date">17th February 2026 12:00pm</p>
+
+							<!-- Underline like the example -->
+							<div class="next-auction-underline"></div>
+
+							<p class="next-auction-meta">
+								Remote bidding only – bid online, over the telephone or submit
+								proxy bids in advance.
+							</p>
+							</div>
+
+							<!-- Bottom: button row -->
+							<div class="next-auction-cta-row">
+
+							<!-- Your fancy register pill -->
+							<div class="auction-feature-cta2">
+								<a
+								href="{{ url_for('bidder_registration') }}"
+								class="auction-feature-cta2-main register-pill-btn"
+								aria-label="Register to bid"
+								>
+								<!-- Background SVG with text -->
+								<img
+									src="{{ url_for('static', filename='images/regtobidnew.svg') }}"
+									alt="Register to bid"
+									class="svg-pill-bg register-pill-bg"
+								>
+
+								<!-- Arrow square with stacked arrows -->
+								<span class="register-arrow-wrap">
+									<img
+									src="{{ url_for('static', filename='images/superArrow.svg') }}"
+									alt=""
+									aria-hidden="true"
+									class="svg-pill-arrow svg-arrow-default"
+									>
+									<img
+									src="{{ url_for('static', filename='images/uprightArrow.svg') }}"
+									alt=""
+									aria-hidden="true"
+									class="svg-pill-arrow svg-arrow-hover"
+									>
+								</span>
+								</a>
+							</div>
+							</div>
+
+						</div>
+						</div>
+					</div>
+					</section>
+
+
+
+
 
 			<!-- Filtering Section -->
 				<section id="lot-filtering" class="lot-filter-section">
