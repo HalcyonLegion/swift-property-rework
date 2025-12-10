@@ -12622,7 +12622,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   width: 100%;
   border-radius: 8px;
   border: none;
-  padding: 14px 24px;
+  padding: 14px 16px;
   background: #ffffff;
   font-family: 'Stack Sans Headline', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
@@ -12643,7 +12643,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 
 /* Select arrow reset (we keep browser arrow for now) */
 .valuation-field select {
-  color: rgba(15, 40, 72, 0.5);
+  color: #3d3d3d94;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -16029,7 +16029,7 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.1;
-  color: #0f2848;
+  color: #3a4a56;
 
   /* Hide native arrow */
   appearance: none;
