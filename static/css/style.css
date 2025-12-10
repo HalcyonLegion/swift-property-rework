@@ -16154,9 +16154,8 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   margin-bottom: 0;           /* kill bootstrap mb-5 if it's too big */
 }
 
-/* Left text block – 580 x ~311 from Figma */
 #auction-pricing-comparison .ap-text-col {
-  flex: 0 0 622px;
+  flex: 0.5 0 350px;
   width: 610px;
   height: 311px;          /* helps line up with the 311px image */
   display: flex;
