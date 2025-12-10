@@ -413,7 +413,21 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
             ${hasPrev ? `onclick="navigateToLot(${PreviousLotId})"` : ''}
             aria-label="Previous lot"
           >
-            <img src="/static/images/supeLArrow.svg" alt="Previous">
+            <span class="lot-nav-arrow-wrap">
+              <!-- default left arrow -->
+              <img
+                src="/static/images/supeLArrow.svg"
+                alt="Previous"
+                class="svg-pill-arrow nav-arrow-default"
+              >
+              <!-- hover: upright arrow mirrored left -->
+              <img
+                src="/static/images/uprightArrow.svg"
+                alt=""
+                aria-hidden="true"
+                class="svg-pill-arrow nav-arrow-hover nav-arrow-left-hover"
+              >
+            </span>
           </button>
 
           <!-- Prev text -->
@@ -443,9 +457,24 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
             ${hasNext ? `onclick="navigateToLot(${NextLotId})"` : ''}
             aria-label="Next lot"
           >
-            <img src="/static/images/supeRArrow.svg" alt="Next">
+            <span class="lot-nav-arrow-wrap">
+              <!-- default right arrow -->
+              <img
+                src="/static/images/supeRArrow.svg"
+                alt="Next"
+                class="svg-pill-arrow nav-arrow-default"
+              >
+              <!-- hover: upright arrow (normal direction) -->
+              <img
+                src="/static/images/uprightArrow.svg"
+                alt=""
+                aria-hidden="true"
+                class="svg-pill-arrow nav-arrow-hover"
+              >
+            </span>
           </button>
         </div>
+
       </div>
 
         <!-- MAIN MEDIA ONLY (top level = photos) -->

@@ -16677,3 +16677,53 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   filter: brightness(1.05);
 }
 
+/* ========== LOT DETAIL NAV ARROWS (Prev / Next) ========== */
+
+/* Small square that holds the two stacked arrows */
+.lot-nav-row .lot-nav-arrow-wrap {
+  position: relative;
+  display: inline-block;
+  width: 32px;   /* tweak if your arrow SVGs are bigger/smaller */
+  height: 32px;
+}
+
+/* Position both arrow SVGs on top of each other */
+.lot-nav-row .lot-nav-arrow-wrap .svg-pill-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.15s ease, filter 0.2s ease;
+}
+
+/* Default vs hover visibility */
+.lot-nav-row .nav-arrow-default { opacity: 1; }
+.lot-nav-row .nav-arrow-hover  { opacity: 0; }
+
+/* Hover / focus: swap to upright arrow (only when not disabled) */
+.lot-nav-row .lot-nav-arrow:not(.is-disabled):hover .nav-arrow-default,
+.lot-nav-row .lot-nav-arrow:not(.is-disabled):focus-visible .nav-arrow-default {
+  opacity: 0;
+}
+
+.lot-nav-row .lot-nav-arrow:not(.is-disabled):hover .nav-arrow-hover,
+.lot-nav-row .lot-nav-arrow:not(.is-disabled):focus-visible .nav-arrow-hover {
+  opacity: 1;
+  filter: brightness(0.8);  /* darker upright arrow on hover (matches other pills) */
+}
+
+/* Mirror the upright arrow for the PREVIOUS button */
+.lot-nav-row .nav-arrow-left-hover {
+  transform: translate(-50%, -50%) scaleX(-1);
+}
+
+/* Disabled state – keep base arrow, mute interaction */
+.lot-nav-row .lot-nav-arrow.is-disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.lot-nav-row .lot-nav-arrow.is-disabled .nav-arrow-hover {
+  opacity: 0;   /* don't show hover version even if hovered */
+}
