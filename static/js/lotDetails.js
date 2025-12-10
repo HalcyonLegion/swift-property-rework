@@ -525,20 +525,15 @@ function renderLotDetails(lot, PreviousLotId, NextLotId) {
             </div>
 
             <div class="lot-info-section">
-              <h5 class="lot-info-heading">Additional Fees and Disclaimer</h5>
+              <h5 class="lot-info-heading">Important Information for Prospective Purchasers</h5>
               <p class="lot-info-body lot-info-body-small">
-                The administration charge is £1,200, inclusive of VAT upon the virtual gavel, unless otherwise specified in the addendum.
-                For details regarding buyers premium and disbursements, please consult the legal pack and addendum to determine any additional
-                costs that may be payable by the purchaser upon completion. While particulars, images, and video tours on the website and
-                within the catalogue are believed to be accurate, their precision is not guaranteed. The auctioneers will always strive to
-                inform prospective purchasers of any variations to the catalogue, should such changes come to their attention. Neither the
-                auctioneers nor their clients can be held responsible for any losses, damages, or abortive costs incurred in respect of lots
-                that are withdrawn or sold prior to auction. Information concerning rating matters has been acquired through verbal inquiry only.
-                Prospective purchasers are advised to conduct their own inquiries with the appropriate authorities. Prospective purchasers are
-                considered responsible for verifying whether tenanted properties are currently occupied and whether rents are being paid.
-                All measurements, areas, and distances are approximate only. Potential buyers are urged to verify them. No representation or
-                warranty is made in respect to the structure of any properties or in relation to their state of repair. Prospective buyers
-                should arrange for a survey of the particular lot by a professionally qualified person.
+                A buyer’s administration charge of £1,800 including VAT applies to all lots unless otherwise stated in the addendum. Please refer to the legal pack and addendum for any additional buyer’s premium or disbursements payable on completion.
+
+                Guide prices represent the seller’s minimum expectation and may change at any time prior to the auction. They are not guaranteed selling prices. Each lot is offered subject to a reserve price, which we expect to be within the guide range or up to 10% above a single-figure guide. Accuracy of Information. All particulars, images, videos, and descriptions are provided in good faith; however, their accuracy cannot be guaranteed. We will make every reasonable effort to inform purchasers of any changes or updates to the catalogue.
+
+                Measurements, areas, and distances are approximate. Prospective purchasers should rely on their own enquiries. For tenanted lots, buyers should independently verify occupancy status and rent payments. Rating information is obtained by verbal enquiry only and should be checked with the relevant authority. Swift Property Auctions and the seller accept no responsibility for any losses, costs, or abortive expenses relating to lots withdrawn or sold before the auction. Viewings are arranged via third-party agents; while we aim to give notice of any changes, we cannot accept liability for cancellations or no-shows. Access to a property after exchange is not guaranteed.
+
+                No representation or warranty is given regarding the structure, condition, or state of repair of any property. Prospective purchasers are strongly advised to obtain an independent survey and verify all information before bidding. These particulars do not form part of any offer or contract, and neither Swift Property Auctions nor its employees or agents hold authority to make binding assurances about any property.
               </p>
             </div>
           </div>
