@@ -3410,7 +3410,6 @@ p.terms-txt a,
 
 #hero-14 .btn3glass {
     border-radius: 14px;
-    backdrop-filter: blur(12px);
 }
 
 .hero-14-txt h2 {
@@ -16238,3 +16237,134 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
     aspect-ratio: 16 / 9;
   }
 }
+
+/* Container for the two arrows – same size as the little square in the SVG */
+.hero-button-group .hero-arrow-wrap {
+  position: relative;
+  display: inline-block;
+  width: 52px;    /* match your arrow square */
+  height: 52px;
+  margin-left: 8px;   /* tweak to align with the printed square on the bg SVG */
+}
+
+/* Both arrow SVGs sit on top of each other */
+.hero-button-group .hero-arrow-wrap .svg-pill-arrow {
+  position: absolute;
+  top: 50%;
+  left: 34%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.05s ease;
+}
+
+/* Default: only the right-pointing arrow is visible */
+.hero-button-group .svg-arrow-default {
+  opacity: 1;
+}
+
+.hero-button-group .svg-arrow-hover {
+  opacity: 0;
+}
+
+/* Hover/focus: fade default out, fade upright in */
+.hero-button-group .svg-pill-btn:hover .svg-arrow-default,
+.hero-button-group .svg-pill-btn:focus-visible .svg-arrow-default {
+  opacity: 0;
+}
+
+.hero-button-group .svg-pill-btn:hover .svg-arrow-hover,
+.hero-button-group .svg-pill-btn:focus-visible .svg-arrow-hover {
+  opacity: 1;
+}
+
+/* Base layout for the SVG pill buttons */
+.hero-button-group .svg-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;         /* keeps gap between pills */
+  text-decoration: none;
+}
+
+/* Background SVG itself */
+.hero-button-group .svg-pill-bg {
+  display: block;
+  height: 52px;              /* match your pill height */
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Hover / focus: lift + brighten the main pill */
+.hero-button-group .svg-pill-btn:hover .svg-pill-bg,
+.hero-button-group .svg-pill-btn:focus-visible .svg-pill-bg {
+  filter: brightness(2.00);         /* gentle glow */
+}
+
+/* === FOOTER NEWSLETTER CTA – SUBSCRIBE PILL === */
+
+.newsletter-3-strip .auction-feature-cta {
+  display: flex;
+  align-items: center;
+}
+
+/* Button behaves like the hero pills but scoped to newsletter */
+.newsletter-3-strip .newsletter-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Background SVG */
+.newsletter-3-strip .newsletter-pill-bg {
+  display: block;
+  height: 52px; /* match subbtnnew.svg height */
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Small square the arrows live in */
+.newsletter-3-strip .newsletter-arrow-wrap {
+  position: relative;
+  display: inline-block;
+  width: 52px;   /* same as hero */
+  height: 52px;
+  margin-left: 8px; /* tweak if alignment is a bit off */
+}
+
+/* Both arrows stacked on top of each other */
+.newsletter-3-strip .newsletter-arrow-wrap .svg-pill-arrow {
+  position: absolute;
+  top: 50%;
+  left: 37%; /* match whatever worked in hero */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.05s ease;
+}
+
+/* Default: right arrow visible, upright hidden */
+.newsletter-3-strip .svg-arrow-default {
+  opacity: 1;
+}
+.newsletter-3-strip .svg-arrow-hover {
+  opacity: 0;
+}
+
+/* Hover/focus: swap which arrow is visible */
+.newsletter-3-strip .newsletter-pill-btn:hover .svg-arrow-default,
+.newsletter-3-strip .newsletter-pill-btn:focus-visible .svg-arrow-default {
+  opacity: 0;
+}
+.newsletter-3-strip .newsletter-pill-btn:hover .svg-arrow-hover,
+.newsletter-3-strip .newsletter-pill-btn:focus-visible .svg-arrow-hover {
+  opacity: 1;
+}
+
+/* Hover / focus: brighten the Subscribe pill like the hero buttons */
+.newsletter-3-strip .newsletter-pill-btn:hover .newsletter-pill-bg,
+.newsletter-3-strip .newsletter-pill-btn:focus-visible .newsletter-pill-bg {
+  filter: brightness(2.0);
+}
+
+
