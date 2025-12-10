@@ -16728,3 +16728,112 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .lot-nav-row .lot-nav-arrow .nav-arrow-left-hover {
   transform: translate(-50%, -50%) scaleX(-1);
 }
+
+/* ===== Valuation form submit pill (clone of contact pill) ===== */
+
+.valuation-field.submit-field {
+  text-align: center;
+}
+
+/* Main button */
+.valuation-pill-btn {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  display: inline-flex;        /* force horizontal layout */
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* In case old .valuation-submit set a different display */
+.valuation-submit.valuation-pill-btn {
+  display: inline-flex;
+}
+
+/* Background SVG pill */
+.valuation-pill-bg {
+  display: block;
+  height: 52px;                /* match submitted.svg height */
+  border-radius: 8px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Arrow container */
+.valuation-arrow-wrap {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  margin-left: 10px;            /* tweak if needed */
+}
+
+/* Stacked arrows */
+.valuation-arrow-wrap .svg-pill-arrow {
+  position: absolute;
+  top: 50%;
+  left: 34%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.05s ease, filter 0.2s ease;
+}
+
+/* Default vs hover visibility */
+.valuation-pill-btn .svg-arrow-default { opacity: 1; }
+.valuation-pill-btn .svg-arrow-hover  { opacity: 0; }
+
+.valuation-pill-btn:hover .svg-arrow-default,
+.valuation-pill-btn:focus-visible .svg-arrow-default {
+  opacity: 0;
+}
+
+.valuation-pill-btn:hover .svg-arrow-hover,
+.valuation-pill-btn:focus-visible .svg-arrow-hover {
+  opacity: 1;
+}
+
+/* Brighten pill + darken arrow on hover */
+.valuation-pill-btn:hover .valuation-pill-bg,
+.valuation-pill-btn:focus-visible .valuation-pill-bg {
+  filter: brightness(1);
+}
+
+.valuation-pill-btn:hover .svg-arrow-hover,
+.valuation-pill-btn:focus-visible .svg-arrow-hover {
+  filter: brightness(0.8);
+}
+
+/* Make the card + content flex so buttons stay aligned too */
+.lot-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.lot-card .lot-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Description: always reserve 5 lines and clamp with ellipsis */
+.lot-card .description {
+  font-size: 16px;          /* or whatever you’re using */
+  line-height: 1.4;         /* important: used in the height calc */
+
+  /* 5 lines tall, even if there isn't enough text */
+  min-height: calc(1.4em * 5);
+  max-height: calc(1.4em * 5);
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;    /* show up to 5 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+/* Keep the buttons glued to the bottom of the card */
+.lot-card .btn-row {
+  margin-top: auto;
+}

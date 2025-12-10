@@ -378,16 +378,41 @@
 						</label>
 					</div>
 
-					<!-- Row 6: Submit button (SVG) -->
+					<!-- Row 6: Submit button (awesome pill version) -->
 					<div class="valuation-field submit-field">
-						<button type="submit"
-								class="valuation-submit submit"
-								aria-label="Submit valuation request">
-						<img src="{{ url_for('static', filename='images/submitted.svg') }}"
-							alt="Submit valuation request"
-							class="valuation-submit-svg btn-tra-red red-hover">
-						</button>
+					<button
+						type="submit"
+						class="valuation-submit submit valuation-pill-btn"
+						aria-label="Submit valuation request"
+					>
+						<!-- Background SVG pill -->
+						<img
+						src="{{ url_for('static', filename='images/submitted.svg') }}"
+						alt="Submit valuation request"
+						class="valuation-submit-svg valuation-pill-bg"
+						>
+
+						<!-- Arrow square with stacked arrows -->
+						<span class="valuation-arrow-wrap">
+						<!-- Default right arrow -->
+						<img
+							src="{{ url_for('static', filename='images/superArrow.svg') }}"
+							alt=""
+							aria-hidden="true"
+							class="svg-pill-arrow svg-arrow-default"
+						>
+						<!-- Hover upright arrow -->
+						<img
+							src="{{ url_for('static', filename='images/uprightArrow.svg') }}"
+							alt=""
+							aria-hidden="true"
+							class="svg-pill-arrow svg-arrow-hover"
+						>
+						</span>
+					</button>
 					</div>
+
+
 
 					</div>
 
