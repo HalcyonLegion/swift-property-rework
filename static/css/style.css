@@ -9430,7 +9430,7 @@ nav a#pull {
   justify-content: center;
 
   padding: 0;
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   text-decoration: none;
 }
 
@@ -16370,4 +16370,57 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   filter: brightness(1.1);
 }
 
+/* ========= AUCTION FEATURE FREE-VALUATION CTA ========= */
 
+.auction-feature-cta .auction-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Background SVG – scoped to this block */
+.auction-feature-cta .svg-pill-bg {
+  display: block;
+  height: 52px; /* match the asset height */
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Arrow container */
+.auction-feature-cta .auction-arrow-wrap {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  margin-left: 8px;
+}
+
+/* Stacked arrows */
+.auction-feature-cta .auction-arrow-wrap .svg-pill-arrow {
+  position: absolute;
+  top: 50%;
+  left: 34%; /* tweak if needed */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.05s ease;
+}
+
+/* Default vs hover arrows */
+.auction-feature-cta .svg-arrow-default { opacity: 1; }
+.auction-feature-cta .svg-arrow-hover  { opacity: 0; }
+
+.auction-feature-cta .auction-pill-btn:hover .svg-arrow-default,
+.auction-feature-cta .auction-pill-btn:focus-visible .svg-arrow-default {
+  opacity: 0;
+}
+
+.auction-feature-cta .auction-pill-btn:hover .svg-arrow-hover,
+.auction-feature-cta .auction-pill-btn:focus-visible .svg-arrow-hover {
+  opacity: 1;
+}
+
+/* Brighten pill on hover */
+.auction-feature-cta .auction-pill-btn:hover .svg-pill-bg,
+.auction-feature-cta .auction-pill-btn:focus-visible .svg-pill-bg {
+  filter: brightness(1.1);
+}
