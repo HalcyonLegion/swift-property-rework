@@ -16837,3 +16837,9 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .lot-card .btn-row {
   margin-top: auto;
 }
+
+.prev-auction-btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;  /* ensure clicks do nothing */
+}

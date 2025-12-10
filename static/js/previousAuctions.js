@@ -207,17 +207,15 @@ async function updateLots() {
             </div>
 
             <div class="prev-auction-actions">
-            <!-- VIEW LOTS toggles collapse -->
-            <button
+            <!-- VIEW LOTS (temporarily disabled) -->
+              <button
                 type="button"
-                class="prev-auction-btn prev-auction-btn-primary"
-                data-bs-toggle="collapse"
-                data-bs-target="#${collapseId}"
-                aria-expanded="false"
-                aria-controls="${collapseId}"
-            >
+                class="prev-auction-btn prev-auction-btn-primary prev-auction-btn-disabled"
+                aria-disabled="true"
+              >
                 View Lots
-            </button>
+              </button>
+
 
             <!-- WANT TO SELL? goes to valuation page -->
             <a href="/valuation"
