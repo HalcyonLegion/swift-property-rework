@@ -16701,16 +16701,16 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
 .lot-nav-row .nav-arrow-default { opacity: 1; }
 .lot-nav-row .nav-arrow-hover  { opacity: 0; }
 
-/* Hover / focus: swap to upright arrow (only when not disabled) */
-.lot-nav-row .lot-nav-arrow:not(.is-disabled):hover .nav-arrow-default,
-.lot-nav-row .lot-nav-arrow:not(.is-disabled):focus-visible .nav-arrow-default {
+/* Hover / focus: swap to upright arrow (EVEN IF .is-disabled) */
+.lot-nav-row .lot-nav-arrow:hover .nav-arrow-default,
+.lot-nav-row .lot-nav-arrow:focus-visible .nav-arrow-default {
   opacity: 0;
 }
 
-.lot-nav-row .lot-nav-arrow:not(.is-disabled):hover .nav-arrow-hover,
-.lot-nav-row .lot-nav-arrow:not(.is-disabled):focus-visible .nav-arrow-hover {
+.lot-nav-row .lot-nav-arrow:hover .nav-arrow-hover,
+.lot-nav-row .lot-nav-arrow:focus-visible .nav-arrow-hover {
   opacity: 1;
-  filter: brightness(0.8);  /* darker upright arrow on hover (matches other pills) */
+  filter: brightness(0.8);  /* darker upright arrow on hover */
 }
 
 /* Mirror the upright arrow for the PREVIOUS button */
@@ -16718,12 +16718,13 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   transform: translate(-50%, -50%) scaleX(-1);
 }
 
-/* Disabled state – keep base arrow, mute interaction */
+/* Disabled state – still looks muted, but can animate */
 .lot-nav-row .lot-nav-arrow.is-disabled {
   cursor: default;
   opacity: 0.4;
 }
 
-.lot-nav-row .lot-nav-arrow.is-disabled .nav-arrow-hover {
-  opacity: 0;   /* don't show hover version even if hovered */
+/* Mirror the upright arrow for the PREVIOUS button hover */
+.lot-nav-row .lot-nav-arrow .nav-arrow-left-hover {
+  transform: translate(-50%, -50%) scaleX(-1);
 }
