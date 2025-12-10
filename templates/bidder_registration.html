@@ -383,31 +383,42 @@
 				</div><!-- /.row -->
 
 				<!-- REGISTER TO BID CTA -->
-				<div class="bidding-register-cta wow fadeInUp">
-				<div class="auction-feature-cta2">
-					<a
-					href="https://passport.eigroup.co.uk/account/log-in"
-					target="_blank"
-					class="auction-feature-cta2-main bidding-register-link"
-					aria-label="Register to bid"
-					>
-					<!-- Background SVG with "Register to Bid" text -->
-					<img
-						src="{{ url_for('static', filename='images/bidderreg.svg') }}"
-						alt="Register to bid"
-						class="svg-pill-bg"
-					>
+<div class="bidding-register-cta wow fadeInUp">
+  <div class="auction-feature-cta2">
+    <a
+      href="https://passport.eigroup.co.uk/account/log-in"
+      target="_blank"
+      class="auction-feature-cta2-main register-pill-btn bidding-register-link"
+      aria-label="Register to bid"
+    >
+      <!-- Background SVG with "Register to Bid" text -->
+      <img
+        src="{{ url_for('static', filename='images/bidderreg.svg') }}"
+        alt="Register to bid"
+        class="svg-pill-bg register-pill-bg"
+      >
 
-					<!-- Separate arrow icon -->
-					<img
-						src="{{ url_for('static', filename='images/superArrow.svg') }}"
-						alt=""
-						aria-hidden="true"
-						class="svg-pill-arrow"
-					>
-					</a>
-				</div>
-				</div>
+      <!-- Arrow square with stacked arrows -->
+      <span class="register-arrow-wrap">
+        <!-- Default right arrow -->
+        <img
+          src="{{ url_for('static', filename='images/superArrow.svg') }}"
+          alt=""
+          aria-hidden="true"
+          class="svg-pill-arrow svg-arrow-default"
+        >
+        <!-- Hover upright arrow -->
+        <img
+          src="{{ url_for('static', filename='images/uprightArrow.svg') }}"
+          alt=""
+          aria-hidden="true"
+          class="svg-pill-arrow svg-arrow-hover"
+        >
+      </span>
+    </a>
+  </div>
+</div>
+
 
 
 				</div><!-- /.bidding-cards-wrapper -->
