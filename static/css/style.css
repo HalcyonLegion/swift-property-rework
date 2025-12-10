@@ -16592,3 +16592,26 @@ body.lot-details-page .wsmenu > .wsmenu-list > li > a:hover {
   transform: translateY(0);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Base body text in the info sections */
+.lot-info-body {
+  font-family: "Stack Sans Headline", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #8c94a3; /* your existing light grey-ish body colour */
+}
+
+/* Make the <b> bits (Ground Floor / First Floor / Loft Area) look like sub-headings */
+.lot-info-body b,
+.lot-info-body strong {
+  display: block;
+  font-weight: 600;        /* force bold weight */
+  color: #0f2848;          /* dark blue from Figma */
+}
+
+/* Don’t add a top margin before the very first bold line */
+.lot-info-body b:first-child,
+.lot-info-body strong:first-child {
+  margin-top: 0;
+}
